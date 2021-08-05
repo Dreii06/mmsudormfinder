@@ -23,7 +23,7 @@
     <div class="topnav" id="myTopnav">
         <img style="float:left;margin-left:20px;margin-top:12px;" src="/images/mmsu logo.png"  height="3%" width="3%">
         <h4>MARIANO MARCOS <br> STATE UNIVERSITY</h4>
-        <div class="titleheader">Occupant's Details</div>
+        <div class="titleheader">{{ $dorm_name }} - Occupant's Details</div>
     </div>
 
     <div class="verticalnav">
@@ -31,8 +31,8 @@
             <li class="username">{{ Auth::guard('admin')->user()->name }}</li>
             <li><a href="/admin/dashboard"> <img src="https://img.icons8.com/fluent-systems-regular/96/000000/home.png"/> Home</a></li>
             <li><a href="/admin/registrants"> <img src="https://img.icons8.com/fluent-systems-regular/50/000000/parse-resume.png"/> Registrants</a></li>
-            <li><a class="active" href="/admin/occupantslist"><img src="https://img.icons8.com/fluent-systems-regular/96/000000/user-rights.png"/> Occupants</a></li>
-            <li><a href="/admin/dorms"><img src="https://img.icons8.com/fluent-systems-regular/96/000000/department.png"/> Dorm</a></li>
+            <li><a href="/admin/occupantslist"><img src="https://img.icons8.com/fluent-systems-regular/96/000000/user-rights.png"/> Occupants</a></li>
+            <li><a class="active" href="/admin/dorms"><img src="https://img.icons8.com/fluent-systems-regular/96/000000/department.png"/> Dorm</a></li>
             <li><a href="/admin/contact"><img src="https://img.icons8.com/fluent-systems-regular/96/000000/info-squared.png"/> Contact</a></li><br><br>
             <li><a href="" style="color:red;"><img src="https://img.icons8.com/ios-filled/50/000000/exit.png"/>Log Out</a></li>
         </ul>
@@ -40,7 +40,7 @@
     
     <div class="dorm_details_con">
 
-    <form action="/admin/occupantdetails" method="POST">
+    <form action="/admin/{{ $dorm_name }}/occupantdetails" method="POST">
         @csrf
         <label style="width:20%;" for="fstudentid">Student Number</label>  
         <label style="width:20%;" for="sex" >Sex</label>
@@ -83,6 +83,7 @@
         <input type="text" style="width:20%;margin-right:2%;margin-left:0%;"id="course" value="{{ $details->course }}"  class="inputapp" readonly><br><br>
         
         <button type="button" onclick="download()" class="btndownload">DOWNLOAD</button>
+        <button type="submit" onclick="remove()" style="margin-left:1%;"class="btndelete">DELETE</button>
     </form>
     </div>
 

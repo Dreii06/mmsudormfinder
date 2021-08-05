@@ -9,4 +9,10 @@ class Amenities extends Model
 {
     use HasFactory;
     protected $table = 'amenities';
+    public $timestamps = false;
+
+    protected $fillable = [
+        'dormitory',
+        'amenities'
+    ];
 }

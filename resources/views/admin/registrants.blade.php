@@ -27,10 +27,11 @@
             <li class="username">{{ Auth::guard('admin')->user()->name }}</li>
             <li><a href="/admin/dashboard"> <img src="https://img.icons8.com/fluent-systems-regular/96/000000/home.png"/> Home</a></li>
             <li><a class="active" href="/admin/registrants"> <img src="https://img.icons8.com/fluent-systems-regular/50/000000/parse-resume.png"/> Registrants</a></li>
+            <li><a href="/admin/occupantslist"><img src="https://img.icons8.com/fluent-systems-regular/96/000000/user-rights.png"/> Occupants</a></li>
             <li><a href="/admin/dorms"><img src="https://img.icons8.com/fluent-systems-regular/96/000000/department.png"/> Dorm</a></li>
             <li><a href="/admin/contact"><img src="https://img.icons8.com/fluent-systems-regular/96/000000/info-squared.png"/> Contact</a></li><br><br>
             <li><a href="" style="color:red;"><img src="https://img.icons8.com/ios-filled/50/000000/exit.png"/>Log Out</a></li>
-        </ul>    
+        </ul>
     </div>
 
     <div class="listappcontainer">
@@ -48,10 +49,9 @@
         <tbody>
             @foreach($registrants as $registrant)
           <tr>
-            <td><a href="/admin/registrantdetails/{{ $registrant['id'] }}">{{ $registrant['name'] }}</a></td>
-            <td>{{ $registrant['dorm_name'] }}</td>
-            <td>{{ $registrant['mobile_number'] }}</td>
-            <td ><input type="checkbox" class="check"></td>
+            <td><a href="/admin/registrantdetails/{{ $registrant->id }}">{{ $registrant->first_name }} {{ $registrant->middle_name }} {{ $registrant->last_name }}</a></td>
+            <td>{{ $registrant->dorm_name }}</td>
+            <td>{{ $registrant->mobile_num }}</td>
           </tr>
           @endforeach
         </tbody>

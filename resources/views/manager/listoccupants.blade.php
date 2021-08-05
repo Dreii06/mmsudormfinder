@@ -47,7 +47,7 @@
       </form>        
     </div>
 
-    <div class="listappcontainer">
+    <div class="listappcontainer" style="margin-top:2%;">
     <div class="tableFixHeadtitle">LIST OF OCCUPANTS</div>  
     <div class="tableFixHead">
       <table>
@@ -61,9 +61,9 @@
         <tbody>
             @foreach($occupants as $occupant)
           <tr>
-            <td><a href="detailsoccupant/{{ $occupant['id'] }}">{{ $occupant['name'] }}</a></td>
-            <td>{{ $occupant['stud_num'] }}</td>
-            <td>{{ $occupant['mobile_num'] }}</td>
+            <td><a href="detailsoccupant/{{ $occupant['id'] }}">{{ $occupant->first_name }} {{ $occupant->middle_name }} {{ $occupant->last_name }}</a></td>
+            <td>{{ $occupant->stud_num }}</td>
+            <td>{{ $occupant->mobile_num }}</td>
           </tr>
           @endforeach
         </tbody>

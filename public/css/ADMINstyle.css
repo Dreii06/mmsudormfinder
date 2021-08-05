@@ -92,10 +92,10 @@ form {
 .loginform {
     width: 45%;
     height: 40px;
-    border-radius: 10px;
     border-style: none;
     text-indent: 10px;
     margin-top: 70px;
+    border-radius: 10px;
 }
 
 .yellowbutton {
@@ -154,13 +154,12 @@ form {
 }
 
 .inputapp{
-    font-family: Regular;
-    height: 30px;
-    display: inline-block;
-    border: 0px;
-    color: #0C4B05;
-    text-indent: 10px;
-    font-size: 15px;
+  font-family: Regular;
+  height: 30px;
+  display: inline-block;
+  margin-right: 2%;
+  border-radius: 5px;
+  border-width: 1px;
 }
 
 .readapp{
@@ -317,7 +316,7 @@ display: flex;
 }
 
 .btnviewocc {
-    width: 15%;
+    width: 20%;
     height: 50px;
     border-radius: 35px;
     font-size: 1.1vw;
@@ -330,6 +329,7 @@ display: flex;
 .dorm_details_con {
     display: flex;
     width: 100%;
+    height: 430px;
     padding-top: 15%;
     overflow-y: scroll;
 }
@@ -340,14 +340,50 @@ display: flex;
 
 .dorm_details_con label{
   font-family: ABold;
-  font-size: 20px;
-  width: 200px;    
-  display: inline-block;
   color: #0C4B05;
+  font-size: 1.1vw;
+  margin-right: 2.8%;
+  display: inline-block;
+  width: 20%;
+}
+
+/* TABLE FOR VIEW DORM */
+.viewdormtable{
+  font-size: 1.2vw;
+  width: 100%;
+}
+.viewdormtable th{
+font-family: ABold;
+color: white;
+font-size: 1.2vw;
+text-align: left;
+background-color: #0C4B05;
+}
+
+textarea{
+  width:70%;
+  height:50px;
+  font-family: Regular;
+
+}
+.tablewrapper {
+  overflow:hidden;
+  overflow-y: scroll;
+  height: 150px;
+  width:30%;
+}
+
+.tablewrapper th {
+  top: 0;
+  z-index: 2;
+  position: sticky;
+  background-color:#0C4B05;
+  color: whitesmoke;
 }
 
 .btndorm_container {
-    margin-top: 1%;
+    margin-top: 2%;
+    padding-bottom: 10%;
 }
 
  /* SCROLLABLE LIST */

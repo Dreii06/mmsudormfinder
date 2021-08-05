@@ -23,6 +23,10 @@ Route::get('/', function () {
     return view('auth.login');
 });
 
+Route::get('/logout', function () {
+    return view('auth.login');
+});
+
 Route::get('/register', function () {
     return view('auth.register');
 });
@@ -138,15 +142,21 @@ Route::get('/admin/contact', function () {
     return view('admin.contact');
 });
 
+Route::get('/admin/occupantslist', [OccupantsController::class, 'adminshow']);
+
+Route::get('/admin/occupantdetails/{id}', [OccupantsController::class, 'adminget']);
+
+Route::get('/admin/oncampusdorms', [DormsController::class, 'adminshow']);
+
 Route::get('/admin/offcampusdorms', [DormsController::class, 'adminshow']);
 
 Route::get('/admin/dormdetails/{id}', [DormsController::class, 'adminget']);
 
-Route::get('/admin/{id}/occupantslist', [OccupantsController::class, 'adminshow']);
+Route::get('/admin/{id}/dormoccupantslist', [OccupantsController::class, 'adminshowdorm']);
 
-Route::get('/admin/{name}/occupantdetails/{id}', [OccupantsController::class, 'adminget']);
+Route::get('/admin/{name}/dormoccupantdetails/{id}', [OccupantsController::class, 'admingetdorm']);
 
-Route::post('/admin/{name}/occupantdetails', [OccupantsController::class, 'admindel']);
+Route::post('/admin/{name}/dormoccupantdetails', [OccupantsController::class, 'admindel']);
 
 require __DIR__.'/auth.php';
 

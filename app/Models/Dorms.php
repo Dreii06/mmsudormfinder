@@ -13,7 +13,9 @@ class Dorms extends Model
     public $timestamps = false;
 
     protected $fillable = [
-        'owner_name',
+        'first_name',
+        'middle_name',
+        'last_name',
         'dorm_name',
         'mobile_num',
         'filename'

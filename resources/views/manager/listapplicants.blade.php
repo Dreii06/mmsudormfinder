@@ -45,7 +45,7 @@
   <!-- END OF NAVIGATION BAR -->
    
   <!-- TABLE -->
-    <div class="listappcontainer">
+    <div class="listappcontainer" style="margin-top:2%;">
         
     <div class="tableFixHeadtitle">LIST OF APPLICANTS</div>  
     <div class="tableFixHead">
@@ -60,9 +60,9 @@
         <tbody>
           @foreach ($applicants as $applicant)
           <tr>
-            <td><a href="detailsapplicant/{{ $applicant['id'] }}">{{ $applicant['name'] }}</a></td>
-            <td>{{ $applicant['stud_num'] }}</td>
-            <td>{{ $applicant['mobile_num'] }}</td>
+            <td><a href="detailsapplicant/{{ $applicant['id'] }}">{{ $applicant->first_name }} {{ $applicant->middle_name }} {{ $applicant->last_name }}</a></td>
+            <td>{{ $applicant->stud_num }}</td>
+            <td>{{ $applicant->mobile_num }}</td>
           </tr>
           @endforeach
         </tbody>

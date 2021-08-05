@@ -63,9 +63,9 @@
         <tbody>
             @foreach($dorm as $dorm)
           <tr>
-            <td><a href="/dormitorydetails/{{ $dorm['id'] }}">{{ $dorm['dorm_name'] }}</a></td>
-            <td>{{ $dorm['owner_name'] }}</td>
-            <td>{{ $dorm['mobile_num'] }}</td>
+            <td><a href="/dormitorydetails/{{ $dorm['id'] }}">{{ $dorm->dorm_name }}</a></td>
+            <td>{{ $dorm->first_name }} {{ $dorm->middle_name }} {{ $dorm->last_name }}</td>
+            <td>{{ $dorm->mobile_num }}</td>
           </tr>
           @endforeach
         </tbody>

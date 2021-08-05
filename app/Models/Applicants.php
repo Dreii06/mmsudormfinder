@@ -13,15 +13,23 @@ class Applicants extends Model
     public $timestamps = false;
 
     protected $fillable = [
-        'name',
+        'first_name',
+        'middle_name',
+        'last_name',
+        'suffix',
         'email',
-        'stud_number',
+        'stud_num',
         'sex',
-        'mobile_number',
-        'guardian_number',
-        'date_of_birth',
-        'address',
+        'mobile_num',
+        'guardian_name',
+        'guardian_num',
+        'barangay',
+        'street',
+        'city',
+        'province',
         'college',
         'course',
+        'dormitory',
+        'room_type',
     ];
 }

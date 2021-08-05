@@ -23,9 +23,11 @@
                     <ul><li>
                      <a href="#" style="float:right;margin:10px 0px 0px 0px;">{{ Auth::user()->stud_num }}</a>
                         <ul>
-                        <li><a href="profilestudent">Profile</a></li><br>
-                        <li><a href="applicationlist">Application List</a></li><br>
-                        <li><a href="welcome">Log Out</a></li>
+                        <li><a href="/profilestudent">Profile</a></li><br>
+                        <li><a href="/applicationlist">Application List</a></li><br>
+                        <form method="POST" action="{{ route('logout') }}">
+                            @csrf
+                        <li><a href="/logout"><button type="submit">{{ __('Log Out') }}</button></a></li></form>
                         </ul>
                     </ul></li>
             </div>
@@ -38,14 +40,14 @@
         <label for="dormname">Dorm Name:</label>
             <input type="text" id="dormname" value="{{ $detail->dormitory }}" style="width: 20%;" class="readapp" readonly="readonly"><br>
         <label for="fname">Manager:</label>
-                <input type="text" id="fname" value="{{ $detail->owner_name }}" style="width: 20%;" class="readapp" value="Sample Name" readonly="readonly"><br>
+                <input type="text" id="fname" value="{{ $detail->first_name }} {{ $detail->middle_name }} {{ $detail->last_name }}" style="width: 20%;" class="readapp" value="Sample Name" readonly="readonly"><br>
         <label for="roomtype">Room Type:</label>
             <input type="text" id="roomtype" value="{{ $detail->room_type }}" style="width: 20%;" class="readapp" readonly="readonly"><br>
         <label for="number">Mobile Number:</label>
             <input type="tel" id="number" value="{{ $detail->mobile_num }}" style="width: 20%;" class="readapp" readonly="readonly"><br>
         
         <label for="process">Process:</label>
-        <input type="text" id="process" value="Waiting for Approval" style="width: 20%;" class="readapp" readonly="readonly"><br>
+        <input type="text" id="process" name="process" value="{{ $process }}" style="width: 20%;" class="readapp" readonly="readonly"><br>
     </form>
     </div>
     @endforeach

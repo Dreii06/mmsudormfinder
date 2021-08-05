@@ -47,7 +47,7 @@ legend{
 }
 
 hr{
-  width: 95%; 
+  width: 100%; 
   border-color: #FFB700;
   float: left;
   margin-top: 20px;
@@ -56,14 +56,39 @@ hr{
 label{
   font-family: ABold;
   color: #0C4B05;
-  font-size: 1.4vw;
-  width: 20%;    
+  font-size: 1.1vw;
+  margin-right: 2%;
   display: inline-block;
+  width: 25%;
+  margin-left: 0%;
+}
+
+textarea{
+  width:70%;
+  height:50px;
+  font-family: Regular;
+
+}
+.tablewrapper {
+  overflow:hidden;
+  overflow-y: scroll;
+  height: 100px;
+  width:30%;
+}
+
+.detailslabel{
+  font-family: ABold;
+  color: #0C4B05;
+  font-size: 1vw;
+  margin-right: 2%;
+  display: inline-block;
+  width: 20%;
+  margin-left: 0%;
 }
 
 /* HEADER STYLE */
 .titleheader{
-  color: #FFB700;
+  color:white;
   font-size: 2vw;
   margin-top: 20px;
 }
@@ -176,7 +201,7 @@ background: #1D6115;
 .listappcontainer {
     display: block;
     padding-left: 25%;   
-    margin-top: 2%; 
+    margin-top: 5%; 
 }
 
 .listappcontainer form {
@@ -235,8 +260,8 @@ background: #1D6115;
 .registercontainer {
   display: flex;
   background-color: #0C4B05;
-  width: 60%;
-  padding: 5% 15% 10% 0%;
+  width: 80%;
+  padding: 3% 15% 10% 0%;
   height: 100%;  
 }
 
@@ -245,7 +270,7 @@ background: #1D6115;
   display: inline-block;
   width: 100%;
   height: 100%;
-  margin: 10% 2% 2% 10%;
+  margin: 5% 2% 2% 10%;
 }
 
 .logincontainer label{
@@ -359,8 +384,8 @@ background: #1D6115;
 .inputapp{
     font-family: Regular;
     height: 30px;
-    margin-left: 5%;
     display: inline-block;
+    margin-right: 2%;
     border-radius: 5px;
     border-width: 1px;
   }
@@ -373,8 +398,7 @@ margin-top: 15px;
     font-family: Regular;
     height: 30px;
     border-style: none;
-    font-size: 1.3vw;
-    margin-left: 20px;
+    font-size: 1.2vw;
     background-color: #F3EEED;
 }
 
@@ -464,15 +488,16 @@ margin-top: 15px;
 
 /* TABLE FOR VIEW DORM */
 .viewdormtable{
-  width:35%;
-  font-size: 2vw;
+  font-size: 1.2vw;
 }
 .viewdormtable th{
 font-family: ABold;
-color: #0C4B05;
-font-size: 1.5vw;
+color: white;
+font-size: 1.2vw;
 text-align: left;
+background-color: #0C4B05;
 }
+
 
 /* TABLE FOR VIEW DORM */
 
@@ -515,7 +540,7 @@ display: flex;
   
 .verticalnav .active {
     background-color:#0C4B05;
-    color: #FFB700;
+    color: white;
   }
   
 .verticalnav li a:hover:not(.active){
@@ -792,14 +817,15 @@ input[type='radio']#section3:checked ~ .cover {
 	font-size: 12px;
 	letter-spacing: 0.5rem;
 	text-transform: uppercase;
-	margin-bottom: 40px;
+	margin-bottom: 20px;
+  color: white;
 }
 
 .text--normal {
 	font-size: 13px;
 	color: rgba(255, 255, 255, 0.8);
 	line-height: 22px;
-  width: 50%;
+  width: 70%;
 	margin-top: 25px;
 }
 
@@ -842,3 +868,5 @@ input[type='radio']#section3:checked ~ .cover {
   left: 0;
   z-index: -1;
 }
+
+/* END FOR 2ND SLIDER*/

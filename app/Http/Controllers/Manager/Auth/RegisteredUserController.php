@@ -38,25 +38,31 @@ class RegisteredUserController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'name' => 'required|string|max:255',
+            'first' => 'required|string|max:255',
+            'middle' => 'required|string|max:255',
+            'last' => 'required|string|max:255',
             'email' => 'required|string|email|max:255|unique:managers',
             'password' => 'required|string|confirmed|min:8',
             'dorm_name' => 'required|string|max:255',
-            'mobile_num' => 'required|string|max:11'
+            'mobile_num' => 'required|string|max:255'
         ]);
 
         Dorms::create([
-            'owner_name' => $request->name,
+            'first_name' => $request->first,
+            'middle_name' => $request->middle,
+            'last_name' => $request->last,
             'dorm_name' => $request->dorm_name,
-            'mobile_num' => $request->mobile_number
+            'mobile_num' => $request->mobile_num
         ]);
 
-        Registrant::create([
-            'name' => $request->name,
+        $registrant = Registrant::create([
+            'first_name' => $request->first,
+            'middle_name' => $request->middle,
+            'last_name' => $request->last,
             'email' => $request->email,
             'password' => Hash::make($request->password),
             'dorm_name' => $request->dorm_name,
-            'mobile_num' => $request->mobile_number
+            'mobile_num' => $request->mobile_num
         ]);
 
         VerifyEmail::createUrlUsing(function ($notifiable) {

@@ -38,28 +38,48 @@
 <div class="listappcontainer">
     <form action="/manager/detailsoccupant" method="POST">
         @csrf
-        <label for="fname">Full Name</label>
-            <input type="text" id="fname" name="name" value="{{ $details->name }}" style="width:25%;" class="readapp" readonly="readonly">
-        <label for="fstudentid">Student Number</label>
-            <input type="text" id="fstudentid" value="{{ $details->stud_num }}" style="width:25%;" class="readapp" readonly="readonly"><br><br>
-        <label for="gender">Sex</label>
-            <input type="text" id="gender" value="{{ $details->sex }}" style="width:25%;" class="readapp" readonly="readonly">
-        <label for="email">Email</label>
-            <input type="email" id="email" value="{{ $details->email }}" style="width:25%;" class="readapp" readonly="readonly"><br><br>
-        <label for="number">Mobile Number</label>
-            <input type="tel" id="number" value="{{ $details->mobile_num }}" style="width:25%;" class="readapp" readonly="readonly">
-        <label for="number">Contact of Guardian</label>
-            <input type="tel" id="number" value="{{ $details->guardian_num }}" style="width:25%;" class="readapp" readonly="readonly"><br><br>
-        <label for="birthday">Date of Birth</label>
-            <input type="text" id="birthday" value="{{ $details->dob }}" style="width:25%;" class="readapp" readonly="readonly">
-        <label for="birthday">Address</label>
-            <input type="text" id="birthday" value="{{ $details->address }}" style="width:25%;" class="readapp" readonly="readonly"><br><br><br><br>
-        <label for="college">College:</label>
-            <input type="text" id="college" value="{{ $details->college }}" style="width:25%;" class="readapp" readonly="readonly"><br><br>
-        <label for="course">Course:</label>
-            <input type="text" id="course" value="{{ $details->course }}" style="width:25%;" class="readapp" readonly="readonly"><br><br>
-        <label for="dormitory">Type of Room:</label>
-            <input type="text" id="dormitory" value="{{ $details->room_type }}" style="width:25%;" class="readapp" readonly="readonly"><br><br><br>
+        <label class="detailslabel" for="fstudentid">Student Number</label>  
+        <label class="detailslabel" for="sex" >Sex</label>
+        <label class="detailslabel" for="email">Email</label>
+        <label class="detailslabel" for="number">Mobile Number</label><br>
+
+        <input type="text" style="width:20%;margin-right:2%;margin-left:0%;" id="fstudentid" name="stud_id" value="{{ $details->stud_num }}" class="inputapp" readonly >
+        <input type="text" style="width:20%;margin-right:2%;margin-left:0%;" id="sec" name="sex" value="{{ $details->sex }}" class="inputapp" readonly>
+        <input type="email" style="width:20%;margin-right:2%;margin-left:0%;" id="email" name="email" value="{{ $details->email }}"  class="inputapp" readonly>
+        <input type="tel" style="width:20%;margin-left:0%;" id="number" name="mobile_num" value="{{ $details->mobile_num }}" class="inputapp" readonly><br><br>
+
+        <label class="detailslabel" for="fname">First Name</label>
+        <label class="detailslabel" for="mname">Midle Name</label>
+        <label class="detailslabel" for="lname">Last Name</label>
+        <label class="detailslabel" for="sname">Suffix (Jr,,III)</label><br>
+
+        <input type="text"  style="width:20%;margin-right:2%;margin-left:0%;" id="fname" name="first" value="{{ $details->first_name }}" class="inputapp" readonly>
+        <input type="text"  style="width:20%;margin-right:2%;margin-left:0%;" id="mname" name="middle" value="{{ $details->middle_name }}"  class="inputapp" readonly>
+        <input type="text"  style="width:20%;margin-right:2%;margin-left:0%;" id="lname" name="last" value="{{ $details->last_name }}"  class="inputapp" readonly>
+        <input type="text"  style="width:20%;margin-right:2%;margin-left:0%;" id="sname" name="suffix" value="{{ $details->suffix }}"  class="inputapp" readonly><br><br>
+
+        <label class="detailslabel" for="birthday">Barangay</label>
+        <label class="detailslabel" for="birthday">Street</label>
+        <label class="detailslabel" for="birthday">City</label>
+        <label class="detailslabel" for="birthday">Province</label>
+
+        <input type="text" style="width:20%;margin-right:2%;margin-left:0%;" id="birthday" name="barangay" value="{{ $details->barangay }}"  class="inputapp" readonly>
+        <input type="text" style="width:20%;margin-right:2%;margin-left:0%;"id="birthday" name="street" value="{{ $details->street }}"  class="inputapp" readonly>
+        <input type="text" style="width:20%;margin-right:2%;margin-left:0%;"id="birthday" name="city" value="{{ $details->city }}"  class="inputapp" readonly>
+        <input type="text" style="width:20%;margin-left:0%;"id="birthday" name="province" value="{{ $details->province }}" class="inputapp" readonly><br><br>
+
+        <label class="detailslabel" for="nameg">Name of Guardian</label>
+        <label class="detailslabel" for="number">Contact of Guardian</label>
+        <label class="detailslabel" for="college">College:</label>
+        <label class="detailslabel" for="course">Course:</label><br>
+
+        <input type="text" style="width:20%;margin-right:2%;margin-left:0%;"id="nameg" name="guardian_name" value="{{ $details->guardian_name }}"  class="inputapp" readonly>
+        <input type="tel" style="width:20%;margin-right:2%;margin-left:0%;"id="number" name="guardian_num" value="{{ $details->guardian_num }}"  class="inputapp" readonly>
+        <input type="text" style="width:20%;margin-right:2%;margin-left:0%;"id="college" name="college" value="{{ $details->college }}"  class="inputapp" readonly>
+        <input type="text" style="width:20%;margin-right:2%;margin-left:0%;"id="course" name="course" value="{{ $details->course }}"  class="inputapp" readonly><br><br>
+
+        <label class="detailslabel" for="room">Room Type</label><br>
+        <input type="text" style="width:20%;margin-right:2%;margin-left:0%;"id="nameg" name="room_type" value="{{ $details->room_type }}"  class="inputapp" readonly><br>
 
         <button type="submit" onclick="remove()" class="greenbutton" style="margin-top:20px;">REMOVE</button>  
         <button type="button" onclick="listapp()" class="secondyellowbutton" style="margin-right:10px;margin-top:20px;">DOWNLOAD</button>

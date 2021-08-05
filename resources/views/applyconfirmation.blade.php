@@ -54,7 +54,7 @@
         <input type="text" style="width:20%;margin-right:2%;" name="stud_id" id="fstudentid" value="{{ Auth::user()->stud_num }}" class="inputapp" readonly >
         <input type="text" style="width:20%;margin-right:2%;" name="sex" id="sec" value="{{ Auth::user()->sex }}" class="inputapp" readonly>
         <input type="email" style="width:20%;margin-right:2%;" name="email" id="email" value="{{ Auth::user()->email }}"  class="inputapp" readonly>
-        <input type="tel" style="width:20%;" name="mobile" id="number" value="{{ Auth::user()->mobile_num }}" class="inputapp" readonly><br><br>
+        <input type="tel" style="width:20%;" name="mobile_num" id="number" value="{{ Auth::user()->mobile_num }}" class="inputapp" readonly><br><br>
 
         <label for="fname">First Name</label>
         <label for="mname">Midle Name</label>
@@ -84,7 +84,7 @@
         <input type="text" style="width:20%;margin-right:2%;"id="nameg" name="guardian_name" value="{{ Auth::user()->guardian_name }}"  class="inputapp">
         <input type="tel" style="width:20%;margin-right:2%;"id="number" name="guardian_num" value="{{ Auth::user()->guardian_num }}"  class="inputapp">
         <select name="college" style="width:20%;margin-right:2%;"id="room" class="inputapp">
-            <option value="{{ Auth::user()->college }}">{{ Auth::user()->college }}</option>
+            <option selected disable hidden value="{{ Auth::user()->college }}">{{ Auth::user()->college }}</option>
             <option value="CAS">CAS</option>
             <option value="COE">COE</option>
             <option value="CBEA">CBEA</option>
@@ -99,6 +99,7 @@
 
         <input type="text" id="dorm" name="dorm" value="{{ $details->dorm_name }}" style="width:20%;margin-right:2%;" class="inputapp">
         <select name="room_type" id="room" style="width:20%;margin-right:2%;" class="inputapp">
+            <option selected disable hidden>Choose your room type</option>
             @foreach($room_types as $types)
             <option value="{{ $types->room_type }}">{{ $types->room_type }}</option>
             @endforeach

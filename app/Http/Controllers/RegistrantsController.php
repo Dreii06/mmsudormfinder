@@ -21,16 +21,17 @@ class RegistrantsController extends Controller
         return view('admin.registrantdetails', ['details' => $details]);
     }
 
-
     function store(Request $request) {
-        $registrant = Registrant::where('name', '=', request('name'))->first();
+        $registrant = Registrant::where('dorm_name', '=', request('dorm_name'))->first();
         $manager = new Manager();
 
-        $manager->name = request('name', false);
+        $manager->first_name = request('first', false);
+        $manager->middle_name = request('middle', false);
+        $manager->last_name = request('last', false);
         $manager->email = request('email', false);
         $manager->password = $registrant->password;
         $manager->dorm_name = request('dorm_name', false);
-        $manager->mobile_num = request('contact', false);
+        $manager->mobile_num = request('mobile_num', false);
 
         $manager->save();
         $registrant->delete();

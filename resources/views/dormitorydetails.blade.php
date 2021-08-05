@@ -52,7 +52,7 @@
         <form style="width:80%;">
 
             <label for="fname">Manager</label>
-                <input type="text" id="fname" name="fname" style="width: 25%;" class="readapp" value="{{ $details->owner_name }}" readonly="readonly">
+                <input type="text" id="fname" name="fname" style="width: 25%;" class="readapp" value="{{ $details->first_name }} {{ $details->middle_name }} {{ $details->last_name }}" readonly="readonly">
             <label for="fname">Contact</label>
                 <input type="text" id="fname" name="fname" style="width: 25%;" class="readapp" value="{{ $details->mobile_num }}" readonly="readonly"><br>
             <label for="fname">Barangay</label>

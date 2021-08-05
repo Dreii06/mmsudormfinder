@@ -23,7 +23,7 @@ class UserProfileController extends Controller
         $user->last_name = request('last', false);
         $user->first_name = request('first', false);
         $user->middle_name = request('middle', false);
-        $user->suffix = request('suffix', false);
+        $user->suffix = request('suffix');
         $user->stud_num = request('stud_id', false);
         $user->sex = request('sex', false);
         $user->mobile_num = request('mobile_num', false);

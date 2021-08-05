@@ -24,7 +24,7 @@
 
     <div class="verticalnav">
         <ul>
-          <li class="username">{{ Auth::guard('admin')->user()->name }}</li>
+            <li class="username">{{ Auth::guard('admin')->user()->name }}</li>
             <li><a href="/admin/dashboard"> <img src="https://img.icons8.com/fluent-systems-regular/96/000000/home.png"/> Home</a></li>
             <li><a href="/admin/registrants"> <img src="https://img.icons8.com/fluent-systems-regular/50/000000/parse-resume.png"/> Registrants</a></li>
             <li><a href="/admin/occupantslist"><img src="https://img.icons8.com/fluent-systems-regular/96/000000/user-rights.png"/> Occupants</a></li>
@@ -42,7 +42,7 @@
     </div>
 
     <div class="listappcontainer">
-    <div class="tableFixHeadtitle">OFF-CAMPUS DORMITORIES</div>  
+    <div class="tableFixHeadtitle">ON-CAMPUS DORMITORIES</div>  
     <div class="tableFixHead">
       <table>
         <thead>

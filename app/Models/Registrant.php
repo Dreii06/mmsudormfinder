@@ -17,11 +17,13 @@ class Registrant extends Model
      * @var array
      */
     protected $fillable = [
-        'name',
+        'first_name',
+        'middle_name',
+        'last_name',
         'email',
         'password',
         'dorm_name',
-        'mobile_number',
+        'mobile_num',
     ];
 
     /**

@@ -35,17 +35,53 @@
     </div>
 
     <div class="updatedormcontainer">
-    <form style="width:90%;">
-    <label style="margin-left:1.5%;" for="fname">Dormitory</label>
-        <input type="text" id="fname" name="fname" style="width: 40%;" class="readapp" value="{{ $details->dorm_name }}" readonly="readonly"><br><br>
-    <label style="margin-left:1.5%;" for="fname">Address</label>
-        <input type="text" id="fname" name="fname" style="width: 40%;" class="readapp" value="{{ $details->address }}" readonly="readonly"><br><br>
-    <label style="margin-left:1.5%;" for="fname">Contact</label>
-        <input type="text" id="fname" name="fname" style="width: 40%;" class="readapp" value="{{ $details->contact_num }}" readonly="readonly"><br><br>
+    <form style="width:100%;">
+
+    <label for="fname">First Name</label>
+    <label for="fname">Middle Name</label>
+    <label for="fname">Last Name</label><br>
+
+    <input type="text" id="fname" name="fname" value="{{ $details->first_name }}" style="width: 25%;" class="inputapp">
+    <input type="text" id="fname" name="fname" value="{{ $details->middle_name }}" style="width: 25%;" class="inputapp">
+    <input type="text" id="fname" name="fname" value="{{ $details->last_name }}" style="width: 25%;" class="inputapp"><br><br>
+
+    <label for="dname">Dorm Name</label>
+    <label for="contact">Contact</label>
+    <label for="quantity">Available space</label><br>
+
+    <input type="tel" id="fname" name="dname" value="{{ $details->dorm_name }}" style="width: 25%;" class="inputapp" >
+    <input type="text" id="fname" name="contact" value="{{ $details->mobile_num }}" style="width: 25%;" class="inputapp">
+    <input type="number" id="quantity" name="quantity" value="{{ $details->available_space }}" style="width: 25%;" class="inputapp" min="0"><br><br>
+
+    <label for="brgy">Barangay</label>
+    <label for="st">Street</label><br>
+
+    <input type="text" id="brgy" name="fname" value="{{ $details->barangay }}" style="width: 25%;" class="inputapp">
+    <input type="text" id="st" name="fname" value="{{ $details->street }}" style="width: 25%;" class="inputapp"><br><br>
+
+    <label for="hn">House Number</label>
+    <label for="nl">Nearest Landmark</label><br>
+
+    <input type="text" id="hn" name="fname" value="{{ $details->house_num }}" style="width: 25%;" class="inputapp">
+    <input type="text" id="nl" name="fname" value="{{ $details->nearest }}" style="width: 25%;" class="inputapp"><br><br>
+
+    <label for="fname">Short Description</label><br>
+    <textarea readonly>{{ $details->description }}</textarea><br><br>
+
+    </form>
+
     <label style="margin-left:1.5%;" for="fname">Amenities</label>
-        <input type="text" id="fname" name="fname" style="width: 40%;" class="readapp" value="{{ $details->amenities }}" readonly="readonly"><br><br><br>
-    <label style="margin-left:1.5%;"for="quantity">Available space</label>
-        <input type="number" id="quantity" name="quantity" class="readapp" min="0" value="10" readonly="readonly"><br><br>   
+    <table class="viewdormtable" id="room">
+        <tr>
+            <th>Amenities</th>
+        </tr>
+        @foreach($amenities as $amenity)
+        <tr>
+            <td class="readapp">{{ $amenity->amenities }}</td>
+        </tr>
+        @endforeach
+    </table><br><br>
+
     <table class="viewdormtable" id="room">
         <tr>
             <th>Room Type</th>
@@ -66,7 +102,6 @@
         @endforeach
     </div>
 
-    <a href="/manager/updatedorm/{{ Auth::guard('manager')->user()->id }}"><button type="button" class="secondyellowbutton" style="margin-right:35%;margin-top:10px;">UPDATE</button></a>
-
-    </form>
+    <a href="updateimage"><button type="button" class="greenbutton" style="margin-right:20%;margin-top:10px;"> UPDATE IMAGE</button></a>
+    <a href="/manager/updatedorm/{{ Auth::guard('manager')->user()->id }}"><button type="button" class="secondyellowbutton" style="margin-top:10px;margin-right:2%;">UPDATE FORM</button></a>
 </div>
