@@ -15,7 +15,7 @@ class Dorms extends Model
     protected $fillable = [
         'owner_name',
         'dorm_name',
-        'contact_num',
+        'mobile_num',
         'filename'
     ];
 }

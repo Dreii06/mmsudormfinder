@@ -74,11 +74,11 @@
         <label for="birthday">Street</label>
         <label  for="birthday">City</label>
         <label for="birthday">Province</label>
+
         <input type="text" style="width:20%;margin-right:2%;" id="birthday" name="barangay" value="{{ Auth::user()->barangay }}"  class="inputapp">
         <input type="text" style="width:20%;margin-right:2%;"id="birthday" name="street" value="{{ Auth::user()->street }}"  class="inputapp">
         <input type="text" style="width:20%;margin-right:2%;"id="birthday" name="city" value="{{ Auth::user()->city }}"  class="inputapp">
         <input type="text" style="width:20%;"id="birthday" name="province" value="{{ Auth::user()->province }}" class="inputapp"><br><br>
-
 
         <label for="nameg">Name of Guardian</label>
         <label for="number">Contact of Guardian</label>
@@ -96,8 +96,7 @@
         </select>
         <input type="text" style="width:20%;margin-right:2%;"id="course" name="course" value="{{ Auth::user()->course }}"  class="inputapp"><br><br>
        
-
-        <a href="home"><button type="button" class="greenbutton" style="margin-top:20px;">CANCEL</button></a>
+        <a href="/dashboard"><button type="button" class="greenbutton" style="margin-top:20px;">CANCEL</button></a>
         <button type="submit" onclick="updateProfileFunction()" class="secondyellowbutton" style="margin-right:10px;margin-top:20px;"> UPDATE</button>
     </div>
     </form>

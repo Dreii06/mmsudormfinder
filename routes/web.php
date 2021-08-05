@@ -20,11 +20,15 @@ use App\Models\Dorms;
 */
 
 Route::get('/', function () {
-    return view('login');
+    return view('auth.login');
+});
+
+Route::get('/register', function () {
+    return view('auth.register');
 });
 
 Route::get('/dashboard', function () {
-    return view('hello');
+    return view('dashboard');
 })->middleware(['auth']);
 
 Route::get('/profilestudent', function () {

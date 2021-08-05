@@ -51,17 +51,23 @@
     <div class="dorm_details">
         <form style="width:80%;">
 
-            <label for="fname" style="margin-left:2%;">Manager</label>
+            <label for="fname">Manager</label>
                 <input type="text" id="fname" name="fname" style="width: 25%;" class="readapp" value="{{ $details->owner_name }}" readonly="readonly">
-            <label for="fname">Address</label>
-                <input type="text" id="fname" name="fname" style="width: 100%;" class="readapp" value="{{ $details->address }}" readonly="readonly"><br>
-            <label for="fname" style="margin-left:2%;">Contact</label>
-                <input type="text" id="fname" name="fname" style="width: 25%;" class="readapp" value="{{ $details->mobile_num }}" readonly="readonly">
+            <label for="fname">Contact</label>
+                <input type="text" id="fname" name="fname" style="width: 25%;" class="readapp" value="{{ $details->mobile_num }}" readonly="readonly"><br>
+            <label for="fname">Barangay</label>
+                <input type="text" id="fname" name="fname" style="width: 25%;" class="readapp" value="{{ $details->barangay }}" readonly="readonly">
+            <label for="fname">Street</label>
+                <input type="text" id="fname" name="fname" style="width: 20%;" class="readapp" value="{{ $details->street }}" readonly="readonly"><br>
+            <label  for="fname">House Number</label>
+                <input type="text" id="fname" name="fname" style="width: 10%;" class="readapp" value="{{ $details->house_num }}" readonly="readonly">
+            <label  for="fname">Nearest Landmark</label>
+                <input type="text" id="fname" name="fname" style="width: 20%;" class="readapp" value="{{ $details->nearest }}" readonly="readonly"><br>
             <label for="quantity" >Available Space</label>
                 <input type="number" id="quantity" name="quantity" style="width:10%;" class="readapp" min="0" value="{{ $details->available_space }}" readonly="readonly"><br><br>
             
             <div style="display:flex;">
-            <div class="tablewrapper" style="margin-right:20%;margin-left:2%;">
+            <div class="tablewrapper">
             <table class="viewdormtable" id="room">
                 <tr>
                     <th>Amenities</th>

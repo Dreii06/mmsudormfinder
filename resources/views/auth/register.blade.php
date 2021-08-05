@@ -1,59 +1,52 @@
-<x-guest-layout>
-    <x-auth-card>
-        <x-slot name="logo">
-            <a href="/">
-                <x-application-logo class="w-20 h-20 fill-current text-gray-500" />
-            </a>
-        </x-slot>
+<!DOCTYPE html>
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+    <head>
+        <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>MMSU - Dorm Finder</title>
 
-        <!-- Validation Errors -->
-        <x-auth-validation-errors class="mb-4" :errors="$errors" />
+        <!-- CSS -->
+        <link rel="stylesheet" type="text/css" href="/css/StudentStyle.css">  
+        <!-- SCRIPT -->
+        <script src="/studentDormFinder.js"></script>
 
-        <form method="POST" action="{{ route('register') }}">
+        <link rel="icon" href="/images/mmsu logo.png">
+    </head>
+    
+    <body style="overflow: hidden;background-image: url('/images/bg.jpg');background-repeat: no-repeat; background-size: 100%;" class="antialiased">
+        
+    <div class="uppernav"> <h3 style="margin-left:20px;color:#0C4B05;">MMSU </h3><h3> - Dorm Finder</h3> </div>
+    <div class="topnav" id="myTopnav">
+        <img style="float:left;margin-left:20px;" src="/images/mmsu logo.png"  height="5%" width="5%">
+        <h4>MARIANO MARCOS <br> STATE UNIVERSITY</h4>
+    </div>
+    
+    <img style="right:20%;" class="__img" src="images/mmsu logo.png" />
+
+    <div class="registercontainer">
+
+        <form id="Registration" method="POST" action="{{ route('register') }}">
             @csrf
+            <legend>Registration</legend>
+            <hr>
+            <input type="text" id="studnumber" name="stud_num" placeholder="Student Number" class="loginform" style="margin-top:30px;"> 
 
-            <!-- Name -->
-            <div>
-                <x-label for="name" :value="__('Name')" />
+            <input type="text" id="fullname" name="first" placeholder="First Name" class="loginform" style="width:30%;margin-top:10px;margin-right:1%;">
+            <input type="text" id="fullname" name="middle" placeholder="Middle Name" class="loginform" style="width:23%;margin-top:10px;margin-right:1%;">
+            <input type="text" id="fullname" name="last" placeholder="Last Name" class="loginform" style="width:30%;margin-top:10px;margin-right:1%;">
+            <input type="text" id="fullname" name="suffix" placeholder="Suffix" class="loginform" style="width:10%;margin-top:10px;margin-right:1%;">
 
-                <x-input id="name" class="block mt-1 w-full" type="text" name="name" :value="old('name')" required autofocus />
-            </div>
+            <input type="password" id="password" name="password" placeholder="Password" class="loginform" style="margin-top:10px;"> 
+            <input type="password" id="cpassword" name="password_confirmation" placeholder="Confirm Password" class="loginform" style="margin-top:10px;"> <br>
+            <input type="email" id="email" name="email" placeholder="Email" class="loginform" style="margin-top:10px;"> 
+            <input type="text" id="mnumber" name="mobile_num" placeholder="Mobile Number" class="loginform" style="margin-top:10px;"> <br>
 
-            <!-- Email Address -->
-            <div class="mt-4">
-                <x-label for="email" :value="__('Email')" />
-
-                <x-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required />
-            </div>
-
-            <!-- Password -->
-            <div class="mt-4">
-                <x-label for="password" :value="__('Password')" />
-
-                <x-input id="password" class="block mt-1 w-full"
-                                type="password"
-                                name="password"
-                                required autocomplete="new-password" />
-            </div>
-
-            <!-- Confirm Password -->
-            <div class="mt-4">
-                <x-label for="password_confirmation" :value="__('Confirm Password')" />
-
-                <x-input id="password_confirmation" class="block mt-1 w-full"
-                                type="password"
-                                name="password_confirmation" required />
-            </div>
-
-            <div class="flex items-center justify-end mt-4">
-                <a class="underline text-sm text-gray-600 hover:text-gray-900" href="{{ route('login') }}">
-                    {{ __('Already registered?') }}
-                </a>
-
-                <x-button class="ml-4">
-                    {{ __('Register') }}
-                </x-button>
-            </div>
+            <hr>
+            <p style="color:white;font-size:0.8vw;text-align: justify;">By submitting this form, you agree to the collection and processing of your personal data in accordance with the policies of the Mariano Marcos State University.  
+               This consent does not preclude the existence of other criteria for lawful 
+               processing of personal data and does not waive any rights under the <a style="color:#FFCD00;"href="https://www.officialgazette.gov.ph/2012/08/15/republic-act-no-10173/">Data Privacy Act of 2012</a> and other applicable laws.</p>
+               <a href="/login"><button type="submit" class="yellowbutton" style="margin-top:5px;margin-left:0%;">{{ __('Register') }}</button></a><br>
+            <a href="/login"><button type="button" id="cancel"  class="registercancelbutton">Cancel</button></a>
         </form>
-    </x-auth-card>
-</x-guest-layout>
+    </div>
+    </body>
+</html>

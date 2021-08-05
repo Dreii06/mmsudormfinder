@@ -44,12 +44,48 @@ form {
 }
 
 legend{
-    color:#FFCD00;
+    color:white;
     font-size:2vw;
 }
 
+hr{
+  width: 100%; 
+  border-color: #FFB700;
+  float: left;
+  margin-top: 20px;
+}
+
+.registercontainer {
+  display: flex;
+  background-color: #0C4B05;
+  width: 60%;
+  padding: 1% 15% 15% 0%;
+  height: 100%;  
+}
+
+.registercontainer form {
+  border-style: none;
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+  margin: 0% 2% 2% 10%;
+}
+
+.registerbutton {
+  background-color:transparent;
+  color: #FFB700;
+  font-size: 1.1vw;
+  border-style:solid;
+  border-color: #FFB700;
+  width: 100%;
+  height: 30px;
+  border-radius: 12px;
+  margin-bottom:10px;
+  cursor: pointer;
+}
+
 .note{
-  color:#FFCD00;background-color: #0C4B05;margin-top:20px;width:50%;
+  color:white;background-color: #0C4B05;margin-top:20px;width:50%;
   border-radius: 10px;
   padding:1%;
 }
@@ -209,7 +245,7 @@ background: #1D6115;
 }
 
 .yellowbutton {
-    background-color:#FFCD00;
+    background-color:#ebbc00;
     color: #0C4B05;
     border-style: none;
     width: 100%;
@@ -222,7 +258,7 @@ background: #1D6115;
 }
 
 .secondyellowbutton {
-    background-color:#FFCD00;
+    background-color:#ebbc00;
     color: #0C4B05;
     border-style: none;
     width: 15%;
@@ -234,7 +270,7 @@ background: #1D6115;
 }
 
 .contractbutton {
-  background-color:#FFCD00;
+  background-color:#ebbc00;
   color: #0C4B05;
   border-style: none;
   width: 15%;
@@ -258,7 +294,7 @@ background: #1D6115;
 }
 
 .cancelbutton {
-    background-color:#F3EEED;
+    background-color:transparent;
     color: #0C4B05;
     border-style:solid;
     border-color: #0C4B05;
@@ -268,6 +304,19 @@ background: #1D6115;
     margin: 20px 0px 0px 5px;
     cursor: pointer;
     font-size: 1vw;
+}
+
+.registercancelbutton {
+  background-color:transparent;
+  color:white;
+  border-style:solid;
+  border-color: #ebbc00;
+  width: 100%; height: 30px;
+  border-radius: 12px;
+  padding: 0px 35px 0px 35px;
+  margin: 10px 0px 0px 0px;
+  cursor: pointer;
+  font-size: 1vw;
 }
 
 .inputapp{
@@ -318,7 +367,7 @@ background: #1D6115;
     color: #0C4B05;
     margin-top: 20px;
     border-style: none;
-    background-color: #FFCD00;
+    background-color: #ebbc00;
     cursor: pointer;
 }
 
@@ -381,8 +430,9 @@ background: #1D6115;
     position: relative;
     padding-left: 30px;
     width: 80%;
-    height: 430px;
+    height: 500px;
   }
+  
   
   /* Hide the images by default */
   .mySlides {
@@ -510,6 +560,7 @@ margin-right: 5%;
     float: right;
     margin-top: 5px;
     margin-left: 15%;
+    z-index: 2;
 }
 
   .menu a {
@@ -645,7 +696,7 @@ margin-right: 5%;
   padding-left: 10px;
   margin-top: 3%;
   width: 95%;
-  color: #FFB700;
+  color:#FFB700;
   background-color: #0C4B05;
   font-size: 2vw;
 }
@@ -670,8 +721,8 @@ th {
 }
 .tableFixHead th{
   box-shadow: inset 1px 1px #1D6115, 1 1px #1D6115;
-  background-color: #FFB700;
-  color: #0C4B05;
+  background-color: #1D6115;
+  color: white;
   text-align: left;
 }
 
