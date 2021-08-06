@@ -2,7 +2,7 @@
     "name": "laravel/laravel",
     "type": "project",
     "description": "The Laravel Framework.",
-    "keywords": ["framework", "laravel"],
+    "keywords": ["framework", "laravel", "breeze", "multiauth"],
     "license": "MIT",
     "require": {
         "php": "^7.3|^8.0",
@@ -21,6 +21,7 @@
         "nunomaduro/collision": "^5.0",
         "painlesscode/breeze-multiauth": "^1.1",
         "phpunit/phpunit": "^9.3.3"
+        "phpspec/phpspec": "2.2.1"
     },
     "autoload": {
         "psr-4": {
