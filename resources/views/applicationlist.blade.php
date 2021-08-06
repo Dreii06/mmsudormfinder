@@ -25,9 +25,10 @@
                         <ul>
                         <li><a href="/profilestudent">Profile</a></li><br>
                         <li><a href="/applicationlist">Application List</a></li><br>
-                        <form method="POST" action="{{ route('logout') }}">
+                        <form style="display:block;" method="POST" action="{{ route('logout') }}">
                             @csrf
-                        <li><a href="/logout"><button type="submit">{{ __('Log Out') }}</button></a></li></form>
+                        <li><a href="" ><button type="submit" style="color:red;" >{{ __('Log Out') }}</button></a></li>
+                        </form>
                         </ul>
                     </ul></li>
             </div>
