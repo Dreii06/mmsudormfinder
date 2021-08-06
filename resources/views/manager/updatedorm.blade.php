@@ -34,7 +34,10 @@
             <li><a href="/manager/listoccupants"><img src="https://img.icons8.com/fluent-systems-regular/96/000000/user-rights.png"/> Occupants</a></li>
             <li><a class="active" href="/manager/viewdorm/{{ Auth::guard('manager')->user()->id }}"><img src="https://img.icons8.com/fluent-systems-regular/96/000000/department.png"/> Dorm</a></li>
             <li><a href="/manager/contact"><img src="https://img.icons8.com/fluent-systems-regular/96/000000/info-squared.png"/> Contact</a></li><br><br>
-            <li><a href="#" style="color:red;"><img src="https://img.icons8.com/ios-filled/50/000000/exit.png"/>Log Out</a></li>
+            <form method="POST" action="{{ route('manager.logout') }}">
+                @csrf
+            <li><a href=""><button type="submit" style="padding-left:0%;color:red;" ><img src="https://img.icons8.com/ios-filled/50/000000/exit.png"/>{{ __('Log Out') }}</button></a></li>
+            </form>
         </ul>
     </div>
 
@@ -70,10 +73,14 @@
     <input type="text" id="hn" name="house_num" value="{{ $details->house_num }}" style="width: 25%;" class="inputapp" value="1231">
     <input type="text" id="nl" name="nearest" value="{{ $details->nearest }}" style="width: 25%;" class="inputapp" value="Teatro Ilocandia"><br><br>
 
+    <label style="width:15%;" for="contract">Add Contract <br>File type: [DOCS/PDF]</label>
+    <input type="file" name="image" accept=".doc,.pdf,.docx" class="inputapp"><br>
+
     <label for="fname">Short Description</label><br>
     <textarea name="description">{{ $details->description }}</textarea><br><br>
 
-    <div id="newlinkame">
+    <div style="display:flex;">
+    <div class="tablewrapper" style="margin-right:5%;width:40%;">
     <table class="viewdormtable" id="room">
         <tr>
             <th>Amenities</th>
@@ -83,22 +90,14 @@
             <td class="readapp">{{ $amenity->amenities }}</td>
         </tr>
         @endforeach
-        </table>
-        <select name="amenities" id="room" class="inputapp">
-            <option selected disable hidden>Choose what you want to delete</option>
-            @foreach($amenities as $amenities)
-            <option value="{{ $amenities->amenities }}">{{ $amenities->amenities }}</option>
-            @endforeach
-        </select>
-        <button type="submit" name="submit" value="DELAME" class="addbutton" style="width:15%;">DELETE</button>
-        <button type="button" onclick="new_linkame()" class="addbutton" style="width:15%;">ADD AMENITY</button><br>
+    </table>
     </div><br>
-    
-    <div id="newlinktype">
-        <table class="viewdormtable" id="room">
+
+    <div class="tablewrapper" style="margin-right:0%;width:40%;">
+    <table class="viewdormtable" id="room">
         <tr>
             <th>Room Type</th>
-            <th>Price</th>
+            <th>Room Fee</th>
         </tr>
         @foreach($room_types as $types)
         <tr>
@@ -106,86 +105,56 @@
             <td class="readapp">{{ $types->price }}</td>
         </tr>
         @endforeach
-        </table>
-        <select name="room_type" id="room" class="inputapp">
-            <option selected disable hidden>Choose what you want to delete</option>
-            @foreach($room_types as $type)
-            <option value="{{ $type->room_type }}">{{ $type->room_type }}</option>
-            @endforeach
-        </select>
-        <button type="submit" name="submit" value="DELROOM" class="addbutton" style="width:15%;">DELETE</button>
-        <button type="button" onclick="new_linktype()" class="addbutton" style="width:15%;">ADD ROOM TYPE</button>  
-    </div><br>
+    </table>
+    </div></div><br>
 
-    <label style="width:15%;" for="contract">Add Contract <br>File type: [DOCS/PDF]</label>
-        <input type="file" name="image" accept=".doc,.pdf,.docx" class="inputapp"><br>
+    <select name="amenities" id="amenities" class="inputapp">
+        <option selected disable hidden>Choose what you want to remove</option>
+        @foreach($amenities as $amenities)
+            <option value="{{ $amenities->amenities }}">{{ $amenities->amenities }}</option>
+        @endforeach
+    </select>
+        <button type="submit" name="submit" value="DELAME" onclick="new_link()" class="addbutton" style="width:10%;margin-right:5%;">REMOVE</button>  
 
- 
-    <div style="padding-right:10%;margin-top:10px;">
+    <select name="room_type" id="room" class="inputapp">
+        <option selected disable hidden>Choose what you want to remove</option>
+        @foreach($room_types as $type)
+        <option value="{{ $type->room_type }}">{{ $type->room_type }}</option>
+        @endforeach
+    </select>
+        <button type="submit" name="submit" value="DELROOM" onclick="new_link()" class="addbutton" style="width:15%;">REMOVE</button><br>
+
+        <div style="display:flex;">
+
+        <h3 style="width:45%;" for="fname">Add Ammenities</h3>        
+        <h3 style="width:40%;" for="fname">Add Room Type</h3><br>
+    </div>
+
+        <label style="width:10%;" for="fname">Ammenities</label>
+            <input type="text" id="fname" name="amenity" style="width:20%;margin-right:12%;" class="inputapp">
+        <label style="width:10%;" for="fname">Room Type</label>
+            <input type="text" id="fname" name="room_types" style="width: 10%;" class="inputapp">
+        <label for="fname" style="width:10%;margin-left:10px;margin-right:0%;">Rental Fee</label>
+            <input type="text" id="fname" name="prices" style="width:5%;margin-left:0%;" class="inputapp">
+            <div style="padding-right:10%;margin-top:10px;">
+
+    <div style="padding-right:10%;margin-top:5%;">
         <a href="/manager/dashboard"><button type="button" class="greenbutton">CANCEL</button></a>
         <input type="submit" name="save" onclick="update()" class="secondyellowbutton" style="margin-right:20px;" value="SAVE">
     </div>
     </form>
 
-    <!-- Template FOR AMENITY-->
-    <div id="newlinktplame" style="display:none">
-        <label style="width:15%;" for="fname"></label>
-            <input type="text" id="fname" name="amenity" style="width: 20%;" class="inputapp">
-    </div>
-
-    <!-- Template FOR ROOM TYPE-->
-    <div id="newlinktpltype" style="display:none">
-        <label style="width:15%;" for="fname"></label>
-            <input type="text" id="fname" name="room_types" style="width: 20%;" class="inputapp">
-        <label for="fname" style="margin-left:10px;">Rental Fee</label>
-            <input type="text" id="fname" name="prices" style="width:5%;margin-left:0%;" class="inputapp">
-    </div>
-
 </div>
 
 <script>
-/*
-This script is identical to the above JavaScript function.
-*/
-    var ct = 1;
-    // function to add new room type
-    function new_linktype()
-    {
-    	ct++;
-	    var div1 = document.createElement('div');
-	    div1.id = ct;
-	// link to delete extended form elements
-	    var delLink = '<button type="button" onclick="delItType('+ ct +')" class="addbutton">x</button>';
-	    div1.innerHTML = document.getElementById('newlinktpltype').innerHTML + delLink ;
-	    document.getElementById('newlinktype').appendChild(div1);
-    }
-    // function to add new amenity
-    function new_linkame()
-    {
-    	ct++;
-	    var div1 = document.createElement('div');
-	    div1.id = ct;
-	// link to delete extended form elements
-	    var delLink = '<button type="button" onclick="delItAme('+ ct +')" class="addbutton">x</button>';
-	    div1.innerHTML = document.getElementById('newlinktplame').innerHTML + delLink ;
-	    document.getElementById('newlinkame').appendChild(div1);
-    }
-// function to remove the newly added set of elements
-    function delItType(eleId)
+/*This script is identical to the above JavaScript function.*/
+    function delIt(eleId)
     {
 	    d = document;
 	    var ele = d.getElementById(eleId);
-	    var parentEle = d.getElementById('newlinktype');
+	    var parentEle = d.getElementById('newlink');
 	    parentEle.removeChild(ele);
     }
-    function delItAme(eleId)
-    {
-	    d = document;
-	    var ele = d.getElementById(eleId);
-	    var parentEle = d.getElementById('newlinkame');
-	    parentEle.removeChild(ele);
-    }
-     
 </script>
 
 </body>

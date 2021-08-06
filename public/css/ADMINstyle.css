@@ -272,6 +272,13 @@ display: flex;
     cursor: pointer;
   }
 
+.verticalnav button{
+    width: 100%;
+    border-style: none;
+    background-color: transparent;
+    padding-left: 50px;
+    text-align: left;
+  }
 .dorm_con {
   display: flex;
   padding-left: 460px;
