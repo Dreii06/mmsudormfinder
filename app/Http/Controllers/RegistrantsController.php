@@ -24,9 +24,17 @@ class RegistrantsController extends Controller
     function store(Request $request) {
         $registrant = Registrant::where('dorm_name', '=', request('dorm_name'))->first();
         $manager = new Manager();
+        
+        Dorms::create([
+            'first_name' => $request->first,
+            'middle_name' => $request->middle,
+            'last_name' => $request->last,
+            'dorm_name' => $request->dorm_name,
+            'mobile_num' => $request->mobile_num
+        ]);
 
         $manager->first_name = request('first', false);
-        $manager->middle_name = request('middle', false);
+        $manager->middle_name = request('middle');
         $manager->last_name = request('last', false);
         $manager->email = request('email', false);
         $manager->password = $registrant->password;

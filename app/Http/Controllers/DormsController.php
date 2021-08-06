@@ -114,14 +114,15 @@ class DormsController extends Controller
         $dorm->available_space = request('avail', false);
         $dorm->description = request('description', false);
 
-        if ($request->submit == "DELROOM") {
-            $room_types = RoomType::where('dormitory', '=', $dorm->dorm_name)->
-                                    where('room_type', '=', request('room_type'))->first();
-            $room_types->delete();
-        } else if ($request->submit == "DELAME") {
+        
+        if ($request->has('amen')) {
             $amenities = Amenities::where('dormitory', '=', $dorm->dorm_name)->
-                                    where('amenities', '=', request('amenities'))->first();
+                                    where('amenities', '=', $request->input('amen'))->first();
             $amenities->delete();
+        } else if ($request->has('roomtype')) {
+            $room_types = RoomType::where('dormitory', '=', $dorm->dorm_name)->
+                                    where('room_type', '=', $request->input('roomtype'))->first();
+            $room_types->delete();
         } else {
             if($request->filled('room_types') && !$request->filled('amenity')) {
                 RoomType::create([

@@ -30,7 +30,7 @@
                         <li><a href="applicationlist">Application List</a></li><br>
                         <form style="display:block;" method="POST" action="{{ route('logout') }}">
                             @csrf
-                        <li><a href="" ><button type="submit" style="color:red;" >{{ __('Log Out') }}</button></a></li>
+                        <li><a href="" ><button type="submit" style="color:white;">{{ __('Log Out') }}</button></a></li>
                         </form>
                         </ul>
                     </ul></li>
@@ -38,11 +38,6 @@
     </div>
 
     <div class="header"> <h1>HOUSING FACILITIES - OFF CAMPUS</h1>
-    <label for="room" style="width:5%;">Price</label>
-                <select name="room" id="room" class="inputapp">
-                    <option value="coe">Low to High</option>
-                    <option value="cbea">High to Low</option>
-                </select>
 
     <form style="margin-left:10%;margin-top:2%;" action="/searchdorm" method="POST" role="search">
     @csrf
@@ -61,14 +56,16 @@
             <th>DORMITORY NAME</th>
             <th>DORM MANAGER</th>
             <th>CONTACT NUMBER</th>
+            <th></th>
           </tr>
         </thead>
         <tbody>
             @foreach($dorm as $dorm)
           <tr>
-            <td><a href="/dormitorydetails/{{ $dorm['id'] }}">{{ $dorm->dorm_name }}</a></td>
+            <td>{{ $dorm->dorm_name }}</a></td>
             <td>{{ $dorm->first_name }} {{ $dorm->middle_name }} {{ $dorm->last_name }}</td>
             <td>{{ $dorm->mobile_num }}</td>
+            <td><a href="/dormitorydetails/{{ $dorm['id'] }}"><button>VIEW</button></a></td>
           </tr>
           @endforeach
         </tbody>

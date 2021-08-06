@@ -84,10 +84,12 @@
     <table class="viewdormtable" id="room">
         <tr>
             <th>Amenities</th>
+            <th></th>
         </tr>
         @foreach($amenities as $amenity)
         <tr>
             <td class="readapp">{{ $amenity->amenities }}</td>
+            <td><button type="submit" name="amen" value="{{ $amenity->amenities }}">DELETE</button></td>
         </tr>
         @endforeach
     </table>
@@ -98,11 +100,13 @@
         <tr>
             <th>Room Type</th>
             <th>Room Fee</th>
+            <th></th>
         </tr>
         @foreach($room_types as $types)
         <tr>
             <td class="readapp">{{ $types->room_type }}</td>
             <td class="readapp">{{ $types->price }}</td>
+            <td><button type="submit" name="roomtype" value="{{ $types->room_type }}">DELETE</button></td>
         </tr>
         @endforeach
     </table>

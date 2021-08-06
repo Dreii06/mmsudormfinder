@@ -30,7 +30,7 @@
                         <li><a href="/applicationlist">Application List</a></li><br>
                         <form style="display:block;" method="POST" action="{{ route('logout') }}">
                             @csrf
-                        <li><a href="" ><button type="submit" style="color:red;" >{{ __('Log Out') }}</button></a></li>
+                        <li><a href="" ><button type="submit" style="color:white;">{{ __('Log Out') }}</button></a></li>
                         </form>
                         </ul>
                     </ul></li>

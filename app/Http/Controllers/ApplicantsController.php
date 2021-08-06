@@ -25,24 +25,26 @@ class ApplicantsController extends Controller
     }
 
     function store(Request $request) {
+        $id = Auth::user()->id;
+        $user = UserProfile::find($id);
         $applicant = new Applicants();
 
-        $applicant->first_name = request('first', false);
-        $applicant->middle_name = request('middle', false);
-        $applicant->last_name = request('last', false);
-        $applicant->suffix = request('suffix');
-        $applicant->stud_num = request('stud_id', false);
-        $applicant->sex = request('sex', false);
-        $applicant->email = request('email', false);
-        $applicant->mobile_num = request('mobile_num', false);
-        $applicant->guardian_name = request('guardian_name', false);
-        $applicant->guardian_num = request('guardian_num', false);
-        $applicant->barangay = request('barangay', false);
-        $applicant->street = request('street', false);
-        $applicant->city = request('city', false);
-        $applicant->province = request('province', false);
-        $applicant->college = request('college', false);
-        $applicant->course = request('course', false);
+        $applicant->first_name = $user->first_name;
+        $applicant->middle_name = $user->middle_name;
+        $applicant->last_name = $user->last_name;
+        $applicant->suffix = $user->suffix;
+        $applicant->stud_num = $user->stud_num;
+        $applicant->sex = $user->sex;
+        $applicant->email = $user->email;
+        $applicant->mobile_num = $user->mobile_num;
+        $applicant->guardian_name = $user->guardian_name;
+        $applicant->guardian_num = $user->guardian_num;
+        $applicant->barangay = $user->barangay;
+        $applicant->street = $user->street;
+        $applicant->city = $user->city;
+        $applicant->province = $user->province;
+        $applicant->college = $user->college;
+        $applicant->course = $user->course;
         $applicant->dormitory = request('dorm', false);
         $applicant->room_type = request('room_type', false);
 

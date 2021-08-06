@@ -73,7 +73,6 @@
 
     </form>
 
-    <label style="margin-left:1.5%;" for="fname">Amenities</label>
     <table class="viewdormtable" id="room">
         <tr>
             <th>Amenities</th>

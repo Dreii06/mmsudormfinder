@@ -30,7 +30,7 @@
                         <li><a href="/applicationlist">Application List</a></li><br>
                         <form style="display:block;" method="POST" action="{{ route('logout') }}">
                             @csrf
-                        <li><a href="" ><button type="submit" style="color:red;" >{{ __('Log Out') }}</button></a></li>
+                        <li><a href="" ><button type="submit" style="color:white;">{{ __('Log Out') }}</button></a></li>
                         </form>
                         </ul>
                     </ul></li>
@@ -49,7 +49,7 @@
     <section>
         <h2 class="h2nav"><p class="text--sub">house facilities</p>On Campus <p class="text--normal">Pikachu is an Electric-type Pokémon introduced in Generation I. Pikachu are small, chubby, and incredibly 
           cute mouse-like Pokémon. They are almost completely covered by yellow fur.</p><p class="text--sub">CLICK BUTTONS ON THE <br>RIGHT SIDE TO CHOOSE</p><p class="text__background">ON CAMPUS</p>
-          <a href="oncampus"><button type="button" class="dorm">E N T E R</button></a>
+          <a href="/oncampusdormslist"><button type="button" class="dorm">E N T E R</button></a>
         </h2>
           <img class="__img" src="images/1.png" />
           

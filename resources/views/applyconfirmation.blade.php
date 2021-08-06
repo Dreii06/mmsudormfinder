@@ -35,7 +35,7 @@
                         <li><a href="applicationlist">Application List</a></li><br>
                         <form style="display:block;" method="POST" action="{{ route('logout') }}">
                             @csrf
-                        <li><a href="" ><button type="submit" style="color:red;" >{{ __('Log Out') }}</button></a></li>
+                        <li><a href="" ><button type="submit" style="color:white;">{{ __('Log Out') }}</button></a></li>
                         </form>
                         </ul>
                     </ul></li>
@@ -49,52 +49,6 @@
     <div class="profile_con">
     <form action="/applyconfirmation/{id}" method="POST">
     @csrf
-        <label for="fstudentid">Student Number</label>  
-        <label  for="sex" >Sex</label>
-        <label for="email">Email</label>
-        <label  for="number">Mobile Number</label><br>
-
-        <input type="text" style="width:20%;margin-right:2%;" name="stud_id" id="fstudentid" value="{{ Auth::user()->stud_num }}" class="inputapp" readonly >
-        <input type="text" style="width:20%;margin-right:2%;" name="sex" id="sec" value="{{ Auth::user()->sex }}" class="inputapp" readonly>
-        <input type="email" style="width:20%;margin-right:2%;" name="email" id="email" value="{{ Auth::user()->email }}"  class="inputapp" readonly>
-        <input type="tel" style="width:20%;" name="mobile_num" id="number" value="{{ Auth::user()->mobile_num }}" class="inputapp" readonly><br><br>
-
-        <label for="fname">First Name</label>
-        <label for="mname">Midle Name</label>
-        <label for="lname">Last Name</label>
-        <label for="sname">Suffix (Jr,,III)</label><br>
-
-        <input type="text" style="width:20%;margin-right:2%;" id="fname" name="first" value="{{ Auth::user()->first_name }}" class="inputapp">
-        <input type="text" style="width:20%;margin-right:2%;" id="mname" name="middle" value="{{ Auth::user()->middle_name }}"  class="inputapp">
-        <input type="text" style="width:20%;margin-right:2%;" id="lname" name="last" value="{{ Auth::user()->last_name }}"  class="inputapp">
-        <input type="text" style="width:20%;margin-right:2%;" id="sname" name="suffix" value="{{ Auth::user()->suffix }}"  class="inputapp"><br><br>
-
-        <label for="birthday">Barangay</label>
-        <label for="birthday">Street</label>
-        <label  for="birthday">City</label>
-        <label for="birthday">Province</label>
-
-        <input type="text" style="width:20%;margin-right:2%;" id="birthday" name="barangay" value="{{ Auth::user()->barangay }}"  class="inputapp">
-        <input type="text" style="width:20%;margin-right:2%;"id="birthday" name="street" value="{{ Auth::user()->street }}"  class="inputapp">
-        <input type="text" style="width:20%;margin-right:2%;"id="birthday" name="city" value="{{ Auth::user()->city }}"  class="inputapp">
-        <input type="text" style="width:20%;"id="birthday" name="province" value="{{ Auth::user()->province }}" class="inputapp"><br><br>
-
-        <label for="nameg">Name of Guardian</label>
-        <label for="number">Contact of Guardian</label>
-        <label for="college">College:</label>
-        <label for="course">Course:</label><br>
-
-        <input type="text" style="width:20%;margin-right:2%;"id="nameg" name="guardian_name" value="{{ Auth::user()->guardian_name }}"  class="inputapp">
-        <input type="tel" style="width:20%;margin-right:2%;"id="number" name="guardian_num" value="{{ Auth::user()->guardian_num }}"  class="inputapp">
-        <select name="college" style="width:20%;margin-right:2%;"id="room" class="inputapp">
-            <option selected disable hidden value="{{ Auth::user()->college }}">{{ Auth::user()->college }}</option>
-            <option value="CAS">CAS</option>
-            <option value="COE">COE</option>
-            <option value="CBEA">CBEA</option>
-            <option value="CHS">CHS</option>
-        </select>
-        <input type="text" style="width:20%;margin-right:2%;"id="course" name="course" value="{{ Auth::user()->course }}"  class="inputapp"><br><br>
-
         <h2 style="color:#0C4B05;">SELECT DESIRED ROOM TYPE:</h2>
         <label  for="dorm">Dormitory</label>
         <label  for="room">Type of Room</label>

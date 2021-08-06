@@ -23,10 +23,6 @@ Route::get('/', function () {
     return view('auth.login');
 });
 
-Route::get('/register', function () {
-    return view('auth.register');
-});
-
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth']);
@@ -56,7 +52,6 @@ Route::post('/profilestudent', [UserProfileController::class, 'update']);
 /*Route::get('/offcampus', function () {
     return view('offcampusdormslist');
 })->middleware(['auth']);*/
-
 
 Route::get('/offcampusdormslist', [DormsController::class, 'show']);
 
@@ -162,6 +157,3 @@ require __DIR__.'/auth.php';
 
 Route::multiauth('Admin', 'admin');
 Route::multiauth('Manager', 'manager');
-
-Route::mixin(new \Laravel\Ui\AuthRouteMethods());
-Route::auth(['verify' => true]);
