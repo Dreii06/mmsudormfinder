@@ -162,6 +162,3 @@ require __DIR__.'/auth.php';
 
 Route::multiauth('Admin', 'admin');
 Route::multiauth('Manager', 'manager');
-
-Route::mixin(new \Laravel\Ui\AuthRouteMethods());
-Route::auth(['verify' => true]);
