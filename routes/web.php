@@ -122,6 +122,10 @@ Route::any('/manager/updatedorm/{id}', [DormsController::class, 'getupdate']);
 
 Route::post('/manager/updatedorm', [DormsController::class, 'store']);
 
+Route::get('/manager/updateimage/{id}', [DormsController::class, 'getdormimage']);
+
+Route::post('/manager/updateimage/{id}', [DormsController::class, 'storeimg']);
+
 //Route::post('/manager/updatedorm', [DormsController::class, 'delete']);
 
 /*Route::get('/admin/registrants', function () {

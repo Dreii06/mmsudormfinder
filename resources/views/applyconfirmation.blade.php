@@ -104,7 +104,7 @@
             <option value="{{ $types->room_type }}">{{ $types->room_type }}</option>
             @endforeach
         </select>
-        <a href="/sampledocx/sampledoc.pdf" download><button type="button" id="contract" class="contractbutton"  > DOWNLOAD FILE</button></a>
+        <a href="/sampledoc.pdf" download><button type="button" id="contract" class="contractbutton"  > DOWNLOAD FILE</button></a>
         
         <div style="display:flex;width:100%;">
         <p class="note"> NOTE: Before confirming, kindly check the contract for the terms of service.</p>

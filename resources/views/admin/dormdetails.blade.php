@@ -94,12 +94,14 @@
             </table>
         </div>
     </div>
-</form>
 
     <div class="btndorm_container">
     <button type="button" onclick="download()" class="btndownload">DOWNLOAD</button>
-    <a href="/admin/{{ $details->dorm_name }}/occupantslist"><button type="button" class="btnviewocc">VIEW OCCUPANTS</button></a>
+    <a href="/admin/{{ $details->dorm_name }}/dormoccupantslist"><button type="button" class="btnviewocc">VIEW OCCUPANTS</button></a>
     </div>
+
+    </form>
+</div>
 
     </body>
 </html>

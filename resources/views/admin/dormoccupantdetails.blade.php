@@ -40,14 +40,14 @@
     
     <div class="dorm_details_con">
 
-    <form action="/admin/{{ $dorm_name }}/occupantdetails" method="POST">
+    <form action="/admin/{{ $dorm_name }}/dormoccupantdetails" method="POST">
         @csrf
         <label style="width:20%;" for="fstudentid">Student Number</label>  
         <label style="width:20%;" for="sex" >Sex</label>
         <label style="width:20%;" for="email">Email</label>
         <label style="width:20%;" for="number">Mobile Number</label><br>
         
-        <input type="text" style="width:20%;margin-right:2%;margin-left:0%;" id="fstudentid" value="{{ $details->stud_num }}" class="inputapp" readonly >
+        <input type="text" style="width:20%;margin-right:2%;margin-left:0%;" id="fstudentid" name="stud_num" value="{{ $details->stud_num }}" class="inputapp" readonly >
         <input type="text" style="width:20%;margin-right:2%;margin-left:0%;" id="sec" value="{{ $details->sex }}" class="inputapp" readonly>
         <input type="email" style="width:20%;margin-right:2%;margin-left:0%;" id="email" value="{{ $details->email }}"  class="inputapp" readonly>
         <input type="tel" style="width:20%;margin-left:0%;" id="number" value="{{ $details->mobile_num }}" class="inputapp" readonly><br><br>

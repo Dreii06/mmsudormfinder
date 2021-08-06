@@ -98,7 +98,7 @@ class OccupantsController extends Controller
     }
 
     function admindel($name, Request $request) {
-        $occupant = Occupants::where('name', '=', request('name'))->first();
+        $occupant = Occupants::where('stud_num', '=', request('stud_num'))->first();
         $occupant->delete();
         
         $details = Occupants::join('dorm', 'dorm_name', '=', 'dormitory')

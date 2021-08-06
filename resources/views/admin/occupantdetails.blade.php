@@ -72,10 +72,10 @@
         <input type="text" style="width:20%;margin-right:2%;margin-left:0%;"id="birthday" value="{{ $details->city }}"  class="inputapp" readonly>
         <input type="text" style="width:20%;margin-left:0%;"id="birthday" value="{{ $details->province }}" class="inputapp" readonly><br><br>
 
-        <label class="detailslabel" for="nameg">Name of Guardian</label>
-        <label class="detailslabel" for="number">Contact of Guardian</label>
-        <label class="detailslabel" for="college">College:</label>
-        <label class="detailslabel" for="course">Course:</label><br>
+        <label style="width:20%;" for="nameg">Name of Guardian</label>
+        <label style="width:20%;" for="number">Contact of Guardian</label>
+        <label style="width:20%;" for="college">College:</label>
+        <label style="width:20%;" for="course">Course:</label><br>
 
         <input type="text" style="width:20%;margin-right:2%;margin-left:0%;"id="nameg" value="{{ $details->guardian_name }}"  class="inputapp" readonly>
         <input type="tel" style="width:20%;margin-right:2%;margin-left:0%;"id="number" value="{{ $details->guardian_num }}"  class="inputapp" readonly>

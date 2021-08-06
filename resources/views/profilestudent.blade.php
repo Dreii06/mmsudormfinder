@@ -53,9 +53,9 @@
         
         <input type="text" style="width:20%;margin-right:2%;" id="fstudentid" name="stud_id" value="{{ Auth::user()->stud_num }}" class="inputapp" >
         <select name="sex" style="width:20%;margin-right:2%;" id="room" class="inputapp">
-            <option value="{{ Auth::user()->sex }}">{{ Auth::user()->sex }}</option>
-            <option value="Female">Female</option>
-            <option value="Male">Male</option>
+            <option selected disable hidden value="{{ Auth::user()->sex }}">{{ Auth::user()->sex }}</option>
+            <option value="Female">Male</option>
+            <option value="Male">Female</option>
          </select>
         <input type="email" style="width:20%;margin-right:2%;" name="email" id="email" value="{{ Auth::user()->email }}"  class="inputapp">
         <input type="tel" style="width:20%;" id="number" name="mobile_num" value="{{ Auth::user()->mobile_num }}" class="inputapp"><br><br>
@@ -88,7 +88,7 @@
         <input type="text" style="width:20%;margin-right:2%;"id="nameg" name="guardian_name" value="{{ Auth::user()->guardian_name }}"  class="inputapp">
         <input type="tel" style="width:20%;margin-right:2%;"id="number" name="guardian_num" value="{{ Auth::user()->guardian_num }}"  class="inputapp">
         <select name="college" style="width:20%;margin-right:2%;"id="room" class="inputapp">
-            <option value="{{ Auth::user()->college }}">{{ Auth::user()->college }}</option>
+            <option selected disable hidden value="{{ Auth::user()->college }}">{{ Auth::user()->college }}</option>
             <option value="CAS">CAS</option>
             <option value="COE">COE</option>
             <option value="CBEA">CBEA</option>

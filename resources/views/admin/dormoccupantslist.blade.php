@@ -58,7 +58,7 @@
         <tbody>
             @foreach($details as $occupant)
           <tr>
-            <td><a href="/admin/{{ $dorm_name }}/occupantdetails/{{ $occupant->id }}">{{ $occupant->first_name }} {{ $occupant->middle_name }} {{ $occupant->last_name }}</a></td>
+            <td><a href="/admin/{{ $dorm_name }}/dormoccupantdetails/{{ $occupant->id }}">{{ $occupant->first_name }} {{ $occupant->middle_name }} {{ $occupant->last_name }}</a></td>
             <td>{{ $occupant->stud_num }}</td>
             <td>{{ $occupant->mobile_num }}</td>
           </tr>

@@ -102,6 +102,6 @@
         @endforeach
     </div>
 
-    <a href="updateimage"><button type="button" class="greenbutton" style="margin-right:20%;margin-top:10px;"> UPDATE IMAGE</button></a>
+    <a href="/manager/updateimage/{{ Auth::guard('manager')->user()->id }}"><button type="button" class="greenbutton" style="margin-right:20%;margin-top:10px;"> UPLOAD IMAGE</button></a>
     <a href="/manager/updatedorm/{{ Auth::guard('manager')->user()->id }}"><button type="button" class="secondyellowbutton" style="margin-top:10px;margin-right:2%;">UPDATE FORM</button></a>
 </div>
