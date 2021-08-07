@@ -16,7 +16,7 @@
     
     <div class="topnav" id="myTopnav">
        <img style="float:left;margin-left:20px;margin-top:5px;" src="/images/mmsu logo.png"  height="4%" width="4%">
-       <a style=" text-decoration: none;width:20%;margin:0%;" href="home"><h4>MARIANO MARCOS <br> STATE UNIVERSITY</h4></a>
+       <a style=" text-decoration: none;width:20%;margin:0%;" href="dashboard"><h4>MARIANO MARCOS <br> STATE UNIVERSITY</h4></a>
             <a class="topnavlink" href="/contact">CONTACT</a>
             <a class="topnavlink" href="/about">ABOUT US</a>
             <a class="topnavlink" href="/dorm">LIST OF DORMS</a>
@@ -46,7 +46,6 @@
     </form>         
     </div>
         
-    
     <div class="listappcontainer">
     <div class="tableFixHeadtitle">LIST OF DORMITORIES</div>  
     <div class="tableFixHead">
@@ -65,7 +64,7 @@
             <td>{{ $dorm->dorm_name }}</a></td>
             <td>{{ $dorm->first_name }} {{ $dorm->middle_name }} {{ $dorm->last_name }}</td>
             <td>{{ $dorm->mobile_num }}</td>
-            <td><a href="/dormitorydetails/{{ $dorm['id'] }}"><button>VIEW</button></a></td>
+            <td><a href="/dormitorydetails/{{ $dorm['id'] }}"><button type="button">VIEW</button></a></td>
           </tr>
           @endforeach
         </tbody>

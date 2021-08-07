@@ -21,7 +21,7 @@
     
     <div class="topnav" id="myTopnav">
        <img style="float:left;margin-left:20px;margin-top:5px;" src="/images/mmsu logo.png"  height="4%" width="4%">
-       <a style=" text-decoration: none;width:20%;margin:0%;" href="home"><h4>MARIANO MARCOS <br> STATE UNIVERSITY</h4></a>
+       <a style=" text-decoration: none;width:20%;margin:0%;" href="/dashboard"><h4>MARIANO MARCOS <br> STATE UNIVERSITY</h4></a>
             <a class="topnavlink" href="/contact">CONTACT</a>
             <a class="topnavlink" href="/about">ABOUT US</a>
             <a class="topnavlink" href="/dorm">LIST OF DORMS</a>
@@ -42,36 +42,81 @@
             </div>
     </div>
 
-    <div class="header">
-        <h1>CONFIRMATION</h1>
+    <!-- SLIDESHOW OF DORMITORY  -->
+    <div class="dorm_name">{{ $details->dorm_name }}</div><br>
+        <div class="dorm_details_con">
+
+        <div id="slideshow" class="imgcontainer">
+        @foreach($images as $image)
+        <div class="mySlides"> <img src="/images/{{ $image->filename }}" style="width:100%;height:500px;"><div class="text">{{ $image->filename }}</div></div>
+        @endforeach
+        <a class="prev" onclick="plusSlides(-1, slideshow)">❮</a>
+        <a class="next" onclick="plusSlides(1, slideshow)">❯</a>
+        </div>
+           <p class="descriptiondorm"> {{ $details->description }} </p>
     </div>
 
-    <div class="profile_con">
-    <form action="/applyconfirmation/{id}" method="POST">
-    @csrf
-        <h2 style="color:#0C4B05;">SELECT DESIRED ROOM TYPE:</h2>
-        <label  for="dorm">Dormitory</label>
-        <label  for="room">Type of Room</label>
-        <label for="contract">Contract</label><br>
-
-        <input type="text" id="dorm" name="dorm" value="{{ $details->dorm_name }}" style="width:20%;margin-right:2%;" class="inputapp">
-        <select name="room_type" id="room" style="width:20%;margin-right:2%;" class="inputapp">
+        <!-- DETAILS OF DORMITORY  -->
+    <div class="dorm_details">    
+        <form style="width:80%;" action="/applyconfirmation/{id}" method="POST">
+            @csrf
+        <h2 style="color:#0C4B05;">Confirm your Application</h2>
+        <label style="width:25%;margin-right:2%;" for="dorm">Dormitory</label>
+        <label style="width:30%;margin-right:2%;" for="room">Type of Room</label>
+        <label style="width:25%;margin-right:2%;" for="room">Vacancy</label><br>
+        
+        <input type="text" id="dorm" name="dorm" style="width:25%;margin-right:2%;" value="{{ $details->dorm_name }}" readonly class="inputapp">
+  
+        <select name="room_type" id="roomtype" style="width:30%;margin-right:2%;" class="inputapp" onchange="changeInput(event)">
             <option selected disable hidden>Choose your room type</option>
             @foreach($room_types as $types)
-            <option value="{{ $types->room_type }}">{{ $types->room_type }}</option>
+            <option value="{{ $types->vacancy }}">{{ $types->room_type }}</option>
             @endforeach
         </select>
-        <a href="/sampledoc.pdf" download><button type="button" id="contract" class="contractbutton"  > DOWNLOAD FILE</button></a>
+
+        <input type="hidden" id="type" name="type">
+        <input type="text" id="vacancy" name="vacancy" style="width:25%;margin-right:2%;" readonly class="inputapp"><br>
         
-        <div style="display:flex;width:100%;">
-        <p class="note"> NOTE: Before confirming, kindly check the contract for the terms of service.</p>
-       
-        <button type="submit"class="secondyellowbutton" style="margin-top:20px;margin-right:10px;margin-left:10%;"> CONFIRM</button>
-        <a href="home"><button type="button" class="cancelbutton">CANCEL</button></a>
+        <button type="submit" onclick="###" class="secondyellowbutton" style="width:20%;margin-top:5%;float:left;"> CONFIRM</button>
+        <a href="home"><button type="button" class="confirmcancelbutton">CANCEL</button></a><br>
         
-        </div>
+        <p style="margin-top:10%;"class="note"> NOTE: After confirming, wait for 1-3 business days for the process, if still waiting for
+        approval, feel free to apply to other available dormitories </p>
+
+        </form>
     </div>
-    </form>
+
+    <!-- SCRIPT FOR SLIDESHOW  -->
+    <script>
+        var slideshow = document.getElementById("slideshow");
+        slideshow.currentSlideIndex = 1;
+        showSlides(slideshow.currentSlideIndex, slideshow);
+        function plusSlides(n, slideshow) {
+        showSlides(slideshow.currentSlideIndex += n, slideshow);
+        }
+        function currentSlide(n, slideshow) {
+        showSlides(slideshow.currentSlideIndex = n, slideshow);
+        }
+        function showSlides(n, slideshow) {
+  
+            var i;
+            var slides = slideshow.getElementsByClassName("mySlides");
+       
+            if (n > slides.length) {slideshow.currentSlideIndex = 1}    
+            if (n < 1) {slideshow.currentSlideIndex = slides.length}
+        for (i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";  
+        }
+        slides[slideshow.currentSlideIndex-1].style.display = "block";  
+        }
+        
+        function changeInput(e) {
+            document.getElementById("vacancy").value = e.target.value;
+
+            var sel = document.getElementById("roomtype");
+            document.getElementById("type").value = sel.options[sel.selectedIndex].text;
+        }
+    </script>
 
     </body>
 </html>

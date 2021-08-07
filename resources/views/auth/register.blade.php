@@ -12,7 +12,7 @@
         <link rel="icon" href="/images/mmsu logo.png">
     </head>
     
-    <body style="overflow: hidden;background-image: url('/images/bg.jpg');background-repeat: no-repeat; background-size: 100%;" class="antialiased">
+    <body style="overflow: hidden;background-image: url('/images/bg.png');background-repeat: no-repeat; background-size: 100% 100%;" class="antialiased">
         
     <div class="uppernav"> <h3 style="margin-left:20px;color:#0C4B05;">MMSU </h3><h3> - Dorm Finder</h3> </div>
     <div class="topnav" id="myTopnav">
@@ -44,7 +44,7 @@
             <p style="color:white;font-size:0.8vw;text-align: justify;">By submitting this form, you agree to the collection and processing of your personal data in accordance with the policies of the Mariano Marcos State University.  
                This consent does not preclude the existence of other criteria for lawful 
                processing of personal data and does not waive any rights under the <a style="color:#FFCD00;"href="https://www.officialgazette.gov.ph/2012/08/15/republic-act-no-10173/">Data Privacy Act of 2012</a> and other applicable laws.</p>
-               <a href="/login"><button type="submit" class="yellowbutton" style="margin-top:5px;margin-left:0%;">{{ __('Register') }}</button></a><br>
+            <a href="/login"><button type="submit" class="yellowbutton" style="margin-top:5px;margin-left:0%;">{{ __('Register') }}</button></a><br>
             <a href="/login"><button type="button" id="cancel"  class="registercancelbutton">Cancel</button></a>
         </form>
     </div>

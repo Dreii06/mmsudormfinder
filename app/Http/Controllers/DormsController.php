@@ -24,6 +24,9 @@ class DormsController extends Controller
 
     function get($id) {
         $details = Dorms::find($id);
+        
+        $available = Dorms::join('room_types', 'dormitory', '=', 'dorm_name')
+        ->where('dorm.id', '=', $id)->sum('vacancy');
 
         $images = Dorms::join('images', 'dormitory', '=', 'dorm_name')
         ->where('dorm.id', '=', $id)
@@ -31,37 +34,47 @@ class DormsController extends Controller
         
         $room_types = Dorms::join('room_types', 'dormitory', '=', 'dorm_name')
         ->where('dorm.id', '=', $id)
-        ->get(['room_types.room_type', 'room_types.price']);
+        ->get();
 
         $amenities = Dorms::join('amenities', 'dormitory', '=', 'dorm_name')
         ->where('dorm.id', '=', $id)
         ->get(['amenities.amenities']);
 
-        return view('manager.viewdorm', ['details' => $details], compact('images', 'room_types', 'amenities'));
+        return view('manager.viewdorm', ['details' => $details], compact('images', 'room_types', 'amenities', 'available'));
     }
     
     function adminget($id) {
         $details = Dorms::find($id);
 
-        $room_types = Dorms::join('room_types', 'dormitory', '=', 'dorm_name')
-        ->where('dorm.id', '=', $id)
-        ->get(['room_types.room_type', 'room_types.price']);
-
-        return view('admin.dormdetails', ['details' => $details], ['room_types' => $room_types]);
-    }
-
-    function getupdate($id) {
-        $details = Dorms::find($id);
+        $available = Dorms::join('room_types', 'dormitory', '=', 'dorm_name')
+        ->where('dorm.id', '=', $id)->sum('vacancy');
 
         $room_types = Dorms::join('room_types', 'dormitory', '=', 'dorm_name')
         ->where('dorm.id', '=', $id)
-        ->get(['room_types.room_type', 'room_types.price']);
+        ->get();
 
         $amenities = Dorms::join('amenities', 'dormitory', '=', 'dorm_name')
         ->where('dorm.id', '=', $id)
         ->get(['amenities.amenities']);
 
-        return view('manager.updatedorm', ['details' => $details],  compact('room_types', 'amenities'));
+        return view('admin.dormdetails', ['details' => $details], compact('room_types', 'amenities', 'available'));
+    }
+
+    function getupdate($id) {
+        $details = Dorms::find($id);
+
+        $available = Dorms::join('room_types', 'dormitory', '=', 'dorm_name')
+        ->where('dorm.id', '=', $id)->sum('vacancy');
+
+        $room_types = Dorms::join('room_types', 'dormitory', '=', 'dorm_name')
+        ->where('dorm.id', '=', $id)
+        ->get();
+
+        $amenities = Dorms::join('amenities', 'dormitory', '=', 'dorm_name')
+        ->where('dorm.id', '=', $id)
+        ->get(['amenities.amenities']);
+
+        return view('manager.updatedorm', ['details' => $details],  compact('room_types', 'amenities', 'available'));
     }
 
     function getdorm($id) {
@@ -75,7 +88,6 @@ class DormsController extends Controller
         ->where('dorm.id', '=', $id)
         ->get(['room_types.room_type', 'room_types.price']);
 
-
         $amenities = Dorms::join('amenities', 'dormitory', '=', 'dorm_name')
         ->where('dorm.id', '=', $id)
         ->get(['amenities.amenities']);
@@ -86,17 +98,22 @@ class DormsController extends Controller
     function getapply($id) {
         $details = Dorms::find($id);
 
+        $images = Dorms::join('images', 'dormitory', '=', 'dorm_name')
+        ->where('dorm.id', '=', $id)
+        ->get(['images.filename']);
+
         $room_types = Dorms::join('room_types', 'dormitory', '=', 'dorm_name')
         ->where('dorm.id', '=', $id)
-        ->get(['room_types.room_type']);
+        ->get();
 
-        return view('applyconfirmation', ['details' => $details], ['room_types' => $room_types]);
+        return view('applyconfirmation', ['details' => $details], compact('images', 'room_types'));
     }
 
     function store(Request $request) {
         $id = Auth::guard('manager')->id();
         $dorm = Dorms::find($id);
         $manager = Auth::guard('manager')->user();
+        $available_space = RoomType::where('dormitory', '=', $dorm->dorm_name)->sum('vacancy');
 
         $dorm->first_name = request('first', false);
         $dorm->middle_name = request('middle', false);
@@ -111,47 +128,35 @@ class DormsController extends Controller
         $dorm->house_num = request('house_num', false);
         $dorm->nearest = request('nearest', false);
         $dorm->mobile_num = request('mobile_num', false);
-        $dorm->available_space = request('avail', false);
+        $dorm->available_space = $available_space;
         $dorm->description = request('description', false);
 
-        
         if ($request->has('amen')) {
             $amenities = Amenities::where('dormitory', '=', $dorm->dorm_name)->
                                     where('amenities', '=', $request->input('amen'))->first();
             $amenities->delete();
-        } else if ($request->has('roomtype')) {
+        } else if ($request->has('type')) {
             $room_types = RoomType::where('dormitory', '=', $dorm->dorm_name)->
-                                    where('room_type', '=', $request->input('roomtype'))->first();
+                                    where('room_type', '=', $request->input('type'))->first();
             $room_types->delete();
+        } else if($request->submit == ("addAmen")) {
+            Amenities::create([
+                'dormitory' => request('dorm_name', false),
+                'amenities' => request('amenities', false)
+            ]);
+        } else if($request->submit == ("addRoomType")) {
+            RoomType::create([
+                'dormitory' => request('dorm_name', false),
+                'room_type' => request('roomtype', false),
+                'vacancy' => request('vacancy', false),
+                'price' => request('prices')
+            ]);
         } else {
-            if($request->filled('room_types') && !$request->filled('amenity')) {
-                RoomType::create([
-                    'dormitory' => request('dorm_name', false),
-                    'room_type' => request('room_types', false),
-                    'price' => request('prices')
-                ]);
-            } else if ($request->filled('amenity') && !$request->filled('room_types')) {
-                Amenities::create([
-                    'dormitory' => request('dorm_name', false),
-                    'amenities' => request('amenity', false)
-                ]);
-            } else if ($request->filled('room_types') && $request->filled('amenity')) {
-                RoomType::create([
-                    'dormitory' => request('dorm_name', false),
-                    'room_type' => request('room_types', false),
-                    'price' => request('prices')
-                ]);
-                Amenities::create([
-                    'dormitory' => request('dorm_name', false),
-                    'amenities' => request('amenity', false)
-                ]);
-            } else {
-                $dorm->save();
-                $manager->save();
-            }
             $dorm->save();
             $manager->save();
         }
+        $dorm->save();
+        $manager->save();
 
         return redirect()->back();
     }
@@ -161,8 +166,7 @@ class DormsController extends Controller
 
         $images = Dorms::join('images', 'dormitory', '=', 'dorm_name')
         ->where('dorm.id', '=', $id)
-        ->get(['images.filename']);
-
+        ->get();
 
         return view('manager.updateimage', ['details' => $details], ['images' => $images]);
     }
@@ -176,8 +180,8 @@ class DormsController extends Controller
         if($request->submit == "ADD") {
             if($request->has('image')) {
                 $photos = $request->file('image');
-    
-                $filename = $photos->getClientOriginalName();
+                
+                $filename = request('filename');
                 $photos->move(public_path('images'), $filename);
                     
                 (Images::create([
@@ -185,6 +189,10 @@ class DormsController extends Controller
                         'filename' => $filename
                 ]));
             }
+        } else if ($request->submit == "DEL") {
+            $images = Images::where('dormitory', '=', $dorm->dorm_name)
+                            ->where('id', '=', request('delfilename'))->first();
+            $images->delete();
         }
 
         return redirect()->back();

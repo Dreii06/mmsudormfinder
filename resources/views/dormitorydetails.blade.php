@@ -16,7 +16,7 @@
     
     <div class="topnav" id="myTopnav">
        <img style="float:left;margin-left:20px;margin-top:5px;" src="/images/mmsu logo.png"  height="4%" width="4%">
-       <a style=" text-decoration: none;width:20%;margin:0%;" href="home"><h4>MARIANO MARCOS <br> STATE UNIVERSITY</h4></a>
+       <a style=" text-decoration: none;width:20%;margin:0%;" href="/dashboard"><h4>MARIANO MARCOS <br> STATE UNIVERSITY</h4></a>
             <a class="topnavlink" href="/contact">CONTACT</a>
             <a class="topnavlink" href="/about">ABOUT US</a>
             <a class="topnavlink" href="/dorm">LIST OF DORMS</a>
@@ -37,75 +37,80 @@
             </div>
     </div>
 
+        <!-- TITLE OF DORMITORY  -->
+        <div class="header"> <h1>HOUSING FACILITIES - Details</h1></div>
 
-    <div class="header"> <h1>HOUSING FACILITIES - OFF CAMPUS</h1></div>
-        <div class="dorm_name"> <h2>{{ $details->dorm_name }}</h2> </div><br>
+        <!-- SLIDESHOW OF DORMITORY  -->
+        <div class="dorm_name">{{ $details->dorm_name }}</div><br>
         <div class="dorm_details_con">
 
         <div id="slideshow" class="imgcontainer">
         @foreach($images as $image)
-        <div class="mySlides"><img src="/images/{{ $image->filename }}" style="width:100%;height:100%;"></div>
+        <div class="mySlides"> <img src="/images/{{ $image->filename }}" style="width:100%;height:100%;"><div class="text">{{ $image->filename }}</div></div>
         @endforeach
         <a class="prev" onclick="plusSlides(-1, slideshow)">❮</a>
         <a class="next" onclick="plusSlides(1, slideshow)">❯</a>
         </div>
+           <p class="descriptiondorm"> {{ $details->description }} </p>
         </div>
 
-    <div class="dorm_details">
+        <!-- DETAILS OF DORMITORY  -->
+        <div class="dorm_details">    
         <form style="width:80%;">
-
-            <label for="fname">Manager</label>
+        
+            <label  for="fname">Manager</label>
                 <input type="text" id="fname" name="fname" style="width: 25%;" class="readapp" value="{{ $details->first_name }} {{ $details->middle_name }} {{ $details->last_name }}" readonly="readonly">
             <label for="fname">Contact</label>
                 <input type="text" id="fname" name="fname" style="width: 25%;" class="readapp" value="{{ $details->mobile_num }}" readonly="readonly"><br>
             <label for="fname">Barangay</label>
                 <input type="text" id="fname" name="fname" style="width: 25%;" class="readapp" value="{{ $details->barangay }}" readonly="readonly">
             <label for="fname">Street</label>
-                <input type="text" id="fname" name="fname" style="width: 20%;" class="readapp" value="{{ $details->street }}" readonly="readonly"><br>
-            <label  for="fname">House Number</label>
-                <input type="text" id="fname" name="fname" style="width: 10%;" class="readapp" value="{{ $details->house_num }}" readonly="readonly">
+                <input type="text" id="fname" name="fname" style="width: 25%;" class="readapp" value="{{ $details->street }}" readonly="readonly"><br>
             <label  for="fname">Nearest Landmark</label>
-                <input type="text" id="fname" name="fname" style="width: 20%;" class="readapp" value="{{ $details->nearest }}" readonly="readonly"><br>
-            <label for="quantity" >Available Space</label>
-                <input type="number" id="quantity" name="quantity" style="width:10%;" class="readapp" min="0" value="{{ $details->available_space }}" readonly="readonly"><br><br>
-            
-            <div style="display:flex;">
-            <div class="tablewrapper">
+                <input type="text" id="fname" name="fname" style="width: 25%;" class="readapp" value="{{ $details->nearest }}" readonly="readonly">
+            <label for="quantity" >Available space</label>
+                <input type="number" id="quantity" name="quantity" style="width:10%;" class="readapp" min="0" value="{{ $details->available_space }}" readonly="readonly"><br>
+
+        <div style="display:flex;margin-top:2%;">
+
+        <div>
             <table class="viewdormtable" id="room">
                 <tr>
                     <th>Amenities</th>
                 </tr>
                 @foreach($amenities as $amenities)
-                <tr>
+               <tr>
                     <td class="readapp">{{ $amenities->amenities }}</td>
                </tr>
                @endforeach
             </table>
-            </div>
+        </div>
 
-            <div class="tablewrapper"  >
+        <div style="margin-left:5%;">
             <table class="viewdormtable" id="room">
                 <tr>
                     <th>Room Type</th>
+                    <th>Vacancy</th>
                     <th>Price</th>
                 </tr>
-                @foreach($room_types as $types)
-               <tr>
+                @foreach($room_types as $types) 
+                <tr>
                     <td class="readapp">{{ $types->room_type }}</td>
+                    <td class="readapp">5</td>
                     <td class="readapp">{{ $types->price }}</td>
                 </tr>
                 @endforeach
             </table>
-            </div>
         </div>
-            
-            <p class="descriptiondorm">{{ $details->description }} </p>
-            <a href="/applyconfirmation/{{ $details->id }}"><button type="button" class="secondyellowbutton" style="margin-top:1%;width:20%;">APPLY</button></a>  
-        </form>
-    </div>
+        </div>
+        
+                <a href="/applyconfirmation/{{ $details->id }}"><button type="button" class="secondyellowbutton" style="margin-top:5%;width:25%;"> APPLY</button></a>  
+            </form>
+        </div>
 
-<script>
-var slideshow = document.getElementById("slideshow");
+        <!-- SCRIPT FOR SLIDESHOW  -->
+        <script>
+        var slideshow = document.getElementById("slideshow");
         slideshow.currentSlideIndex = 1;
         showSlides(slideshow.currentSlideIndex, slideshow);
         function plusSlides(n, slideshow) {
@@ -127,8 +132,6 @@ var slideshow = document.getElementById("slideshow");
         slides[slideshow.currentSlideIndex-1].style.display = "block";  
         }
     
-</script>
-
-        </body>
-    </head>
+        </script>
+    </body>
 </html>

@@ -25,7 +25,7 @@ h1{
 }
 
 h3{
-    color: #FFCD00;
+    color: #0C4B05;
     font-size: 1.3vw;
     margin-top:5;
 }
@@ -85,13 +85,20 @@ hr{
 }
 
 .note{
-  color:white;background-color: #0C4B05;margin-top:20px;width:50%;
+  color:white;
+  background-color: #0C4B05;
+  margin-top:20px;
+  width:80%;
   border-radius: 10px;
+  font-family: Arial;
+  font-weight:lighter;
+  font-size: 1.2vw;
   padding:1%;
 }
 
 .profile_con{
   width:100%;
+  padding-bottom: 5%;
 }
 
 .profile_con form{
@@ -104,7 +111,7 @@ hr{
 .profile_con label{
   font-family: ABold;
   color: #0C4B05;
-  font-size: 1vw;
+  font-size: 1.5vw;
   margin-right: 2%;
   display: inline-block;
   width: 20%;
@@ -117,7 +124,7 @@ label{
     color: #0C4B05;
     font-size: 1.5vw;
     display: inline-block;
-    width: 15%;
+    width: 20%;
 }
 
 
@@ -164,6 +171,8 @@ background: #1D6115;
 .descriptiondorm{
   font-size: 1.1vw;
   color: #0C4B05;
+  width: 85%;
+  margin-bottom: 5%;
 
 
 }
@@ -266,18 +275,7 @@ background: #1D6115;
     border-radius: 20px;
     float: right;
     cursor: pointer;
-    font-size: 1vw;
-}
-
-.contractbutton {
-  background-color:#ebbc00;
-  color: #0C4B05;
-  border-style: none;
-  width: 15%;
-  height: 30px;
-  border-radius: 10px;
-  cursor: pointer;
-  font-size: 1vw;
+    font-size: 1.2vw;
 }
 
 .greenbutton {
@@ -293,17 +291,18 @@ background: #1D6115;
   font-size: 1vw;
 }
 
-.cancelbutton {
+.confirmcancelbutton {
     background-color:transparent;
     color: #0C4B05;
     border-style:solid;
     border-color: #0C4B05;
-    width: 100%; height: 40px;
+    width: 20%; height: 40px;
     border-radius: 20px;
-    padding: 0px 35px 0px 35px;
-    margin: 20px 0px 0px 5px;
+    margin-top: 5%;
+    margin-left: 2%;
     cursor: pointer;
     font-size: 1vw;
+    float: left;
 }
 
 .registercancelbutton {
@@ -322,7 +321,7 @@ background: #1D6115;
 .inputapp{
     font-family: Regular;
     height: 30px;
-    font-size: 1vw;
+    font-size: 1.2vw;
     display: inline-block;
 }
 
@@ -397,8 +396,9 @@ background: #1D6115;
 
 .dorm_name {
     background-color: #0C4B05;
-    color: #FFCD00;
+    color: white;
     padding-left: 50px;
+    font-size: 2vw;
     margin-top:3%
 }
 
@@ -416,6 +416,7 @@ background: #1D6115;
     margin-top: 100px;
 }
 
+
 /*SLIDESHOW IMAGE CSS*/
 * {
     box-sizing: border-box;
@@ -428,7 +429,6 @@ background: #1D6115;
   /* Position the image container (needed to position the left and right arrows) */
   .imgcontainer {
     position: relative;
-    padding-left: 30px;
     width: 80%;
     height: 500px;
   }
@@ -474,13 +474,16 @@ background: #1D6115;
     color: #FFCD00;
   }
   
-  /* Number text (1/3 etc) */
-  .numbertext {
-    color: #f2f2f2;
-    font-size: 1vw;
+  /* Caption text */
+  .text {
+    color: #ffffff;
+    background-color: #0C4B05;
+    font-size: 1.5vw;
     padding: 8px 12px;
     position: absolute;
-    top: 0;
+    bottom: 8px;
+    width: 100%;
+    text-align:left;
   }
   
   .row:after {
@@ -504,7 +507,7 @@ background: #1D6115;
   .demo:hover {
     opacity: 1;
   }
-/*SLIDESHOW IMAGE CSS*/
+/* END FOR SLIDESHOW IMAGE CSS*/
 
 /* TABLE FOR VIEW DORM */
 .viewdormtable{
@@ -513,25 +516,16 @@ background: #1D6115;
 }
 .viewdormtable th{
 font-family: ABold;
-color: #0C4B05;
+color: white;
+background-color: #0C4B05;
 font-size: 1.5vw;
 text-align: left;
-margin-right: 5%;
+height: 20px;
+position: sticky;
 }
 
-.tablewrapper {
-  overflow:hidden;
-  overflow-y: scroll;
-  height: 200px;
-}
 
-.tablewrapper th {
-  top: 0;
-  z-index: 2;
-  position: sticky;
-  background-color:#0C4B05;
-  color: whitesmoke;
-}
+
 /* END TABLE FOR VIEW DORM */
 
 /* AMENITIES LIST*/ 
@@ -560,7 +554,7 @@ margin-right: 5%;
     float: right;
     margin-top: 5px;
     margin-left: 15%;
-    z-index: 2;
+    z-index: 3;
 }
 
 .menu button{
@@ -695,6 +689,31 @@ margin-right: 5%;
   height: 400px;
   width: 95%;
 }
+
+.tableFixHead button{
+  background-color: #0C4B05;
+  color: white;
+  font-size: 1.2vw;
+  border-style: none;
+  border-radius: 10px;
+  width: 60%;
+  height: 35px;
+}
+
+
+.tableFixHead button:hover{
+  background-color: #FFB700;
+  color:#0C4B05;
+  font-size: 1.2vw;
+  border-style: none;
+  border-radius: 10px;
+  width: 60%;
+  height: 35px;
+  cursor: pointer;
+}
+
+
+
 .tableFixHead thead th {
   position: sticky;
   top: 0;
@@ -784,15 +803,13 @@ section {
 
 .h2nav {
   font-size: 80px;
-  text-align: left;
-  color: #FFB700;
+  text-align: center;
+  color: white;
 }
 section:nth-of-type(1) {
   background: #0C4B05;
 }
-section:nth-of-type(2) {
-  background: #0C4B05;
-}
+
 
 input[type='radio'] {
   display: none;
@@ -810,33 +827,25 @@ input[type='radio']#section1:checked ~ section:nth-of-type(1) {
 input[type='radio']#section1:checked ~ .cover {
   background-color: #FFB700;
 }
-input[type='radio']#section2:checked ~ nav label[for='section2'] {
-  background-color: #FFB700;
-  color: #0C4B05;
-}
-input[type='radio']#section2:checked ~ section:nth-of-type(2) {
-  z-index: 1;
-  top: 0;
-  transition: top 0.5s ease-in-out;
-  transition-delay: 0s;
-}
-input[type='radio']#section2:checked ~ .cover {
-  background-color: #FFB700;
-}
+
 
 .text--sub {
-	font-size: 12px;
+	font-size: 1.5vw;
 	letter-spacing: 0.5rem;
 	text-transform: uppercase;
 	margin-bottom: 40px;
 }
 
 .text--normal {
-	font-size: 13px;
-	color: rgba(255, 255, 255, 0.8);
+	font-size: 1.2vw;
+	color:white;
 	line-height: 22px;
-  width: 50%;
+  width: 65%;
 	margin-top: 25px;
+  text-indent: 10%;
+  text-align: justify;
+  padding: 2%;
+  font-weight:normal; 
 }
 
 .text__background {
@@ -845,7 +854,7 @@ input[type='radio']#section2:checked ~ .cover {
 	left: 72px;
 	bottom: -60px;
 	color: rgba(0,0,0,0.05);
-	font-size: 100px;
+	font-size: 5vw;
 	font-weight: 700;
 }
 
@@ -862,11 +871,55 @@ input[type='radio']#section2:checked ~ .cover {
 .dorm {
   background-color:#FFB700;
   color: #0C4B05;
-  margin-top: -3%;
-  border-style: none;
-  width: 20%;
-  height: 30px;
+  width: 30%;
+  height: 40px;
   border-radius: 15px;
   cursor: pointer;
-  font-size: 1.1vw;
+  border-style: none;
+  font-size: 1.3vw;
+}
+
+/* FOR ON AND OFF CAMPUS SLIDERS : dorm.blade.php*/
+.centerheader{
+  width:100%;
+  display:flex;
+  z-index:3;
+  margin-top: 5%;
+  color: #FFB700;
+  padding-left:25%;
+}
+
+.onslider{
+  padding-left: 20%;
+  padding-bottom: 5%;
+  height: 85%;
+  width: 50%;
+  display: flex;
+  align-items: center;
+  position: absolute;
+  right:50%;  
+ background-color: #0C4B05;
+}
+
+.offslider{
+  padding-left: 1%;
+  padding-bottom: 5%;
+  height: 85%;
+  width: 50%;
+  display: flex;
+  align-items: center;
+  position: absolute;
+right:0%;  
+background-color: #1D6115;
+}
+
+.smallheader{
+  padding: 0.5% 0.5% 0.5% 2%;
+  margin-bottom: 0.5%;
+  margin-top:0.5%;
+  color:white;
+  width: 100%;
+  background-color: #0C4B05;
+  font-size: 1.4vw;
+
 }

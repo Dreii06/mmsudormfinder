@@ -19,7 +19,7 @@
     
     <body class="antialiased">
         
-    <div class="uppernav"><h3 style="color:#0C4B05;margin-left:20px;">MMSU </h3><h3> - Admin Dorm Management</h3></div>
+    <div class="uppernav"><h3 style="color:#0C4B05;margin-left:20px;">MMSU - Admin Dorm Management</h3></div>
     <div class="topnav" id="myTopnav">
         <img style="float:left;margin-left:20px;margin-top:12px;" src="/images/mmsu logo.png"  height="3%" width="3%">
         <h4>MARIANO MARCOS <br> STATE UNIVERSITY</h4>
@@ -43,16 +43,16 @@
 
     
     <div class="dashboard_con">
-<input type="radio" name="item" checked="checked" id="section1" />
+    <input type="radio" name="item" checked="checked" id="section1" />
     <input type="radio" name="item" id="section2" />
+    <input type="radio" name="item" id="section3" />
 
     <nav class="nav">
       <label class="nav-item" for="section1">R</label>
-      <label class="nav-item" for="section2">D</label>
-
+      <label class="nav-item" for="section2">O</label>
+      <label class="nav-item" for="section3">D</label>
     </nav>
 
-    
     <section>
         <h2 class="h2nav"><p class="text--sub">admin management</p>Registrants <p class="text--normal">Pikachu is an Electric-type Pokémon introduced in Generation I. Pikachu are small, chubby, and incredibly 
           cute mouse-like Pokémon. They are almost completely covered by yellow fur.</p><p class="text--sub">CLICK BUTTONS ON THE <br>RIGHT SIDE TO CHOOSE</p><p class="text__background">ADMIN</p>

@@ -37,54 +37,78 @@
         </ul>    
     </div>
 
-<div class="updatedormcontainer">
-    
-    <label for="slide">Uploaded Images</label>
-    <div class="slide-container" id="slide">
+<div class="updateimagecon">
+
+    <!-- SLIDESHOW OF DORMITORY  -->
+    <div class="dorm_details_con">
+
+        <div id="slideshow" class="imgcontainer">
         @foreach($images as $image)
-            <img src="/images/{{ $image->filename }}" />
+        <div class="mySlides">
+            <img src="/images/{{ $image->filename }}" style="width:100%;height:400px;">
+            <div class="text">{{ $image->filename }}</div><div class="IDtext">Image ID: {{ $image->id }}</div>
+        </div>
         @endforeach
+        <a class="prev" onclick="plusSlides(-1, slideshow)">❮</a>
+        <a class="next" onclick="plusSlides(1, slideshow)">❯</a>
+        </div>
+         
     </div>
+    
+    <div class="dorm_details">    
+        <form style="width:90%;" action="/manager/updateimage/{{ Auth::guard('manager')->user()->id }}" method="post" enctype="multipart/form-data">
+            @csrf
+        <label style="width:70%;margin-top:5%;" for="image">Add Image File type: [JPG/PNG]</label><br>
+            <input type="file" id="myfile" class="imagefile" name="image" accept="image/*"><br>
 
-    <form action="/manager/updateimage/{{ Auth::guard('manager')->user()->id }}" method="post" enctype="multipart/form-data">
-        @csrf
-    <div id="linkimage">
-        <label for="image">Add Image <br><h5 style="margin-top:0px;color:#FFB700;">File type: [JPG/PNG]</h5></label> 
-        <label for="image"></label> 
-        <input type="file" name="image" accept="image/*" class="inputapp" required>
-    </div>
+    <label style="width:40%;margin-bottom:2%;" for="image" >Select label for image</label><br>
+        <select style="width:auto" class="inputapp" name="filename" required>
+            <option>Single Space</option>
+            <option>Ammenities</option>
+            <option>Single Space</option>
+        </select>
 
-    <a href="updatedorm"><button type="submit" name="submit" value="ADD" class="secondyellowbutton" style="margin-right:15%;margin-top:10px;">ADD</button></a>
-    <a href="updatedorm"><button type="button" class="greenbutton" style="margin-right:2%;margin-top:10px;">CANCEL</button></a>
-</form>
+    <a href="updatedorm"><button type="submit" name="submit" value="ADD" class="secondyellowbutton" style="margin-right:15%;margin-top:10px;margin-bottom:2%;">ADD</button></a><br>
+    
+    <hr style="margin-top:0%;margin-bottom:5%;"><br>
+
+    <label style="width:30%;margin-bottom:2%;" for="image">Delete image by ID</label>
+        <select style="width:15%" class="inputapp" name="delfilename">
+        @foreach($images as $filename)
+            <option value="{{ $filename->id }}">{{ $filename->id }}</option>
+        @endforeach
+        </select>
+    <a href="updatedorm"><button type="submit" name="submit" value="DEL" class="secondyellowbutton" style="margin-right:15%;margin-top:0%;margin-bottom:2%;">DELETE</button></a>
+        <hr style="margin-top:2%;"><br>
+    
+    </form>
+</div>
 </div>
 </body>
 
 <script>
-/*
-This script is identical to the above JavaScript function.
-*/
-var ig = 1;
-function new_linkimage()
-{
-	ig++;
-	var div2 = document.createElement('div');
-	div2.id = ig;
-	// link to delete extended form elements
-	var delLink = '<button type="button" onclick="delItimg('+ ig +')" class="addbutton">x</button>';
-    var addLink = '<button type="button" onclick="new_linkimage()" class="addbutton">+</button>  ';
-	div2.innerHTML = document.getElementById('newlinkimage').innerHTML + delLink ;
-	document.getElementById('linkimage').appendChild(div2);
-}
-// function to delete the newly added set of elements
-function delItimg(eleId)
-{
-	d = document;
-	var ele = d.getElementById(eleId);
-	var parentEle = d.getElementById('linkimage');
-	parentEle.removeChild(ele);
-}
-     
+var slideshow = document.getElementById("slideshow");
+        slideshow.currentSlideIndex = 1;
+        showSlides(slideshow.currentSlideIndex, slideshow);
+        function plusSlides(n, slideshow) {
+        showSlides(slideshow.currentSlideIndex += n, slideshow);
+        }
+        function currentSlide(n, slideshow) {
+        showSlides(slideshow.currentSlideIndex = n, slideshow);
+        }
+        function showSlides(n, slideshow) {
+  
+            var i;
+            var slides = slideshow.getElementsByClassName("mySlides");
+       
+            if (n > slides.length) {slideshow.currentSlideIndex = 1}    
+            if (n < 1) {slideshow.currentSlideIndex = slides.length}
+        for (i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";  
+        }
+        slides[slideshow.currentSlideIndex-1].style.display = "block";  
+        }
+    
 </script>
 
 </html>

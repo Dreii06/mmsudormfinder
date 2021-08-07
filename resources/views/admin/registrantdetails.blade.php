@@ -14,7 +14,7 @@
     
     <body class="antialiased">
         
-    <div class="uppernav"><h3 style="color:#0C4B05;margin-left:20px;">MMSU </h3><h3> - Admin Dorm Management</h3></div>
+    <div class="uppernav"><h3 style="color:#0C4B05;margin-left:20px;">MMSU - Admin Dorm Management</h3></div>
     <div class="topnav" id="myTopnav">
         <img style="float:left;margin-left:20px;margin-top:12px;" src="/images/mmsu logo.png"  height="3%" width="3%">
         <h4>MARIANO MARCOS <br> STATE UNIVERSITY</h4>
@@ -36,22 +36,29 @@
         </ul>
     </div>
 
-    <div class="dorm_details_con">
+    <div class="dormdeets">
     
-    <form action="/admin/registrants" method="POST">
-    @csrf
-        <label for="fname">Manager</label>
-            <input type="text" id="fname" name="name" style="width: 65%;" class="readapp" value="{{ $details->first_name }}" readonly="readonly"><br><br>
-        <label for="fname">Dorm Name</label>
-            <input type="text" id="fname" name="dorm_name" style="width: 65%;" class="readapp" value="{{ $details->dorm_name }}" readonly="readonly"><br><br>
-        <label for="fname">Email</label>
-            <input type="text" id="fname" name="email" style="width: 65%;" class="readapp" value="{{ $details->email }}" readonly="readonly"><br><br>
-        <label for="fname">Contact Number</label>
-            <input type="text" id="fname" name="contact" style="width: 65%;" class="readapp" value="{{ $details->mobile_num }}" readonly="readonly"><br><br><br>
+    <form style="width:65%;margin-left:24%;" action="/admin/registrants" method="POST">
+        @csrf
+        
+        <div class="smallheader">FULL NAME</div>
+        <label for="fname">First Name</label>
+        <label for="fname">Middle Name</label>
+        <label for="fname">Last Name</label><br>
+        
+        <input type="text" id="fname" name="fname" style="width: 20%;" class="inputapp" value="{{ $details->first_name }}" readonly>
+        <input type="text" id="fname" name="fname" style="width: 20%;" class="inputapp" value="{{ $details->middle_name }}" readonly>
+        <input type="text" id="fname" name="fname" style="width: 20%;" class="inputapp" value="{{ $details->last_name }}" readonly><br><br>
 
-        <div class="btndorm_container">
-        <button type="submit" onclick="##" class="btndownload">ACCEPT</button>
-        <a href="occupantslist"><button type="button" class="btnviewocc">DENY</button></a>
+        <div class="smallheader">OTHER INFORMATION</div>
+        <label for="dname">Dorm Name</label>
+        <label for="contact">Contact</label><br>
+   
+        <input type="tel" id="fname" name="dname" style="width: 20%;" class="inputapp" value="{{ $details->dorm_name }}" readonly>
+        <input type="text" id="fname" name="contact" style="width: 20%;" class="inputapp" value="{{ $details->mobile_num }}" readonly><br>
+
+        <a href="occupantslist"><button type="button" onclick="remove()" style="margin: 5% 7% 0% 1%;float:right;"class="btndelete">DENY</button></a>
+        <button type="submit" onclick="download()"  style="margin-left:0%;margin-top:5%;float:right;"class="btndownload">ACCEPT</button>
         </div>
     </form>    
     

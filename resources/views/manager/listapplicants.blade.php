@@ -39,7 +39,7 @@
         </ul>    
     </div>
 
-    <div class="header"> <h1>APPLICANTS</h1>
+    <div class="header"> <h1 style="color:white;">APPLICANTS</h1>
       <form style="margin-top:2%;margin-left:30%;" action="###">
         <input type="text" id="search" onkeyup="searchFunction()" placeholder="Search.." name="search">
         <button type="submit"><img src="https://img.icons8.com/pastel-glyph/50/000000/search--v2.png" width="100%"></button>
@@ -48,7 +48,7 @@
   <!-- END OF NAVIGATION BAR -->
    
   <!-- TABLE -->
-    <div class="listappcontainer" style="margin-top:2%;">
+    <div class="listappcontainer">
         
     <div class="tableFixHeadtitle">LIST OF APPLICANTS</div>  
     <div class="tableFixHead">
@@ -58,14 +58,16 @@
             <th>NAME</th>
             <th>STUDENT NUMBER</th>
             <th>CONTACT NUMBER</th>
+            <th></th>
           </tr>
         </thead>
         <tbody>
           @foreach ($applicants as $applicant)
           <tr>
-            <td><a href="detailsapplicant/{{ $applicant['id'] }}">{{ $applicant->first_name }} {{ $applicant->middle_name }} {{ $applicant->last_name }}</a></td>
+            <td>{{ $applicant->first_name }} {{ $applicant->middle_name }} {{ $applicant->last_name }}</td>
             <td>{{ $applicant->stud_num }}</td>
             <td>{{ $applicant->mobile_num }}</td>
+            <td><a href="detailsapplicant/{{ $applicant->id }}"><button type="button">VIEW</button></a></td>
           </tr>
           @endforeach
         </tbody>

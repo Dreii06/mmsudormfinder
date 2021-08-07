@@ -54,86 +54,31 @@
     </form>        
     </div>
         
-        @foreach($dorm as $dorm)
-        <div class="dorm_name"> <h2>{{ $dorm['dorm_name'] }}</h2> </div><br>
-        <div class="dorm_details_con">
-
-        <div id="slideshow1" class="imgcontainer">
-        <div class="mySlides">
-        <div class="numbertext">1 / 4</div> <img src="/images/sample.jpg" style="width:100%;height:100%;"></div>
-
-        <div class="mySlides">
-        <div class="numbertext">2 / 4</div> <img src="/images/sample2.jpg"  style="width:100%;height:100%;"> </div>
-
-        <div class="mySlides">
-        <div class="numbertext">3 / 4</div> <img src="/images/sample.jpg"  style="width:100%;height:100%;"> </div>
-
-        <div class="mySlides">
-        <div class="numbertext">4 / 4</div> <img src="/images/sample2.jpg"  style="width:100%;height:100%;"> </div>
-
-        <a class="prev" onclick="plusSlides(-1, slideshow1)">❮</a>
-        <a class="next" onclick="plusSlides(1, slideshow1)">❯</a>
-        </div>
-        </div>
-
-        <div class="dorm_details">
-        <form style="width:80%;margin-top: 2%;">
-        @csrf
-            <label for="fname">Owner</label>
-                <input type="text" id="fname" name="name" style="width: 40%;" class="readapp" value="{{ $dorm['owner_name'] }}" readonly="readonly"><br>
-            <label for="fname">Address</label>
-                <input type="text" id="fname" name="address" style="width: 40%;" class="readapp" value="{{ $dorm['address'] }}" readonly="readonly"><br>
-            <label for="fname">Contact</label>
-                <input type="text" id="fname" name="contact" style="width: 40%;" class="readapp" value="{{ $dorm['contact_num'] }}" readonly="readonly"><br>
-            <label for="fname">Amenities</label>
-                <input type="text" id="fname" name="amenities" style="width: 40%;" class="readapp" value="{{ $dorm['amenities'] }}" readonly="readonly"><br>
-    
-            <label for="room">Type of Room</label>
-                <select name="room" id="room" style="width: 20%;" class="inputapp">
-                    <option value="cas">CAS</option>
-                    <option value="coe">COE</option>
-                    <option value="cbea">CBEA</option>
-                    <option value="chs">CHS</option>
-                </select>
-            <label for="fname" style="width:20%;margin-left:3%">Room Fee</label>
-                <input type="text" id="fname" name="fee" style="width: 10%; margin-left:-5%;" class="readapp" value="1200" readonly="readonly"><br>
-   
-            <label for="quantity" >Available space</label>
-                <input type="number" id="quantity" name="quantity" style="width:10%;" class="readapp" min="0" value="{{ $dorm['available_space'] }}" readonly="readonly">
-            <a href="/applyconfirmation/{{ $dorm['id'] }}"><button type="button" class="secondyellowbutton" style="margin-top:1%;width:20%;">APPLY</button></a>
-        </form>
-        </div>
-
-        <script>
-            var slideshow1 = document.getElementById("slideshow1");
-            slideshow1.currentSlideIndex = 1;
-            showSlides(slideshow1.currentSlideIndex, slideshow1);
-
-            function plusSlides(n, slideshow) {
-                showSlides(slideshow.currentSlideIndex += n, slideshow);
-            }
-
-            function currentSlide(n, slideshow) {
-                showSlides(slideshow.currentSlideIndex = n, slideshow);
-            }
-
-            function showSlides(n, slideshow) {
-                var i;
-                var slides = slideshow.getElementsByClassName("mySlides");
-
-                if (n > slides.length) {slideshow.currentSlideIndex = 1}
-                if (n < 1) {slideshow.currentSlideIndex = slides.length}
-
-                for (i = 0; i < slides.length; i++) {
-                    slides[i].style.display = "none";
-                }
-
-                slides[slideshow.currentSlideIndex-1].style.display = "block";
-            }
-        </script>
+    <div class="listappcontainer">
+    <div class="tableFixHeadtitle">LIST OF DORMITORIES</div>  
+    <div class="tableFixHead">
+      <table>
+        <thead>
+          <tr>
+            <th>DORMITORY NAME</th>
+            <th>DORM MANAGER</th>
+            <th>CONTACT NUMBER</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+            @foreach($dorm as $dorm)
+          <tr>
+            <td>{{ $dorm->dorm_name }}</a></td>
+            <td>{{ $dorm->first_name }} {{ $dorm->middle_name }} {{ $dorm->last_name }}</td>
+            <td>{{ $dorm->mobile_num }}</td>
+            <td><a href="/dormitorydetails/{{ $dorm['id'] }}"><button type="button">VIEW</button></a></td>
+          </tr>
+          @endforeach
+        </tbody>
+      </table>
+    </div>
+    </div>
         
-        @endforeach
-        
-        </body>
-    </head>
+    </body>
 </html>

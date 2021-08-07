@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\Auth;
 use App\Models\Occupants;
 use App\Models\Applicants;
 use App\Models\Dorms;
+use App\Models\RoomType;
 
 class OccupantsController extends Controller
 {
@@ -75,6 +76,9 @@ class OccupantsController extends Controller
             $occupant->save();
             $dorm->decrement('available_space');
 
+            $room_type = RoomType::where('room_type', '=', $occupant->room_type)->first();
+            $room_type->decrement('vacancy');
+
             $applicant = Applicants::where('stud_num', '=', $occupant->stud_num)->where('dormitory', '=', $manager->dorm_name)->first();
             $applicant->delete();
         } else if ($request->submit == "DENY") {
@@ -90,6 +94,9 @@ class OccupantsController extends Controller
         $occupant = Occupants::where('stud_num', '=', request('stud_id'))->first();
         $id = Auth::guard('manager')->id();
         $dorm = Dorms::find($id);
+
+        $room_type = RoomType::where('room_type', '=', $occupant->room_type)->first();
+        $room_type->increment('vacancy');
 
         $occupant->delete();
         $dorm->increment('available_space');

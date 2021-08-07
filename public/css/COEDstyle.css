@@ -24,7 +24,7 @@ h1{
 }
 
 h3{
-    color: #FFB700; 
+    color: #0C4B05; 
 }
 
 h4{
@@ -56,11 +56,12 @@ hr{
 label{
   font-family: ABold;
   color: #0C4B05;
-  font-size: 1.1vw;
+  font-size: 1.3vw;  
   margin-right: 2%;
   display: inline-block;
-  width: 25%;
+  width: 20%;
   margin-left: 0%;
+  padding: 0%;
 }
 
 textarea{
@@ -95,8 +96,8 @@ textarea{
 
 
 .header{
-  background-color: #FFCD00;
-  color: #0C4B05;
+  background-color: #1D6115;
+  color:white;
   padding-left: 25%;
   display: flex;
   width: auto;
@@ -200,8 +201,10 @@ background: #1D6115;
 
 .listappcontainer {
     display: block;
+    height: 100%;
     padding-left: 25%;   
-    margin-top: 5%; 
+    padding-top: 2%; 
+    overflow-y: scroll;
 }
 
 .listappcontainer form {
@@ -236,10 +239,20 @@ background: #1D6115;
 .updatedormcontainer{
   padding-left: 25%;
   padding-bottom: 10%;
-  margin-top: 5%;
+  padding-top: 2%;
   overflow: auto;
-  height: 550px;
+  height: 600px;
   width: auto;
+}
+
+.updateimagecon{
+  padding-left: 22%;
+  padding-bottom: 10%;
+  padding-top: 2%;
+  overflow: auto;
+  display: flex;
+  height: 600px;
+  width: 100%;
 }
 
 .logincontainer {
@@ -297,7 +310,7 @@ background: #1D6115;
     color: #0C4B05;
     border-style: none;
     font-size: 1.3vw;
-    width: 30%;
+    width: 20%;
     height: 40px;
     border-radius: 12px;
     cursor: pointer;
@@ -338,6 +351,7 @@ background: #1D6115;
     margin-top:15px; 
     margin-bottom:50px;
     float: right;
+    font-size: 1vw;
     cursor: pointer;
 }
 
@@ -352,6 +366,7 @@ background: #1D6115;
     margin-top:15px; 
     margin-bottom:50px;
     float: right;
+    font-size: 1vw;
     cursor: pointer;
 }
 
@@ -372,11 +387,10 @@ background: #1D6115;
   background-color:#1D6115;
   color: #FFB700;
   font-size: 1vw;
-  border-style:solid;
-  border-color: #FFB700;
+  border-style:none;
   width: 50px;
   height: 40px;
-  border-radius: 10px;
+  border-radius: 20px;
   margin: 0px 5px 10px 5px;
   cursor: pointer;
 }
@@ -388,6 +402,7 @@ background: #1D6115;
     border-radius: 5px;
     margin-right:2%;
     border-width: 1px;
+    font-size: 1.1vw;
   }
 
 #newlink {
@@ -468,8 +483,10 @@ margin-top: 15px;
 }
 
 .dorm_details_con {
-    margin: auto;
+    margin: 0%;
     display: flex;
+    width: 40%;
+
 }
 
 .dorm_name {
@@ -479,16 +496,25 @@ margin-top: 15px;
 }
 
 .dorm_details {
-    color: #FFB700;
-    font-family: ABold;
-    font-size: 20px;
-    margin-left: -150px;
+padding-left: 5%;
+ width: 70%;  
 }
 
 
 /* TABLE FOR VIEW DORM */
 .viewdormtable{
   font-size: 1.2vw;
+  margin-right: 3%;
+}
+
+.viewdormtable button{
+  background-color: #0C4B05;
+  color: white;
+  font-size: 1vw;
+  border-style: none;
+  border-radius: 10px;
+  width: 50%;
+  height: 25px;
 }
 
 .viewdormtable th{
@@ -497,7 +523,13 @@ color: white;
 font-size: 1.2vw;
 text-align: left;
 background-color: #0C4B05;
+position: sticky;
 }
+
+.viewdormtable td{
+  background-color: rgb(221, 221, 221);
+}
+
 
 
 /* TABLE FOR VIEW DORM */
@@ -554,107 +586,46 @@ display: flex;
   width: 100%;
   border-style: none;
   background-color: transparent;
-  padding-left: 50px;
   text-align: left;
+  padding-left: 50px;
 }
 
-  /*FOR IMAGE OVERLAY DASHBOARD*/
-  * {
-    box-sizing: border-box;
-  }
-  
-.leftcontainer {
-    position: relative;
-    margin-right: 10px;
-  }
-
-.rightcontainer{
-    position: relative;
-    margin-right: 10px;
+.verticalnav button:hover{
+  background-color:#FFB700;
+    color: #0C4B05;
+    cursor: pointer;
 }
 
-.middlecontainer{
-    position: relative;
-    margin-right: 10px;
-}
-  
-.image {
-    display: block;
-    width: 100%;
-    height:250px;
-}
-  
-.overlay {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    background-color: #0C4B05;
-    overflow: hidden;
-    width: 0;
-    height: 100%;
-    transition: .5s ease;
-}
-
-.rightoverlay {
-    position: absolute;
-    bottom: 0;
-    left: 100%;
-    right: 0;
-    background-color: #0C4B05;
-    overflow: hidden;
-    width: 0;
-    height: 100%;
-    transition: .5s ease;
-}
-
-.middleoverlay {
-    position: absolute;
-    bottom: 100%;
-    left: 0;
-    right: 0;
-    background-color: #0C4B05;
-    overflow: hidden;
-    width: 100%;
-    height:0;
-    transition: .5s ease;
-}
-
-  .leftcontainer:hover .overlay {
-    width: 100%;
-    height:250px;
-  }
-
-  .rightcontainer:hover .rightoverlay {
-    width: 100%;
-    height:250px;
-    left: 0;
-  }
-
-  .middlecontainer:hover .middleoverlay {
-    width: 100%;
-    height:250px;
-    bottom: 0;
-  }
-  
-  .text {
-    color: #FFB700;
-    font-size: 1.2vw;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    -webkit-transform: translate(-50%, -50%);
-    -ms-transform: translate(-50%, -50%);
-    transform: translate(-50%, -50%);
-    white-space: nowrap;
-  }
 
   /* SCROLLABLE LIST */
   .tableFixHead {
     overflow-y: auto;
     height: 400px;
     width: 95%;
+    border-radius: 15px;
   }
+
+  .tableFixHead button{
+    background-color: #0C4B05;
+    color: white;
+    font-size: 1.2vw;
+    border-style: none;
+    border-radius: 10px;
+    width: 60%;
+    height: 35px;
+  }
+  
+  .tableFixHead button:hover{
+    background-color: #FFB700;
+    color:#0C4B05;
+    font-size: 1.2vw;
+    border-style: none;
+    border-radius: 10px;
+    width: 60%;
+    height: 35px;
+    cursor: pointer;
+  }
+
   .tableFixHead thead th {
     position: sticky;
     top: 0;
@@ -662,12 +633,14 @@ display: flex;
 
   .tableFixHeadtitle {
     position: sticky;
-    padding-left: 10px;
+    padding-left:2%;
     width: 95%;
     margin: 0px 0px 0px 0px;
     color: #FFB700;
     background-color: #0C4B05;
     font-size: 2vw;
+    border-radius: 20px;
+    margin-bottom: 1%;
   }
 
   table {
@@ -677,6 +650,7 @@ display: flex;
   th,
   td {
     padding: 8px 16px;
+    font-size: 1.2vw;
   }
   th {
     background: #eee;
@@ -689,8 +663,8 @@ display: flex;
   }
   .tableFixHead th {
     box-shadow: inset 1px 1px #1D6115, 1 1px #1D6115;
-    background-color: #FFB700;
-    color: #0C4B05;
+    background-color: #1D6115;
+    color:white;
     text-align: left;
   }
 
@@ -879,3 +853,125 @@ input[type='radio']#section3:checked ~ .cover {
 }
 
 /* END FOR 2ND SLIDER*/
+
+
+.smallheader{
+  padding: 0.5% 0.5% 0.5% 2%;
+  margin-bottom: 1%;
+  color:white;
+  width: 100%;
+  background-color: #0C4B05;
+  font-size: 1.4vw;
+  border-radius: 10px;
+}
+
+
+/*SLIDESHOW IMAGE CSS*/
+* {
+  box-sizing: border-box;
+}
+
+img {
+  vertical-align: middle;
+}
+
+/* Position the image container (needed to position the left and right arrows) */
+.imgcontainer {
+  position: relative;
+  width: 100%;
+  height: 500px;
+}
+
+
+/* Hide the images by default */
+.mySlides {
+  display: none;
+}
+
+/* Add a pointer when hovering over the thumbnail images */
+.cursor {
+  cursor: pointer;
+}
+
+/* Next & previous buttons */
+.prev,
+.next {
+  cursor: pointer;
+  position: absolute;
+  top: 30%;
+  width: 7%;
+  padding: 3%;
+  color: white;
+  font-weight: bold;
+  font-size: 1.5vw;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  padding-right: 5%;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover,
+.next:hover {
+  background-color:#0C4B05;
+  color: #FFCD00;
+}
+
+/* Caption text */
+.text {
+  color: #ffffff;
+  background-color: #0C4B05;
+  font-size: 1.5vw;
+  position: absolute;
+  width: 100%;
+  padding-left: 5%;
+  text-align:left;
+}
+
+/* ID text */
+.IDtext {
+  color: #ffffff;
+  background-color: #0C4B05;
+  font-size: 1.5vw;
+  position: absolute;
+  top: 0%;
+  width: 100%;
+  padding-left: 5%;
+  text-align:left;
+}
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Six columns side by side */
+.column {
+  float: left;
+  width: 16.66%;
+}
+
+/* Add a transparency effect for thumnbail images */
+.demo {
+  opacity: 0.6;
+}
+
+.active,
+.demo:hover {
+  opacity: 1;
+}
+/* END FOR SLIDESHOW IMAGE CSS*/
+
+.imagefile{
+  background-color: #1D6115;
+  color: white;
+  margin-top: 3%;
+  margin-bottom: 3%;
+}

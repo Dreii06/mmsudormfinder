@@ -15,7 +15,7 @@
     <body class="antialiased">
         
      
-    <div class="uppernav"><h3 style="color:#0C4B05;margin-left:20px;">MMSU </h3><h3> - Admin Dorm Management</h3></div>
+    <div class="uppernav"><h3 style="color:#0C4B05;margin-left:20px;">MMSU - Admin Dorm Management</h3></div>
     <div class="topnav" id="myTopnav">
         <img style="float:left;margin-left:20px;margin-top:12px;" src="/images/mmsu logo.png"  height="3%" width="3%">
         <h4>MARIANO MARCOS <br> STATE UNIVERSITY</h4>
@@ -52,9 +52,10 @@
         <tbody>
             @foreach($registrants as $registrant)
           <tr>
-            <td><a href="/admin/registrantdetails/{{ $registrant->id }}">{{ $registrant->first_name }} {{ $registrant->middle_name }} {{ $registrant->last_name }}</a></td>
+            <td>{{ $registrant->first_name }} {{ $registrant->middle_name }} {{ $registrant->last_name }}</td>
             <td>{{ $registrant->dorm_name }}</td>
             <td>{{ $registrant->mobile_num }}</td>
+            <td><a href="/admin/registrantdetails/{{ $registrant->id }}"><button type="button">VIEW</button></a></td>
           </tr>
           @endforeach
         </tbody>

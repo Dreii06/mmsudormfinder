@@ -43,14 +43,14 @@
         </ul>    
     </div>
     
-    <div class="header"> <h1>OCCUPANTS</h1>
+    <div class="header"> <h1 style="color:white;">OCCUPANTS</h1>
       <form style="margin-top:2%;margin-left:30%;" action="###">
         <input type="text" id="search" onkeyup="searchFunction()" placeholder="Search.." name="search">
         <button type="submit"><img src="https://img.icons8.com/pastel-glyph/50/000000/search--v2.png" width="100%"></button>
       </form>        
     </div>
 
-    <div class="listappcontainer" style="margin-top:2%;">
+    <div class="listappcontainer">
     <div class="tableFixHeadtitle">LIST OF OCCUPANTS</div>  
     <div class="tableFixHead">
       <table>
@@ -59,14 +59,16 @@
             <th>NAME</th>
             <th>STUDENT NUMBER</th>
             <th>CONTACT NUMBER</th>
+            <th></th>
           </tr>
         </thead>
         <tbody>
             @foreach($occupants as $occupant)
           <tr>
-            <td><a href="detailsoccupant/{{ $occupant['id'] }}">{{ $occupant->first_name }} {{ $occupant->middle_name }} {{ $occupant->last_name }}</a></td>
+            <td>{{ $occupant->first_name }} {{ $occupant->middle_name }} {{ $occupant->last_name }}</td>
             <td>{{ $occupant->stud_num }}</td>
             <td>{{ $occupant->mobile_num }}</td>
+            <td><a href="detailsoccupant/{{ $occupant->id }}"><button type="button">VIEW</button></a></td>
           </tr>
           @endforeach
         </tbody>

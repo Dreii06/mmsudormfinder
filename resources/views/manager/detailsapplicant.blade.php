@@ -42,51 +42,58 @@
 <div class="listappcontainer">
     <form action="/manager/detailsapplicant" method="POST">
     @csrf
-        <label class="detailslabel" for="fstudentid">Student Number</label>  
-        <label class="detailslabel" for="sex" >Sex</label>
-        <label class="detailslabel" for="email">Email</label>
-        <label class="detailslabel" for="number">Mobile Number</label><br>
 
-        <input type="text" style="width:20%;margin-right:2%;margin-left:0%;" id="fstudentid" name="stud_id" value="{{ $details->stud_num }}" class="inputapp" readonly >
-        <input type="text" style="width:20%;margin-right:2%;margin-left:0%;" id="sec" name="sex" value="{{ $details->sex }}" class="inputapp" readonly>
-        <input type="email" style="width:20%;margin-right:2%;margin-left:0%;" id="email" name="email" value="{{ $details->email }}"  class="inputapp" readonly>
-        <input type="tel" style="width:20%;margin-left:0%;" id="number" name="mobile_num" value="{{ $details->mobile_num }}" class="inputapp" readonly><br><br>
+    <div class="smallheader">FULL NAME</div>
+        <label for="fname">First Name</label>
+        <label for="mname">Midle Name</label>
+        <label for="lname">Last Name</label>
+        <label for="sname">Suffix (Jr,,III)</label><br>
 
-        <label class="detailslabel" for="fname">First Name</label>
-        <label class="detailslabel" for="mname">Midle Name</label>
-        <label class="detailslabel" for="lname">Last Name</label>
-        <label class="detailslabel" for="sname">Suffix (Jr,,III)</label><br>
+        <input type="text"  style="width:20%;margin-right:2%;" id="fname" name="first" value="{{ $details->first_name }}" class="inputapp" readonly>
+        <input type="text"  style="width:20%;margin-right:2%;" id="mname" name="middle" value="{{ $details->middle_name }}" class="inputapp" readonly>
+        <input type="text"  style="width:20%;margin-right:2%;" id="lname" name="last" value="{{ $details->last_name }}" class="inputapp" readonly>
+        <input type="text"  style="width:20%;margin-right:2%;" id="sname" name="suffix" value="{{ $details->suffix }}" class="inputapp" readonly><br><br>
 
-        <input type="text"  style="width:20%;margin-right:2%;margin-left:0%;" id="fname" name="first" value="{{ $details->first_name }}" class="inputapp" readonly>
-        <input type="text"  style="width:20%;margin-right:2%;margin-left:0%;" id="mname" name="middle" value="{{ $details->middle_name }}"  class="inputapp" readonly>
-        <input type="text"  style="width:20%;margin-right:2%;margin-left:0%;" id="lname" name="last" value="{{ $details->last_name }}"  class="inputapp" readonly>
-        <input type="text"  style="width:20%;margin-right:2%;margin-left:0%;" id="sname" name="suffix" value="{{ $details->suffix }}"  class="inputapp" readonly><br><br>
+    <div class="smallheader">ADDRESS</div>
+        <label for="barangay">Barangay</label>
+        <label for="street">Street</label>
+        <label  for="city">City</label>
+        <label for="province">Province</label>
 
-        <label class="detailslabel" for="birthday">Barangay</label>
-        <label class="detailslabel" for="birthday">Street</label>
-        <label class="detailslabel" for="birthday">City</label>
-        <label class="detailslabel" for="birthday">Province</label>
+        <input type="text" style="width:20%;margin-right:2%;" id="barangay" name="barangay" value="{{ $details->barangay }}" class="inputapp" readonly>
+        <input type="text" style="width:20%;margin-right:2%;"id="street" name="street" value="{{ $details->street }}" class="inputapp" readonly>
+        <input type="text" style="width:20%;margin-right:2%;"id="city" name="city" value="{{ $details->city }}" class="inputapp" readonly>
+        <input type="text" style="width:20%;"id="province" name="province" value="{{ $details->province }}" class="inputapp" readonly><br><br>
 
-        <input type="text" style="width:20%;margin-right:2%;margin-left:0%;" id="birthday" name="barangay" value="{{ $details->barangay }}"  class="inputapp" readonly>
-        <input type="text" style="width:20%;margin-right:2%;margin-left:0%;"id="birthday" name="street" value="{{ $details->street }}"  class="inputapp" readonly>
-        <input type="text" style="width:20%;margin-right:2%;margin-left:0%;"id="birthday" name="city" value="{{ $details->city }}"  class="inputapp" readonly>
-        <input type="text" style="width:20%;margin-left:0%;"id="birthday" name="province" value="{{ $details->province }}" class="inputapp" readonly><br><br>
+    <div class="smallheader">CONTACT INFORMATION</div>
+        <label for="email">Email</label>
+        <label  for="number">Mobile Number</label>
+        <label for="nameg">Name of Guardian</label>
+        <label for="number">Contact of Guardian</label><br>
 
-        <label class="detailslabel" for="nameg">Name of Guardian</label>
-        <label class="detailslabel" for="number">Contact of Guardian</label>
-        <label class="detailslabel" for="college">College:</label>
-        <label class="detailslabel" for="course">Course:</label><br>
+        <input type="email" style="width:20%;margin-right:2%;" id="email" name="email" value="{{ $details->email }}" class="inputapp" readonly>
+        <input type="tel" style="width:20%;margin-right:2%;" id="number" name="mobile_num" value="{{ $details->mobile_num }}" class="inputapp" readonly>
+        <input type="text" style="width:20%;margin-right:2%;"id="nameg" name="guardian_name" value="{{ $details->guardian_name }}" class="inputapp" readonly>
+        <input type="tel" style="width:20%;"id="number" name="guardian_num" value="{{ $details->guardian_num }}" class="inputapp" readonly><br><br>
 
-        <input type="text" style="width:20%;margin-right:2%;margin-left:0%;"id="nameg" name="guardian_name" value="{{ $details->guardian_name }}"  class="inputapp" readonly>
-        <input type="tel" style="width:20%;margin-right:2%;margin-left:0%;"id="number" name="guardian_num" value="{{ $details->guardian_num }}"  class="inputapp" readonly>
-        <input type="text" style="width:20%;margin-right:2%;margin-left:0%;"id="college" name="college" value="{{ $details->college }}"  class="inputapp" readonly>
-        <input type="text" style="width:20%;margin-right:2%;margin-left:0%;"id="course" name="course" value="{{ $details->course }}"  class="inputapp" readonly><br><br>
+    <div class="smallheader">ACADEMIC INFORMATION</div>
+        <label for="fstudentid">Student Number</label>  
+        <label for="college">College:</label>
+        <label for="course">Course:</label><br>
 
-        <label class="detailslabel" for="room">Room Type</label><br>
-        <input type="text" style="width:20%;margin-right:2%;margin-left:0%;"id="nameg" name="room_type" value="{{ $details->room_type }}"  class="inputapp" readonly><br>
+        <input type="text" style="width:20%;margin-right:2%;" id="fstudentid" name="stud_id" value="{{ $details->stud_num }}" class="inputapp" readonly>
+        <input type="text" style="width:20%;margin-right:2%;" id="college" name="college" value="{{ $details->college }}" class="inputapp" readonly>
+        <input type="text" style="width:20%;margin-right:2%;"id="course" name="course" value="{{ $details->course }}" class="inputapp" readonly><br><br>
 
-        <button type="submit" name="submit" value="DENY" onclick="denyapplicant()" class="greenbutton" style="margin-top:20px;">DENY</button>  
-        <button type="submit" name="submit" value="ACCEPT" onclick="acceptapplicant()" class="secondyellowbutton" style="margin-right:10px;margin-top:20px;">ACCEPT</button>
+    <div class="smallheader">OTHER INFORMATION</div>
+         <label  for="sex" >Sex</label>
+         <label  for="sex" >Room Type</label><br>
+
+         <input type="text" style="width:20%;margin-right:2%;" id="sec" name="sex" value="{{ $details->sex }}" class="inputapp" readonly>
+         <input type="text" style="width:20%;margin-right:2%;" id="fstudentid" name="room_type" value="{{ $details->room_type }}" class="inputapp" readonly>
+
+        <button type="submit" name="submit" value="DENY" onclick="denyapplicant()" class="greenbutton" style="margin-top:0px;">DENY</button>  
+        <button type="submit" name="submit" value="ACCEPT" onclick="acceptapplicant()" class="secondyellowbutton" style="margin-right:10px;margin-top:0%;">ACCEPT</button>
     </form>
 </div>
 

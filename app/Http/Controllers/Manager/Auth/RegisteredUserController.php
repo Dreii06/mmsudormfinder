@@ -47,14 +47,6 @@ class RegisteredUserController extends Controller
             'mobile_num' => 'required|string|max:255'
         ]);
 
-        Dorms::create([
-            'first_name' => $request->first,
-            'middle_name' => $request->middle,
-            'last_name' => $request->last,
-            'dorm_name' => $request->dorm_name,
-            'mobile_num' => $request->mobile_num
-        ]);
-
         $registrant = Registrant::create([
             'first_name' => $request->first,
             'middle_name' => $request->middle,

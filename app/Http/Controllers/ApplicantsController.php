@@ -8,6 +8,7 @@ use App\Models\Occupants;
 use Illuminate\Support\Facades\Auth;
 use App\Models\UserProfile;
 use App\Models\Dorms;
+use App\Models\RoomType;
 
 class ApplicantsController extends Controller
 {
@@ -46,11 +47,11 @@ class ApplicantsController extends Controller
         $applicant->college = $user->college;
         $applicant->course = $user->course;
         $applicant->dormitory = request('dorm', false);
-        $applicant->room_type = request('room_type', false);
+        $applicant->room_type = request('type', false);
 
         $applicant->save();
 
-        return redirect('/offcampusdormslist');
+        return redirect('/applicationlist');
     }
 
     function applicationlist() {
