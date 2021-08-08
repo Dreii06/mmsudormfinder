@@ -42,30 +42,123 @@
     </div>
 
     
-    <div class="dashboard_con">
-    <input type="radio" name="item" checked="checked" id="section1" />
-    <input type="radio" name="item" id="section2" />
-    <input type="radio" name="item" id="section3" />
+<div class="dashboard_con">
 
-    <nav class="nav">
-      <label class="nav-item" for="section1">R</label>
-      <label class="nav-item" for="section2">O</label>
-      <label class="nav-item" for="section3">D</label>
-    </nav>
+<input type="radio" name="item" checked="checked" id="section1" />
+   <input type="radio" name="item" id="section2" />
+   <input type="radio" name="item" id="section3" />
 
-    <section>
-        <h2 class="h2nav"><p class="text--sub">admin management</p>Registrants <p class="text--normal">Pikachu is an Electric-type Pokémon introduced in Generation I. Pikachu are small, chubby, and incredibly 
-          cute mouse-like Pokémon. They are almost completely covered by yellow fur.</p><p class="text--sub">CLICK BUTTONS ON THE <br>RIGHT SIDE TO CHOOSE</p><p class="text__background">ADMIN</p>
-          <a href="/admin/registrants"><button type="button" class="dorm">V I E W</button></a>
+<!-- REGISTRANTS -->
+      <section>
+          <h2 class="h2nav"><p class="text--sub">admin management</p>Registrants 
+      
+          <div style="display:flex;margin-top:5%;">
+            <div class="statistics">
+              <div> <img src="https://img.icons8.com/bubbles/100/000000/group.png"/></div>
+              <p style="	margin-bottom:0%;" class="text--small">Total Registrants<br>
+              <input type="text"  style="width:20%;" id="fname" name="first" value="{{ $registrants }}" readonly></p>
+            </div>
+
+          </div>
+
+        <p class="text--normal">To be able to view and accept/deny registrants, click view!</p>
+        <a href="/manager/listapplicants"><button type="button" class="dorm">V I E W</button></a>
         </h2>
-    </section>
-   
-    <section>
-        <h2 class="h2nav"><p class="text--sub">admin management</p>Dormitory<p class="text--normal">Pikachu is an Electric-type Pokémon introduced in Generation I. Pikachu are small, chubby, and incredibly 
-          cute mouse-like Pokémon. They are almost completely covered by yellow fur.</p><p class="text--sub">CLICK BUTTONS ON THE <br>RIGHT SIDE TO CHOOSE</p><p class="text__background">ADMIN</p>
-          <a href="/admin/dorms"><button type="button" class="dorm">V I E W</button></a>
-        </h2>
-        </section>
+      </section>
+  
+    <!-- OCCUPANTS -->
+        <section>
+          <h2 class="h2nav"><p class="text--sub">admin management</p>Occupants 
+      
+          <div class="headerstat">
+            <p style="padding-top:1%;" class="text--small">TOTAL OCCUPANTS : 
+            <input type="text"  style="width:20%;" id="fname" name="first" value="{{ $occupants }}" readonly></p>
+        </div>
+
+        <div class="tableFixHead" style="margin-top:1%;width:100%;height:250px;">
+        <table style="color:white;">
+          <tr>
+            <thead>
+            <th>COLLEGE</th>
+            <th>TOTAL</th>
+            </thead>
+          </tr>
+          <tr>
+            <td>CAS</td>
+            <td>{{ $occupants_cas }}</td>
+          </tr>
+          <tr>
+            <td>COE</td>
+            <td>{{ $occupants_coe }}</td>
+          </tr>
+          <tr>
+            <td>CHS</td>
+            <td>{{ $occupants_chs }}</td>
+          </tr>
+          <tr>
+            <td>CAFSD</td>
+            <td>{{ $occupants_cafsd }}</td>
+          </tr>
+          <tr>
+            <td>CBEA</td>
+            <td>{{ $occupants_cbea }}</td>
+          </tr>
+          <tr>
+            <td>CASAT</td>
+            <td>{{ $occupants_casat }}</td>
+          </tr>
+          <tr>
+            <td>CTE</td>
+            <td>{{ $occupants_cte }}</td>
+          </tr>
+          <tr>
+            <td>CIT</td>
+            <td>{{ $occupants_cit }}</td>
+          </tr>
+        </table>
+      </div>
+      
+        <a href="/manager/listapplicants"><button type="button" class="dorm">V I E W</button></a>
+
+      </h2>
+      </section>
+
+  <!-- DORMITORY -->
+
+      <section>
+          <h2 class="h2nav"><p class="text--sub">admin management</p>Dormitory 
+      
+          <div style="display:flex;margin-top:5%;">
+            <div class="statistics">
+              <div> <img src="https://img.icons8.com/bubbles/100/000000/group.png"/></div>
+              <p style="	margin-bottom:0%;" class="text--small">Total Dormitories<br>
+              <input type="text"  style="width:20%;" id="fname" name="first" value="100"  readonly></p>
+            </div>
+
+            <div style="margin-left:3%;" class="statistics">
+              <div> <img src="https://img.icons8.com/bubbles/100/000000/classroom.png"/></div>
+              <p style="width:100%;margin-right:1%;" class="text--small">Occupants per Dorm<br>
+              <select>
+                <option>CAS</option>
+                <option>COE</option>
+              </select>
+              <input type="text"  style="width:20%;" id="fname" name="first" value="100"  readonly></p>
+            </div>
+          </div>
+
+      <p class="text--normal">To be able to view and accept/deny your applicants, click view!</p>
+      <a href="/manager/listapplicants"><button type="button" class="dorm">V I E W</button></a>
+
+      </h2>
+      </section>
+
+      <div class="cover"></div>
+
+      <nav class="nav">
+          <label class="nav-item" for="section1">APPLICANTS</label>
+          <label class="nav-item" for="section2">OCCUPANTS</label>
+          <label class="nav-item" for="section3">DORMITORY</label>
+      </nav>
 </div>
-    </body>
+</body>
 </html>

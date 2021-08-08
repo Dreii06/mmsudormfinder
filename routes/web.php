@@ -6,6 +6,8 @@ use App\Http\Controllers\DormsController;
 use App\Http\Controllers\OccupantsController;
 use App\Http\Controllers\ApplicantsController;
 use App\Http\Controllers\RegistrantsController;
+use App\Http\Controllers\Manager\DashboardController as ManagerDashboardController;
+use App\Http\Controllers\Admin\DashboardController as AdminDashboardController;
 use App\Models\Dorms;
 
 /*
@@ -87,9 +89,11 @@ Route::get('/occupantdetails', function () {
     return view('occupantsdetails');
 });*/
 
-Route::get('/manager/dashboard', function () {
+Route::get('/manager/dashboard', [ManagerDashboardController::class, 'index'])->middleware(['auth']);
+
+/*Route::get('/manager/dashboard', function () {
     return view('manager.dashboard');
-})->middleware(['auth']);
+});*/
 
 Route::get('/manager/contact', function () {
     return view('manager.contact');
@@ -122,6 +126,8 @@ Route::post('/manager/updateimage/{id}', [DormsController::class, 'storeimg']);
 /*Route::get('/admin/registrants', function () {
     return view('admin.registrants');
 });*/
+
+Route::get('/admin/dashboard', [AdminDashboardController::class, 'index'])->middleware(['auth']);
 
 Route::get('/admin/registrants', [RegistrantsController::class, 'show']);
 

@@ -5,9 +5,9 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Models\Dorms;
+use App\Models\RoomType;
 use App\Models\Manager;
 use App\Models\Images;
-use App\Models\RoomType;
 use App\Models\Amenities;
 
 class DormsController extends Controller

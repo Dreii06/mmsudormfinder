@@ -99,7 +99,10 @@
             <option value="CAFSD">CAFSD</option>
             <option value="CIT">CIT</option>
         </select>
-        <input type="text" style="width:20%;margin-right:2%;"id="course" name="course" value="{{ Auth::user()->course }}" class="inputapp"><br><br>
+        
+        <select name="course" style="width:20%;margin-right:2%;"id="room" class="inputapp">
+            <option selected disable hidden value="{{ Auth::user()->course }}">{{ Auth::user()->course }}</option>
+        </select><br><br>
 
         <div class="smallheader">OTHER INFORMATION</div>
          <label  for="sex" >Sex</label><br>

@@ -233,6 +233,7 @@ text-align: left;
 
 /* TABLE FOR VIEW DORM */
 
+
 /* FOR VERTICAL NAVIGATION BAR */
   
 .verticalnav {
@@ -267,7 +268,7 @@ display: flex;
   
 .verticalnav .active {
     background-color:#0C4B05;
-    color: #FFB700;
+    color: white;
   }
   
 .verticalnav li a:hover:not(.active){
@@ -277,16 +278,25 @@ display: flex;
   }
 
 .verticalnav button{
-    width: 100%;
-    border-style: none;
-    background-color: transparent;
-    padding-left: 50px;
-    text-align: left;
-  }
+  width: 100%;
+  border-style: none;
+  background-color: transparent;
+  text-align: left;
+  padding-left: 50px;
+}
+
+.verticalnav button:hover{
+  background-color:#FFB700;
+    color: #0C4B05;
+    cursor: pointer;
+}
+
+
 .dorm_con {
   display: flex;
-  padding-left: 460px;
-  padding-top: 100px;
+  height: 100%;
+  padding-left:25%;
+  padding-top: 1%;
 }
 
 .onoffcampus_con {
@@ -460,7 +470,8 @@ textarea{
   }
   .tableFixHead th{
     box-shadow: inset 1px 1px #1D6115, 1 1px #1D6115;
-    background-color: #1D6115;
+    background: rgb(26,129,16);
+    background: linear-gradient(90deg, rgba(26,129,16,1) 0%, rgba(31,149,20,1) 35%, rgba(26,129,16,1) 100%);   
     color:white;
     text-align: left;
   }
@@ -479,7 +490,8 @@ textarea{
   
   /* Track */
   ::-webkit-scrollbar-track {
-    background-color:white; 
+    background: rgb(26,129,16);
+    background: linear-gradient(90deg, rgba(26,129,16,1) 0%, rgba(31,149,20,1) 35%, rgba(26,129,16,1) 100%);   
   }
    
   /* Handle */
@@ -645,41 +657,43 @@ background: #1D6115;
 /* END CONTACT PAGE CONTAINER */
 
 
+
 /* 2ND SLIDER*/
-.nav {
+nav {
   position: fixed;
+  display: flex;
   z-index: 2;
-  right: 22%;
-  top: 55%;
+  right: 50%;
+  top: 90%;
   -webkit-transform: translateY(-50%);
   transform: translateY(-50%);
 }
 .nav-item {
-  width: 30px;
-  height: 30px;
+  width: 100%;
+  height: 25px;
   display: block;
-  margin: 12px auto;
+  margin-right: 5%;
   text-align: center;
   border: solid 2px #FFCD00;
-  border-radius: 30%;
+  border-radius: 30px;
   cursor: pointer;
-  padding-top: 10px;
+  padding: 3% 5% 1% 5%;
   color: #FFCD00;
   font-size:1vw;
 }
 .nav-item:hover {
   background-color: #FFCD00;
-  color: #0C4B05;
+  color:#1D6115;
 }
 section {
-  margin-top:7%;
+  margin-top:7.4%;
   padding-left: 10%;
   margin-left:20%;
-  padding-bottom: 9%;
-  height: 75%;
-  width: 90%;
+  padding-bottom: 15%;
+  padding-top:0%;
+  height: 90%;
+  width: 100%;
   display: flex;
-  align-items: center;
   position: absolute;
   top: 100%;
   right: 0;
@@ -688,18 +702,29 @@ section {
 }
 
 .h2nav {
-  font-size: 80px;
+  font-size: 4vw;
   text-align: left;
-  color: #FFCD00;
+  color:white;
 }
 section:nth-of-type(1) {
-  background: #0C4B05;
+  backdrop-filter: blur(25px) saturate(49%);
+  -webkit-backdrop-filter: blur(25px) saturate(49%);
+  background-color: rgba(12, 75, 5, 0.70);
 }
 section:nth-of-type(2) {
-  background: #0C4B05;
+  backdrop-filter: blur(25px) saturate(49%);
+  -webkit-backdrop-filter: blur(25px) saturate(49%);
+  background-color: rgba(12, 75, 5, 0.70);
 }
 section:nth-of-type(3) {
-  background: #0C4B05;
+  backdrop-filter: blur(25px) saturate(49%);
+  -webkit-backdrop-filter: blur(25px) saturate(49%);
+  background-color: rgba(12, 75, 5, 0.70);
+}
+section:nth-of-type(4) {
+  backdrop-filter: blur(25px) saturate(49%);
+  -webkit-backdrop-filter: blur(25px) saturate(49%);
+  background-color: rgba(12, 75, 5, 0.70);
 }
 
 input[type='radio'] {
@@ -716,7 +741,7 @@ input[type='radio']#section1:checked ~ section:nth-of-type(1) {
   transition-delay: 0s;
 }
 input[type='radio']#section1:checked ~ .cover {
-  background-color: #FFCD00;
+  background-color: #1D6115;
 }
 input[type='radio']#section2:checked ~ nav label[for='section2'] {
   background-color: #FFCD00;
@@ -746,19 +771,40 @@ input[type='radio']#section3:checked ~ .cover {
   background-color: #FFCD00;
 }
 
+input[type='radio']#section4:checked ~ nav label[for='section4'] {
+  background-color: #FFCD00;
+  color: #0C4B05;
+}
+input[type='radio']#section4:checked ~ section:nth-of-type(4) {
+  z-index: 1;
+  top: 0;
+  transition: top 0.5s ease-in-out;
+  transition-delay: 0s;
+}
+input[type='radio']#section4:checked ~ .cover {
+  background-color: #FFCD00;
+}
+
 .text--sub {
 	font-size: 12px;
 	letter-spacing: 0.5rem;
 	text-transform: uppercase;
-	margin-bottom: 40px;
+  color: white;
+}
+
+.text--small {
+	font-size: 1.1vw;
+	text-transform: uppercase;
+  color:white;
 }
 
 .text--normal {
-	font-size: 13px;
+	font-size: 1.3vw;
 	color: rgba(255, 255, 255, 0.8);
-	line-height: 22px;
-  width: 50%;
-	margin-top: 25px;
+	font-weight: 100;
+  width: 100%;
+	margin-top: 5%;
+  margin-bottom: 0%;
 }
 
 .text__background {
@@ -781,12 +827,20 @@ input[type='radio']#section3:checked ~ .cover {
 	transition: opacity 0.43s 0.6s, transform 0.4s 0.65s cubic-bezier(0, 0.88, 0.4, 0.93);
 }
 
+.__imgonoff {
+	position: absolute;
+	max-height: 40vw;
+  top:20%;
+	opacity: 1;
+	transform: translate3d(0,0,0);
+	transition: opacity 0.43s 0.6s, transform 0.4s 0.65s cubic-bezier(0, 0.88, 0.4, 0.93);
+}
+
 .dorm {
   background-color:#FFCD00;
   color: #0C4B05;
-  margin-top: -3%;
   border-style: none;
-  width: 20%;
+  width: 30%;
   height: 30px;
   border-radius: 15px;
   cursor: pointer;
@@ -799,9 +853,153 @@ input[type='radio']#section3:checked ~ .cover {
   right: 0;
   bottom: 0;
   left: 0;
-  z-index: -1;
+  z-index: -2;
+  background-image: url('/images/bg.png');  background-repeat: no-repeat;background-size:100% 100%;
 }
 
+.frontcover {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: -1;
+  backdrop-filter: blur(25px) saturate(49%);
+  -webkit-backdrop-filter: blur(25px) saturate(49%);
+  background-color: rgba(12, 75, 5, 0.50);
+}
+
+.headerstat{
+  width:100%;
+  height:30px;
+  padding-left: 3%;
+  border-radius: 20px;
+  color: white;
+  background: rgb(26,129,16);
+  background: linear-gradient(90deg, rgba(26,129,16,1) 0%, rgba(31,149,20,1) 35%, rgba(26,129,16,1) 100%);
+}
+
+.headerstat input{
+  border-style: none;
+  border-radius: 10px;
+  background-color: transparent;
+  text-indent: 5px;
+  color: #FFCD00;
+  font-size: 1.2vw;
+  font-family:ABold;
+}
+
+.statistics{
+  width: 400px;
+  height: 20%;
+  border-radius: 20px;
+  color: white;
+  padding-left: 3%;
+  display: flex;
+  background: rgb(26,129,16);
+background: linear-gradient(90deg, rgba(26,129,16,1) 0%, rgba(31,149,20,1) 35%, rgba(26,129,16,1) 100%);
+}
+
+.statistics input{
+  border-style: none;
+  background-color: #0C4B05;
+  border-radius: 10px;
+  text-indent: 5px;
+  height: 30px;
+  color: #FFCD00;
+  margin-top: 5%;
+  font-size: 1.2vw;
+  font-family:ABold;
+}
+
+.statistics select{
+  width: 50%;
+  height:30px;
+  border-radius: 10px;
+  margin-top: 5%;
+}
+
+/* END FOR 2ND SLIDER*/
+
+
+/* IMAGE OVERLAY FOR ON AND OFF CAMPUS*/
+.containeron {
+  position: relative;
+  width: 35%;
+  height: 300px;
+  float:left;
+  margin-right: 1%;
+  align-items: center;
+
+}
+
+.containeroff {
+  position: relative;
+  width: 35%;
+  margin-left: 1%;
+  float:right;
+}
+
+.image {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border-radius: 20px;
+}
+
+.onoverlay {
+  border-radius: 10px;
+  text-align: center;
+  position: absolute;
+  bottom: 0;
+  left: 100%;
+  right: 0;
+  background-color: #0C4B05;
+  overflow: hidden;
+  width: 0;
+  height: 100%;
+  transition: .5s ease;
+  background: rgba( 64, 113, 4, 0.45 );
+  box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+  backdrop-filter: blur( 20.0px );
+  -webkit-backdrop-filter: blur( 20.0px );
+}
+
+.containeron:hover .onoverlay {
+  width: 100%;
+  left: 0;
+}
+
+.offoverlay {
+  border-radius: 10px;
+  text-align: center;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  overflow: hidden;
+  width: 0;
+  height: 100%;
+  transition: .5s ease;
+  background: rgba( 64, 113, 4, 0.45 );
+  box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+  backdrop-filter: blur( 20.0px );
+  -webkit-backdrop-filter: blur( 20.0px );
+}
+
+.containeroff:hover .offoverlay {
+  width: 100%;
+}
+
+.text {
+  position: absolute;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  white-space: nowrap;
+}
+
+/* OTHER CLASSES */
 .smallheader{
   padding: 0.5% 0.5% 0.5% 2%;
   margin-bottom: 1%;
