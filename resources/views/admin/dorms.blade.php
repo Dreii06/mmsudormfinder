@@ -37,33 +37,35 @@
         </ul>
     </div>
 
-    <div class="dorm_con">
-    <input type="radio" name="item" checked="checked" id="section1" />
-    <input type="radio" name="item" id="section2" />
+        <h2 class="h2head">SELECT DORMITORY TYPE</h2>
 
-    <nav class="nav">
-      <label class="nav-item" for="section1">ON</label>
-      <label class="nav-item" for="section2">OFF</label>
+        <div class="dorm_con">
 
-    </nav>
+        <div class="containeron">
+            <img src="/images/on.png" alt="Avatar" class="image">
+            <div class="onoverlay">
+                <h2 style="margin-left:5%;margin-right:5%;" class="h2nav">On Campus 
+                <p style="width:90%;" class="text--normal">Staying within the facilities owned by the university. Insert more information here! </p>
+                <a href="/admin/oncampusdorms"><button type="button" style="margin-left:0%;width:40%;" class="dorm">E N T E R</button></a>
+                </h2>
+            </div>    
+        </div>
 
-    
-    <section>
-        <h2 class="h2nav"><p class="text--sub">admin management</p>On Campus <p class="text--normal">Pikachu is an Electric-type Pokémon introduced in Generation I. Pikachu are small, chubby, and incredibly 
-          cute mouse-like Pokémon. They are almost completely covered by yellow fur.</p><p class="text--sub">CLICK BUTTONS ON THE <br>RIGHT SIDE TO CHOOSE</p><p class="text__background">ADMIN</p>
-          <a href="/admin/oncampusdorms"><button type="button" class="dorm">V I E W</button></a>
-        </h2>
-        <img class="__img" src="/images/1.png" />
-    </section>
-   
-    <section>
-        <h2 class="h2nav"><p class="text--sub">admin management</p>Off Campus<p class="text--normal">Pikachu is an Electric-type Pokémon introduced in Generation I. Pikachu are small, chubby, and incredibly 
-          cute mouse-like Pokémon. They are almost completely covered by yellow fur.</p><p class="text--sub">CLICK BUTTONS ON THE <br>RIGHT SIDE TO CHOOSE</p><p class="text__background">ADMIN</p>
-          <a href="/admin/offcampusdorms"><button type="button" class="dorm">V I E W</button></a>
-        </h2>
-        <img class="__img" src="/images/2.png" />
-        </section>
-    </div>
+        <div class="containeroff">
+            <img src="/images/off.png" alt="Avatar" class="image">
+            <div class="offoverlay">
+                <h2 style="margin-left:5%;margin-right:5%;" class="h2nav">Off Campus 
+                <p style="width:90%;" class="text--normal">Staying within the facilities owned by local residents. Insert more information here! </p>
+                <a href="/admin/offcampusdorms"><button type="button" style="margin-left:0%;width:40%;" class="dorm">E N T E R</button></a>
+                </h2>
+            </div>    
+        </div>
+
+
+        <img  style="right:2%;" class="__imgonoff" src="/images/1.png" /> 
+
+    <div class="frontcover"></div>
+    <div class="cover"></div>
 
     </body>
 </html>

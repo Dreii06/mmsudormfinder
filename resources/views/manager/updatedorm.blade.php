@@ -95,9 +95,13 @@
     </table><br>
     <select name="roomtype" id="room" class="inputapp" style="width:65%;">
     <option selected disable hidden>Choose a room type you want to add</option>
-        @foreach($room_types as $type)
-        <option value="{{ $type->room_type }}">{{ $type->room_type }}</option>
-        @endforeach
+        <option value="Single">Single</option>
+        <option value="Double">Double</option>
+        <option value="Triple">Triple</option>
+        <option value="Quad">Quad</option>
+        <option value="Twin">Twin</option>
+        <option value="Double-double">Double-double</option>
+        <option value="Studio">Studio</option>
     </select><br><br>
 
     <label style="width:20%;" for="fname">Room Fee</label>
@@ -122,11 +126,18 @@
         @endforeach
     </table><br>
 
-    <select name="amenities" id="amenities" class="inputapp" style="width:65%;">
+    <select name="amenities" id="amenities" class="inputapp" style="width:70%;">
         <option selected disable hidden>Choose an amenity you want to add</option>
-        @foreach($amenities as $amenities)
-        <option value="{{ $amenities->amenities }}">{{ $amenities->amenities }}</option>
-        @endforeach
+        <option value="Free WiFi">Free WiFi</option>
+        <option value="Study Room">Study Room</option>
+        <option value="Pet's Allowed">Pet's Allowed</option>
+        <option value="Kitchen Utensils">Kitchen Utensils</option>
+        <option value="Own Bathroom">Own Bathroom</option>
+        <option value="CCTV">CCTV</option>
+        <option value="Parking Space">Parking Space</option>
+        <option value=">With Hot and Cold Shower">With Hot and Cold Shower</option>
+        <option value="Complete Furniture">Complete Furniture</option>
+        <option value="Air-conditioned Room">Air-conditioned Room</option>
     </select>
 
     <button type="submit" onclick="new_link()" name="submit" value="addAmen" class="addbutton" style="width:15%;margin-right:10%;">ADD</button><br>

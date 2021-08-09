@@ -10,7 +10,9 @@
 
         <link rel="icon" href="/images/mmsu logo.png">
     </head>
-    <body style="overflow: hidden;" >
+    <body style="background-color: #427604;background-image: 
+                radial-gradient(at 47% 33%, hsl(88.13, 96%, 27%) 0, transparent 59%), 
+                radial-gradient(at 82% 65%, hsl(88.65, 77%, 43%) 0, transparent 55%);">
         
     <div class="uppernav"> <h3 style="margin-left:20px;color:#0C4B05;">MMSU </h3><h3> - Dorm Finder</h3></div>
     
@@ -30,7 +32,7 @@
                         <li><a href="/applicationlist">Application List</a></li><br>
                         <form style="display:block;" method="POST" action="{{ route('logout') }}">
                             @csrf
-                        <li><a href="" ><button type="submit" style="color:white;">{{ __('Log Out') }}</button></a></li>
+                        <li><button type="submit">{{ __('Log Out') }}</button></li>
                         </form>
                         </ul>
                     </ul></li>
@@ -38,28 +40,32 @@
     </div>
 
 
-    <div style="width:100%;display:flex;">
-
-<div class="centerheader"><p class="text--sub">choose type of housing facility:</p></div>
-
-    <div class="onslider">
-        <h2 class="h2nav">On Campus <p class="text--normal">Staying within the facilities owned by the
-        university.</p><p class="text__background">ON CAMPUS</p>
-          <a href="/oncampusdormslist"><button type="button" style="margin-left:0%;width:50%;" class="dorm">E N T E R</button></a>
-        </h2>
-          <img style="right: 60%;" class="__img" src="/images/1.png" />
-          
-    </div>
    
-    <div class="offslider">
-        <h2 class="h2nav">Off Campus <p class="text--normal">Staying within the facilities owned by the
-        university. </p><p class="text__background">OFF CAMPUS</p>
-          <a href="/offcampusdormslist"><button type="button" style="margin-left:0%;width:40%;" class="dorm">E N T E R</button></a>
-        </h2>
-          
-          <img  style="right: 1%;" class="__img" src="/images/2.png" />
-    </div>
-</div> 
+        <div class="centerheader"><h2 class="h2head">SELECT TYPE OF FACILITY</h2></div>
+        
+        <div class="containeron">
+            <img src="/images/on.png" alt="Avatar" class="image">
+            <div class="onoverlay">
+                <h2 class="h2nav">On Campus <p style="width:90%;" class="text--normal">Staying within the facilities owned by the
+                university. Insert more information here! </p>
+                <a href="/offcampusdormslist"><button type="button" style="margin-left:0%;width:40%;" class="dorm">E N T E R</button></a>
+                </h2>
+            </div>    
+        </div>
+        <img  style="left:0%;" class="__imgonoff" src="/images/2.png" /> 
+
+        <div class="containeroff">
+            <img src="/images/off.png" alt="Avatar" class="image">
+            <div class="offoverlay">
+                <h2 class="h2nav">Off Campus <p style="width:90%;" class="text--normal">Staying within the facilities owned by local residents.
+            Insert more information here! </p>
+                <a href="/offcampusdormslist"><button type="button" style="margin-left:0%;width:40%;" class="dorm">E N T E R</button></a>
+                </h2>
+            </div>    
+        </div>
+        <img  style="right:0%;" class="__imgonoff" src="/images/1.png" /> 
+<div class="imgcover">
+<div class="frontcover">
 
 </body>
 </html>

@@ -197,7 +197,6 @@
 <script>
   function changeInput(e) {
             document.getElementById("vacancy").value = e.target.value;
-
             var sel = document.getElementById("roomtype");
             document.getElementById("type").value = sel.options[sel.selectedIndex].text;
         }

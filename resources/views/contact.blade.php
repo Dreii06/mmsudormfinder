@@ -30,7 +30,7 @@
                         <li><a href="/applicationlist">Application List</a></li><br>
                         <form style="display:block;" method="POST" action="{{ route('logout') }}">
                             @csrf
-                        <li><a href="" ><button type="submit" style="color:white;">{{ __('Log Out') }}</button></a></li>
+                        <li><button type="submit">{{ __('Log Out') }}</button></li>
                         </form>
                         </ul>
                     </ul></li>
@@ -39,7 +39,7 @@
 
     <div class="contactcontainer">
     <div class="boxcontact">
-        <h1>Frequently Asked Questions:</h1>
+        <h1 style="color:#FFCD00;">Frequently Asked Questions:</h1>
         <ol type="A">
             <li><b>How to update details in Dorm?</b></li>
                 <ol type="i">
@@ -59,7 +59,7 @@
     </div>
 
     <div class="boxcontact">
-        <h1>Contact Information</h1>
+        <h1  style="color:#FFCD00;" >Contact Information</h1>
         <ul>
             <li><img src="https://img.icons8.com/pastel-glyph/50/000000/email--v3.png"/>dormfinder@mmsu.edu.ph</li>
             <li><img src="https://img.icons8.com/pastel-glyph/64/000000/phone-message--v1.png"/>(SAMPLE MOBILE NUMBER)</li>
@@ -67,6 +67,7 @@
     </div>
 
 </div>
-
+<div class="imgcover">
+<div class="frontcover">
 </body>
 </html>

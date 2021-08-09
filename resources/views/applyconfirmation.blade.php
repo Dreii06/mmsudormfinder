@@ -32,10 +32,10 @@
                      <a href="#" style="float:right;margin:10px 0px 0px 0px;">{{ Auth::user()->stud_num }}</a>
                         <ul>
                         <li><a href="/profilestudent">Profile</a></li><br>
-                        <li><a href="applicationlist">Application List</a></li><br>
+                        <li><a href="/applicationlist">Application List</a></li><br>
                         <form style="display:block;" method="POST" action="{{ route('logout') }}">
                             @csrf
-                        <li><a href="" ><button type="submit" style="color:white;">{{ __('Log Out') }}</button></a></li>
+                        <li><button type="submit">{{ __('Log Out') }}</button></li>
                         </form>
                         </ul>
                     </ul></li>
@@ -78,7 +78,7 @@
         <input type="text" id="vacancy" name="vacancy" style="width:25%;margin-right:2%;" readonly class="inputapp"><br>
         
         <button type="submit" onclick="###" class="secondyellowbutton" style="width:20%;margin-top:5%;float:left;"> CONFIRM</button>
-        <a href="home"><button type="button" class="confirmcancelbutton">CANCEL</button></a><br>
+        <a href="/dashboard"><button type="button" class="confirmcancelbutton">CANCEL</button></a><br>
         
         <p style="margin-top:10%;"class="note"> NOTE: After confirming, wait for 1-3 business days for the process, if still waiting for
         approval, feel free to apply to other available dormitories </p>
@@ -112,7 +112,6 @@
         
         function changeInput(e) {
             document.getElementById("vacancy").value = e.target.value;
-
             var sel = document.getElementById("roomtype");
             document.getElementById("type").value = sel.options[sel.selectedIndex].text;
         }

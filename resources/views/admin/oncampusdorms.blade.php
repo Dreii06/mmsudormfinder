@@ -5,7 +5,7 @@
         <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="icon" href="/images/mmsu logo.png">
 
-        <title>MMSU - Dorm Management | Dashboard</title>
+        <title>MMSU - Dorm Management</title>
 
         <!-- CSS -->
         <link rel="stylesheet" type="text/css" href="/css/ADMINstyle.css">  

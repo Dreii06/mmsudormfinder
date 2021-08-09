@@ -24,11 +24,14 @@
                 <div class="menu">
                 <img style="float:right;margin-top:15px;" src="/images/user.png"  width="15%" height="40%">
                     <ul><li>
-                    <a href="#" style="float:right;margin:10px 0px 0px 0px;">{{ Auth::user()->stud_number }}</a>
+                    <a href="#" style="float:right;margin:10px 0px 0px 0px;">{{ Auth::user()->stud_num }}</a>
                         <ul>
                         <li><a href="/profilestudent">Profile</a></li><br>
                         <li><a href="/applicationlist">Application List</a></li><br>
-                        <li><a href="welcome">Log Out</a></li>
+                        <form style="display:block;" method="POST" action="{{ route('logout') }}">
+                            @csrf
+                        <li><button type="submit">{{ __('Log Out') }}</button></li>
+                        </form>
                         </ul>
                     </ul></li>
             </div>
@@ -38,7 +41,7 @@
 
     <div class="contactcontainer">
     <div class="boxcontact">
-        <h1>What you need to know in Dorm Finder:</h1>
+        <h1 style="color:#FFCD00;">What you need to know in Dorm Finder:</h1>
         <ol type="A">
             <li><b>PURPOSE</b></li>
                 <ol type="i">
@@ -65,6 +68,7 @@
     </div>
 
 </div>
-
+<div class="imgcover">
+<div class="frontcover">
 </body>
 </html>

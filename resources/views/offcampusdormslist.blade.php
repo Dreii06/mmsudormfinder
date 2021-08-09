@@ -27,10 +27,10 @@
                      <a href="#" style="float:right;margin:10px 0px 0px 0px;">{{ Auth::user()->stud_num }}</a>
                         <ul>
                         <li><a href="/profilestudent">Profile</a></li><br>
-                        <li><a href="applicationlist">Application List</a></li><br>
+                        <li><a href="/applicationlist">Application List</a></li><br>
                         <form style="display:block;" method="POST" action="{{ route('logout') }}">
                             @csrf
-                        <li><a href="" ><button type="submit" style="color:white;">{{ __('Log Out') }}</button></a></li>
+                        <li><button type="submit">{{ __('Log Out') }}</button></li>
                         </form>
                         </ul>
                     </ul></li>
