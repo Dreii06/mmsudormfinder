@@ -99,7 +99,9 @@ Route::get('/manager/listoccupants', [OccupantsController::class, 'show']);
 Route::post('/manager/searchoccupants', function() {
     $search = Request::get('search');
     if($search != "") {
-        $occupants = Occupants::where('stud_num', 'LIKE', '%' . $search . '%')->get();
+        $occupants = Occupants::where('stud_num', 'LIKE', '%' . $search . '%')->
+                                orWhere('first_name', 'LIKE', '%' . $search . '%')->
+                                orWhere('last_name', 'LIKE', '%' . $search . '%')->get();
         return view('manager.searchoccupants', compact('occupants'));
     } else {
         return redirect()->back();
@@ -115,7 +117,9 @@ Route::get('/manager/listapplicants', [ApplicantsController::class, 'show']);
 Route::post('/manager/searchapplicants', function() {
     $search = Request::get('search');
     if($search != "") {
-        $applicants = Applicants::where('stud_num', 'LIKE', '%' . $search . '%')->get();
+        $applicants = Applicants::where('stud_num', 'LIKE', '%' . $search . '%')->
+                                    orWhere('first_name', 'LIKE', '%' . $search . '%')->
+                                    orWhere('last_name', 'LIKE', '%' . $search . '%')->get();
         return view('manager.searchapplicants', compact('applicants'));
     } else {
         return redirect()->back();
@@ -149,7 +153,9 @@ Route::get('/admin/registrants', [RegistrantsController::class, 'show']);
 Route::post('/admin/searchregistrants', function() {
     $search = Request::get('search');
     if($search != "") {
-        $registrants = Registrant::where('dorm_name', 'LIKE', '%' . $search . '%')->get();
+        $registrants = Registrant::where('dorm_name', 'LIKE', '%' . $search . '%')->
+                                    orWhere('first_name', 'LIKE', '%' . $search . '%')->
+                                    orWhere('last_name', 'LIKE', '%' . $search . '%')->get();
         return view('admin.searchregistrants', compact('registrants'));
     } else {
         return redirect()->back();
@@ -173,7 +179,9 @@ Route::get('/admin/occupantslist', [OccupantsController::class, 'adminshow']);
 Route::post('/admin/searchoccupants', function() {
     $search = Request::get('search');
     if($search != "") {
-        $occupants = Occupants::where('stud_num', 'LIKE', '%' . $search . '%')->get();
+        $occupants = Occupants::where('stud_num', 'LIKE', '%' . $search . '%')->
+                                orWhere('first_name', 'LIKE', '%' . $search . '%')->
+                                orWhere('last_name', 'LIKE', '%' . $search . '%')->get();
         return view('admin.searchoccupants', compact('occupants'));
     } else {
         return redirect()->back();
