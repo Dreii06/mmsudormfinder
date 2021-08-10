@@ -40,7 +40,7 @@
     <img style="z-index: 2;right:5%;" class="__img" src="images/mmsu logo.png" />
 
     <input type="radio" name="item" checked="checked" id="section1" />
-    <section style="width:50%;margin-left:10%;padding: 1% 2% 5% 2%;">
+    <section style="width:50%;margin-left:10%;margin-top:8%;padding: 1% 2% 5% 2%;">
         <h2  class="h2nav"><p class="text--sub">welcome to </p>STUDENT HOUSE<br> FACILITIES <p style="width:100%;" class="text--normal">With the understanding of the role that accommodation plays supporting 
             academic performance, the Mariano Marcos State University offers a decent array of accommodations for qualified students. These accommodations are made available exclusively to its residents with the goal of providing secure and comfortable safe spaces to live in during their stay in the University.</p>
           <a href="/dorm"><button type="button" style="margin-top:1%;" class="dorm">APPLY NOW</button></a>
