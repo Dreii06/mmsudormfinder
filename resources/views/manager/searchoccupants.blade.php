@@ -64,14 +64,16 @@
           </tr>
         </thead>
         <tbody>
-            @foreach($occupants as $occupant)
+            @forelse($occupants as $occupant)
           <tr>
             <td>{{ $occupant->first_name }} {{ $occupant->middle_name }} {{ $occupant->last_name }}</td>
             <td>{{ $occupant->stud_num }}</td>
             <td>{{ $occupant->mobile_num }}</td>
             <td><a href="detailsoccupant/{{ $occupant->id }}"><button type="button">VIEW</button></a></td>
           </tr>
-          @endforeach
+          @empty
+          <td><p>No Occupants Found</p></td>
+          @endforelse
         </tbody>
       </table>
     </div>

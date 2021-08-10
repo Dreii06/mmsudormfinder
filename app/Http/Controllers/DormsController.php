@@ -86,7 +86,7 @@ class DormsController extends Controller
 
         $room_types = Dorms::join('room_types', 'dormitory', '=', 'dorm_name')
         ->where('dorm.id', '=', $id)
-        ->get(['room_types.room_type', 'room_types.price']);
+        ->get();
 
         $amenities = Dorms::join('amenities', 'dormitory', '=', 'dorm_name')
         ->where('dorm.id', '=', $id)
@@ -196,23 +196,5 @@ class DormsController extends Controller
         }
 
         return redirect()->back();
-        /*if($images->first()) {
-            $images->delete();
-        }
-        else {
-            if($request->has('photo')) {
-                $photos = $request->file('photo');
-    
-                foreach($photos as $photo) {
-                    $filename = $photo->getClientOriginalName();
-                    $photo->move(public_path('images'), $filename);
-                    
-                    (Images::create([
-                        'dormitory' => request('name', false),
-                        'filename' => $filename
-                    ]));
-                }
-            }
-        }*/
     }
 }

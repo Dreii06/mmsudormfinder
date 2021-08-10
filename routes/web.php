@@ -9,6 +9,9 @@ use App\Http\Controllers\RegistrantsController;
 use App\Http\Controllers\Manager\DashboardController as ManagerDashboardController;
 use App\Http\Controllers\Admin\DashboardController as AdminDashboardController;
 use App\Models\Dorms;
+use App\Models\Applicants;
+use App\Models\Occupants;
+use App\Models\Registrant;
 
 /*
 |--------------------------------------------------------------------------
@@ -59,19 +62,11 @@ Route::get('/offcampusdormslist', [DormsController::class, 'show']);
 
 Route::post('/searchdorm', function() {
     $q = Request::get('q');
-    /*$dorm = Dorms::where('dorm_name', 'LIKE', '%' . $q . '%')->get();
-    if (count($dorm) > 0)
-        return view('searchdorm')->withDetails($dorm);*/
     if($q != "") {
         $dorm = Dorms::where('dorm_name', 'LIKE', '%' . $q . '%')->get();
-        $room_types = Dorms::join('room_types', 'dormitory', '=', 'dorm_name')
-            ->where('dorm.dorm_name', 'LIKE', '%' . $q . '%')
-            ->get(['room_types.room_type', 'room_types.price']);
-        $images = Dorms::join('images', 'dormitory', '=', 'dorm_name')
-        ->where('dorm.dorm_name', 'LIKE', '%' . $q . '%')
-        ->get(['images.filename']);
-        if (count($dorm) > 0)
-            return view('searchdorm', compact('images', 'room_types'))->withDetails($dorm);  
+        return view('searchdorm', compact('dorm'));
+    } else {
+        return redirect()->back();
     }
 });
 
@@ -101,11 +96,31 @@ Route::get('/manager/contact', function () {
 
 Route::get('/manager/listoccupants', [OccupantsController::class, 'show']);
 
+Route::post('/manager/searchoccupants', function() {
+    $search = Request::get('search');
+    if($search != "") {
+        $occupants = Occupants::where('stud_num', 'LIKE', '%' . $search . '%')->get();
+        return view('manager.searchoccupants', compact('occupants'));
+    } else {
+        return redirect()->back();
+    }
+});
+
 Route::get('/manager/detailsoccupant/{id}', [OccupantsController::class, 'get']);
 
 Route::post('/manager/detailsoccupant', [OccupantsController::class, 'del']);
 
 Route::get('/manager/listapplicants', [ApplicantsController::class, 'show']);
+
+Route::post('/manager/searchapplicants', function() {
+    $search = Request::get('search');
+    if($search != "") {
+        $applicants = Applicants::where('stud_num', 'LIKE', '%' . $search . '%')->get();
+        return view('manager.searchapplicants', compact('applicants'));
+    } else {
+        return redirect()->back();
+    }
+});
 
 Route::get('/manager/detailsapplicant/{id}', [ApplicantsController::class, 'get']);
 
@@ -131,6 +146,16 @@ Route::get('/admin/dashboard', [AdminDashboardController::class, 'index'])->midd
 
 Route::get('/admin/registrants', [RegistrantsController::class, 'show']);
 
+Route::post('/admin/searchregistrants', function() {
+    $search = Request::get('search');
+    if($search != "") {
+        $registrants = Registrant::where('dorm_name', 'LIKE', '%' . $search . '%')->get();
+        return view('admin.searchregistrants', compact('registrants'));
+    } else {
+        return redirect()->back();
+    }
+});
+
 Route::get('/admin/registrantdetails/{id}', [RegistrantsController::class, 'get']);
 
 Route::post('/admin/registrants', [RegistrantsController::class, 'store']);
@@ -145,11 +170,31 @@ Route::get('/admin/contact', function () {
 
 Route::get('/admin/occupantslist', [OccupantsController::class, 'adminshow']);
 
+Route::post('/admin/searchoccupants', function() {
+    $search = Request::get('search');
+    if($search != "") {
+        $occupants = Occupants::where('stud_num', 'LIKE', '%' . $search . '%')->get();
+        return view('admin.searchoccupants', compact('occupants'));
+    } else {
+        return redirect()->back();
+    }
+});
+
 Route::get('/admin/occupantdetails/{id}', [OccupantsController::class, 'adminget']);
 
 Route::get('/admin/oncampusdorms', [DormsController::class, 'adminshow']);
 
 Route::get('/admin/offcampusdorms', [DormsController::class, 'adminshow']);
+
+Route::post('/admin/searchoffcampusdorms', function() {
+    $search = Request::get('search');
+    if($search != "") {
+        $offcampusdorms = Dorms::where('dorm_name', 'LIKE', '%' . $search . '%')->get();
+        return view('admin.searchoffcampusdorms', compact('offcampusdorms'));
+    } else {
+        return redirect()->back();
+    }
+});
 
 Route::get('/admin/dormdetails/{id}', [DormsController::class, 'adminget']);
 

@@ -96,7 +96,7 @@
                 @foreach($room_types as $types) 
                 <tr>
                     <td class="readapp">{{ $types->room_type }}</td>
-                    <td class="readapp">5</td>
+                    <td class="readapp">{{ $types->vacancy }}</td>
                     <td class="readapp">{{ $types->price }}</td>
                 </tr>
                 @endforeach

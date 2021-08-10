@@ -40,7 +40,7 @@
     <div class="header"> <h1>HOUSING FACILITIES - OFF CAMPUS</h1>
 
     <form style="margin-left:10%;margin-top:2%;" action="/searchdorm" method="POST" role="search">
-    @csrf
+      @csrf
         <input type="text" id="search" onkeyup="searchFunction()" placeholder="Search.." name="q">
         <button type="submit"><img src="https://img.icons8.com/pastel-glyph/50/000000/search--v2.png" width="100%"></button>
     </form>         
@@ -64,7 +64,7 @@
             <td>{{ $dorm->dorm_name }}</a></td>
             <td>{{ $dorm->first_name }} {{ $dorm->middle_name }} {{ $dorm->last_name }}</td>
             <td>{{ $dorm->mobile_num }}</td>
-            <td><a href="/dormitorydetails/{{ $dorm['id'] }}"><button type="button">VIEW</button></a></td>
+            <td><a href="/dormitorydetails/{{ $dorm->id }}"><button type="button">VIEW</button></a></td>
           </tr>
           @endforeach
         </tbody>

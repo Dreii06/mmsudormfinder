@@ -19,7 +19,6 @@
     <div class="topnav" id="myTopnav">
         <img style="float:left;margin-left:20px;margin-top:12px;" src="/images/mmsu logo.png"  height="3%" width="3%">
         <h4>MARIANO MARCOS <br> STATE UNIVERSITY</h4>
-        <div class="titleheader">REGISTRANTS</div>
     </div>
           
     <div class="verticalnav">
@@ -35,6 +34,14 @@
             <li><button type="submit"><a href="" style="padding-left:0%;color:red;" ><img src="https://img.icons8.com/ios-filled/50/000000/exit.png"/>{{ __('Log Out') }}</a></button></li>
             </form>
         </ul>
+    </div>
+
+    <div class="header"> <h1 style="color:white;">REGISTRANTS</h1>
+    <form style="margin-top:2%;margin-left:30%;" action="/admin/searchregistrants" method="POST" role="search">
+        @csrf
+        <input type="text" id="search" onkeyup="searchFunction()" placeholder="Search" name="search">
+        <button type="submit"><img src="https://img.icons8.com/pastel-glyph/50/000000/search--v2.png" width="100%"></button>
+      </form>        
     </div>
 
     <div class="listappcontainer">
