@@ -2,11 +2,11 @@
 
 @font-face {
     font-family: Regular;
-    src: url('/fonts/Archivo-Regular.ttf');
+    src: url('/fonts/LT Amber Regular.otf');
 }
 @font-face {
     font-family: ABold;
-    src: url('/fonts/Archivo-Bold.ttf');
+    src: url('/fonts/LT Amber Bold.otf');
 }
 @font-face {
     font-family: Unna;
@@ -30,7 +30,7 @@ h1{
 h3{
     color: #0C4B05;
     font-size: 1.3vw;
-    margin-top:5;
+    margin-top: 3px;
 }
 
 h4{
@@ -81,7 +81,7 @@ hr{
   border-style:solid;
   border-color: #FFB700;
   width: 100%;
-  height: 30px;
+  height: 35px;
   border-radius: 12px;
   margin-bottom:10px;
   cursor: pointer;
@@ -123,7 +123,8 @@ hr{
 }
 
 label{
-    font-family: ABold;
+    font-weight:bolder;
+    font-family: Regular;
     color: #0C4B05;
     font-size: 1.5vw;
     display: inline-block;
@@ -174,7 +175,8 @@ background: #1D6115;
 .descriptiondorm{
   font-size: 1.1vw;
   color: #0C4B05;
-  width: 85%;
+  font-weight: bold;
+  width: 80%;
   margin-bottom: 5%;
 
 
@@ -208,7 +210,8 @@ background: #1D6115;
 .uppernav {
     background-color: #F3EEED;
     display: flex;
-    height: 5%;
+    height: 30px;
+    padding: 0%;
 }
 .topnav {
     background-color: #0C4B05;
@@ -218,10 +221,10 @@ background: #1D6115;
   
 .topnavlink {
     color: #f2f2f2;
-    padding: 2% 1% 1% 1%;
+    padding: 1.5% 1% 1% 1%;
     margin-right: 5%;
     text-decoration: none;
-    font-size: 1.3vw;
+    font-size: 1.5vw;
 }
 
 .topnavlink:hover {
@@ -238,7 +241,9 @@ background: #1D6115;
   width: 50%;
   float: left;
   height: 900px;
-  background-color: #0C4B05;
+  backdrop-filter: blur(16px) saturate(180%);
+  -webkit-backdrop-filter: blur(16px) saturate(180%);
+  background-color: rgba(12, 75, 5, 0.88);
 }
 
 .logincontainer form{
@@ -261,7 +266,7 @@ background: #1D6115;
     color: #0C4B05;
     border-style: none;
     width: 100%;
-    height: 30px;
+    height: 35px;
     margin-left: 15%;
     margin-right: 20%;
     border-radius: 12px;
@@ -291,7 +296,7 @@ background: #1D6115;
   margin-top:15px; margin-bottom:50px;
   float: right;
   cursor: pointer;
-  font-size: 1vw;
+  font-size: 1.2vw;
 }
 
 .confirmcancelbutton {
@@ -313,7 +318,7 @@ background: #1D6115;
   color:white;
   border-style:solid;
   border-color: #ebbc00;
-  width: 100%; height: 30px;
+  width: 100%; height: 35px;
   border-radius: 12px;
   padding: 0px 35px 0px 35px;
   margin: 10px 0px 0px 0px;
@@ -349,13 +354,6 @@ background: #1D6115;
     right:15%;
     top:30%;
     width: 40%;
-}
-
-.dashboard_con2 {
-    position: absolute;
-    left:10%;
-    top:30%;
-    width: 35%;
 }
 
 .btnapply {
@@ -400,6 +398,7 @@ background: #1D6115;
     background: rgb(26,129,16);
     background: linear-gradient(90deg, rgba(26,129,16,1) 0%, rgba(31,149,20,1) 35%, rgba(26,129,16,1) 100%);   
     color: white;
+    font-weight: bolder;
     padding-left: 50px;
     font-size: 2vw;
     margin-top:3%
@@ -512,13 +511,15 @@ background: #1D6115;
   }
 /* END FOR SLIDESHOW IMAGE CSS*/
 
+
 /* TABLE FOR VIEW DORM */
 .viewdormtable{
   width:100%;
   font-size: 1.5vw;
 }
 .viewdormtable th{
-font-family: ABold;
+font-family:Regular;
+font-weight: bolder;
 color: white;
 background: rgb(26,129,16);
 background: linear-gradient(90deg, rgba(26,129,16,1) 0%, rgba(31,149,20,1) 35%, rgba(26,129,16,1) 100%);   
@@ -527,9 +528,6 @@ text-align: left;
 height: 20px;
 position: sticky;
 }
-
-
-
 /* END TABLE FOR VIEW DORM */
 
 /* AMENITIES LIST*/ 
@@ -547,12 +545,10 @@ position: sticky;
   color: black;
   margin-right: 2%;
 }
-
 /* END AMENITIES LIST*/ 
 
 
 /* USER NAVIGATION */
-
 .menu{
     display: flex;
     float: right;
@@ -571,6 +567,7 @@ position: sticky;
   color:#FFCD00;
   padding: 10px;
   display:inline-block;
+  font-family: Regular;
   font-size: 1.2vw;
 }
 
@@ -585,7 +582,7 @@ position: sticky;
     color:#FFCD00;
     padding: 10px;
     display:inline-block;
-    font-size: 1.2vw;
+    font-size: 1.3vw;
   }
   .menu a:hover{
     background-color: #1D6115;
@@ -633,7 +630,6 @@ position: sticky;
    }
 
 /* CONTACT PAGE CONTAINER */
-
 .contactcontainer{
   display:flexbox;
   margin-top: 1%;
@@ -670,6 +666,7 @@ position: sticky;
 }
 /* END CONTACT PAGE CONTAINER */
 
+
 /*SCROLLABLE LIST END*/
 
   /*CUSTOM SCROLL*/
@@ -684,7 +681,8 @@ position: sticky;
    
   /* Handle */
   ::-webkit-scrollbar-thumb {
-    background: #0C4B05; 
+    background: rgb(26,129,16);
+    background: linear-gradient(90deg, rgba(26,129,16,1) 0%, rgba(31,149,20,1) 35%, rgba(26,129,16,1) 100%);  
   }
   
   /* Handle on hover */
@@ -785,47 +783,22 @@ th {
 
 
 /* 2ND SLIDER*/
-.nav {
-  position: fixed;
-  z-index: 2;
-  right: 22%;
-  top: 55%;
-  -webkit-transform: translateY(-50%);
-  transform: translateY(-50%);
-}
-.nav-item {
-  width: 30px;
-  height: 30px;
-  display: block;
-  margin: 12px auto;
-  padding-top: 7px;
-  padding-left: 2px;
-  color: #FFB700;
-  border: solid 2px #FFB700;
-  border-radius: 30%;
-  cursor: pointer;
-  font-size:0.8vw;
-}
-.nav-item:hover {
-  background-color: #FFB700;
-}
-section {
-  margin-top:7.4%;
-  padding-left: 10%;
-  padding-bottom: 5%;
-  height: 85%;
-  width: 100%;
-  display: flex;
+.dashboard {
+  margin-left:10%;
+  padding: 1% 2% 2% 2%;
+  width: 50%;
+  margin-top: 1%;
   align-items: center;
-  position: absolute;
-  top: 100%;
-  right: 0;
-  left: 0;
   transition-delay: 0.5s;
+  backdrop-filter: blur(0px) saturate(118%);
+  -webkit-backdrop-filter: blur(0px) saturate(118%);
+  background-color: rgba(49, 89, 0, 0.90);
+  border: 1px solid rgba(209, 213, 219, 0.3);
+  border-radius: 12px;
 }
 
 .h2nav {
-  font-size: 4vw;
+  font-size: 4.5vw;
   padding-left: 3%;
   text-align: center;
   color: white;
@@ -841,33 +814,6 @@ section {
   background: linear-gradient(90deg, rgba(26,129,16,1) 0%, rgba(31,149,20,1) 35%, rgba(26,129,16,1) 100%);   
 }
 
-section:nth-of-type(1) {
-
-  backdrop-filter: blur(0px) saturate(118%);
-  -webkit-backdrop-filter: blur(0px) saturate(118%);
-  background-color: rgba(49, 89, 0, 0.90);
-  border: 1px solid rgba(209, 213, 219, 0.3);
-  border-radius: 12px;
-}
-
-input[type='radio'] {
-  display: none;
-}
-input[type='radio']#section1:checked ~ nav label[for='section1'] {
-  background-color:#FFB700;
-  color: #0C4B05;
-}
-input[type='radio']#section1:checked ~ section:nth-of-type(1) {
-  z-index: 1;
-  top: 0;
-  transition: top 0.5s ease-in-out;
-  transition-delay: 0s;
-}
-input[type='radio']#section1:checked ~ .cover {
-  background-color: #FFB700;
-}
-
-
 .text--sub {
 	font-size: 1.5vw;
 	letter-spacing: 0.5rem;
@@ -876,7 +822,7 @@ input[type='radio']#section1:checked ~ .cover {
 }
 
 .text--normal {
-	font-size: 1.2vw;
+	font-size: 1.4vw;
 	color:white;
 	line-height: 22px;
   width: 65%;
@@ -949,7 +895,6 @@ input[type='radio']#section1:checked ~ .cover {
   background-color: #0C4B05;
 }
 
-
 /* IMAGE OVERLAY FOR ON AND OFF CAMPUS*/
 .containeron {
   position: relative;
@@ -974,6 +919,7 @@ input[type='radio']#section1:checked ~ .cover {
 
 .onoverlay {
   border-radius: 30px;
+  padding-top: 5%;
   position: absolute;
   bottom: 0;
   left: 100%;
@@ -995,6 +941,7 @@ input[type='radio']#section1:checked ~ .cover {
 }
 
 .offoverlay {
+  padding-top: 5%;
   border-radius: 30px;
   position: absolute;
   bottom: 0;
@@ -1025,15 +972,16 @@ input[type='radio']#section1:checked ~ .cover {
   margin-bottom: 0.5%;
   margin-top:0.5%;
   color:white;
+  border-radius: 10px;
   width: 100%;
   background: rgb(26,129,16);
   background: linear-gradient(90deg, rgba(26,129,16,1) 0%, rgba(31,149,20,1) 35%, rgba(26,129,16,1) 100%); 
-  font-size: 1.4vw;
+  font-size: 1.6vw;
+  font-family: ABold;
 
 }
 
 /* BACKGROUND COVER */
-
 .imgcover {
   position: fixed;
   top: 0;
@@ -1054,8 +1002,4 @@ input[type='radio']#section1:checked ~ .cover {
   backdrop-filter: blur(16px) saturate(180%);
     -webkit-backdrop-filter: blur(16px) saturate(180%);
     background-color: rgba(29, 97, 21, 0.75);
-}
-
-#cas {
-  display:none;
 }

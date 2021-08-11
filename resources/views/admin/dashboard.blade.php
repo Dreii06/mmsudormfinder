@@ -19,7 +19,8 @@
     
     <body class="antialiased">
         
-    <div class="uppernav"><h3 style="color:#0C4B05;margin-left:20px;">MMSU - Admin Dorm Management</h3></div>
+    <div class="uppernav"><h3>MMSU - Admin Dorm Management</h3></div>
+    
     <div class="topnav" id="myTopnav">
         <img style="float:left;margin-left:20px;margin-top:12px;" src="/images/mmsu logo.png"  height="3%" width="3%">
         <h4>MARIANO MARCOS <br> STATE UNIVERSITY</h4>
@@ -62,7 +63,7 @@
           </div>
 
         <p class="text--normal">To be able to view and accept/deny registrants, click view!</p>
-        <a href="/manager/listapplicants"><button type="button" class="dorm">V I E W</button></a>
+        <a href="/admin/registrants"><button type="button" class="dorm">V I E W</button></a>
         </h2>
       </section>
   
@@ -118,7 +119,7 @@
         </table>
       </div>
       
-        <a href="/manager/listapplicants"><button type="button" class="dorm">V I E W</button></a>
+        <a href="/admin/occupantslist"><button type="button" class="dorm">V I E W</button></a>
 
       </h2>
       </section>
@@ -132,22 +133,23 @@
             <div class="statistics">
               <div> <img src="https://img.icons8.com/bubbles/100/000000/group.png"/></div>
               <p style="	margin-bottom:0%;" class="text--small">Total Dormitories<br>
-              <input type="text"  style="width:20%;" id="fname" name="first" value="100"  readonly></p>
+              <input type="text"  style="width:20%;" id="fname" name="first" value="{{ $dorms_count }}"  readonly></p>
             </div>
 
             <div style="margin-left:3%;" class="statistics">
               <div> <img src="https://img.icons8.com/bubbles/100/000000/classroom.png"/></div>
               <p style="width:100%;margin-right:1%;" class="text--small">Occupants per Dorm<br>
-              <select>
-                <option>CAS</option>
-                <option>COE</option>
+              <select name="dorm" id="dorm" onchange="changeInput(event)">
+                <option selected disable hidden></option>
+                @foreach($dorms as $dorms)
+                <option value="{{ $dorms->num_of_occupants }}">{{ $dorms->dorm_name }}</option>
+                @endforeach
               </select>
-              <input type="text"  style="width:20%;" id="fname" name="first" value="100"  readonly></p>
+              <input type="text" style="width:20%;" id="occupants_num" name="occupants_num" readonly></p>
             </div>
           </div>
 
-      <p class="text--normal">To be able to view and accept/deny your applicants, click view!</p>
-      <a href="/manager/listapplicants"><button type="button" class="dorm">V I E W</button></a>
+      <a href="/admin/dorms"><button type="button" class="dorm">V I E W</button></a>
 
       </h2>
       </section>
@@ -155,10 +157,16 @@
       <div class="cover"></div>
 
       <nav class="nav">
-          <label class="nav-item" for="section1">APPLICANTS</label>
+          <label class="nav-item" for="section1">REGISTRANTS</label>
           <label class="nav-item" for="section2">OCCUPANTS</label>
           <label class="nav-item" for="section3">DORMITORY</label>
       </nav>
 </div>
+  <script>
+    function changeInput(e) {
+            document.getElementById("occupants_num").value = e.target.value;
+            var sel = document.getElementById("dorm");
+    }
+  </script>
 </body>
 </html>

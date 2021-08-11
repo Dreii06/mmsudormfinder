@@ -19,7 +19,8 @@
     
     <body class="antialiased">
     
-    <div class="uppernav"><h3 style="color:#0C4B05;margin-left:20px;">MMSU - Admin Dorm Management</h3></div>
+    <div class="uppernav"><h3>MMSU - Admin Dorm Management</h3></div>
+    
     <div class="topnav" id="myTopnav">
         <img style="float:left;margin-left:20px;margin-top:12px;" src="/images/mmsu logo.png"  height="3%" width="3%">
         <h4>MARIANO MARCOS <br> STATE UNIVERSITY</h4>
@@ -83,7 +84,7 @@
         <label for="college">College:</label>
         <label for="course">Course:</label><br>
 
-        <input type="text" style="width:20%;margin-right:2%;" id="fstudentid" value="{{ $details->stud_num }}" class="inputapp" readonly>
+        <input type="text" style="width:20%;margin-right:2%;" id="fstudentid" name="stud_num" value="{{ $details->stud_num }}" class="inputapp" readonly>
         <input type="text" style="width:20%;margin-right:2%;" id="college" value="{{ $details->college }}"  class="inputapp" readonly>
         <input type="text" style="width:20%;margin-right:2%;" id="course" value="{{ $details->course }}"  class="inputapp" readonly><br><br>
         
@@ -96,6 +97,7 @@
 
         <a href="/admin/occupantslist"><button type="button" style="margin: 5% 7% 0% 1%;float:right;"class="btndelete">CANCEL</button></a>
         <button type="button" onclick="download()" style="margin-left:0%;margin-top:5%;float:right;" class="btndownload">DOWNLOAD</button>
+        <button type="submit" onclick="remove()" style="margin-left:1%;"class="btndelete">DELETE</button>
     </form>
     </div>
 

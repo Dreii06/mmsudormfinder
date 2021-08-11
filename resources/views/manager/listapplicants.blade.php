@@ -16,7 +16,7 @@
     
     <body class="antialiased">
         
-    <div class="uppernav"><h3 style="color:#0C4B05;margin-left:20px;">MMSU </h3><h3> - COEDS / Proprietor Dorm Management</h3></div>
+    <div class="uppernav"><h3>MMSU - COEDS / Proprietor Dorm Management</h3></div>
     
   <!-- NAVIGATION BAR -->
     <div class="topnav" id="myTopnav">

@@ -14,7 +14,7 @@
                 radial-gradient(at 47% 33%, hsl(88.13, 96%, 27%) 0, transparent 59%), 
                 radial-gradient(at 82% 65%, hsl(88.65, 77%, 43%) 0, transparent 55%);">
         
-    <div class="uppernav"> <h3 style="margin-left:20px;color:#0C4B05;">MMSU </h3><h3> - Dorm Finder</h3></div>
+    <div class="uppernav"> <h3 style="margin-left:20px;">MMSU - Dorm Finder</h3></div>
     
     <div class="topnav" id="myTopnav">
        <img style="float:left;margin-left:20px;margin-top:5px;" src="/images/mmsu logo.png"  height="4%" width="4%">
@@ -48,7 +48,7 @@
             <div class="onoverlay">
                 <h2 class="h2nav">On Campus <p style="width:90%;" class="text--normal">Staying within the facilities owned by the
                 university. Insert more information here! </p>
-                <a href="/offcampusdormslist"><button type="button" style="margin-left:0%;width:40%;" class="dorm">E N T E R</button></a>
+                <a href="/oncampusdormslist"><button type="button" style="margin-left:0%;width:40%;" class="dorm">E N T E R</button></a>
                 </h2>
             </div>    
         </div>

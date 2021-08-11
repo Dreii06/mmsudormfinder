@@ -38,6 +38,6 @@ class UserProfileController extends Controller
 
         $user->save();
 
-        return redirect('/dashboard');
+        return redirect()->back();
     }
 }

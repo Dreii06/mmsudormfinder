@@ -18,7 +18,7 @@
     
     <body class="antialiased">
 
-    <div class="uppernav"> <h3 style="margin-left:20px;color:#0C4B05;">MMSU </h3><h3> - Dorm Finder</h3></div>
+    <div class="uppernav"> <h3 style="margin-left:20px;">MMSU - Dorm Finder</h3></div>
     
     <div class="topnav" id="myTopnav">
        <img style="float:left;margin-left:20px;margin-top:5px;" src="/images/mmsu logo.png"  height="4%" width="4%">
@@ -52,7 +52,7 @@
         @csrf
         <div class="smallheader">FULL NAME</div>
         <label for="fname">First Name</label>
-        <label for="mname">Midle Name</label>
+        <label for="mname">Middle Name</label>
         <label for="lname">Last Name</label>
         <label for="sname">Suffix (Jr,,III)</label><br>
 

@@ -50,13 +50,7 @@ Route::get('/dorm', function () {
 
 Route::get('/applicationlist', [ApplicantsController::class, 'applicationlist']);
 
-//Route::get('/profilestudent', [UserProfileController::class, 'update'])->middleware(['auth']);
-
 Route::post('/profilestudent', [UserProfileController::class, 'update']);
-
-/*Route::get('/offcampus', function () {
-    return view('offcampusdormslist');
-})->middleware(['auth']);*/
 
 Route::get('/offcampusdormslist', [DormsController::class, 'show']);
 
@@ -76,19 +70,7 @@ Route::get('/applyconfirmation/{id}', [DormsController::class, 'getapply']);
 
 Route::post('/applyconfirmation/{id}', [ApplicantsController::class, 'store']);
 
-/*Route::get('/dormdetails', function () {
-    return view('dormitorydetails');
-});
-
-Route::get('/occupantdetails', function () {
-    return view('occupantsdetails');
-});*/
-
 Route::get('/manager/dashboard', [ManagerDashboardController::class, 'index'])->middleware(['auth']);
-
-/*Route::get('/manager/dashboard', function () {
-    return view('manager.dashboard');
-});*/
 
 Route::get('/manager/contact', function () {
     return view('manager.contact');
@@ -140,12 +122,6 @@ Route::get('/manager/updateimage/{id}', [DormsController::class, 'getdormimage']
 
 Route::post('/manager/updateimage/{id}', [DormsController::class, 'storeimg']);
 
-//Route::post('/manager/updatedorm', [DormsController::class, 'delete']);
-
-/*Route::get('/admin/registrants', function () {
-    return view('admin.registrants');
-});*/
-
 Route::get('/admin/dashboard', [AdminDashboardController::class, 'index'])->middleware(['auth']);
 
 Route::get('/admin/registrants', [RegistrantsController::class, 'show']);
@@ -190,6 +166,8 @@ Route::post('/admin/searchoccupants', function() {
 
 Route::get('/admin/occupantdetails/{id}', [OccupantsController::class, 'adminget']);
 
+Route::post('/admin/occupantdetails', [OccupantsController::class, 'admindel']);
+
 Route::get('/admin/oncampusdorms', [DormsController::class, 'adminshow']);
 
 Route::get('/admin/offcampusdorms', [DormsController::class, 'adminshow']);
@@ -210,7 +188,7 @@ Route::get('/admin/{id}/dormoccupantslist', [OccupantsController::class, 'admins
 
 Route::get('/admin/{name}/dormoccupantdetails/{id}', [OccupantsController::class, 'admingetdorm']);
 
-Route::post('/admin/{name}/dormoccupantdetails', [OccupantsController::class, 'admindel']);
+//Route::post('/admin/{name}/dormoccupantdetails', [OccupantsController::class, 'admindel']);
 
 require __DIR__.'/auth.php';
 

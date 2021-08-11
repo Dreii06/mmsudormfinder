@@ -1,5 +1,5 @@
 function loginFunction() {
-    alert('Hello Take action');
+    alert('Login Successfully!');
 }
 
 function apply() {

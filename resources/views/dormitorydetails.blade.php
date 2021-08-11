@@ -12,7 +12,7 @@
     </head>
 
     <body>
-    <div class="uppernav"> <h3 style="margin-left:20px;color:#0C4B05;">MMSU </h3><h3> - Dorm Finder</h3></div>
+    <div class="uppernav"> <h3 style="margin-left:20px;">MMSU - Dorm Finder</h3></div>
     
     <div class="topnav" id="myTopnav">
        <img style="float:left;margin-left:20px;margin-top:5px;" src="/images/mmsu logo.png"  height="4%" width="4%">
@@ -104,7 +104,7 @@
         </div>
         </div>
         
-                <a href="/applyconfirmation/{{ $details->id }}"><button type="button" class="secondyellowbutton" style="margin-top:5%;width:25%;"> APPLY</button></a>  
+                <a href="/applyconfirmation/{{ $details->id }}"><button type="button" class="secondyellowbutton" style="margin-top:5%;width:25%;margin-right:10%;"> APPLY</button></a>  
             </form>
         </div>
 

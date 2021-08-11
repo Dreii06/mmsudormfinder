@@ -14,13 +14,13 @@
     
     <body style="overflow: hidden;background-image: url('/images/bg.png');background-repeat: no-repeat; background-size: 100% 100%;" class="antialiased">
         
-    <div class="uppernav"> <h3 style="margin-left:20px;color:#0C4B05;">MMSU </h3><h3> - Dorm Finder</h3> </div>
+    <div class="uppernav"> <h3 style="margin-left:20px;">MMSU - Dorm Finder</h3></div>
     <div class="topnav" id="myTopnav">
         <img style="float:left;margin-left:20px;" src="/images/mmsu logo.png"  height="5%" width="5%">
         <h4>MARIANO MARCOS <br> STATE UNIVERSITY</h4>
     </div>
     
-    <img style="right:30%;" class="__img" src="/images/mmsu logo.png">
+    <img style="right:30%;z-index: 2;" class="__img" src="/images/mmsu logo.png">
 
         <div class="logincontainer">
             <form method="POST" action="{{ route('login') }}">
@@ -32,10 +32,11 @@
                     <button type="submit" onclick="loginFunction()" class="yellowbutton" style="margin-left:0%;margin-top:15px;">{{ __('Log in') }}</button>
                     <hr>
             
-            <label for="register" style="color:white;font-size:1vw;width:100%;text-align:center;">New Here? Register first!</label><br>
+            <label for="register" style="color:white;font-size:1vw;width:100%;text-align:center;font-family:Regular;">New Here? Register first!</label><br>
             <a href="/register"> <button type="button" id="register" class="registerbutton" style="margin-top:15px;">{{ __('Register') }}</button></a>
             </form>
         </div>
     </div>
+    
     </body>
 </html>

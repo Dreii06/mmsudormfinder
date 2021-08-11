@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use Illuminate\Http\Request;
 use App\Models\Occupants;
 use App\Models\Dorms;
 use App\Models\Registrant;
@@ -18,7 +19,7 @@ class DashboardController extends Controller
     }
 
 
-    public function index(){
+    public function index(Request $request){
         $registrants = Registrant::all()->count();
         $occupants = Occupants::all()->count();
 
@@ -30,7 +31,9 @@ class DashboardController extends Controller
         $occupants_casat = Occupants::where('college', '=', 'CASAT')->count();
         $occupants_cte = Occupants::where('college', '=', 'CTE')->count();
         $occupants_cit = Occupants::where('college', '=', 'CIT')->count();
+        $dorms_count = Dorms::all()->count();
+        $dorms = Dorms::all();
 
-        return view('admin.dashboard', compact('registrants', 'occupants', 'occupants_cas', 'occupants_coe', 'occupants_cbea', 'occupants_chs', 'occupants_cafsd', 'occupants_casat', 'occupants_cte', 'occupants_cit'));
+        return view('admin.dashboard', compact('registrants', 'occupants', 'occupants_cas', 'occupants_coe', 'occupants_cbea', 'occupants_chs', 'occupants_cafsd', 'occupants_casat', 'occupants_cte', 'occupants_cit', 'dorms_count', 'dorms'));
     }
 }

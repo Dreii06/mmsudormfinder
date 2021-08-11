@@ -12,7 +12,7 @@
     </head>
 
     <body style="background-image: url('/images/bg.png');background-repeat: no-repeat; background-size: 100% 100%;">
-    <div class="uppernav"> <h3 style="margin-left:20px;">MMSU </h3><h3> - Dorm Finder</h3> </div>
+    <div class="uppernav"> <h3 style="margin-left:20px;">MMSU - Dorm Finder</h3></div>
     
     <div class="topnav" id="myTopnav">
        <img style="float:left;margin-left:20px;margin-top:5px;" src="/images/mmsu logo.png"  height="4%" width="4%">
@@ -39,12 +39,11 @@
 
     <img style="z-index: 2;right:5%;" class="__img" src="images/mmsu logo.png" />
 
-    <input type="radio" name="item" checked="checked" id="section1" />
-    <section style="width:50%;margin-left:10%;margin-top:8%;padding: 1% 2% 5% 2%;">
+    <div class="dashboard" >
         <h2  class="h2nav"><p class="text--sub">welcome to </p>STUDENT HOUSE<br> FACILITIES <p style="width:100%;" class="text--normal">With the understanding of the role that accommodation plays supporting 
             academic performance, the Mariano Marcos State University offers a decent array of accommodations for qualified students. These accommodations are made available exclusively to its residents with the goal of providing secure and comfortable safe spaces to live in during their stay in the University.</p>
           <a href="/dorm"><button type="button" style="margin-top:1%;" class="dorm">APPLY NOW</button></a>
         </h2>
-</section>
+</div>
 </body>
 </html>

@@ -2,16 +2,17 @@
 
 @font-face {
     font-family: Regular;
-    src: url('/fonts/Archivo-Regular.ttf');
+    src: url('/fonts/LT Amber Regular.otf');
 }
 @font-face {
     font-family: ABold;
-    src: url('/fonts/Archivo-Bold.ttf');
+    src: url('/fonts/LT Amber Bold.otf');
 }
 @font-face {
     font-family: Unna;
     src: url('/fonts/Unna-Regular.ttf');
 }
+
 body {
     background-color: #F3EEED;
     font-family: Regular;
@@ -24,7 +25,9 @@ h1{
 }
 
 h3{
-    color: #0C4B05; 
+  color: #0C4B05;
+  font-size: 1.3vw;
+  margin-top: 8px;     
 }
 
 h4{
@@ -217,13 +220,15 @@ background: #1D6115;
     color: #0C4B05;
     font-size: 23px;
 }
+
 .uppernav {
-    background-color: #F3EEED;
-    overflow: hidden;
-    display: flex;
-    height: 50px;
-    margin-top: -10px;
+  background-color: #F3EEED;
+  display: flex;
+  height: 40px;
+  padding: 0%;
+  padding-left: 20px;
 }
+
 .topnav {
     background-color: #0C4B05;
     overflow: hidden;
@@ -253,13 +258,15 @@ background: #1D6115;
     display: flex;
     width: 60%;  
     height: 100%;  
-    background-color: #0C4B05;
+    backdrop-filter: blur(16px) saturate(180%);
+    -webkit-backdrop-filter: blur(16px) saturate(180%);
+    background-color: rgba(12, 75, 5, 0.88);
 }
 
 .logincontainer form {
   border-style: none;
   display: inline-block;
-  margin: 20% 2% 50% 20%;
+  margin: 15% 2% 50% 20%;
   width: 40%;
   height: 100%; 
 }
@@ -282,7 +289,8 @@ background: #1D6115;
 
 .logincontainer label{
   color: #FFB700;
-  font-size: 13px;
+  font-size: 1.2vw;
+  font-family: Regular;
   width: 250px;    
   padding-top: 10px;
   display: inline-block;
@@ -513,11 +521,13 @@ padding-left: 5%;
 }
 
 .viewdormtable th{
-font-family: ABold;
+font-family: Regular;
+font-weight: bolder;
 color: white;
 font-size: 1.2vw;
 text-align: left;
-background-color: #0C4B05;
+background: rgb(26,129,16);
+background: linear-gradient(90deg, rgba(26,129,16,1) 0%, rgba(31,149,20,1) 35%, rgba(26,129,16,1) 100%);
 position: sticky;
 }
 
@@ -557,6 +567,7 @@ display: flex;
   background-color: #d4d4d4;
   height: 100%;
   position: fixed;
+  font-size: 1.3vw;
   }
   
 .verticalnav  li a {
@@ -580,6 +591,7 @@ display: flex;
 
 .verticalnav button{
   width: 100%;
+  font-size: 1.3vw;
   border-style: none;
   background-color: transparent;
   text-align: left;
@@ -632,7 +644,7 @@ display: flex;
     padding-left:2%;
     width: 95%;
     margin: 0px 0px 0px 0px;
-    color: #FFB700;
+    color:white;
     background-color: #0C4B05;
     font-size: 2vw;
     border-radius: 20px;
@@ -679,13 +691,13 @@ display: flex;
   
   /* Track */
   ::-webkit-scrollbar-track {
-    background: rgb(26,129,16);
-    background: linear-gradient(90deg, rgba(26,129,16,1) 0%, rgba(31,149,20,1) 35%, rgba(26,129,16,1) 100%);    
+       background-color: transparent;
   }
    
   /* Handle */
   ::-webkit-scrollbar-thumb {
-    background: #0C4B05; 
+    background: rgb(26,129,16);
+    background: linear-gradient(90deg, rgba(26,129,16,1) 0%, rgba(31,149,20,1) 35%, rgba(26,129,16,1) 100%);
   }
   
   /* Handle on hover */
@@ -713,7 +725,7 @@ display: flex;
   border: solid 2px #FFCD00;
   border-radius: 30px;
   cursor: pointer;
-  padding: 3% 2% 1% 2%;
+  padding: 3% 5% 1% 5%;
   color: #FFCD00;
   font-size:1vw;
 }
@@ -866,8 +878,8 @@ input[type='radio']#section4:checked ~ .cover {
   background-color:#FFCD00;
   color: #0C4B05;
   border-style: none;
-  width: 30%;
-  height: 30px;
+  width: 100px;
+  height: 40px;
   border-radius: 15px;
   cursor: pointer;
   font-size: 1.1vw;
@@ -940,8 +952,10 @@ background: linear-gradient(90deg, rgba(26,129,16,1) 0%, rgba(31,149,20,1) 35%, 
   margin-bottom: 1%;
   color:white;
   width: 100%;
-  background-color: #0C4B05;
+  background: rgb(26,129,16);
+  background: linear-gradient(90deg, rgba(26,129,16,1) 0%, rgba(31,149,20,1) 35%, rgba(26,129,16,1) 100%);
   font-size: 1.4vw;
+  font-weight: bolder;
   border-radius: 10px;
 }
 

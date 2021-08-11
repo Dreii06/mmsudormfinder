@@ -15,7 +15,8 @@
     
     <body class="antialiased">
     
-    <div class="uppernav"><h3 style="color:#0C4B05;margin-left:20px;">MMSU - Admin Dorm Management</h3></div>
+    <div class="uppernav"><h3>MMSU - Admin Dorm Management</h3></div>
+    
     <div class="topnav" id="myTopnav">
         <img style="float:left;margin-left:20px;margin-top:12px;" src="/images/mmsu logo.png"  height="3%" width="3%">
         <h4>MARIANO MARCOS <br> STATE UNIVERSITY</h4>
@@ -44,7 +45,7 @@
         <div class="containeron">
             <img src="/images/on.png" alt="Avatar" class="image">
             <div class="onoverlay">
-                <h2 style="margin-left:5%;margin-right:5%;" class="h2nav">On Campus 
+                <h2 style="margin-left:10%;margin-right:5%;" class="h2nav">On Campus 
                 <p style="width:90%;" class="text--normal">Staying within the facilities owned by the university. Insert more information here! </p>
                 <a href="/admin/oncampusdorms"><button type="button" style="margin-left:0%;width:40%;" class="dorm">E N T E R</button></a>
                 </h2>
@@ -54,7 +55,7 @@
         <div class="containeroff">
             <img src="/images/off.png" alt="Avatar" class="image">
             <div class="offoverlay">
-                <h2 style="margin-left:5%;margin-right:5%;" class="h2nav">Off Campus 
+                <h2 style="margin-left:10%;margin-right:5%;" class="h2nav">Off Campus 
                 <p style="width:90%;" class="text--normal">Staying within the facilities owned by local residents. Insert more information here! </p>
                 <a href="/admin/offcampusdorms"><button type="button" style="margin-left:0%;width:40%;" class="dorm">E N T E R</button></a>
                 </h2>

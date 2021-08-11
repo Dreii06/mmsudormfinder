@@ -22,9 +22,9 @@
         <h4>MARIANO MARCOS <br> STATE UNIVERSITY</h4>
     </div>
                 
-    <img style="right:23%;" class="__img" src="/images/mmsu logo.png" />
+    <img style="right:30%;z-index:2;" class="__img" src="/images/mmsu logo.png" />
 
-    <div class="logincontainer">
+    <div class="logincontainer" style="width:50%;">
         <form method="POST" action="{{ route('admin.login') }}">
         @csrf
             <legend>Log In:</legend>

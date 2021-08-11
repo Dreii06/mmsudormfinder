@@ -14,7 +14,7 @@
     
     <body class="antialiased">
         
-    <div class="uppernav"><h3 style="color:#0C4B05;margin-left:20px;">MMSU </h3><h3> - COEDS / Proprietor Dorm Management</h3></div>
+    <div class="uppernav"><h3>MMSU - COEDS / Proprietor Dorm Management</h3></div>
     
     <div class="topnav" id="myTopnav">
         <img style="float:left;margin-left:20px;margin-top:10px;" src="/images/mmsu logo.png"  height="60" width="60">
@@ -63,9 +63,13 @@
 
     <label style="width:40%;margin-bottom:2%;" for="image" >Select label for image</label><br>
         <select style="width:auto" class="inputapp" name="filename" required>
-            <option>Single Space</option>
-            <option>Ammenities</option>
-            <option>Single Space</option>
+            <option value="Single">Single</option>
+            <option value="Double">Double</option>
+            <option value="Triple">Triple</option>
+            <option value="Quad">Quad</option>
+            <option value="Twin">Twin</option>
+            <option value="Double-double">Double-double</option>
+            <option value="Studio">Studio</option>
         </select>
 
     <a href="updatedorm"><button type="submit" name="submit" value="ADD" class="secondyellowbutton" style="margin-right:15%;margin-top:10px;margin-bottom:2%;">ADD</button></a><br>

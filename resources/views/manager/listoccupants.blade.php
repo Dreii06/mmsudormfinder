@@ -19,10 +19,8 @@
     
     <body class="antialiased">
         
-    <div class="uppernav">
-        <h3 style="color:#0C4B05;margin-left:20px;">MMSU </h3><h3> - COEDS / Proprietor Dorm Management</h3>
-    </div>
-    
+    <div class="uppernav"><h3>MMSU - COEDS / Proprietor Dorm Management</h3></div>
+
     <div class="topnav" id="myTopnav">
         <img style="float:left;margin-left:20px;margin-top:10px;" src="/images/mmsu logo.png"  height="60" width="60">
         <h4>MARIANO MARCOS <br> STATE UNIVERSITY</h4>

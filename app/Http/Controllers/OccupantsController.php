@@ -75,6 +75,7 @@ class OccupantsController extends Controller
 
             $occupant->save();
             $dorm->decrement('available_space');
+            $dorm->increment('num_of_occupants');
 
             $room_type = RoomType::where('room_type', '=', $occupant->room_type)->first();
             $room_type->decrement('vacancy');
@@ -100,18 +101,26 @@ class OccupantsController extends Controller
 
         $occupant->delete();
         $dorm->increment('available_space');
+        $dorm->decrement('num_of_occupants');
 
         return redirect('/manager/listoccupants');
     }
 
-    function admindel($name, Request $request) {
+    function admindel(Request $request) {
         $occupant = Occupants::where('stud_num', '=', request('stud_num'))->first();
         $occupant->delete();
+
+        $room_type = RoomType::where('room_type', '=', $occupant->room_type)->first();
+        $room_type->increment('vacancy');
+
+        $dorm = Dorms::where('dorm_name', '=', $occupant->dormitory)->first();
+        $dorm->increment('available_space');
+        $dorm->decrement('num_of_occupants');
         
         $details = Occupants::join('dorm', 'dorm_name', '=', 'dormitory')
-            ->where('dorm_name', '=', $name)
+            ->where('dorm_name', '=', $occupant->dormitory)
             ->get(['dorm.dorm_name', 'occupants.id', 'occupants.first_name', 'occupants.middle_name', 'occupants.last_name', 'occupants.stud_num', 'occupants.mobile_num']);
 
-        return view('admin.dormoccupantslist', ['details' => $details], ['dorm_name' => $name]);
+        return view('admin.dormoccupantslist', ['details' => $details]);
     }
 }

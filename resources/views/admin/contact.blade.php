@@ -14,7 +14,7 @@
     
     <body  style="background-color: #0C4B05;" class="antialiased">
         
-    <div class="uppernav"><h3 style="color:#0C4B05;margin-left:20px;">MMSU - Admin Dorm Management</h3></div>
+    <div class="uppernav"><h3>MMSU - Admin Dorm Management</h3></div>
     <div class="topnav" id="myTopnav">
         <img style="float:left;margin-left:20px;margin-top:12px;" src="/images/mmsu logo.png"  height="3%" width="3%">
         <h4>MARIANO MARCOS <br> STATE UNIVERSITY</h4>
