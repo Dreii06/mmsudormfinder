@@ -38,13 +38,13 @@ class RegisteredUserController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'first' => 'required|string|max:255',
-            'middle' => 'nullable|string|max:255',
-            'last' => 'required|string|max:255',
+            'first_name' => 'required|string|max:255',
+            'middle_name' => 'nullable|string|max:255',
+            'last_name' => 'required|string|max:255',
             'email' => 'required|string|email|max:255|unique:managers',
             'password' => 'required|string|confirmed|min:8',
             'dorm_name' => 'required|string|max:255',
-            'mobile_num' => 'required|string|max:255'
+            'mobile_number' => 'required|string|max:255'
         ]);
 
         $registrant = Registrant::create([

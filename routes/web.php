@@ -52,7 +52,9 @@ Route::get('/applicationlist', [ApplicantsController::class, 'applicationlist'])
 
 Route::post('/profilestudent', [UserProfileController::class, 'update']);
 
-Route::get('/offcampusdormslist', [DormsController::class, 'show']);
+Route::get('/oncampusdormslist', [DormsController::class, 'showOnCampusDorms']);
+
+Route::get('/offcampusdormslist', [DormsController::class, 'showOffCampusDorms']);
 
 Route::post('/searchdorm', function() {
     $q = Request::get('q');
@@ -168,9 +170,9 @@ Route::get('/admin/occupantdetails/{id}', [OccupantsController::class, 'adminget
 
 Route::post('/admin/occupantdetails', [OccupantsController::class, 'admindel']);
 
-Route::get('/admin/oncampusdorms', [DormsController::class, 'adminshow']);
+Route::get('/admin/oncampusdorms', [DormsController::class, 'adminshowOnCampusDorms']);
 
-Route::get('/admin/offcampusdorms', [DormsController::class, 'adminshow']);
+Route::get('/admin/offcampusdorms', [DormsController::class, 'adminshowOffCampusDorms']);
 
 Route::post('/admin/searchoffcampusdorms', function() {
     $search = Request::get('search');

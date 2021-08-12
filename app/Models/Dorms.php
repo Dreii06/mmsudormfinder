@@ -9,7 +9,7 @@ use Illuminate\Database\Eloquent\Model;
 class Dorms extends Model
 {
     use HasFactory;
-    protected $table = 'dorm';
+    protected $table = 'dorms';
     public $timestamps = false;
 
     protected $fillable = [

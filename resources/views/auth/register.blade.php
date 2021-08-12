@@ -28,17 +28,17 @@
             @csrf
             <legend>Registration</legend>
             <hr>
-            <input type="text" id="studnumber" name="stud_num" placeholder="Student Number" class="loginform" style="margin-top:30px;"> 
+            <input type="text" id="studnumber" name="student_number" placeholder="Student Number" class="loginform" style="margin-top:30px;"> 
 
-            <input type="text" id="fullname" name="first" placeholder="First Name" class="loginform" style="width:30%;margin-top:10px;margin-right:1%;">
-            <input type="text" id="fullname" name="middle" placeholder="Middle Name" class="loginform" style="width:23%;margin-top:10px;margin-right:1%;">
-            <input type="text" id="fullname" name="last" placeholder="Last Name" class="loginform" style="width:30%;margin-top:10px;margin-right:1%;">
+            <input type="text" id="fullname" name="first_name" placeholder="First Name" class="loginform" style="width:30%;margin-top:10px;margin-right:1%;">
+            <input type="text" id="fullname" name="middle_name" placeholder="Middle Name" class="loginform" style="width:23%;margin-top:10px;margin-right:1%;">
+            <input type="text" id="fullname" name="last_name" placeholder="Last Name" class="loginform" style="width:30%;margin-top:10px;margin-right:1%;">
             <input type="text" id="fullname" name="suffix" placeholder="Suffix" class="loginform" style="width:10%;margin-top:10px;margin-right:1%;">
 
             <input type="password" id="password" name="password" placeholder="Password" class="loginform" style="margin-top:10px;"> 
             <input type="password" id="cpassword" name="password_confirmation" placeholder="Confirm Password" class="loginform" style="margin-top:10px;"> <br>
             <input type="email" id="email" name="email" placeholder="Email" class="loginform" style="margin-top:10px;"> 
-            <input type="text" id="mnumber" name="mobile_num" placeholder="Mobile Number" class="loginform" style="margin-top:10px;"> <br>
+            <input type="text" id="mnumber" name="mobile_number" placeholder="Mobile Number" class="loginform" style="margin-top:10px;"> <br>
 
             <hr>
             <p style="color:white;font-size:0.8vw;text-align: justify;">By submitting this form, you agree to the collection and processing of your personal data in accordance with the policies of the Mariano Marcos State University.  

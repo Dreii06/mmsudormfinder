@@ -12,13 +12,23 @@ use App\Models\Amenities;
 
 class DormsController extends Controller
 {
-    function show() {
-        $data = Dorms::all();
+    function showOnCampusDorms() {
+        $data = Dorms::join('oncampusdorms', 'dormitory', '=', 'dorm_name')->get();
+        return view('oncampusdormslist', ['dorm' => $data]);
+    }
+
+    function showOffCampusDorms() {
+        $data = Dorms::join('offcampusdorms', 'dormitory', '=', 'dorm_name')->get();
         return view('offcampusdormslist', ['dorm' => $data]);
     }
 
-    function adminshow() {
-        $data = Dorms::all();
+    function adminshowOnCampusDorms() {
+        $data = Dorms::join('oncampusdorms', 'dormitory', '=', 'dorm_name')->get();
+        return view('admin.oncampusdorms', ['dorm' => $data]);
+    }
+
+    function adminshowOffCampusDorms() {
+        $data = Dorms::join('offcampusdorms', 'dormitory', '=', 'dorm_name')->get();
         return view('admin.offcampusdorms', ['dorm' => $data]);
     }
 

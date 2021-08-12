@@ -47,7 +47,7 @@
     </div>
 
     <div class="listappcontainer">
-    <div class="tableFixHeadtitle">OFF-CAMPUS DORMITORIES</div>  
+    <div class="tableFixHeadtitle">OFF - CAMPUS DORMITORIES</div>  
     <div class="tableFixHead">
       <table>
         <thead>

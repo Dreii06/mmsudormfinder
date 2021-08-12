@@ -36,11 +36,11 @@
                     <hr style="width:80%;">
                         <input type="email" id="email" name="email" placeholder="Email" class="loginform" style="margin-top:30px;width:25%;"> 
                         <input type="text" id="dormname" name="dorm_name" placeholder="Dorm Name" class="loginform" style="margin-top:10px;width:25%;">
-                        <input type="text" id="mnumber" name="mobile_num" placeholder="Mobile Number" class="loginform" style="margin-top:10px;width:25%;"> <br>
+                        <input type="text" id="mnumber" name="mobile_number" placeholder="Mobile Number" class="loginform" style="margin-top:10px;width:25%;"> <br>
 
-                        <input type="text" id="fullname" name="first" placeholder="First Name" class="loginform" style="margin-top:10px;width:25%;"> 
-                        <input type="text" id="fullname" name="middle" placeholder="Middle Name" class="loginform" style="margin-top:10px;width:25%;"> 
-                        <input type="text" id="fullname" name="last" placeholder="Last Name" class="loginform" style="margin-top:10px;width:25%;"><br>
+                        <input type="text" id="fullname" name="first_name" placeholder="First Name" class="loginform" style="margin-top:10px;width:25%;"> 
+                        <input type="text" id="fullname" name="middle_name" placeholder="Middle Name" class="loginform" style="margin-top:10px;width:25%;"> 
+                        <input type="text" id="fullname" name="last_name" placeholder="Last Name" class="loginform" style="margin-top:10px;width:25%;"><br>
 
                         <input type="password" id="password" name="password" placeholder="Password" class="loginform" style="margin-top:10px;width:25%;"> 
                         <input type="password" id="cpassword" name="password_confirmation" placeholder="Confirm Password" class="loginform" style="margin-top:10px;width:25%;"> <br>
