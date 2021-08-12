@@ -30,14 +30,18 @@
 
                     <form id="login" method="POST" action="{{ route('manager.login') }}">
                         @csrf
-                    <legend>Log In:</legend>
+                    <legend style="color:white;">Log In:</legend>
                         <input type="text" id="name" name="email" :value="old('email')" placeholder="Staff ID" class="loginform" style="margin-top:30px;width:100%;"> <br>
                         <input type="password" id="password" name="password" placeholder="Password" class="loginform" style="margin-top:10px;width:100%;"> <br>
 
                         <button type="submit" class="yellowbutton" style="width:100%;margin-top:15px;">{{ __('Log in') }}</button><br>
+
+                        <!-- Validation Errors -->
+                        <x-auth-validation-errors class="mb-4" :errors="$errors" style="color:white;margin-top:5%;"/>
                         <hr>
-                        <label for="register" style="margin-left:15%;">New Here? Register first!</label><br>
+                        <label for="register" style="color:white;margin-left:15%;">New Here? Register first!</label><br>
                         <a href="/manager/register"><button type="button" id="register" class="registerbutton" style="margin-top:15px;">{{ __('Register') }}</button></a>
+                        
                     </form>
 
                 </div>

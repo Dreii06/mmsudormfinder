@@ -61,7 +61,7 @@
         <div class="smallheader">OTHER INFORMATION</div>
         <label for="dname">Dorm Name</label>
         <label for="contact">Contact</label>
-        <label for="quantity">Available space</label><br>
+        <label for="quantity">Capacity</label><br>
 
         <input type="tel" id="fname" name="dname" style="width: 20%;" class="inputapp" value="{{ $details->dorm_name }}" readonly>
         <input type="text" id="fname" name="contact" style="width: 20%;" class="inputapp" value="{{ $details->mobile_num }}" readonly>

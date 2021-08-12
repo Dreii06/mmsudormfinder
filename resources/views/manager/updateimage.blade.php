@@ -28,13 +28,13 @@
             <li><a href="/manager/dashboard"> <img src="https://img.icons8.com/fluent-systems-regular/96/000000/home.png"/> Home</a></li>
             <li><a href="/manager/listapplicants"> <img src="https://img.icons8.com/fluent-systems-regular/50/000000/parse-resume.png"/> Applicants</a></li>
             <li><a href="/manager/listoccupants"><img src="https://img.icons8.com/fluent-systems-regular/96/000000/user-rights.png"/> Occupants</a></li>
-            <li><a class="active" href="/manager/viewdorm"><img src="https://img.icons8.com/fluent-systems-regular/96/000000/department.png"/> Dorm</a></li>
+            <li><a class="active" href="/manager/viewdorm/{{ Auth::guard('manager')->user()->id }}"><img src="https://img.icons8.com/fluent-systems-regular/96/000000/department.png"/> Dorm</a></li>
             <li><a href="/manager/contact"><img src="https://img.icons8.com/fluent-systems-regular/96/000000/info-squared.png"/> Contact</a></li><br><br>
             <form method="POST" action="{{ route('manager.logout') }}">
                 @csrf
             <li><a href=""><button type="submit" style="padding-left:0%;color:red;" ><img src="https://img.icons8.com/ios-filled/50/000000/exit.png"/>{{ __('Log Out') }}</button></a></li>
             </form>
-        </ul>    
+        </ul>
     </div>
 
 <div class="updateimagecon">
@@ -46,7 +46,7 @@
         @foreach($images as $image)
         <div class="mySlides">
             <img src="/images/{{ $image->filename }}" style="width:100%;height:400px;">
-            <div class="text">{{ $image->filename }}</div><div class="IDtext">Image ID: {{ $image->id }}</div>
+            <div class="text">{{ $image->label }}</div><div class="IDtext">Image ID: {{ $image->id }}</div>
         </div>
         @endforeach
         <a class="prev" onclick="plusSlides(-1, slideshow)">❮</a>
@@ -62,7 +62,9 @@
             <input type="file" id="myfile" class="imagefile" name="image" accept="image/*"><br>
 
     <label style="width:40%;margin-bottom:2%;" for="image" >Select label for image</label><br>
-        <select style="width:auto" class="inputapp" name="filename" required>
+        <select style="width:auto" class="inputapp" name="filename">
+            <option selected disable hidden></option>
+            <option value="Dorm">Dorm</option>
             <option value="Single">Single</option>
             <option value="Double">Double</option>
             <option value="Triple">Triple</option>
@@ -78,6 +80,7 @@
 
     <label style="width:30%;margin-bottom:2%;" for="image">Delete image by ID</label>
         <select style="width:15%" class="inputapp" name="delfilename">
+        <option selected disable hidden></option>
         @foreach($images as $filename)
             <option value="{{ $filename->id }}">{{ $filename->id }}</option>
         @endforeach

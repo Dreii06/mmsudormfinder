@@ -48,7 +48,7 @@
 
         <div id="slideshow" class="imgcontainer">
         @foreach($images as $image)
-        <div class="mySlides"> <img src="/images/{{ $image->filename }}" style="width:100%;height:500px;"><div class="text">{{ $image->filename }}</div></div>
+        <div class="mySlides"> <img src="/images/{{ $image->filename }}" style="width:100%;height:500px;"><div class="text">{{ $image->label }}</div></div>
         @endforeach
         <a class="prev" onclick="plusSlides(-1, slideshow)">❮</a>
         <a class="next" onclick="plusSlides(1, slideshow)">❯</a>

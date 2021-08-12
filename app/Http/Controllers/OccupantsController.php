@@ -74,7 +74,6 @@ class OccupantsController extends Controller
             $occupant->room_type = request('room_type', false);
 
             $occupant->save();
-            $dorm->decrement('available_space');
             $dorm->increment('num_of_occupants');
 
             $room_type = RoomType::where('room_type', '=', $occupant->room_type)->first();
@@ -100,7 +99,6 @@ class OccupantsController extends Controller
         $room_type->increment('vacancy');
 
         $occupant->delete();
-        $dorm->increment('available_space');
         $dorm->decrement('num_of_occupants');
 
         return redirect('/manager/listoccupants');
@@ -114,7 +112,6 @@ class OccupantsController extends Controller
         $room_type->increment('vacancy');
 
         $dorm = Dorms::where('dorm_name', '=', $occupant->dormitory)->first();
-        $dorm->increment('available_space');
         $dorm->decrement('num_of_occupants');
         
         $details = Occupants::join('dorm', 'dorm_name', '=', 'dormitory')

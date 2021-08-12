@@ -82,7 +82,7 @@ class DormsController extends Controller
 
         $images = Dorms::join('images', 'dormitory', '=', 'dorm_name')
         ->where('dorm.id', '=', $id)
-        ->get(['images.filename']);
+        ->get();
 
         $room_types = Dorms::join('room_types', 'dormitory', '=', 'dorm_name')
         ->where('dorm.id', '=', $id)
@@ -100,7 +100,7 @@ class DormsController extends Controller
 
         $images = Dorms::join('images', 'dormitory', '=', 'dorm_name')
         ->where('dorm.id', '=', $id)
-        ->get(['images.filename']);
+        ->get();
 
         $room_types = Dorms::join('room_types', 'dormitory', '=', 'dorm_name')
         ->where('dorm.id', '=', $id)
@@ -181,12 +181,14 @@ class DormsController extends Controller
             if($request->has('image')) {
                 $photos = $request->file('image');
                 
-                $filename = request('filename');
+                $filename = $photos->getClientOriginalName();
+                $label = request('filename');
                 $photos->move(public_path('images'), $filename);
-                    
+                
                 (Images::create([
                         'dormitory' => $dorm->dorm_name,
-                        'filename' => $filename
+                        'filename' => $filename,
+                        'label' => $label
                 ]));
             }
         } else if ($request->submit == "DEL") {

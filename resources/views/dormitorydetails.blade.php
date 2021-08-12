@@ -46,7 +46,7 @@
 
         <div id="slideshow" class="imgcontainer">
         @foreach($images as $image)
-        <div class="mySlides"> <img src="/images/{{ $image->filename }}" style="width:100%;height:100%;"><div class="text">{{ $image->filename }}</div></div>
+        <div class="mySlides"> <img src="/images/{{ $image->filename }}" style="width:100%;height:100%;"><div class="text">{{ $image->label }}</div></div>
         @endforeach
         <a class="prev" onclick="plusSlides(-1, slideshow)">❮</a>
         <a class="next" onclick="plusSlides(1, slideshow)">❯</a>
@@ -68,7 +68,7 @@
                 <input type="text" id="fname" name="fname" style="width: 25%;" class="readapp" value="{{ $details->street }}" readonly="readonly"><br>
             <label  for="fname">Nearest Landmark</label>
                 <input type="text" id="fname" name="fname" style="width: 25%;" class="readapp" value="{{ $details->nearest }}" readonly="readonly">
-            <label for="quantity" >Available space</label>
+            <label for="quantity" >Capacity</label>
                 <input type="number" id="quantity" name="quantity" style="width:10%;" class="readapp" min="0" value="{{ $details->available_space }}" readonly="readonly"><br>
 
         <div style="display:flex;margin-top:2%;">

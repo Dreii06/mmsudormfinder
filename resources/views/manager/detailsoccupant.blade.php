@@ -90,8 +90,7 @@
          <input type="text" style="width:20%;margin-right:2%;" id="sec" name="sex" value="{{ $details->sex }}" class="inputapp" readonly>
          <input type="text" style="width:20%;margin-right:2%;" id="fstudentid" name="room_type" value="{{ $details->room_type }}" class="inputapp" readonly>
 
-        <button type="submit" name="submit" value="DENY" onclick="denyapplicant()" class="greenbutton" style="margin-top:0px;">REMOVE</button>  
-        <button type="submit" name="submit" value="ACCEPT" onclick="acceptapplicant()" class="secondyellowbutton" style="margin-right:10px;margin-top:0%;">DOWNLOAD</button>
+        <button type="submit" name="submit" value="DENY" onclick="denyapplicant()" class="greenbutton" style="margin-top:0px;">REMOVE</button>
     </form>
 </div>
 

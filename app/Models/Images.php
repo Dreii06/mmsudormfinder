@@ -10,5 +10,5 @@ class Images extends Model
     use HasFactory;
     protected $table = 'images';
     public $timestamps = false;
-    protected $fillable = ['dormitory', 'filename'];
+    protected $fillable = ['dormitory', 'filename', 'label'];
 }

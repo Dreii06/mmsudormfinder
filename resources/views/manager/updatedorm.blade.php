@@ -65,7 +65,7 @@
     <div class="smallheader" style="width:90%;">OTHER INFORMATION</div>
     <label for="dname">Dorm Name</label>
     <label for="contact">Contact</label>
-    <label for="quantity">Available space</label><br>
+    <label for="quantity">Capacity</label><br>
 
     <input type="tel" id="fname" name="dorm_name" value="{{ $details->dorm_name }}" style="width: 20%;" class="inputapp" value="Sample Dorm Name">
     <input type="text" id="fname" name="mobile_num" value="{{ $details->mobile_num }}" style="width: 20%;" class="inputapp" value="Sample Contact">
@@ -93,7 +93,7 @@
         @endforeach
     </table><br>
     <select name="roomtype" id="room" class="inputapp" style="width:65%;">
-    <option selected disable hidden>Choose a room type you want to add</option>
+        <option selected disable hidden>Choose a room type you want to add</option>
         <option value="Single">Single</option>
         <option value="Double">Double</option>
         <option value="Triple">Triple</option>

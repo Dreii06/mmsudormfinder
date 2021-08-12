@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\Registrants;
 use App\Models\Registrant;
 use App\Models\Manager;
+use App\Models\Dorms;
 use Illuminate\Support\Facades\Auth;
 
 class RegistrantsController extends Controller
@@ -24,22 +25,22 @@ class RegistrantsController extends Controller
     function store(Request $request) {
         $registrant = Registrant::where('dorm_name', '=', request('dorm_name'))->first();
         $manager = new Manager();
-        
+
         Dorms::create([
-            'first_name' => $request->first,
-            'middle_name' => $request->middle,
-            'last_name' => $request->last,
-            'dorm_name' => $request->dorm_name,
-            'mobile_num' => $request->mobile_num
+            'first_name' => $registrant->first_name,
+            'middle_name' => $registrant->middle_name,
+            'last_name' => $registrant->last_name,
+            'dorm_name' => $registrant->dorm_name,
+            'mobile_num' => $registrant->mobile_num
         ]);
 
-        $manager->first_name = request('first', false);
-        $manager->middle_name = request('middle');
-        $manager->last_name = request('last', false);
-        $manager->email = request('email', false);
+        $manager->first_name = $registrant->first_name;
+        $manager->middle_name = $registrant->middle_name;
+        $manager->last_name =  $registrant->last_name;
+        $manager->email = $registrant->email;
         $manager->password = $registrant->password;
-        $manager->dorm_name = request('dorm_name', false);
-        $manager->mobile_num = request('mobile_num', false);
+        $manager->dorm_name = $registrant->dorm_name;
+        $manager->mobile_num = $registrant->mobile_num;
 
         $manager->save();
         $registrant->delete();

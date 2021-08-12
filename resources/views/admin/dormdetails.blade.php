@@ -32,7 +32,7 @@
             <li><a href="/admin/contact"><img src="https://img.icons8.com/fluent-systems-regular/96/000000/info-squared.png"/> Contact</a></li><br><br>
             <form style="margin-left:0%;margin-top:0%;display:block;" method="POST" action="{{ route('admin.logout') }}">
                 @csrf
-            <li><button type="submit"><a href="" style="padding-left:0%;color:red;" ><img src="https://img.icons8.com/ios-filled/50/000000/exit.png"/>{{ __('Log Out') }}</a></button></li>
+                <li><button type="submit" style="color:red;"><img src="https://img.icons8.com/ios-filled/50/000000/exit.png"/>{{ __('Log Out') }}</button></li>
             </form>
         </ul>
     </div>
@@ -61,7 +61,7 @@
 <div class="smallheader">OTHER INFORMATION</div>
     <label for="dname">Dorm Name</label>
     <label for="contact">Contact</label>
-    <label for="quantity">Available space</label><br>
+    <label for="quantity">Capacity</label><br>
 
     <input type="tel" id="fname" name="dname" style="width: 20%;" class="inputapp" value="{{ $details->dorm_name }}" readonly>
     <input type="text" id="fname" name="contact" style="width: 20%;" class="inputapp" value="{{ $details->mobile_num }}" readonly>
