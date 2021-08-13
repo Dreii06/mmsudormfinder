@@ -13,22 +13,22 @@ use App\Models\Amenities;
 class DormsController extends Controller
 {
     function showOnCampusDorms() {
-        $data = Dorms::join('oncampusdorms', 'dormitory', '=', 'dorm_name')->get();
+        $data = Dorms::join('oncampusdorms', 'dormitory', '=', 'dorm_name')->get(['dorm_name', 'first_name', 'middle_name', 'last_name', 'mobile_num', 'dorms.id']);
         return view('oncampusdormslist', ['dorm' => $data]);
     }
 
     function showOffCampusDorms() {
-        $data = Dorms::join('offcampusdorms', 'dormitory', '=', 'dorm_name')->get();
+        $data = Dorms::join('offcampusdorms', 'dormitory', '=', 'dorm_name')->get(['dorm_name', 'first_name', 'middle_name', 'last_name', 'mobile_num', 'dorms.id']);
         return view('offcampusdormslist', ['dorm' => $data]);
     }
 
     function adminshowOnCampusDorms() {
-        $data = Dorms::join('oncampusdorms', 'dormitory', '=', 'dorm_name')->get();
+        $data = Dorms::join('oncampusdorms', 'dormitory', '=', 'dorm_name')->get(['dorm_name', 'first_name', 'middle_name', 'last_name', 'mobile_num', 'dorms.id']);
         return view('admin.oncampusdorms', ['dorm' => $data]);
     }
 
     function adminshowOffCampusDorms() {
-        $data = Dorms::join('offcampusdorms', 'dormitory', '=', 'dorm_name')->get();
+        $data = Dorms::join('offcampusdorms', 'dormitory', '=', 'dorm_name')->get(['dorm_name', 'first_name', 'middle_name', 'last_name', 'mobile_num', 'dorms.id']);
         return view('admin.offcampusdorms', ['dorm' => $data]);
     }
 
@@ -36,18 +36,18 @@ class DormsController extends Controller
         $details = Dorms::find($id);
         
         $available = Dorms::join('room_types', 'dormitory', '=', 'dorm_name')
-        ->where('dorm.id', '=', $id)->sum('vacancy');
+        ->where('dorms.id', '=', $id)->sum('vacancy');
 
         $images = Dorms::join('images', 'dormitory', '=', 'dorm_name')
         ->where('dorm.id', '=', $id)
         ->get(['images.filename']);
         
         $room_types = Dorms::join('room_types', 'dormitory', '=', 'dorm_name')
-        ->where('dorm.id', '=', $id)
+        ->where('dorms.id', '=', $id)
         ->get();
 
         $amenities = Dorms::join('amenities', 'dormitory', '=', 'dorm_name')
-        ->where('dorm.id', '=', $id)
+        ->where('dorms.id', '=', $id)
         ->get(['amenities.amenities']);
 
         return view('manager.viewdorm', ['details' => $details], compact('images', 'room_types', 'amenities', 'available'));
@@ -57,14 +57,14 @@ class DormsController extends Controller
         $details = Dorms::find($id);
 
         $available = Dorms::join('room_types', 'dormitory', '=', 'dorm_name')
-        ->where('dorm.id', '=', $id)->sum('vacancy');
+        ->where('dorms.id', '=', $id)->sum('vacancy');
 
         $room_types = Dorms::join('room_types', 'dormitory', '=', 'dorm_name')
-        ->where('dorm.id', '=', $id)
+        ->where('dorms.id', '=', $id)
         ->get();
 
         $amenities = Dorms::join('amenities', 'dormitory', '=', 'dorm_name')
-        ->where('dorm.id', '=', $id)
+        ->where('dorms.id', '=', $id)
         ->get(['amenities.amenities']);
 
         return view('admin.dormdetails', ['details' => $details], compact('room_types', 'amenities', 'available'));
@@ -74,14 +74,14 @@ class DormsController extends Controller
         $details = Dorms::find($id);
 
         $available = Dorms::join('room_types', 'dormitory', '=', 'dorm_name')
-        ->where('dorm.id', '=', $id)->sum('vacancy');
+        ->where('dorms.id', '=', $id)->sum('vacancy');
 
         $room_types = Dorms::join('room_types', 'dormitory', '=', 'dorm_name')
-        ->where('dorm.id', '=', $id)
+        ->where('dorms.id', '=', $id)
         ->get();
 
         $amenities = Dorms::join('amenities', 'dormitory', '=', 'dorm_name')
-        ->where('dorm.id', '=', $id)
+        ->where('dorms.id', '=', $id)
         ->get(['amenities.amenities']);
 
         return view('manager.updatedorm', ['details' => $details],  compact('room_types', 'amenities', 'available'));
@@ -91,15 +91,15 @@ class DormsController extends Controller
         $details = Dorms::find($id);
 
         $images = Dorms::join('images', 'dormitory', '=', 'dorm_name')
-        ->where('dorm.id', '=', $id)
+        ->where('dorms.id', '=', $id)
         ->get();
 
         $room_types = Dorms::join('room_types', 'dormitory', '=', 'dorm_name')
-        ->where('dorm.id', '=', $id)
+        ->where('dorms.id', '=', $id)
         ->get();
 
         $amenities = Dorms::join('amenities', 'dormitory', '=', 'dorm_name')
-        ->where('dorm.id', '=', $id)
+        ->where('dorms.id', '=', $id)
         ->get(['amenities.amenities']);
 
         return view('dormitorydetails', ['details' => $details], compact('images', 'room_types', 'amenities'));
@@ -109,11 +109,11 @@ class DormsController extends Controller
         $details = Dorms::find($id);
 
         $images = Dorms::join('images', 'dormitory', '=', 'dorm_name')
-        ->where('dorm.id', '=', $id)
+        ->where('dorms.id', '=', $id)
         ->get();
 
         $room_types = Dorms::join('room_types', 'dormitory', '=', 'dorm_name')
-        ->where('dorm.id', '=', $id)
+        ->where('dorms.id', '=', $id)
         ->get();
 
         return view('applyconfirmation', ['details' => $details], compact('images', 'room_types'));
@@ -175,7 +175,7 @@ class DormsController extends Controller
         $details = Dorms::find($id);
 
         $images = Dorms::join('images', 'dormitory', '=', 'dorm_name')
-        ->where('dorm.id', '=', $id)
+        ->where('dorms.id', '=', $id)
         ->get();
 
         return view('manager.updateimage', ['details' => $details], ['images' => $images]);

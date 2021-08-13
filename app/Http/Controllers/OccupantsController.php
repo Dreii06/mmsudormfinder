@@ -25,9 +25,9 @@ class OccupantsController extends Controller
     }
 
     function adminshowdorm($name) {
-        $details = Occupants::join('dorm', 'dorm_name', '=', 'dormitory')
+        $details = Occupants::join('dorms', 'dorm_name', '=', 'dormitory')
             ->where('dorm_name', '=', $name)
-            ->get(['dorm.dorm_name', 'occupants.id', 'occupants.first_name', 'occupants.middle_name', 'occupants.last_name',  'occupants.stud_num', 'occupants.mobile_num']);
+            ->get(['dorms.dorm_name', 'occupants.id', 'occupants.first_name', 'occupants.middle_name', 'occupants.last_name', 'occupants.stud_num', 'occupants.mobile_num']);
 
         return view('admin.dormoccupantslist', ['details' => $details], ['dorm_name' => $name]);
     }
@@ -114,9 +114,9 @@ class OccupantsController extends Controller
         $dorm = Dorms::where('dorm_name', '=', $occupant->dormitory)->first();
         $dorm->decrement('num_of_occupants');
         
-        $details = Occupants::join('dorm', 'dorm_name', '=', 'dormitory')
+        $details = Occupants::join('dorms', 'dorm_name', '=', 'dormitory')
             ->where('dorm_name', '=', $occupant->dormitory)
-            ->get(['dorm.dorm_name', 'occupants.id', 'occupants.first_name', 'occupants.middle_name', 'occupants.last_name', 'occupants.stud_num', 'occupants.mobile_num']);
+            ->get(['dorms.dorm_name', 'occupants.id', 'occupants.first_name', 'occupants.middle_name', 'occupants.last_name', 'occupants.stud_num', 'occupants.mobile_num']);
 
         return view('admin.dormoccupantslist', ['details' => $details]);
     }

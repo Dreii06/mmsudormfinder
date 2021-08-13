@@ -56,14 +56,14 @@ class ApplicantsController extends Controller
 
     function applicationlist() {
         $user = Auth::user();
-        $details = Applicants::join('dorm', 'dorm_name', '=', 'dormitory')
+        $details = Applicants::join('dorms', 'dorm_name', '=', 'dormitory')
             ->where('applicants.stud_num', '=', $user->stud_num)
-            ->get(['applicants.dormitory', 'dorm.first_name', 'dorm.middle_name', 'dorm.last_name', 'applicants.room_type', 'dorm.mobile_num']);
+            ->get(['applicants.dormitory', 'dorms.first_name', 'dorms.middle_name', 'dorms.last_name', 'applicants.room_type', 'dorms.mobile_num']);
 
         if($details->isEmpty()) {
             $details = Occupants::join('dorm', 'dorm_name', '=', 'dormitory')
             ->where('occupants.stud_num', '=', $user->stud_num)
-            ->get(['occupants.dormitory', 'dorm.first_name', 'dorm.middle_name', 'dorm.last_name', 'occupants.room_type', 'dorm.mobile_num']);
+            ->get(['occupants.dormitory', 'dorms.first_name', 'dorms.middle_name', 'dorms.last_name', 'occupants.room_type', 'dorms.mobile_num']);
             $process = "Approved";
         } else {
             $process = "Waiting for Approval";

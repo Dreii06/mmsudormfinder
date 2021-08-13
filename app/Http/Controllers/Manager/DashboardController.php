@@ -47,7 +47,7 @@ class DashboardController extends Controller
         $occupants_cit = Occupants::where('dormitory', '=', $dorm->dorm_name)->where('college', '=', 'CIT')->count();
 
         $room_types = Dorms::join('room_types', 'dormitory', '=', 'dorm_name')
-        ->where('dorm.id', '=', $id)
+        ->where('dorms.id', '=', $id)
         ->get();
 
         return view('manager.dashboard', compact('applicants', 'occupants', 'applicants_cas', 'applicants_coe', 'applicants_cbea', 'applicants_chs', 'applicants_cafsd', 'applicants_casat', 'applicants_cte', 'applicants_cit','available_space', 'occupants_cas', 'occupants_coe', 'occupants_cbea', 'occupants_chs', 'occupants_cafsd', 'occupants_casat', 'occupants_cte', 'occupants_cit', 'room_types'));
