@@ -42,8 +42,7 @@
             </div>
     </div>
 
-    <!-- SLIDESHOW OF DORMITORY  -->
-    <div class="dorm_name">{{ $details->dorm_name }}</div><br>
+    <!-- SLIDESHOW OF DORMITORY  --><br>
         <div class="dorm_details_con">
 
         <div id="slideshow" class="imgcontainer">
@@ -58,15 +57,12 @@
 
         <!-- DETAILS OF DORMITORY  -->
     <div class="dorm_details">    
-        <form style="width:80%;" action="/applyconfirmation/{id}" method="POST">
+        <form style="width:80%;" action="/applyconfirmation/{{ $details->id }}" method="POST">
             @csrf
-        <h2 style="color:#0C4B05;">Confirm your Application</h2>
-        <label style="width:25%;margin-right:2%;" for="dorm">Dormitory</label>
+        <h2 style="color:#0C4B05;">Confirm your Application to {{ $details->dorm_name }}</h2>
         <label style="width:30%;margin-right:2%;" for="room">Type of Room</label>
         <label style="width:25%;margin-right:2%;" for="room">Vacancy</label><br>
-        
-        <input type="text" id="dorm" name="dorm" style="width:25%;margin-right:2%;" value="{{ $details->dorm_name }}" readonly class="inputapp">
-  
+          
         <select name="room_type" id="roomtype" style="width:30%;margin-right:2%;" class="inputapp" onchange="changeInput(event)">
             <option selected disable hidden>Choose your room type</option>
             @foreach($room_types as $types)

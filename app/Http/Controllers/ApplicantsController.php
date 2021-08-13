@@ -25,9 +25,10 @@ class ApplicantsController extends Controller
         return view('manager.detailsapplicant', ['details' => $details]);
     }
 
-    function store(Request $request) {
-        $id = Auth::user()->id;
-        $user = UserProfile::find($id);
+    function store($id, Request $request) {
+        $dorm = Dorms::find($id);
+        $user_id = Auth::user()->id;
+        $user = UserProfile::find($user_id);
         $applicant = new Applicants();
 
         $applicant->first_name = $user->first_name;
@@ -46,7 +47,7 @@ class ApplicantsController extends Controller
         $applicant->province = $user->province;
         $applicant->college = $user->college;
         $applicant->course = $user->course;
-        $applicant->dormitory = request('dorm', false);
+        $applicant->dormitory = $dorm->dorm_name;
         $applicant->room_type = request('type', false);
 
         $applicant->save();
@@ -61,7 +62,7 @@ class ApplicantsController extends Controller
             ->get(['applicants.dormitory', 'dorms.first_name', 'dorms.middle_name', 'dorms.last_name', 'applicants.room_type', 'dorms.mobile_num']);
 
         if($details->isEmpty()) {
-            $details = Occupants::join('dorm', 'dorm_name', '=', 'dormitory')
+            $details = Occupants::join('dorms', 'dorm_name', '=', 'dormitory')
             ->where('occupants.stud_num', '=', $user->stud_num)
             ->get(['occupants.dormitory', 'dorms.first_name', 'dorms.middle_name', 'dorms.last_name', 'occupants.room_type', 'dorms.mobile_num']);
             $process = "Approved";
