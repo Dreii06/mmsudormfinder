@@ -27,37 +27,36 @@
     <div class="verticalnav">
         <ul>
             <li class="username">{{ Auth::guard('manager')->user()->dorm_name }}</li>
-            <li><a href="/manager/dashboard"> <img src="https://img.icons8.com/fluent-systems-regular/96/000000/home.png"/> Home</a></li>
-            <li><a class="active" href="/manager/listapplicants"> <img src="https://img.icons8.com/fluent-systems-regular/50/000000/parse-resume.png"/> Applicants</a></li>
-            <li><a href="/manager/listoccupants"><img src="https://img.icons8.com/fluent-systems-regular/96/000000/user-rights.png"/> Occupants</a></li>
-            <li><a href="/manager/viewdorm/{{ Auth::guard('manager')->user()->id }}"><img src="https://img.icons8.com/fluent-systems-regular/96/000000/department.png"/> Dorm</a></li>
-            <li><a href="/manager/contact"><img src="https://img.icons8.com/fluent-systems-regular/96/000000/info-squared.png"/> Contact</a></li><br><br>
+            <li><a href="{{ url('manager/dashboard') }}"> <img src="https://img.icons8.com/fluent-systems-regular/96/000000/home.png"/> Home</a></li>
+            <li><a class="active" href="{{ url('manager/listapplicants') }}"> <img src="https://img.icons8.com/fluent-systems-regular/50/000000/parse-resume.png"/> Applicants</a></li>
+            <li><a href="{{ url('manager/listoccupants') }}"><img src="https://img.icons8.com/fluent-systems-regular/96/000000/user-rights.png"/> Occupants</a></li>
+            <li><a href="{{ url('manager/viewdorm/'. Auth::guard('manager')->user()->id) }}"><img src="https://img.icons8.com/fluent-systems-regular/96/000000/department.png"/> Dorm</a></li>
+            <li><a href="{{ url('manager/contact') }}"><img src="https://img.icons8.com/fluent-systems-regular/96/000000/info-squared.png"/> Contact</a></li><br><br>
             <form method="POST" action="{{ route('manager.logout') }}">
                 @csrf
-            <li><a href=""><button type="submit" style="padding-left:0%;color:red;" ><img src="https://img.icons8.com/ios-filled/50/000000/exit.png"/>{{ __('Log Out') }}</button></a></li>
+                <li><button type="submit"><img src="https://img.icons8.com/ios-filled/50/000000/exit.png"/>{{ __('Log Out') }}</button></li>
             </form>
         </ul>    
-    </div>
-
-    <div class="header"> <h1 style="color:white;">APPLICANTS</h1>
-    <form style="margin-top:2%;margin-left:30%;" action="/manager/searchapplicants" method="POST" role="search">
-        @csrf
-        <input type="text" id="search" onkeyup="searchFunction()" placeholder="Search by Student Number" name="search">
-        <button type="submit"><img src="https://img.icons8.com/pastel-glyph/50/000000/search--v2.png" width="100%"></button>
-      </form>
     </div>
   <!-- END OF NAVIGATION BAR -->
    
   <!-- TABLE -->
     <div class="listappcontainer">
         
-    <div class="tableFixHeadtitle">LIST OF APPLICANTS</div>  
+    <div class="header"> <h1 style="width:100%;">LIST OF APPLICANTS</h1>
+            <form style="margin-right:0%;" action="/manager/searchapplicants" method="POST" role="search">
+              @csrf
+              <input type="text" id="search" onkeyup="searchFunction()" placeholder="Search" name="search">
+              <button type="submit"><img src="https://img.icons8.com/pastel-glyph/50/000000/search--v2.png" width="100%"></button>
+            </form>        
+      </div>
+
     <div class="tableFixHead">
       <table>
         <thead>
           <tr>
             <th>NAME</th>
-            <th>STUDENT NUMBER</th>
+            <th>ADDRESS</th>
             <th>CONTACT NUMBER</th>
             <th></th>
           </tr>
@@ -66,9 +65,9 @@
           @foreach ($applicants as $applicant)
           <tr>
             <td>{{ $applicant->first_name }} {{ $applicant->middle_name }} {{ $applicant->last_name }}</td>
-            <td>{{ $applicant->stud_num }}</td>
+            <td>{{ $applicant->city }}</td>
             <td>{{ $applicant->mobile_num }}</td>
-            <td><a href="detailsapplicant/{{ $applicant->id }}"><button type="button">VIEW</button></a></td>
+            <td><a href="{{ url('manager/detailsapplicant/'. $applicant->id) }}"><button type="button">VIEW</button></a></td>
           </tr>
           @endforeach
         </tbody>

@@ -14,22 +14,22 @@
                 radial-gradient(at 47% 33%, hsl(88.13, 96%, 27%) 0, transparent 59%), 
                 radial-gradient(at 82% 65%, hsl(88.65, 77%, 43%) 0, transparent 55%);">
         
-    <div class="uppernav"> <h3 style="margin-left:20px;">MMSU - Dorm Finder</h3></div>
+    <div class="uppernav"> <h3 style="margin-left:20px;">MMSU - DORM FINDER</h3></div>
     
     <div class="topnav" id="myTopnav">
        <img style="float:left;margin-left:20px;margin-top:5px;" src="/images/mmsu logo.png"  height="4%" width="4%">
-       <a style=" text-decoration: none;width:20%;margin:0%;" href="/dashboard"><h4>MARIANO MARCOS <br> STATE UNIVERSITY</h4></a>
+       <a style=" text-decoration: none;width:20%;margin:0%;" href="{{ url('dashboard') }}"><h4>MARIANO MARCOS <br> STATE UNIVERSITY</h4></a>
             <a class="topnavlink" href="/contact">CONTACT</a>
             <a class="topnavlink" href="/about">ABOUT US</a>
             <a class="topnavlink" href="/dorm">LIST OF DORMS</a>
 
                 <div class="menu">
-                <img style="float:right;margin-top:15px;" src="/images/user.png"  width="15%" height="40%">
+                <img style="float:right;margin-top:20px;" src="/images/user.png"  width="15%" height="40%">
                     <ul><li>
                     <a href="#" style="float:right;margin:10px 0px 0px 0px;">{{ Auth::user()->stud_num }}</a>
                         <ul>
-                        <li><a href="/profilestudent">Profile</a></li><br>
-                        <li><a href="/applicationlist">Application List</a></li><br>
+                        <li><a href="{{ url('profilestudent') }}">Profile</a></li><br>
+                        <li><a href="{{ url('applicationlist') }}">Application List</a></li><br>
                         <form style="display:block;" method="POST" action="{{ route('logout') }}">
                             @csrf
                         <li><button type="submit">{{ __('Log Out') }}</button></li>
@@ -46,24 +46,22 @@
         <div class="containeron">
             <img src="/images/on.png" alt="Avatar" class="image">
             <div class="onoverlay">
-                <h2 class="h2nav">On Campus <p style="width:90%;" class="text--normal">Staying within the facilities owned by the
+                <h2 class="h2campus">On Campus <p style="width:85%;color:white;" class="text--normal">Staying within the facilities owned by the
                 university. Insert more information here! </p>
-                <a href="/oncampusdormslist"><button type="button" style="margin-left:0%;width:40%;" class="dorm">E N T E R</button></a>
+                <a href="{{ url('oncampusdormslist') }}"><button type="button" style="margin-left:0%;width:40%;" class="dorm">E N T E R</button></a>
                 </h2>
             </div>    
         </div>
-        <img  style="left:0%;" class="__imgonoff" src="/images/2.png" /> 
 
         <div class="containeroff">
             <img src="/images/off.png" alt="Avatar" class="image">
-            <div class="offoverlay">
-                <h2 class="h2nav">Off Campus <p style="width:90%;" class="text--normal">Staying within the facilities owned by local residents.
+            <div class="offoverlay" >
+                <h2 class="h2campus">Off Campus <p style="width:85%;color:white;" class="text--normal" >Staying within the facilities owned by local residents.
             Insert more information here! </p>
-                <a href="/offcampusdormslist"><button type="button" style="margin-left:0%;width:40%;" class="dorm">E N T E R</button></a>
+                <a href="{{ url('offcampusdormslist') }}"><button type="button" style="margin-left:0%;width:40%;" class="dorm">E N T E R</button></a>
                 </h2>
             </div>    
         </div>
-        <img  style="right:0%;" class="__imgonoff" src="/images/1.png" /> 
 <div class="imgcover">
 <div class="frontcover">
 

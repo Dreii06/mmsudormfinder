@@ -50,6 +50,8 @@ Route::get('/dorm', function () {
 
 Route::get('/applicationlist', [ApplicantsController::class, 'applicationlist']);
 
+Route::post('/applicationlist', [ApplicantsController::class, 'delapplication']);
+
 Route::post('/profilestudent', [UserProfileController::class, 'update']);
 
 Route::get('/oncampusdormslist', [DormsController::class, 'showOnCampusDorms']);

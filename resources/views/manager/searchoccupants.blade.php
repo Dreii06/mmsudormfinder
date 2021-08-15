@@ -30,14 +30,14 @@
     <div class="verticalnav">
         <ul>
             <li class="username">{{ Auth::guard('manager')->user()->dorm_name }}</li>
-            <li><a href="/manager/dashboard"> <img src="https://img.icons8.com/fluent-systems-regular/96/000000/home.png"/> Home</a></li>
-            <li><a href="/manager/listapplicants"> <img src="https://img.icons8.com/fluent-systems-regular/50/000000/parse-resume.png"/> Applicants</a></li>
-            <li><a class="active" href="/manager/listoccupants"><img src="https://img.icons8.com/fluent-systems-regular/96/000000/user-rights.png"/> Occupants</a></li>
-            <li><a href="/manager/viewdorm/{{ Auth::guard('manager')->user()->id }}"><img src="https://img.icons8.com/fluent-systems-regular/96/000000/department.png"/> Dorm</a></li>
-            <li><a href="/manager/contact"><img src="https://img.icons8.com/fluent-systems-regular/96/000000/info-squared.png"/> Contact</a></li><br><br>
+            <li><a href="{{ url('manager/dashboard') }}"> <img src="https://img.icons8.com/fluent-systems-regular/96/000000/home.png"/> Home</a></li>
+            <li><a href="{{ url('manager/listapplicants') }}"> <img src="https://img.icons8.com/fluent-systems-regular/50/000000/parse-resume.png"/> Applicants</a></li>
+            <li><a class="active" href="{{ url('manager/listoccupants') }}"><img src="https://img.icons8.com/fluent-systems-regular/96/000000/user-rights.png"/> Occupants</a></li>
+            <li><a href="{{ url('manager/viewdorm/'. Auth::guard('manager')->user()->id) }}"><img src="https://img.icons8.com/fluent-systems-regular/96/000000/department.png"/> Dorm</a></li>
+            <li><a href="{{ url('manager/contact') }}"><img src="https://img.icons8.com/fluent-systems-regular/96/000000/info-squared.png"/> Contact</a></li><br><br>
             <form method="POST" action="{{ route('manager.logout') }}">
                 @csrf
-            <li><a href=""><button type="submit" style="padding-left:0%;color:red;" ><img src="https://img.icons8.com/ios-filled/50/000000/exit.png"/>{{ __('Log Out') }}</button></a></li>
+                <li><button type="submit"><img src="https://img.icons8.com/ios-filled/50/000000/exit.png"/>{{ __('Log Out') }}</button></li>
             </form>
         </ul>    
     </div>
@@ -57,7 +57,7 @@
         <thead>
           <tr>
             <th>NAME</th>
-            <th>STUDENT NUMBER</th>
+            <th>ADDRESS</th>
             <th>CONTACT NUMBER</th>
             <th></th>
           </tr>
@@ -66,9 +66,9 @@
             @forelse($occupants as $occupant)
           <tr>
             <td>{{ $occupant->first_name }} {{ $occupant->middle_name }} {{ $occupant->last_name }}</td>
-            <td>{{ $occupant->stud_num }}</td>
+            <td>{{ $occupant->city }}</td>
             <td>{{ $occupant->mobile_num }}</td>
-            <td><a href="detailsoccupant/{{ $occupant->id }}"><button type="button">VIEW</button></a></td>
+            <td><a href="{{ url('manager/detailsoccupant/'. $occupant->id) }}"><button type="button">VIEW</button></a></td>
           </tr>
           @empty
           <td><p>No Occupants Found</p></td>

@@ -71,6 +71,14 @@ class ApplicantsController extends Controller
         }
 
         return view('applicationlist', ['details' => $details], ['process' => $process]);
+    }
 
+    function delapplication(Request $request) {
+        $user = Auth::user();
+        $applicant = Applicants::where('stud_num', '=', $user->stud_num)->first();
+        
+        $applicant->delete();
+
+        return redirect()->back();
     }
 }

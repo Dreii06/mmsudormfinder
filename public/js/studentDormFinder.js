@@ -2,6 +2,10 @@ function loginFunction() {
     alert('Login Successfully!');
 }
 
+function cancelapp() {
+  alert('Application Cancelled!');
+}
+
 function apply() {
   alert('Successfully Applied! Wait within 1-3 working days for verification');
 }

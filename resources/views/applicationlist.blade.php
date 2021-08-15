@@ -10,7 +10,7 @@
     </head>
 
     <body>
-    <div class="uppernav"> <h3 style="margin-left:20px;">MMSU - Dorm Finder</h3></div>
+    <div class="uppernav"> <h3 style="margin-left:20px;">MMSU - DORM FINDER</h3></div>
     <div class="topnav" id="myTopnav">
        <img style="float:left;margin-left:20px;margin-top:5px;" src="/images/mmsu logo.png"  height="4%" width="4%">
        <a style=" text-decoration: none;width:20%;margin:0%;" href="/dashboard"><h4>MARIANO MARCOS <br> STATE UNIVERSITY</h4></a>
@@ -35,20 +35,28 @@
     </div>
 
     <div class="header"> <h1>APPLICATION LIST</h1></div>
+
+    <p class="note"> <b>NOTICE</b> : After confirming, wait for 1-3 business days for the process, if still waiting for
+        approval, feel free to apply to other available dormitories </p>
+
     @foreach($details as $detail)
     <div class="applistform">
-    <form>
-        <label for="dormname">Dorm Name:</label>
-            <input type="text" id="dormname" value="{{ $detail->dormitory }}" style="width: 20%;" class="readapp" readonly="readonly"><br>
-        <label for="fname">Manager:</label>
-                <input type="text" id="fname" value="{{ $detail->first_name }} {{ $detail->middle_name }} {{ $detail->last_name }}" style="width: 20%;" class="readapp" value="Sample Name" readonly="readonly"><br>
-        <label for="roomtype">Room Type:</label>
-            <input type="text" id="roomtype" value="{{ $detail->room_type }}" style="width: 20%;" class="readapp" readonly="readonly"><br>
-        <label for="number">Mobile Number:</label>
-            <input type="tel" id="number" value="{{ $detail->mobile_num }}" style="width: 20%;" class="readapp" readonly="readonly"><br>
+    <form action="/applicationlist" method="POST">
+        @csrf
+        <label for="dormname">Dorm Name</label>
+            <input type="text" id="dormname" value="{{ $detail->dormitory }}" style="width: 30%;" class="readapp" readonly="readonly">
+        <label for="roomtype">Room Type</label>
+            <input type="text" id="roomtype" value="{{ $detail->room_type }}" style="width: 25%;" class="readapp" readonly="readonly"><br>
+        <label for="fname">Manager</label>
+                <input type="text" id="fname" value="{{ $detail->first_name }} {{ $detail->middle_name }} {{ $detail->last_name }}" style="width: 30%;" class="readapp" value="Sample Name" readonly="readonly">
+        <label for="number">Mobile Number</label>
+            <input type="tel" id="number" value="{{ $detail->mobile_num }}" style="width: 25%;" class="readapp" readonly="readonly"><br>
         
-        <label for="process">Process:</label>
-        <input type="text" id="process" name="process" value="{{ $process }}" style="width: 20%;" class="readapp" readonly="readonly"><br>
+        <label for="process">Process</label>
+        <input type="text" id="process" name="process" value="{{ $process }}" style="width: 30%;color:#28a01b;font-family:ABold;" class="readapp" readonly="readonly">
+        
+        <button type="submit" name="cancel" onclick="cancelapp()" class="secondyellowbutton" style="width:20%;float:right;margin-right:15%;"> CANCEL APPLICATION</button>
+
     </form>
     </div>
     @endforeach

@@ -21,7 +21,7 @@
     
     <div class="topnav" id="myTopnav">
        <img style="float:left;margin-left:20px;margin-top:5px;" src="/images/mmsu logo.png"  height="4%" width="4%">
-       <a style=" text-decoration: none;width:20%;margin:0%;" href="/dashboard"><h4>MARIANO MARCOS <br> STATE UNIVERSITY</h4></a>
+       <a style=" text-decoration: none;width:20%;margin:0%;" href="{{ url('dashboard') }}"><h4>MARIANO MARCOS <br> STATE UNIVERSITY</h4></a>
             <a class="topnavlink" href="/contact">CONTACT</a>
             <a class="topnavlink" href="/about">ABOUT US</a>
             <a class="topnavlink" href="/dorm">LIST OF DORMS</a>
@@ -31,8 +31,8 @@
                     <ul><li>
                      <a href="#" style="float:right;margin:10px 0px 0px 0px;">{{ Auth::user()->stud_num }}</a>
                         <ul>
-                        <li><a href="/profilestudent">Profile</a></li><br>
-                        <li><a href="/applicationlist">Application List</a></li><br>
+                        <li><a href="{{ url('profilestudent') }}">Profile</a></li><br>
+                        <li><a href="{{ url('applicationlist') }}">Application List</a></li><br>
                         <form style="display:block;" method="POST" action="{{ route('logout') }}">
                             @csrf
                         <li><button type="submit">{{ __('Log Out') }}</button></li>
@@ -42,8 +42,8 @@
             </div>
     </div>
 
-    <!-- SLIDESHOW OF DORMITORY  --><br>
-        <div class="dorm_details_con">
+    <!-- SLIDESHOW OF DORMITORY  -->
+        <div class="dorm_details_con" style="margin-top:3%;">
 
         <div id="slideshow" class="imgcontainer">
         @foreach($images as $image)
@@ -52,19 +52,19 @@
         <a class="prev" onclick="plusSlides(-1, slideshow)">❮</a>
         <a class="next" onclick="plusSlides(1, slideshow)">❯</a>
         </div>
-           <p class="descriptiondorm"> {{ $details->description }} </p>
     </div>
 
         <!-- DETAILS OF DORMITORY  -->
-    <div class="dorm_details">    
+    <div class="dorm_details" style="margin-top:3%;">    
         <form style="width:80%;" action="/applyconfirmation/{{ $details->id }}" method="POST">
             @csrf
-        <h2 style="color:#0C4B05;">Confirm your Application to {{ $details->dorm_name }}</h2>
-        <label style="width:30%;margin-right:2%;" for="room">Type of Room</label>
+        <h2 style="color:#053F5E;">Confirm your Application to <br> Tabaniag Dorm</h2>
+        <label style="width:30%;margin-right:2%;" for="room">Choose a Room Type</label>
         <label style="width:25%;margin-right:2%;" for="room">Vacancy</label><br>
-          
-        <select name="room_type" id="roomtype" style="width:30%;margin-right:2%;" class="inputapp" onchange="changeInput(event)">
-            <option selected disable hidden>Choose your room type</option>
+        
+  
+        <select name="room_type" id="roomtype" style="width:30%;margin-right:2%;" class="inputapp" onchange="changeInput(event)" required>
+            <option selected disable hidden></option>
             @foreach($room_types as $types)
             <option value="{{ $types->vacancy }}">{{ $types->room_type }}</option>
             @endforeach
@@ -74,10 +74,7 @@
         <input type="text" id="vacancy" name="vacancy" style="width:25%;margin-right:2%;" readonly class="inputapp"><br>
         
         <button type="submit" onclick="###" class="secondyellowbutton" style="width:20%;margin-top:5%;float:left;"> CONFIRM</button>
-        <a href="/dashboard"><button type="button" class="confirmcancelbutton">CANCEL</button></a><br>
-        
-        <p style="margin-top:10%;"class="note"> NOTE: After confirming, wait for 1-3 business days for the process, if still waiting for
-        approval, feel free to apply to other available dormitories </p>
+        <a href="{{ URL::previous() }}"><button type="button" class="confirmcancelbutton">BACK</button></a><br>
 
         </form>
     </div>

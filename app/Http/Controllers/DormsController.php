@@ -39,7 +39,7 @@ class DormsController extends Controller
         ->where('dorms.id', '=', $id)->sum('vacancy');
 
         $images = Dorms::join('images', 'dormitory', '=', 'dorm_name')
-        ->where('dorm.id', '=', $id)
+        ->where('dorms.id', '=', $id)
         ->get(['images.filename']);
         
         $room_types = Dorms::join('room_types', 'dormitory', '=', 'dorm_name')

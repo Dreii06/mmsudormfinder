@@ -16,7 +16,7 @@
     
     <div class="topnav" id="myTopnav">
        <img style="float:left;margin-left:20px;margin-top:5px;" src="/images/mmsu logo.png"  height="4%" width="4%">
-       <a style=" text-decoration: none;width:20%;margin:0%;" href="dashboard"><h4>MARIANO MARCOS <br> STATE UNIVERSITY</h4></a>
+       <a style=" text-decoration: none;width:20%;margin:0%;" href="{{ url('dashboard') }}"><h4>MARIANO MARCOS <br> STATE UNIVERSITY</h4></a>
             <a class="topnavlink" href="/contact">CONTACT</a>
             <a class="topnavlink" href="/about">ABOUT US</a>
             <a class="topnavlink" href="/dorm">LIST OF DORMS</a>
@@ -26,8 +26,8 @@
                     <ul><li>
                      <a href="#" style="float:right;margin:10px 0px 0px 0px;">{{ Auth::user()->stud_num }}</a>
                         <ul>
-                        <li><a href="/profilestudent">Profile</a></li><br>
-                        <li><a href="/applicationlist">Application List</a></li><br>
+                        <li><a href="{{ url('profilestudent') }}">Profile</a></li><br>
+                        <li><a href="{{ url('applicationlist') }}">Application List</a></li><br>
                         <form style="display:block;" method="POST" action="{{ route('logout') }}">
                             @csrf
                         <li><button type="submit">{{ __('Log Out') }}</button></li>
@@ -39,7 +39,7 @@
 
     <div class="header"> <h1>HOUSING FACILITIES - ON CAMPUS</h1>
 
-    <form style="margin-left:10%;margin-top:2%;" action="/searchdorm" method="POST" role="search">
+    <form style="margin-left:40%;margin-top:1%;" action="/searchdorm" method="POST" role="search">
       @csrf
         <input type="text" id="search" onkeyup="searchFunction()" placeholder="Search.." name="q">
         <button type="submit"><img src="https://img.icons8.com/pastel-glyph/50/000000/search--v2.png" width="100%"></button>
@@ -64,7 +64,7 @@
             <td>{{ $dorm->dorm_name }}</a></td>
             <td>{{ $dorm->first_name }} {{ $dorm->middle_name }} {{ $dorm->last_name }}</td>
             <td>{{ $dorm->mobile_num }}</td>
-            <td><a href="/dormitorydetails/{{ $dorm->id }}"><button type="button">VIEW</button></a></td>
+            <td><a href="{{ url('dormitorydetails/'.$dorm->id) }}"><button type="button">VIEW</button></a></td>
           </tr>
           @endforeach
         </tbody>

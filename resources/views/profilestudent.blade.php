@@ -16,9 +16,9 @@
         
     </head>
     
-    <body class="antialiased">
+    <body class="antialiased" style="overflow:hidden;">
 
-    <div class="uppernav"> <h3 style="margin-left:20px;">MMSU - Dorm Finder</h3></div>
+    <div class="uppernav"> <h3 style="margin-left:20px;">MMSU - DORM FINDER</h3></div>
     
     <div class="topnav" id="myTopnav">
        <img style="float:left;margin-left:20px;margin-top:5px;" src="/images/mmsu logo.png"  height="4%" width="4%">
@@ -50,6 +50,7 @@
     <div class="profile_con">
     <form action="/profilestudent" method="POST">
         @csrf
+    <div>
         <div class="smallheader">FULL NAME</div>
         <label for="fname">First Name</label>
         <label for="mname">Middle Name</label>
@@ -60,7 +61,9 @@
         <input type="text"  style="width:20%;margin-right:2%;" id="mname" name="middle" value="{{ Auth::user()->middle_name }}" class="inputapp">
         <input type="text"  style="width:20%;margin-right:2%;" id="lname" name="last" value="{{ Auth::user()->last_name }}"  class="inputapp">
         <input type="text"  style="width:20%;margin-right:2%;" id="sname" name="suffix" value="{{ Auth::user()->suffix }}"  class="inputapp"><br><br>
+    </div>
 
+    <div>
         <div class="smallheader">ADDRESS</div>
         <label for="barangay">Barangay</label>
         <label for="street">Street</label>
@@ -71,7 +74,7 @@
         <input type="text" style="width:20%;margin-right:2%;"id="street" name="street" value="{{ Auth::user()->street }}" class="inputapp">
         <input type="text" style="width:20%;margin-right:2%;"id="city" name="city" value="{{ Auth::user()->city }}" class="inputapp">
         <input type="text" style="width:20%;"id="province" name="province" value="{{ Auth::user()->province }}" class="inputapp"><br><br>
-
+    </div>
         <div class="smallheader">CONTACT INFORMATION</div>
         <label for="email">Email</label>
         <label  for="number">Mobile Number</label>
@@ -83,13 +86,13 @@
         <input type="text" style="width:20%;margin-right:2%;"id="nameg" name="guardian_name" value="{{ Auth::user()->guardian_name }}" class="inputapp">
         <input type="tel" style="width:20%;"id="number" name="guardian_num" value="{{ Auth::user()->guardian_num }}" class="inputapp"><br><br>
 
-        <div class="smallheader">ACADEMIC INFORMATION</div>
+        <div class="smallheader">OTHER INFORMATION</div>
         <label for="fstudentid">Student Number</label>  
         <label for="college">College:</label>
-        <label for="course">Course:</label><br>
-        
+        <label for="course">Course:</label>
+        <label  for="sex" >Sex</label><br>
+
         <input type="text" style="width:20%;margin-right:2%;" id="fstudentid" name="stud_id" value="{{ Auth::user()->stud_num }}" class="inputapp" >
-        
         <select name="college" style="width:20%;margin-right:2%;" id="college"  onchange="myFunction()" class="inputapp">
             <option selected disable hidden value="{{ Auth::user()->college }}">{{ Auth::user()->college }}</option>
             <option value="CAS">CAS</option>
@@ -143,10 +146,8 @@
             <option data-tag="CTE" value="Bachelor in Secondary Education">Bachelor in Secondary Education</option>
             <option data-tag="CTE" value="Bachelor in Elementary Education">Bachelor in Elementary Education</option>
             <option data-tag="CTE" value="Short-Term Programs">Short-Term Programs</option>
-        </select><br><br>
+        </select>
         
-        <div class="smallheader">OTHER INFORMATION</div>
-         <label  for="sex" >Sex</label><br>
          <select name="sex"  style="width:20%;margin-right:2%;" id="sex" class="inputapp">
             <option selected disable hidden value="{{ Auth::user()->sex }}">{{ Auth::user()->sex }}</option>
             <option value="Male">Male</option>

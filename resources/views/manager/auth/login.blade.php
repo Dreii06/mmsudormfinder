@@ -14,36 +14,34 @@
         
     </head>
     
-    <body style="background-image: url('/images/bg.png');  background-repeat: no-repeat;background-size:100% 100%;" class="antialiased">
+    <body style="background-image: url('/images/bg.png');  background-repeat: no-repeat;background-size:100%;overflow:hidden;" class="antialiased">
         
-    <div class="uppernav">
-        <h3 style="color:#0C4B05;margin-left:20px;">MMSU </h3><h3> - COEDS / Proprietor Dorm Management</h3>
-    </div>
-                <div class="topnav" id="myTopnav">
-                <img style="float:left;margin-left:20px;margin-top:12px;" src="/images/mmsu logo.png"  height="3%" width="3%">
-                <h4>MARIANO MARCOS <br> STATE UNIVERSITY</h4>
-                </div>
+        <div class="uppernav">
+            <h3 style="margin-left:20px;">MMSU - COEDS / Proprietor Dorm Management</h3>
+        </div>
+    
+        <div class="topnav" id="myTopnav">
+            <img style="float:left;margin-left:20px;" src="/images/mmsu logo.png" width="3%">
+            <h4>MARIANO MARCOS <br> STATE UNIVERSITY</h4>
+        </div>
                 
-                <img style="right:23%;z-index:2;" class="__img" src="/images/mmsu logo.png" />
+        <div class="logincontainer">
 
-                <div class="logincontainer">
+            <form id="login" method="POST" action="{{ route('manager.login') }}">
+                @csrf
+                <legend style="float:left;">Log In</legend>
+                    <input type="text" id="name" name="email" :value="old('email')" placeholder="Staff ID" class="loginform" style="margin-top:30px;"> <br>
+                    <input type="password" id="password" name="password" placeholder="Password" class="loginform" style="margin-top:10px;"> <br>
 
-                    <form id="login" method="POST" action="{{ route('manager.login') }}">
-                        @csrf
-                    <legend style="color:white;">Log In:</legend>
-                        <input type="text" id="name" name="email" :value="old('email')" placeholder="Staff ID" class="loginform" style="margin-top:30px;width:100%;"> <br>
-                        <input type="password" id="password" name="password" placeholder="Password" class="loginform" style="margin-top:10px;width:100%;"> <br>
+                    <button type="submit" class="yellowbutton" style="width:80%;margin-top:15px;">{{ __('Log in') }}</button><br>
 
-                        <button type="submit" class="yellowbutton" style="width:100%;margin-top:15px;">{{ __('Log in') }}</button><br>
-
-                        <!-- Validation Errors -->
+                    <!-- Validation Errors -->
                         <x-auth-validation-errors class="mb-4" :errors="$errors" style="color:white;margin-top:5%;"/>
                         <hr>
-                        <label for="register" style="color:white;margin-left:15%;">New Here? Register first!</label><br>
-                        <a href="/manager/register"><button type="button" id="register" class="registerbutton" style="margin-top:15px;">{{ __('Register') }}</button></a>
-                        
-                    </form>
+                    <label for="register">New Here? Register first!</label><br>
+                    <a href="/manager/register"><button type="button" id="register" class="registerbutton" style="margin-top:15px;">{{ __('Register') }}</button></a>       
+            </form>
 
-                </div>
+        </div>
     </body>
 </html>

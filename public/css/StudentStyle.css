@@ -1,12 +1,18 @@
 @charset "utf-8";
 
 @font-face {
-    font-family: Regular;
-    src: url('/fonts/LT Amber Regular.otf');
+  font-family: Regular;
+  src: url('/fonts/PoppinsRegular-B2Bw.otf');
 }
+
 @font-face {
-    font-family: ABold;
-    src: url('/fonts/LT Amber Bold.otf');
+font-family: ABold;
+src: url('/fonts/PoppinsSemibold-8l8n.otf');
+}
+
+@font-face {
+  font-family: ABolder;
+  src: url('/fonts/PoppinsBold-GdJA.otf');
 }
 @font-face {
     font-family: Unna;
@@ -23,18 +29,25 @@ body {
 }
 
 h1{
-    color: white;
-    font-size: 2vw;
+    color:#053F5E;
+    font-size: 1.5vw;margin: 0%;
+    font-family: ABolder;
+}
+
+.contactabout{
+  color:#053F5E;
+  font-size: 2vw;margin: 0%;
+  font-family: ABolder;
 }
 
 h3{
-    color: #0C4B05;
+    color:#434546;
     font-size: 1.3vw;
     margin-top: 3px;
 }
 
 h4{
-    color: #FFCD00;
+    color:white;
     text-align: left;
     padding: 0% 2% 0% 2%;
     font-family:Unna;
@@ -47,159 +60,141 @@ form {
 }
 
 legend{
-    color:white;
+    color:#053F5E;
+    float: left;
+    font-family: ABolder;
     font-size:2vw;
 }
 
 hr{
   width: 100%; 
-  border-color: #FFB700;
+  border-color: #434546;
   float: left;
   margin-top: 20px;
 }
 
 .registercontainer {
   display: flex;
-  background-color: #0C4B05;
+  backdrop-filter: blur(16px) saturate(180%);
+  -webkit-backdrop-filter: blur(16px) saturate(180%);
+  background-color: rgba(255, 255, 255, 0.40);
+  border-radius: 20px;
   width: 60%;
-  padding: 1% 15% 15% 0%;
-  height: 100%;  
+  margin: 0% 0% 0% 20%;
+  padding: 2% 0% 0% 10%;  
 }
 
 .registercontainer form {
   border-style: none;
-  display: inline-block;
   width: 100%;
   height: 100%;
-  margin: 0% 2% 2% 10%;
+  margin: 0% 0% 2% 0%;
 }
 
 .registerbutton {
   background-color:transparent;
-  color: #FFB700;
+  color:#28a01b;
   font-size: 1.1vw;
+  font-family: ABold;
   border-style:solid;
-  border-color: #FFB700;
-  width: 100%;
-  height: 35px;
-  border-radius: 12px;
-  margin-bottom:10px;
+  border-color: #28a01b;
+  width: 80%; height: 35px;
+  border-radius: 12px; margin-bottom:10px;
   cursor: pointer;
 }
 
 .note{
-  color:white;
-  background-color: #0C4B05;
-  margin-top:20px;
-  width:80%;
+  color:#28a01b;
+  margin-left: 50px; padding-left: 3%;
+  border-color: #28a01b; border-style: solid; border-width: 1px;
+  width:90%;
   border-radius: 10px;
-  font-family: Arial;
-  font-weight:lighter;
+  font-family: Regular;
   font-size: 1.2vw;
-  padding:1%;
 }
 
 .profile_con{
   width:100%;
-  padding-bottom: 5%;
 }
 
 .profile_con form{
-  margin-left:5%; margin-top:3%;
+  margin-left:5%; 
   width:90%;
-
 }
 
 
 .profile_con label{
   font-family: ABold;
-  color: #0C4B05;
-  font-size: 1.5vw;
+  color: #053F5E;
+  font-size: 1.2vw;
   margin-right: 2%;
   display: inline-block;
   width: 20%;
   margin-left: 0%;
-
 }
 
 label{
     font-weight:bolder;
-    font-family: Regular;
-    color: #0C4B05;
+    font-family: ABold;
+    color: #053F5E;
     font-size: 1.5vw;
     display: inline-block;
-    width: 20%;
+    width: 15%;
 }
 
-
 .header{
-  background-color:#1D6115;
   padding-left: 50px;
-  color: white;
+  background-color: #e6e6e6;
+  letter-spacing: 2;
   display: flex;
-  width: auto;
+  width: 100%;height: 45px;
+  align-items: center;
 }
 
 
 .header input[type=text] {
-padding: 6px;
-font-size: 1vw;
-border: none;
+  padding: 6px;
+  font-size: 1.1vw;
+  border: none;
+  margin-top: 1.5%;
+  border-radius: 10px;
+}
+
+.header button {
+  border-style: none; background-color: transparent;
+  width: 10%; height: 35px;
 }
 
 .header button:hover {
-background: #1D6115;
-}
-
-
-.header select{
-  margin-top:2%;
-  font-size: 1vw;
-  width: auto;
-}
-
-.header label{
-  margin-top:2%;
-  margin-left: 10%;
-}
-
-.header button{
-  background-color:transparent;
-  color: #FFCD00;
-  height: 33px;
-  width: 12%;
-  border-style: none;
-  cursor: pointer;
+  background: #053F5E;
 }
 
 .descriptiondorm{
   font-size: 1.1vw;
-  color: #0C4B05;
+  color: #434546;
   font-weight: bold;
   width: 80%;
-  margin-bottom: 5%;
+  margin-bottom: 1%;
 
 
 }
 .applistform{
-    border-color: #FFCD00;
-    border-style: solid;
-    margin-top: 2%;
-    border-width: 2px;
+    border-bottom: #434546 dotted 1px;
+    border-width: 2px; margin-bottom: 2%;
 }
 
 .applistform form{
-  margin-left:5%; margin-top:3%;
-  width:60%;
+  margin-left:5%; margin-top:1%;
+  width:100%;
 
 }
 
 .applistform label{
   font-family: ABold;
-  color: #0C4B05;
-  font-size: 1.2vw;
+  color: #434546;
+  font-size: 1.5vw;
   display: inline-block;
-  width: 20%;
+  width: 15%;
 
 }
 .container {
@@ -209,27 +204,32 @@ background: #1D6115;
 
 .uppernav {
     background-color: #F3EEED;
+    letter-spacing: 2;
     display: flex;
     height: 30px;
     padding: 0%;
 }
 .topnav {
-    background-color: #0C4B05;
     overflow: hidden;
     display:flex;
+    background-color: #065471;
 }
   
 .topnavlink {
-    color: #f2f2f2;
-    padding: 1.5% 1% 1% 1%;
+    color: white;
+    font-family: ABold;
+    padding: 0.5% 1% 1% 1%;
     margin-right: 5%;
+    margin-top: 1%;
     text-decoration: none;
-    font-size: 1.5vw;
+    font-size: 1.2vw;
 }
 
 .topnavlink:hover {
-    background-color: #FFCD00;
-    color: #1D6115; 
+    background-color: #053F5E;
+    color:white;
+    height: 50px; 
+    border-radius: 50px;
 }
   
 .topnavlink.active {
@@ -238,23 +238,23 @@ background: #1D6115;
 }
 
 .logincontainer {
-  width: 50%;
-  float: left;
-  height: 900px;
+  width: 40%;
+  text-align: center;
+  margin: 5% 0% 0% 30%;
+  border-radius: 20px;
   backdrop-filter: blur(16px) saturate(180%);
   -webkit-backdrop-filter: blur(16px) saturate(180%);
-  background-color: rgba(12, 75, 5, 0.88);
+  background-color: rgba(255, 255, 255, 0.40);
 }
 
 .logincontainer form{
-  width: 40%;
-  margin: 20% 0% 0% 20%;
+  width: 70%;
+  margin:7%;
 }
 
 .loginform {
-    width: 100%;
+    width: 80%;
     height:40px;
-    margin-right: 20%;
     margin-top: 5%;
     border-style: none;
     border-radius: 10px;
@@ -262,37 +262,38 @@ background: #1D6115;
 }
 
 .yellowbutton {
-    background-color:#ebbc00;
-    color: #0C4B05;
+    background-color:#28a01b;
+    color: white;
     border-style: none;
-    width: 100%;
-    height: 35px;
-    margin-left: 15%;
-    margin-right: 20%;
+    width: 80%;height: 40px;
+    text-align: center;
     border-radius: 12px;
     cursor: pointer;
     font-size: 1.1vw;
+    font-family: ABold;
 }
 
 .secondyellowbutton {
-    background-color:#ebbc00;
-    color: #0C4B05;
+    background-color:#28a01b;
+    color: white;
     border-style: none;
     width: 15%;
     height: 40px;
     border-radius: 20px;
     float: right;
     cursor: pointer;
+    font-family: ABold;
     font-size: 1.2vw;
 }
 
 .greenbutton {
   background-color:#F3EEED;
-  color: #0C4B05;
+  color: #28a01b;
   border-style:solid;
-  border-color: #0C4B05;
+  border-color: #28a01b;
   width: 15%; height: 40px;
   border-radius: 20px;
+  font-family: ABold;
   margin-top:15px; margin-bottom:50px;
   float: right;
   cursor: pointer;
@@ -301,9 +302,10 @@ background: #1D6115;
 
 .confirmcancelbutton {
     background-color:transparent;
-    color: #0C4B05;
+    color: #28a01b;
     border-style:solid;
-    border-color: #0C4B05;
+    font-family: ABold;
+    border-color: #28a01b;
     width: 20%; height: 40px;
     border-radius: 20px;
     margin-top: 5%;
@@ -315,10 +317,11 @@ background: #1D6115;
 
 .registercancelbutton {
   background-color:transparent;
-  color:white;
+  font-family: ABold;
+  color:#28a01b;
   border-style:solid;
-  border-color: #ebbc00;
-  width: 100%; height: 35px;
+  border-color: #28a01b;
+  width: 80%; height: 35px;
   border-radius: 12px;
   padding: 0px 35px 0px 35px;
   margin: 10px 0px 0px 0px;
@@ -331,14 +334,18 @@ background: #1D6115;
     height: 30px;
     font-size: 1.2vw;
     display: inline-block;
+    border-radius: 10px; border-style:solid;
 }
 
 .readapp{
     font-family: Regular;
     height: 30px;
-    border-style: none;
     font-size: 1.3vw;
-    margin-bottom: 2%;
+    margin-bottom: 2%; margin-right: 2%;
+    padding-left: 2%;
+    border-style: none; border-radius: 0%;
+    background-color: #e9e9e9;
+    border-left: solid 2px #434546;
 }
 
 .title {
@@ -395,13 +402,12 @@ background: #1D6115;
 }
 
 .dorm_name {
-    background: rgb(26,129,16);
-    background: linear-gradient(90deg, rgba(26,129,16,1) 0%, rgba(31,149,20,1) 35%, rgba(26,129,16,1) 100%);   
+    background: rgb(5,63,94);
+    background: radial-gradient(circle, rgba(5,63,94,1) 0%, rgba(41,127,159,1) 35%, rgba(26,87,120,1) 100%);
     color: white;
-    font-weight: bolder;
     padding-left: 50px;
-    font-size: 2vw;
-    margin-top:3%
+    font-size: 1.7vw;
+    margin-top:0.5%
 }
 
 .dorm_details {
@@ -452,9 +458,10 @@ background: #1D6115;
     cursor: pointer;
     position: absolute;
     top: 40%;
-    width: 7%;
-    padding: 3%;
-    color: white;
+    width: 10%;
+    padding: 4%;
+    color: #434546;
+    background-color:#e6e6e6;
     font-weight: bold;
     font-size: 1.5vw;
     border-radius: 0 3px 3px 0;
@@ -464,26 +471,26 @@ background: #1D6115;
   
   /* Position the "next button" to the right */
   .next {
+    text-align: center;
     right: 0;
-    padding-right: 5%;
-    border-radius: 3px 0 0 3px;
+    padding-left: 5;
   }
   
   /* On hover, add a black background color with a little bit see-through */
   .prev:hover,
   .next:hover {
-    background-color:#0C4B05;
-    color: #FFCD00;
+    background-color:#28a01b;
   }
   
   /* Caption text */
   .text {
-    color: #ffffff;
-    background-color: #0C4B05;
+    color: #053F5E;
+    background-color:#e6e6e6;
+    font-family: ABold;
     font-size: 1.5vw;
     padding: 8px 12px;
     position: absolute;
-    bottom: 8px;
+    bottom: 10px;
     width: 100%;
     text-align:left;
   }
@@ -518,11 +525,10 @@ background: #1D6115;
   font-size: 1.5vw;
 }
 .viewdormtable th{
-font-family:Regular;
-font-weight: bolder;
-color: white;
-background: rgb(26,129,16);
-background: linear-gradient(90deg, rgba(26,129,16,1) 0%, rgba(31,149,20,1) 35%, rgba(26,129,16,1) 100%);   
+font-family:ABold;
+padding-left: 0%;
+color:#053F5E;
+background-color: transparent;
 font-size: 1.5vw;
 text-align: left;
 height: 20px;
@@ -554,7 +560,7 @@ position: sticky;
     float: right;
     margin-top: 5px;
     margin-left: 15%;
-    z-index: 3;
+    z-index: 10;
 }
 
 .menu button{
@@ -564,29 +570,30 @@ position: sticky;
   text-align: left;
   margin: 0%;
   padding: 0%;
-  color:#FFCD00;
+  color:white;
   padding: 10px;
   display:inline-block;
-  font-family: Regular;
+  font-family: ABold;
   font-size: 1.2vw;
 }
 
 .menu button:hover{
-  background-color:#0C4B05;
-  color:#FFCD00;
+  background-color:#053F5E;
+  color:white;
   cursor: pointer;
 }
 
   .menu a {
     text-decoration: none;
-    color:#FFCD00;
+    font-family: ABold;
+    color:white;
     padding: 10px;
     display:inline-block;
     font-size: 1.3vw;
   }
   .menu a:hover{
-    background-color: #1D6115;
-    color:#FFCD00;
+    background-color: #053F5E;
+    color:white;
   }
   .menu ul {
     display: inline;
@@ -600,7 +607,7 @@ position: sticky;
       }
 
   .menu ul li:hover {
-      background-color: #1D6115;
+      background-color: #065471;
      }
 
   .menu ul li:hover ul {
@@ -610,14 +617,14 @@ position: sticky;
   .menu ul li ul {
     position: absolute;
     width: auto;
-    background-color: #1D6115;
+    background-color: #065471;
     display: none;
     margin-top: 50px;
     width: auto;
 }
 
   .menu ul li ul li { 
-    background: #1D6115; 
+    background: #065471; 
     display: block; }
 
   .menu ul li ul li a {
@@ -625,8 +632,8 @@ position: sticky;
     } 
 
   .menu ul li ul li a:hover {
-      background: #0C4B05;
-      color: #FFCD00;
+      background: #053F5E;
+      color: white;
    }
 
 /* CONTACT PAGE CONTAINER */
@@ -634,12 +641,10 @@ position: sticky;
   display:flexbox;
   margin-top: 1%;
   padding-left: 5%;    
-  height: 550px;
-  overflow: auto;
 }
 
 .contactcontainer img{
-  width: 4%; height: 7%;
+  width: 4%;
   margin-right: 10px;
   margin-bottom: 5px;
   vertical-align: middle;
@@ -650,7 +655,7 @@ position: sticky;
 }
 
 .contactcontainer ol{
-  color:white;
+  color:#053F5E;
   font-size: 1.4vw;
 }
 
@@ -659,10 +664,13 @@ position: sticky;
 }
 
 .boxcontact{
- border-style: solid; border-color: #FFCD00;
- width: 80%;
- padding-left: 5%;
- margin-top: 3%;
+  width: 95%;
+  padding: 2%;
+  border-radius: 20px;
+  margin-top: 3%; margin-bottom: 2%;
+  backdrop-filter: blur(16px) saturate(180%);
+  -webkit-backdrop-filter: blur(16px) saturate(180%);
+  background-color: rgba(255, 255, 255, 0.40);
 }
 /* END CONTACT PAGE CONTAINER */
 
@@ -705,7 +713,7 @@ position: sticky;
 }
 
 .tableFixHead button{
-  background-color: #0C4B05;
+  background-color: #28a01b;
   color: white;
   font-size: 1.2vw;
   border-style: none;
@@ -716,9 +724,7 @@ position: sticky;
 
 
 .tableFixHead button:hover{
-  background-color: #FFB700;
-  color:#0C4B05;
-  font-size: 1.2vw;
+  background-color: #1f8b13;
   border-style: none;
   border-radius: 10px;
   width: 60%;
@@ -735,14 +741,14 @@ position: sticky;
 
 .tableFixHeadtitle {
   position: sticky;
+  font-family: ABold;
   padding-left: 20px;
   margin-top: 1%;
   margin-bottom: 1%;
   width: 95%;
-  color:white;
-  background: rgb(26,129,16);
-  background: linear-gradient(90deg, rgba(26,129,16,1) 0%, rgba(31,149,20,1) 35%, rgba(26,129,16,1) 100%);   
-  font-size: 2vw;
+  color:#053F5E;  
+  border-style: solid;
+  font-size: 1.8vw;
   border-radius: 20px;
 }
 
@@ -754,7 +760,7 @@ table {
 th,
 td {
   padding: 8px 16px;
-  font-size: 1.2vw;
+  font-size: 1.3vw;
 }
 th {
   background: #eee;
@@ -768,8 +774,9 @@ th {
 .tableFixHead th{
   box-shadow: inset 1px 1px #1D6115, 1 1px #1D6115;
   color: white;
-  background: rgb(26,129,16);
-  background: linear-gradient(90deg, rgba(26,129,16,1) 0%, rgba(31,149,20,1) 35%, rgba(26,129,16,1) 100%);   
+  background: rgb(5,63,94);
+  letter-spacing: 1;
+  background: radial-gradient(circle, rgba(5,63,94,1) 0%, rgba(25,76,95,1) 35%, rgba(5,63,94,1) 100%);
   text-align: left;
   z-index:3 ;
 }
@@ -784,24 +791,33 @@ th {
 
 /* 2ND SLIDER*/
 .dashboard {
-  margin-left:10%;
+  margin-left:5%;
   padding: 1% 2% 2% 2%;
-  width: 50%;
+  width: 70%;
+  height: 80%;
   margin-top: 1%;
   align-items: center;
   transition-delay: 0.5s;
-  backdrop-filter: blur(0px) saturate(118%);
-  -webkit-backdrop-filter: blur(0px) saturate(118%);
-  background-color: rgba(49, 89, 0, 0.90);
-  border: 1px solid rgba(209, 213, 219, 0.3);
+  backdrop-filter: blur(16px) saturate(180%);
+  -webkit-backdrop-filter: blur(16px) saturate(180%);
+  background-color: rgba(255, 255, 255, 0.40);
   border-radius: 12px;
 }
 
 .h2nav {
   font-size: 4.5vw;
+  font-family: ABolder;
   padding-left: 3%;
   text-align: center;
-  color: white;
+  color:#053F5E;
+}
+
+.h2campus {
+  font-size: 3vw;
+  font-family: ABolder;
+  padding-left: 3%;
+  text-align: center;
+  color:white;
 }
 
 .h2head {
@@ -810,27 +826,29 @@ th {
   text-align: center;
   color: white;
   width: 100%;
-  background: rgb(26,129,16);
-  background: linear-gradient(90deg, rgba(26,129,16,1) 0%, rgba(31,149,20,1) 35%, rgba(26,129,16,1) 100%);   
+  font-family: ABolder;
+  background: rgb(5,63,94);
+  background: radial-gradient(circle, rgba(5,63,94,1) 0%, rgba(41,127,159,1) 35%, rgba(26,87,120,1) 100%);
 }
 
 .text--sub {
 	font-size: 1.5vw;
 	letter-spacing: 0.5rem;
 	text-transform: uppercase;
-	margin-bottom: 40px;
+	margin-bottom: 20px;
 }
 
 .text--normal {
 	font-size: 1.4vw;
-	color:white;
+	color:#053F5E;
 	line-height: 22px;
   width: 65%;
 	margin-top: 25px;
   text-indent: 10%;
   text-align: justify;
   padding: 2%;
-  font-weight:normal; 
+  letter-spacing:1;
+  font-family: Regular;
 }
 
 .text__background {
@@ -863,14 +881,16 @@ th {
 }
 
 .dorm {
-  background-color:#FFB700;
-  color: #0C4B05;
-  width: 30%;
-  height: 40px;
+  background-color:#28a01b;
+  color: white;
+  width: 35%;
+  height: 50px;
   border-radius: 15px;
   cursor: pointer;
   border-style: none;
   font-size: 1.3vw;
+  letter-spacing: 2;
+  font-family: ABold;
 }
 
 /* FOR ON AND OFF CAMPUS SLIDERS : dorm.blade.php*/
@@ -879,7 +899,7 @@ th {
   display:flex;
   z-index:3;
   margin-top: 2%;
-  color: #0C4B05;
+
 }
 
 .offslider{
@@ -966,19 +986,15 @@ th {
   white-space: nowrap;
 }
 
-
 .smallheader{
-  padding: 0.5% 0.5% 0.5% 2%;
-  margin-bottom: 0.5%;
-  margin-top:0.5%;
-  color:white;
-  border-radius: 10px;
+  padding: 0.5% 0.5% 0% 0%;
+  margin-bottom: 1%;
+  letter-spacing: 1;
+  color:#434546;
   width: 100%;
-  background: rgb(26,129,16);
-  background: linear-gradient(90deg, rgba(26,129,16,1) 0%, rgba(31,149,20,1) 35%, rgba(26,129,16,1) 100%); 
-  font-size: 1.6vw;
+  border-bottom: 3px solid #434546;
+  font-size: 1.3vw;
   font-family: ABold;
-
 }
 
 /* BACKGROUND COVER */
@@ -1001,5 +1017,5 @@ th {
   z-index: -1;
   backdrop-filter: blur(16px) saturate(180%);
     -webkit-backdrop-filter: blur(16px) saturate(180%);
-    background-color: rgba(29, 97, 21, 0.75);
+    background-color: rgba(255, 255, 255, 0.31);
 }

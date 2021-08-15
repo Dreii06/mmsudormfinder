@@ -11,7 +11,8 @@
 
         <!-- CSS -->
         <link rel="stylesheet" type="text/css" href="/css/COEDstyle.css">  
-        
+        <!-- BOOTSTRAP -->
+    
     </head>
     
     <body class="antialiased">
@@ -28,50 +29,50 @@
     <div class="verticalnav">
         <ul>
             <li class="username">{{ Auth::guard('manager')->user()->dorm_name }}</li>
-            <li><a href="/manager/dashboard"> <img src="https://img.icons8.com/fluent-systems-regular/96/000000/home.png"/> Home</a></li>
-            <li><a href="/manager/listapplicants"> <img src="https://img.icons8.com/fluent-systems-regular/50/000000/parse-resume.png"/> Applicants</a></li>
-            <li><a href="/manager/listoccupants"><img src="https://img.icons8.com/fluent-systems-regular/96/000000/user-rights.png"/> Occupants</a></li>
-            <li><a class="active" href="/manager/viewdorm/{{ Auth::guard('manager')->user()->id }}"><img src="https://img.icons8.com/fluent-systems-regular/96/000000/department.png"/> Dorm</a></li>
-            <li><a href="/manager/contact"><img src="https://img.icons8.com/fluent-systems-regular/96/000000/info-squared.png"/> Contact</a></li><br><br>
+            <li><a href="{{ url('manager/dashboard') }}"> <img src="https://img.icons8.com/fluent-systems-regular/96/000000/home.png"/> Home</a></li>
+            <li><a href="{{ url('manager/listapplicants') }}"> <img src="https://img.icons8.com/fluent-systems-regular/50/000000/parse-resume.png"/> Applicants</a></li>
+            <li><a href="{{ url('manager/listoccupants') }}"><img src="https://img.icons8.com/fluent-systems-regular/96/000000/user-rights.png"/> Occupants</a></li>
+            <li><a class="active" href="{{ url('manager/viewdorm/'.Auth::guard('manager')->user()->id) }}"><img src="https://img.icons8.com/fluent-systems-regular/96/000000/department.png"/> Dorm</a></li>
+            <li><a href="{{ url('manager/contact') }}"><img src="https://img.icons8.com/fluent-systems-regular/96/000000/info-squared.png"/> Contact</a></li><br><br>
             <form method="POST" action="{{ route('manager.logout') }}">
                 @csrf
-            <li><a href=""><button type="submit" style="padding-left:0%;color:red;" ><img src="https://img.icons8.com/ios-filled/50/000000/exit.png"/>{{ __('Log Out') }}</button></a></li>
+                <li><button type="submit"><img src="https://img.icons8.com/ios-filled/50/000000/exit.png"/>{{ __('Log Out') }}</button></li>
             </form>
         </ul>
     </div>
 
 
 <div class="updatedormcontainer">
-<form style="width:95%;" action="/manager/updatedorm" method="POST" enctype="multipart/form-data">
+<form style="width:95%;padding-top:7%;" action="/manager/updatedorm" method="POST" enctype="multipart/form-data">
     @csrf
-    <div class="smallheader" style="width:90%;">FULL NAME</div>
+    <div class="smallheader" style="width:90%;border-bottom: #434546 solid 1px;">FULL NAME</div>
     <label for="fname">First Name</label>
     <label for="fname">Middle Name</label>
     <label for="fname">Last Name</label><br>
 
-    <input type="text" id="fname" name="first" value="{{ $details->first_name }}" style="width: 20%;" class="inputapp" value="Sample Name">
-    <input type="text" id="fname" name="middle" value="{{ $details->middle_name }}" style="width: 20%;" class="inputapp" value="Sample Name">
-    <input type="text" id="fname" name="last" value="{{ $details->last_name }}" style="width: 20%;" class="inputapp" value="Sample Name"><br><br>
+    <input type="text" id="fname" name="first" value="{{ $details->first_name }}" style="width: 22%;" class="inputapp">
+    <input type="text" id="fname" name="middle" value="{{ $details->middle_name }}" style="width: 22%;" class="inputapp">
+    <input type="text" id="fname" name="last" value="{{ $details->last_name }}" style="width: 22%;" class="inputapp">
 
-    <div class="smallheader" style="width:90%;">ADDRESS</div>
+    <div class="smallheader" style="width:90%;border-bottom: #434546 solid 1px;">ADDRESS</div>
     <label for="brgy">Barangay</label>
     <label for="st">Street</label>
     <label for="nl">Nearest Landmark</label><br>
 
-    <input type="text" id="brgy" name="barangay" value="{{ $details->barangay }}" style="width: 20%;" class="inputapp" value="6 Quiling Sur">
-    <input type="text" id="st" name="street" value="{{ $details->street }}" style="width: 20%;" class="inputapp" value="Jakamo Street">
-    <input type="text" id="nl" name="nearest" value="{{ $details->nearest }}" style="width: 20%;" class="inputapp" value="Teatro Ilocandia"><br><br>
+    <input type="text" id="brgy" name="barangay" value="{{ $details->barangay }}" style="width: 22%;" class="inputapp">
+    <input type="text" id="st" name="street" value="{{ $details->street }}" style="width: 22%;" class="inputapp">
+    <input type="text" id="nl" name="nearest" value="{{ $details->nearest }}" style="width: 22%;" class="inputapp">
 
-    <div class="smallheader" style="width:90%;">OTHER INFORMATION</div>
+    <div class="smallheader" style="width:90%;border-bottom: #434546 solid 1px;">OTHER INFORMATION</div>
     <label for="dname">Dorm Name</label>
     <label for="contact">Contact</label>
     <label for="quantity">Capacity</label><br>
 
-    <input type="tel" id="fname" name="dorm_name" value="{{ $details->dorm_name }}" style="width: 20%;" class="inputapp" value="Sample Dorm Name">
-    <input type="text" id="fname" name="mobile_num" value="{{ $details->mobile_num }}" style="width: 20%;" class="inputapp" value="Sample Contact">
-    <input type="number" id="quantity" name="avail" value="{{ $available }}"  style="width: 20%;" class="inputapp" min="0" value="10"><br><br>
+    <input type="tel" id="fname" name="dorm_name" value="{{ $details->dorm_name }}" style="width: 22%;" class="inputapp">
+    <input type="text" id="fname" name="mobile_num" value="{{ $details->mobile_num }}" style="width: 22%;" class="inputapp">
+    <input type="number" id="quantity" name="avail" value="{{ $available }}"  style="width: 22%;" class="inputapp" min="0">
     
-    <label for="fname">Short Description</label><br>
+    <div class="smallheader" style="width:90%;border-bottom: #434546 solid 1px;margin-bottom:1%;">SHORT DESCRIPTION</div>
     <textarea name="description">{{ $details->description }}</textarea><br><br>
 
     <div style="display:flex;">
@@ -93,7 +94,7 @@
         @endforeach
     </table><br>
     <select name="roomtype" id="room" class="inputapp" style="width:65%;">
-        <option selected disable hidden>Choose a room type you want to add</option>
+        <option selected disable hidden>Choose a room type </option>
         <option value="Single">Single</option>
         <option value="Double">Double</option>
         <option value="Triple">Triple</option>
@@ -106,7 +107,7 @@
     <label style="width:20%;" for="fname">Room Fee</label>
     <input type="text" id="fname" name="prices" style="width:10%;margin:0%;" class="inputapp">
 
-    <label for="fname" style="width:15%;margin-left:10px;margin-right:0%;">Vacancy</label>
+    <label for="fname" style="width:20%;margin-left:10px;margin-right:0%;">Vacancy</label>
     <input type="text" id="fname" name="vacancy" style="width:10%;margin-left:0%;" class="inputapp">
     <button type="submit" onclick="new_link()" name="submit" value="addRoomType" class="addbutton" style="width:15%;">ADD</button>
     </div><br>
@@ -126,7 +127,7 @@
     </table><br>
 
     <select name="amenities" id="amenities" class="inputapp" style="width:70%;">
-        <option selected disable hidden>Choose an amenity you want to add</option>
+        <option selected disable hidden>Choose an amenity</option>
         <option value="Free WiFi">Free WiFi</option>
         <option value="Study Room">Study Room</option>
         <option value="Pet's Allowed">Pet's Allowed</option>
@@ -144,7 +145,7 @@
 </div>
 
     <div style="padding-right:10%;margin-top:1%;">
-        <a href="/manager/dashboard"><button type="button" class="greenbutton" style="margin-top:1%;">CANCEL</button></a>
+        <a href="{{ URL::previous() }}"><button type="button" class="greenbutton" style="margin-top:1%;">CANCEL</button></a>
         <input type="submit" name="save" onclick="update()" class="secondyellowbutton" style="margin-right:20px;margin-top:1%;" value="SAVE">
     </div>
     </form>

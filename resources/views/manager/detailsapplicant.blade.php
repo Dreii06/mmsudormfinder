@@ -34,7 +34,7 @@
             <li><a href="/manager/contact"><img src="https://img.icons8.com/fluent-systems-regular/96/000000/info-squared.png"/> Contact</a></li><br><br>
             <form method="POST" action="{{ route('manager.logout') }}">
                 @csrf
-            <li><a href=""><button type="submit" style="padding-left:0%;color:red;" ><img src="https://img.icons8.com/ios-filled/50/000000/exit.png"/>{{ __('Log Out') }}</button></a></li>
+                <li><button type="submit"><img src="https://img.icons8.com/ios-filled/50/000000/exit.png"/>{{ __('Log Out') }}</button></li>
             </form>
         </ul>    
     </div>
@@ -43,54 +43,32 @@
     <form action="/manager/detailsapplicant" method="POST">
     @csrf
 
-    <div class="smallheader">FULL NAME</div>
-        <label for="fname">First Name</label>
-        <label for="mname">Midle Name</label>
-        <label for="lname">Last Name</label>
-        <label for="sname">Suffix (Jr,,III)</label><br>
+    <div style="display:flex;"><div class="smallheader">FULL NAME</div>
+    <div class="smallheader">ADDRESS</div></div>
 
-        <input type="text"  style="width:20%;margin-right:2%;" id="fname" name="first" value="{{ $details->first_name }}" class="inputapp" readonly>
-        <input type="text"  style="width:20%;margin-right:2%;" id="mname" name="middle" value="{{ $details->middle_name }}" class="inputapp" readonly>
-        <input type="text"  style="width:20%;margin-right:2%;" id="lname" name="last" value="{{ $details->last_name }}" class="inputapp" readonly>
-        <input type="text"  style="width:20%;margin-right:2%;" id="sname" name="suffix" value="{{ $details->suffix }}" class="inputapp" readonly><br><br>
+        <input type="text"  style="width:45%;margin-right:5%;" id="fname" name="first" value="{{ $details->first_name }} {{ $details->middle_name }} {{ $details->last_name }} {{ $details->suffix }}" class="inputapp" readonly>
+        <input type="text" style="width:45%;" id="barangay" name="barangay" value="{{ $details->barangay }} {{ $details->street }} {{ $details->city }}, {{ $details->province }}" class="inputapp" readonly>
+     
 
-    <div class="smallheader">ADDRESS</div>
-        <label for="barangay">Barangay</label>
-        <label for="street">Street</label>
-        <label  for="city">City</label>
-        <label for="province">Province</label>
+        <div style="display:flex;"><div class="smallheader">CONTACT INFORMATION</div>
+        <div class="smallheader">CONTACT GUARDIAN</div></div>
 
-        <input type="text" style="width:20%;margin-right:2%;" id="barangay" name="barangay" value="{{ $details->barangay }}" class="inputapp" readonly>
-        <input type="text" style="width:20%;margin-right:2%;"id="street" name="street" value="{{ $details->street }}" class="inputapp" readonly>
-        <input type="text" style="width:20%;margin-right:2%;"id="city" name="city" value="{{ $details->city }}" class="inputapp" readonly>
-        <input type="text" style="width:20%;"id="province" name="province" value="{{ $details->province }}" class="inputapp" readonly><br><br>
+        <input type="email" style="width:30%;margin-right:1%;" id="email" name="email" value="{{ $details->email }}" class="inputapp" readonly>
+        <input type="tel" style="width:13.5%;margin-right:5%;" id="number" name="mobile_num" value="{{ $details->mobile_num }}" class="inputapp" readonly>
+        <input type="text" style="width:20%;margin-right:1%;"id="nameg" name="guardian_name" value="{{ $details->guardian_name }}" class="inputapp" readonly>
+        <input type="tel" style="width:20%;"id="number" name="guardian_num" value="{{ $details->guardian_num }}" class="inputapp" readonly>
 
-    <div class="smallheader">CONTACT INFORMATION</div>
-        <label for="email">Email</label>
-        <label  for="number">Mobile Number</label>
-        <label for="nameg">Name of Guardian</label>
-        <label for="number">Contact of Guardian</label><br>
+        
+        <div style="display:flex;"><div class="smallheader">ACADEMIC INFORMATION</div>
+        <div class="smallheader">ROOM TYPE</div></div>
 
-        <input type="email" style="width:20%;margin-right:2%;" id="email" name="email" value="{{ $details->email }}" class="inputapp" readonly>
-        <input type="tel" style="width:20%;margin-right:2%;" id="number" name="mobile_num" value="{{ $details->mobile_num }}" class="inputapp" readonly>
-        <input type="text" style="width:20%;margin-right:2%;"id="nameg" name="guardian_name" value="{{ $details->guardian_name }}" class="inputapp" readonly>
-        <input type="tel" style="width:20%;"id="number" name="guardian_num" value="{{ $details->guardian_num }}" class="inputapp" readonly><br><br>
+        <input type="text" style="width:12%;margin-right:1%;" id="fstudentid" name="stud_id" value="{{ $details->stud_num }}" class="inputapp" readonly>
+        <input type="text" style="width:7%;margin-right:1%;" id="college" name="college" value="{{ $details->college }}" class="inputapp" readonly>
+        <input type="text" style="width:23%;margin-right:5%;"id="course" name="course" value="{{ $details->course }}" class="inputapp" readonly>
+        <input type="text" style="width:20%;" id="fstudentid" name="room_type" value="{{ $details->room_type }}" class="inputapp" readonly>
 
-    <div class="smallheader">ACADEMIC INFORMATION</div>
-        <label for="fstudentid">Student Number</label>  
-        <label for="college">College:</label>
-        <label for="course">Course:</label><br>
-
-        <input type="text" style="width:20%;margin-right:2%;" id="fstudentid" name="stud_id" value="{{ $details->stud_num }}" class="inputapp" readonly>
-        <input type="text" style="width:20%;margin-right:2%;" id="college" name="college" value="{{ $details->college }}" class="inputapp" readonly>
-        <input type="text" style="width:20%;margin-right:2%;"id="course" name="course" value="{{ $details->course }}" class="inputapp" readonly><br><br>
-
-    <div class="smallheader">OTHER INFORMATION</div>
-         <label  for="sex" >Sex</label>
-         <label  for="sex" >Room Type</label><br>
-
-         <input type="text" style="width:20%;margin-right:2%;" id="sec" name="sex" value="{{ $details->sex }}" class="inputapp" readonly>
-         <input type="text" style="width:20%;margin-right:2%;" id="fstudentid" name="room_type" value="{{ $details->room_type }}" class="inputapp" readonly>
+        <div style="display:flex;"><div class="smallheader">OTHER INFORMATION</div></div>
+        <input type="text" style="width:20%;margin-right:2%;" id="sec" name="sex" value="{{ $details->sex }}" class="inputapp" readonly>
 
         <button type="submit" name="submit" value="DENY" onclick="denyapplicant()" class="greenbutton" style="margin-top:0px;">DENY</button>  
         <button type="submit" name="submit" value="ACCEPT" onclick="acceptapplicant()" class="secondyellowbutton" style="margin-right:10px;margin-top:0%;">ACCEPT</button>
