@@ -45,8 +45,8 @@
         <div style="display:flex;"><div class="smallheader">FULL NAME</div>
         <div class="smallheader">ADDRESS</div></div>
 
-        <input type="text"  style="width:45%;margin-right:5%;" id="fname" name="name" value="{{ $details->name }}" class="inputapp" readonly>
-        <input type="text" style="width:45%;" id="barangay" name="address" value="{{ $details->address }}" class="inputapp" readonly>
+        <input type="text"  style="width:45%;margin-right:5%;" id="fname" name="name" value="{{ $details->first_name }} {{ $details->middle_name }} {{ $details->last_name }} {{ $details->suffix }}" class="inputapp" readonly>
+        <input type="text" style="width:45%;" id="barangay" name="address" value="{{ $details->barangay }} {{ $details->street }} {{ $details->city }}, {{ $details->province }}" class="inputapp" readonly>
         
         <div style="display:flex;"><div class="smallheader">CONTACT INFORMATION</div>
         <div class="smallheader">CONTACT GUARDIAN</div></div>

@@ -68,8 +68,8 @@
         <tbody>
             @foreach($occupants as $occupant)
           <tr>
-            <td>{{ $occupant->name }}</td>
-            <td>{{ $occupant->address }}</td>
+            <td>{{ $occupant->first_name }} {{ $occupant->middle_name }} {{ $occupant->last_name }}</td>
+            <td>{{ $occupant->city }}</td>
             <td>{{ $occupant->mobile_num }}</td>
             <td><a href="{{ url('manager/detailsoccupant/'. $occupant->id) }}"><button type="button">VIEW</button></a></td>
           </tr>

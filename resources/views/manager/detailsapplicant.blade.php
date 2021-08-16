@@ -39,7 +39,7 @@
     </div>
 
 <div class="listappcontainer">
-    <form action="/manager/detailsapplicant" method="POST">
+    <form action="/manager/detailsapplicant/{{ $details->id }}" method="POST">
     @csrf
 
     <div class="tableFixHeadtitle">Applicant's Details

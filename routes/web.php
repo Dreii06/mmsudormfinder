@@ -126,7 +126,7 @@ Route::post('/manager/searchapplicants', function() {
 
 Route::get('/manager/detailsapplicant/{id}', [ApplicantsController::class, 'get']);
 
-Route::post('/manager/detailsapplicant', [OccupantsController::class, 'store']);
+Route::post('/manager/detailsapplicant/{id}', [OccupantsController::class, 'store']);
 
 Route::get('/manager/viewdorm/{id}', [DormsController::class, 'get']);
 

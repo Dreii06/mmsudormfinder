@@ -27,7 +27,7 @@ class OccupantsController extends Controller
     function adminshowdorm($name) {
         $details = Occupants::join('dorms', 'dorm_name', '=', 'dormitory')
             ->where('dorm_name', '=', $name)
-            ->get(['dorms.dorm_name', 'occupants.id', 'occupants.name', 'occupants.stud_num', 'occupants.mobile_num']);
+            ->get(['dorms.dorm_name', 'occupants.id', 'occupants.first_name', 'occupants.middle_name', 'occupants.last_name', 'occupants.stud_num', 'occupants.mobile_num']);
 
         return view('admin.dormoccupantslist', ['details' => $details], ['dorm_name' => $name]);
     }
@@ -47,25 +47,31 @@ class OccupantsController extends Controller
         return view('admin.dormoccupantdetails', ['details' => $details], ['dorm_name' => $name]);
     }
 
-    function store(Request $request) {
+    function store($id, Request $request) {
         $manager = Auth::guard('manager')->user();
+        $dorm = Dorms::where('dorm_name', '=', $manager->dorm_name)->first();
+        $applicant = Applicants::find($id);
         $occupant = new Occupants();
-        $id = Auth::guard('manager')->id();
-        $dorm = Dorms::find($id);
 
         if($request->submit == "ACCEPT") {
-            $occupant->name = request('name', false);
-            $occupant->stud_num = request('stud_id', false);
-            $occupant->sex = request('sex', false);
-            $occupant->email = request('email', false);
-            $occupant->mobile_num = request('mobile_num', false);
-            $occupant->guardian_name = request('guardian_name', false);
-            $occupant->guardian_num = request('guardian_num', false);
-            $occupant->address = request('address', false);
-            $occupant->college = request('college', false);
-            $occupant->course = request('course', false);
+            $occupant->first_name = $applicant->first_name;
+            $occupant->middle_name = $applicant->middle_name;
+            $occupant->last_name = $applicant->last_name;
+            $occupant->suffix = $applicant->suffix;
+            $occupant->stud_num = $applicant->stud_num;
+            $occupant->sex = $applicant->sex;
+            $occupant->email = $applicant->email;
+            $occupant->mobile_num = $applicant->mobile_num;
+            $occupant->guardian_name = $applicant->guardian_name;
+            $occupant->guardian_num = $applicant->guardian_num;
+            $occupant->barangay = $applicant->barangay;
+            $occupant->street = $applicant->street;
+            $occupant->city = $applicant->city;
+            $occupant->province = $applicant->province;
+            $occupant->college = $applicant->college;
+            $occupant->course = $applicant->course;
             $occupant->dormitory = $manager->dorm_name;
-            $occupant->room_type = request('room_type', false);
+            $occupant->room_type = $applicant->room_type;
 
             $occupant->save();
             $dorm->increment('num_of_occupants');
@@ -73,10 +79,8 @@ class OccupantsController extends Controller
             $room_type = RoomType::where('room_type', '=', $occupant->room_type)->first();
             $room_type->decrement('vacancy');
 
-            $applicant = Applicants::where('stud_num', '=', $occupant->stud_num)->where('dormitory', '=', $manager->dorm_name)->first();
             $applicant->delete();
         } else if ($request->submit == "DENY") {
-            $applicant = Applicants::where('stud_num', '=',request('stud_id', false))->where('dormitory', '=', $manager->dorm_name)->first();
             $applicant->delete();
         }
 
@@ -110,7 +114,7 @@ class OccupantsController extends Controller
         
         $details = Occupants::join('dorms', 'dorm_name', '=', 'dormitory')
             ->where('dorm_name', '=', $occupant->dormitory)
-            ->get(['dorms.dorm_name', 'occupants.id', 'occupants.name', 'occupants.stud_num', 'occupants.mobile_num']);
+            ->get(['dorms.dorm_name', 'occupants.id', 'occupants.first_name', 'occupants.middle_name', 'occupants.last_name', 'occupants.stud_num', 'occupants.mobile_num']);
 
         return view('admin.dormoccupantslist', ['details' => $details]);
     }
