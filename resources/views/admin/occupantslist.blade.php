@@ -63,9 +63,9 @@
         <tbody>
             @foreach($details as $occupant)
           <tr>
-            <td>{{ $occupant->first_name }} {{ $occupant->middle_name }} {{ $occupant->last_name }}</td>
+            <td>{{ $occupant->name }}</td>
             <td>{{ $occupant->mobile_num }}</td>
-            <td>{{ $occupant->dormitory}}</td>
+            <td>{{ $occupant->dormitory }}</td>
             <td><a href="{{ url('admin/occupantdetails/'. $occupant->id) }}"><button type="button">VIEW</button></a></td>
           </tr>
             @endforeach

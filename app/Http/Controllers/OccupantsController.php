@@ -27,7 +27,7 @@ class OccupantsController extends Controller
     function adminshowdorm($name) {
         $details = Occupants::join('dorms', 'dorm_name', '=', 'dormitory')
             ->where('dorm_name', '=', $name)
-            ->get(['dorms.dorm_name', 'occupants.id', 'occupants.first_name', 'occupants.middle_name', 'occupants.last_name', 'occupants.stud_num', 'occupants.mobile_num']);
+            ->get(['dorms.dorm_name', 'occupants.id', 'occupants.name', 'occupants.stud_num', 'occupants.mobile_num']);
 
         return view('admin.dormoccupantslist', ['details' => $details], ['dorm_name' => $name]);
     }
@@ -54,20 +54,14 @@ class OccupantsController extends Controller
         $dorm = Dorms::find($id);
 
         if($request->submit == "ACCEPT") {
-            $occupant->first_name = request('first', false);
-            $occupant->middle_name = request('middle', false);
-            $occupant->last_name = request('last', false);
-            $occupant->suffix = request('suffix');
+            $occupant->name = request('name', false);
             $occupant->stud_num = request('stud_id', false);
             $occupant->sex = request('sex', false);
             $occupant->email = request('email', false);
             $occupant->mobile_num = request('mobile_num', false);
             $occupant->guardian_name = request('guardian_name', false);
             $occupant->guardian_num = request('guardian_num', false);
-            $occupant->barangay = request('barangay', false);
-            $occupant->street = request('street', false);
-            $occupant->city = request('city', false);
-            $occupant->province = request('province', false);
+            $occupant->address = request('address', false);
             $occupant->college = request('college', false);
             $occupant->course = request('course', false);
             $occupant->dormitory = $manager->dorm_name;
@@ -116,7 +110,7 @@ class OccupantsController extends Controller
         
         $details = Occupants::join('dorms', 'dorm_name', '=', 'dormitory')
             ->where('dorm_name', '=', $occupant->dormitory)
-            ->get(['dorms.dorm_name', 'occupants.id', 'occupants.first_name', 'occupants.middle_name', 'occupants.last_name', 'occupants.stud_num', 'occupants.mobile_num']);
+            ->get(['dorms.dorm_name', 'occupants.id', 'occupants.name', 'occupants.stud_num', 'occupants.mobile_num']);
 
         return view('admin.dormoccupantslist', ['details' => $details]);
     }
