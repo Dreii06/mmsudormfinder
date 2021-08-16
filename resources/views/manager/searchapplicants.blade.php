@@ -2,7 +2,7 @@
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
     <head>
         <meta charset="utf-8"> <meta name="viewport" content="width=device-width, initial-scale=1">
-
+        <!-- ICON -->
         <link rel="icon" href="/images/mmsu logo.png">
 
         <title>MMSU - Dorm Management | Applicants</title>
@@ -18,7 +18,7 @@
         
     <div class="uppernav"><h3>MMSU - COEDS / Proprietor Dorm Management</h3></div>
     
-  <!-- NAVIGATION BAR -->
+    <!-- NAVIGATION BAR -->
     <div class="topnav" id="myTopnav">
         <img style="float:left;margin-left:20px;margin-top:10px;" src="/images/mmsu logo.png"  height="60" width="60">
         <h4>MARIANO MARCOS <br> STATE UNIVERSITY</h4>
@@ -38,31 +38,32 @@
             </form>
         </ul>    
     </div>
-
-    <div class="header"> <h1 style="color:white;">APPLICANTS</h1>
-      <form style="margin-top:2%;margin-left:30%;" action="/manager/searchapplicants" method="POST" role="search">
-        @csrf
-        <input type="text" id="search" onkeyup="searchFunction()" placeholder="Search" name="search">
-        <button type="submit"><img src="https://img.icons8.com/pastel-glyph/50/000000/search--v2.png" width="100%"></button>
-      </form>
-    </div>
-  <!-- END OF NAVIGATION BAR -->
+    <!-- END OF NAVIGATION BAR -->
    
-  <!-- TABLE -->
+    <!-- MAIN CONTENT -->
     <div class="listappcontainer">
-        
-    <div class="tableFixHeadtitle">LIST OF APPLICANTS</div>  
+    
+    <!-- 2ND HEADER WITH SEARCH BAR -->
+    <div class="header"> <h1 style="width:100%;">RESULTS</h1>
+            <form style="margin-right:0%;" action="/manager/searchapplicants" method="POST" role="search">
+              @csrf
+              <input type="text" id="search" onkeyup="searchFunction()" placeholder="Search" name="search">
+              <button type="submit"><img src="https://img.icons8.com/pastel-glyph/50/000000/search--v2.png" width="100%"></button>
+            </form>        
+      </div>
+    
+    <!-- Table for applicants -->
     <div class="tableFixHead">
-      <table>
-        <thead>
+        <table>
+          <thead>
           <tr>
             <th>NAME</th>
             <th>ADDRESS</th>
             <th>CONTACT NUMBER</th>
             <th></th>
           </tr>
-        </thead>
-        <tbody>
+          </thead>
+          <tbody>
           @forelse ($applicants as $applicant)
           <tr>
             <td>{{ $applicant->first_name }} {{ $applicant->middle_name }} {{ $applicant->last_name }}</td>
@@ -73,12 +74,12 @@
           @empty
           <td><p>No Applicants Found</p></td>
           @endforelse
-        </tbody>
+          </tbody>
       </table>
     </div>
 
     <button type="button" class="yellowbutton" onclick="listapp()" style="float:right;margin-top:20px;margin-right:10%;"> DOWNLOAD</button>
-</div>
+  </div>
 
 </body>
 </html>

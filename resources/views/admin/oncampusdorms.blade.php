@@ -19,8 +19,16 @@
     <div class="uppernav"><h3>MMSU - Admin Dorm Management</h3></div>
     
     <div class="topnav" id="myTopnav">
-        <img style="float:left;margin-left:20px;margin-top:12px;" src="/images/mmsu logo.png"  height="3%" width="3%">
+        <img style="float:left;margin-left:20px;" src="/images/mmsu logo.png" width="3%">
         <h4>MARIANO MARCOS <br> STATE UNIVERSITY</h4>
+
+      <div class="header"> <h1 style="color:white;">ON - CAMPUS DORMITORIES</h1>
+        <form style="margin-top:3%;margin-left:15%;" action="/admin/searchoffcampusdorms" method="POST" role="search">
+          @csrf
+          <input type="text" id="search" onkeyup="searchFunction()" placeholder="Search" name="search">
+          <button type="submit"><img src="https://img.icons8.com/pastel-glyph/50/000000/search--v2.png" width="100%"></button>
+        </form>        
+      </div>
     </div>
 
     <div class="verticalnav">
@@ -38,15 +46,7 @@
         </ul>
     </div>
 
-    <div class="header"> <h1 style="color:white;">DORMITORY</h1>
-      <form style="margin-top:2%;margin-left:40%;" action="###">
-        <input type="text" id="search" onkeyup="searchFunction()" placeholder="Search.." name="search">
-        <button type="submit"><img src="https://img.icons8.com/pastel-glyph/50/000000/search--v2.png" width="100%"></button>
-      </form>        
-    </div>
-
-    <div class="listappcontainer">
-    <div class="tableFixHeadtitle">ON-CAMPUS DORMITORIES</div>  
+    <div class="listappcontainer"> 
     <div class="tableFixHead">
       <table>
         <thead>
@@ -63,14 +63,14 @@
             <td>{{ $dorm->dorm_name }}</td>
             <td>{{ $dorm->first_name }} {{ $dorm->middle_name }} {{ $dorm->last_name }} </td>
             <td>{{ $dorm->mobile_num }}</td>
-            <td><a href="{{ url('admin/dormdetails/'. $dorm->id) }}"><button type="button">VIEW</button></a></td>
+            <td><a href="{{ url('admin/dormdetails/'. $dorm->dorm_name) }}"><button type="button">VIEW</button></a></td>
           </tr>
             @endforeach
         </tbody>
       </table>
     </div>
-
-    <button type="button" class="yellowbutton" onclick="download()" style="float:right;margin: 2% 10% 4% 0%;"> DOWNLOAD</button>
+    <a href="{{ URL::previous() }}"><button type="button" style="margin-top:20px;margin-right:5%;" class="greenbutton">BACK</button></a>
+    <button type="button" class="yellowbutton" onclick="download()" style="float:right;margin-top:20px;margin-right:1%;"> DOWNLOAD</button>
 </div>
 
 </body>

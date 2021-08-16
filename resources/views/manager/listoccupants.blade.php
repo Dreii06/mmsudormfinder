@@ -4,7 +4,7 @@
 
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-
+        <!-- ICON -->
         <link rel="icon" href="/images/mmsu logo.png">
 
         <title>MMSU - Dorm Management | Occupants</title>
@@ -12,15 +12,16 @@
         <!-- CSS -->
         <link rel="stylesheet" type="text/css" href="/css/COEDstyle.css">  
 
-          <!-- JS -->
-          <script type="text/javascript" src="dormfindercoed.js"></script>
+        <!-- JS -->
+        <script type="text/javascript" src="dormfindercoed.js"></script>
         
     </head>
     
     <body class="antialiased">
-        
+    <!-- HEADER -->
     <div class="uppernav"><h3>MMSU - COEDS / Proprietor Dorm Management</h3></div>
-
+    
+    <!-- NAVIGATION BAR -->
     <div class="topnav" id="myTopnav">
         <img style="float:left;margin-left:20px;margin-top:10px;" src="/images/mmsu logo.png"  height="60" width="60">
         <h4>MARIANO MARCOS <br> STATE UNIVERSITY</h4>
@@ -41,8 +42,10 @@
         </ul>    
     </div>
     
+    <!-- MAIN CONTENT -->
     <div class="listappcontainer">
-
+    
+    <!-- 2ND HEADER WITH SEARCH BAR -->
       <div class="header"> <h1 style="width:100%;">LIST OF OCCUPANTS</h1>
             <form style="margin-right:0%;" action="/manager/searchoccupants" method="POST" role="search">
               @csrf
@@ -51,6 +54,7 @@
             </form>        
       </div>
 
+    <!-- TABLE FOR OCCUPANT -->
     <div class="tableFixHead">
       <table>
         <thead>
@@ -75,7 +79,7 @@
     </div>
 
     <button type="button" class="yellowbutton" onclick="listapp()" style="float:right;margin-top:20px;margin-right:10%;"> DOWNLOAD</button>
-
-</div>
+    </div>
+    
 </body>
 </html>

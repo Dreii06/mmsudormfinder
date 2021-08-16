@@ -9,4 +9,8 @@ class OnCampusDorms extends Model
 {
     use HasFactory;
     protected $table = 'oncampusdorms';
+    public $timestamps = false;
+    protected $fillable = [
+        'dormitory'
+    ];
 }

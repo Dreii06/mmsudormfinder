@@ -435,25 +435,15 @@ margin-top: 15px;
     right: 200px;
 }
 
-.btnapply {
-    width: 150px;
-    height: 50px;
-    border-radius: 35px;
-    margin-left: 75px;
-    font-size: 15px;
-    font-weight: bold;
-    color: #0C4B05;
-    background-color: #FFB700;
-    border: 2px solid #FFB700;
-}
-
-.btndelete{
-  width: 130px;
-  height: 40px;
+.btndelete {
+  width: 15%;
+  height: 50px;
   border-radius: 35px;
-  font-size: 1vw;
-  color: #1D6115;
-  border: 2px solid #FFB700;
+  font-size: 1.1vw;
+  font-family: ABold;
+  color: #28a01b;
+  border: 2px solid #28a01b;
+  cursor: pointer;
 }
 
 .btnview {

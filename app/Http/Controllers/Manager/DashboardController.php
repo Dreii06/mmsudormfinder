@@ -22,8 +22,8 @@ class DashboardController extends Controller
 
 
     public function index(){
-        $id = Auth::guard('manager')->id();
-        $dorm = Dorms::find($id);
+        $manager = Auth::guard('manager')->user();
+        $dorm = Dorms::where('dorm_name', '=', $manager->dorm_name)->first();
         $applicants = Applicants::where('dormitory', '=', $dorm->dorm_name)->count();
         $occupants = Occupants::where('dormitory', '=', $dorm->dorm_name)->count();
         $available_space = RoomType::where('dormitory', '=', $dorm->dorm_name)->sum('vacancy');
@@ -47,7 +47,7 @@ class DashboardController extends Controller
         $occupants_cit = Occupants::where('dormitory', '=', $dorm->dorm_name)->where('college', '=', 'CIT')->count();
 
         $room_types = Dorms::join('room_types', 'dormitory', '=', 'dorm_name')
-        ->where('dorms.id', '=', $id)
+        ->where('dorms.dorm_name', '=', $dorm->dorm_name)
         ->get();
 
         return view('manager.dashboard', compact('applicants', 'occupants', 'applicants_cas', 'applicants_coe', 'applicants_cbea', 'applicants_chs', 'applicants_cafsd', 'applicants_casat', 'applicants_cte', 'applicants_cit','available_space', 'occupants_cas', 'occupants_coe', 'occupants_cbea', 'occupants_chs', 'occupants_cafsd', 'occupants_casat', 'occupants_cte', 'occupants_cit', 'room_types'));

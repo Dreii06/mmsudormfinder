@@ -36,7 +36,7 @@
                     <button type="submit" class="yellowbutton" style="width:80%;margin-top:15px;">{{ __('Log in') }}</button><br>
 
                     <!-- Validation Errors -->
-                        <x-auth-validation-errors class="mb-4" :errors="$errors" style="color:white;margin-top:5%;"/>
+                    <x-auth-validation-errors class="mb-4" :errors="$errors" style="color:black;margin-top:5%;"/>
                         <hr>
                     <label for="register">New Here? Register first!</label><br>
                     <a href="/manager/register"><button type="button" id="register" class="registerbutton" style="margin-top:15px;">{{ __('Register') }}</button></a>       

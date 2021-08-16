@@ -49,7 +49,7 @@
                processing of personal data and does not waive any rights under the <a style="color:#28a01b;"href="https://www.officialgazette.gov.ph/2012/08/15/republic-act-no-10173/">Data Privacy Act of 2012</a> and other applicable laws.</p>
 
                         <!-- Validation Errors -->
-                        <x-auth-validation-errors class="mb-4" :errors="$errors" style="color:white;"/>
+                        <x-auth-validation-errors class="mb-4" :errors="$errors" style="color:black;"/>
                         <button type="submit" class="yellowbutton" style="width:90%;margin-top:15px;">{{ __('Register') }}</button><br>
                         <a href="login"><button type="button" id="cancel" class="cancelbutton" style="width:90%;">Cancel</button></a>
 

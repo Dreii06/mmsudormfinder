@@ -22,18 +22,26 @@
     <div class="uppernav"><h3>MMSU - Admin Dorm Management</h3></div>
     
     <div class="topnav" id="myTopnav">
-        <img style="float:left;margin-left:20px;margin-top:12px;" src="/images/mmsu logo.png"  height="3%" width="3%">
+        <img style="float:left;margin-left:20px;" src="/images/mmsu logo.png" width="3%">
         <h4>MARIANO MARCOS <br> STATE UNIVERSITY</h4>
+        
+        <div class="header"> <h1 style="color:white;">OCCUPANTS</h1>
+            <form style="margin-top:3%;margin-left:30%;" action="/admin/searchoccupants" method="POST" role="search">
+              @csrf
+              <input type="text" id="search" onkeyup="searchFunction()" placeholder="Search" name="search">
+              <button type="submit"><img src="https://img.icons8.com/pastel-glyph/50/000000/search--v2.png" width="100%"></button>
+            </form>        
+        </div>
     </div>
 
     <div class="verticalnav">
         <ul>
             <li class="username">{{ Auth::guard('admin')->user()->name }}</li>
-            <li><a href="/admin/dashboard"> <img src="https://img.icons8.com/fluent-systems-regular/96/000000/home.png"/> Home</a></li>
-            <li><a href="/admin/registrants"> <img src="https://img.icons8.com/fluent-systems-regular/50/000000/parse-resume.png"/> Registrants</a></li>
-            <li><a class="active" href="/admin/occupantslist"><img src="https://img.icons8.com/fluent-systems-regular/96/000000/user-rights.png"/> Occupants</a></li>
-            <li><a href="/admin/dorms"><img src="https://img.icons8.com/fluent-systems-regular/96/000000/department.png"/> Dorm</a></li>
-            <li><a href="/admin/contact"><img src="https://img.icons8.com/fluent-systems-regular/96/000000/info-squared.png"/> Contact</a></li><br><br>
+            <li><a href="{{ url('admin/dashboard') }}"> <img src="https://img.icons8.com/fluent-systems-regular/96/000000/home.png"/> Home</a></li>
+            <li><a href="{{ url('admin/registrants') }}"> <img src="https://img.icons8.com/fluent-systems-regular/50/000000/parse-resume.png"/> Registrants</a></li>
+            <li><a class="active" href="{{ url('admin/occupantslist') }}"><img src="https://img.icons8.com/fluent-systems-regular/96/000000/user-rights.png"/> Occupants</a></li>
+            <li><a href="{{ url('admin/dorms') }}"><img src="https://img.icons8.com/fluent-systems-regular/96/000000/department.png"/> Dorm</a></li>
+            <li><a href="{{ url('admin/contact') }}"><img src="https://img.icons8.com/fluent-systems-regular/96/000000/info-squared.png"/> Contact</a></li><br><br>
             <form style="margin-left:0%;margin-top:0%;display:block;" method="POST" action="{{ route('admin.logout') }}">
                 @csrf
                 <li><button type="submit" style="color:red;"><img src="https://img.icons8.com/ios-filled/50/000000/exit.png"/>{{ __('Log Out') }}</button></li>
@@ -41,39 +49,28 @@
         </ul>
     </div>
 
-    <div class="header"> <h1 style="color:white;">OCCUPANTS</h1>
-    <form style="margin-top:2%;margin-left:30%;" action="/admin/searchoccupants" method="POST" role="search">
-        @csrf
-        <input type="text" id="search" onkeyup="searchFunction()" placeholder="Search" name="search">
-        <button type="submit"><img src="https://img.icons8.com/pastel-glyph/50/000000/search--v2.png" width="100%"></button>
-      </form>        
-    </div>
-
     <div class="listappcontainer">
-    <div class="tableFixHeadtitle">LIST OF OCCUPANTS</div>  
     <div class="tableFixHead">
       <table>
         <thead>
           <tr>
             <th>NAME</th>
-            <th>STUDENT NUMBER</th>
             <th>CONTACT NUMBER</th>
             <th>DORMITORY</th>
             <th></th>
           </tr>
         </thead>
         <tbody>
-            @forelse($occupants as $occupant)
+          @forelse($occupants as $occupant)
           <tr>
             <td>{{ $occupant->first_name }} {{ $occupant->middle_name }} {{ $occupant->last_name }}</td>
-            <td>{{ $occupant->stud_num}}</td>
             <td>{{ $occupant->mobile_num }}</td>
             <td>{{ $occupant->dormitory}}</td>
-            <td><a href="/admin/occupantdetails/{{ $occupant->id }}"><button type="button">VIEW</button></a></td>
+            <td><a href="{{ url('admin/occupantdetails/'. $occupant->id) }}"><button type="button">VIEW</button></a></td>
           </tr>
-            @empty
+          @empty
             <td><p>No Occupants Found</p></td>
-            @endforelse
+          @endforelse
         </tbody>
       </table>
     </div>

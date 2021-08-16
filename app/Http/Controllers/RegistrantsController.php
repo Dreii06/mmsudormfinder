@@ -7,6 +7,8 @@ use App\Models\Registrants;
 use App\Models\Registrant;
 use App\Models\Manager;
 use App\Models\Dorms;
+use App\Models\OnCampusDorms;
+use App\Models\OffCampusDorms;
 use Illuminate\Support\Facades\Auth;
 
 class RegistrantsController extends Controller
@@ -33,6 +35,16 @@ class RegistrantsController extends Controller
             'dorm_name' => $registrant->dorm_name,
             'mobile_num' => $registrant->mobile_num
         ]);
+
+        if($request->submit == ("addOnCampus")) {
+            OnCampusDorms::create([
+                'dormitory' => $registrant->dorm_name
+            ]);
+        } else if ($request->submit == ("addOffCampus")) {
+            OffCampusDorms::create([
+                'dormitory' => $registrant->dorm_name
+            ]);
+        }
 
         $manager->first_name = $registrant->first_name;
         $manager->middle_name = $registrant->middle_name;

@@ -28,7 +28,8 @@
             <legend style="text-align:left;">Log In</legend>
                 <input type="text" id="name" name="email" :value="old('email')" placeholder="Staff ID" class="loginform" style="margin-top:30px;width:100%;"> <br>
                 <input type="password" name="password" id="password" placeholder="Password" class="loginform" style="margin-top:10px;width:100%;"> <br>
-
+                <!-- Validation Errors -->
+                <x-auth-validation-errors class="mb-4" :errors="$errors" style="color:black;margin-top:5%;"/>
                 <button type="submit" class="yellowbutton" style="width:100%;margin-top:15px; margin-bottom:50px;">{{ __('Log in') }}</button>
                 <x-auth-validation-errors class="mb-4" :errors="$errors" style="color:white;"/>
         </form>

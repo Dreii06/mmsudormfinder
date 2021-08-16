@@ -105,7 +105,7 @@ hr{
 
 .note{
   color:#28a01b;
-  margin-left: 50px; padding-left: 3%;
+  margin-left: 50px; padding-left: 2%;padding-right:1%;
   border-color: #28a01b; border-style: solid; border-width: 1px;
   width:90%;
   border-radius: 10px;

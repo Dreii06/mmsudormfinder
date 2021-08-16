@@ -56,13 +56,25 @@ Route::post('/profilestudent', [UserProfileController::class, 'update']);
 
 Route::get('/oncampusdormslist', [DormsController::class, 'showOnCampusDorms']);
 
-Route::get('/offcampusdormslist', [DormsController::class, 'showOffCampusDorms']);
-
-Route::post('/searchdorm', function() {
+Route::post('/searchoncampusdorms', function() {
     $q = Request::get('q');
     if($q != "") {
-        $dorm = Dorms::where('dorm_name', 'LIKE', '%' . $q . '%')->get();
-        return view('searchdorm', compact('dorm'));
+        $dorm = Dorms::join('oncampusdorms', 'dormitory', '=', 'dorm_name')->
+                        where('dorms.dorm_name', 'LIKE', '%' . $q . '%')->get();
+        return view('searchoncampusdorms', compact('dorm'));
+    } else {
+        return redirect()->back();
+    }
+});
+
+Route::get('/offcampusdormslist', [DormsController::class, 'showOffCampusDorms']);
+
+Route::post('/searchoffcampusdorms', function() {
+    $q = Request::get('q');
+    if($q != "") {
+        $dorm = Dorms::join('offcampusdorms', 'dormitory', '=', 'dorm_name')->
+                        where('dorms.dorm_name', 'LIKE', '%' . $q . '%')->get();
+        return view('searchoffcampusdorms', compact('dorm'));
     } else {
         return redirect()->back();
     }
@@ -161,7 +173,8 @@ Route::post('/admin/searchoccupants', function() {
     if($search != "") {
         $occupants = Occupants::where('stud_num', 'LIKE', '%' . $search . '%')->
                                 orWhere('first_name', 'LIKE', '%' . $search . '%')->
-                                orWhere('last_name', 'LIKE', '%' . $search . '%')->get();
+                                orWhere('last_name', 'LIKE', '%' . $search . '%')->
+                                orWhere('dormitory', 'LIKE', '%' . $search . '%')->get();
         return view('admin.searchoccupants', compact('occupants'));
     } else {
         return redirect()->back();
@@ -174,12 +187,24 @@ Route::post('/admin/occupantdetails', [OccupantsController::class, 'admindel']);
 
 Route::get('/admin/oncampusdorms', [DormsController::class, 'adminshowOnCampusDorms']);
 
+Route::post('/admin/searchoncampusdorms', function() {
+    $search = Request::get('search');
+    if($search != "") {
+        $oncampusdorms = Dorms::join('oncampusdorms', 'dormitory', '=', 'dorm_name')->
+                                where('dorms.dorm_name', 'LIKE', '%' . $search . '%')->get();
+        return view('admin.searchoncampusdorms', compact('oncampusdorms'));
+    } else {
+        return redirect()->back();
+    }
+});
+
 Route::get('/admin/offcampusdorms', [DormsController::class, 'adminshowOffCampusDorms']);
 
 Route::post('/admin/searchoffcampusdorms', function() {
     $search = Request::get('search');
     if($search != "") {
-        $offcampusdorms = Dorms::where('dorm_name', 'LIKE', '%' . $search . '%')->get();
+        $offcampusdorms = Dorms::join('offcampusdorms', 'dormitory', '=', 'dorm_name')->
+                                where('dorm_name', 'LIKE', '%' . $search . '%')->get();
         return view('admin.searchoffcampusdorms', compact('offcampusdorms'));
     } else {
         return redirect()->back();

@@ -33,96 +33,91 @@ class DormsController extends Controller
     }
 
     function get($id) {
-        $details = Dorms::find($id);
-        
-        $available = Dorms::join('room_types', 'dormitory', '=', 'dorm_name')
-        ->where('dorms.id', '=', $id)->sum('vacancy');
+        $manager = Auth::guard('manager')->user();
+        $details = Dorms::where('dorm_name', '=', $manager->dorm_name)->first();
 
         $images = Dorms::join('images', 'dormitory', '=', 'dorm_name')
-        ->where('dorms.id', '=', $id)
+        ->where('dorms.dorm_name', '=', $details->dorm_name)
         ->get(['images.filename']);
         
         $room_types = Dorms::join('room_types', 'dormitory', '=', 'dorm_name')
-        ->where('dorms.id', '=', $id)
+        ->where('dorms.dorm_name', '=', $details->dorm_name)
         ->get();
 
         $amenities = Dorms::join('amenities', 'dormitory', '=', 'dorm_name')
-        ->where('dorms.id', '=', $id)
+        ->where('dorms.dorm_name', '=', $details->dorm_name)
         ->get(['amenities.amenities']);
 
-        return view('manager.viewdorm', ['details' => $details], compact('images', 'room_types', 'amenities', 'available'));
+        return view('manager.viewdorm', ['details' => $details], compact('images', 'room_types', 'amenities'));
     }
     
     function adminget($id) {
-        $details = Dorms::find($id);
-
-        $available = Dorms::join('room_types', 'dormitory', '=', 'dorm_name')
-        ->where('dorms.id', '=', $id)->sum('vacancy');
+        $details = Dorms::where('dorm_name', '=', $id)->first();
 
         $room_types = Dorms::join('room_types', 'dormitory', '=', 'dorm_name')
-        ->where('dorms.id', '=', $id)
+        ->where('dorms.dorm_name', '=', $id)
         ->get();
 
         $amenities = Dorms::join('amenities', 'dormitory', '=', 'dorm_name')
-        ->where('dorms.id', '=', $id)
+        ->where('dorms.dorm_name', '=', $id)
         ->get(['amenities.amenities']);
 
-        return view('admin.dormdetails', ['details' => $details], compact('room_types', 'amenities', 'available'));
+        return view('admin.dormdetails', ['details' => $details], compact('room_types', 'amenities'));
     }
 
     function getupdate($id) {
-        $details = Dorms::find($id);
-
+        $manager = Auth::guard('manager')->user();
+        $details = Dorms::where('dorm_name', '=', $manager->dorm_name)->first();
+        
         $available = Dorms::join('room_types', 'dormitory', '=', 'dorm_name')
-        ->where('dorms.id', '=', $id)->sum('vacancy');
-
+        ->where('dorms.dorm_name', '=', $details->dorm_name)->sum('vacancy');
+        
         $room_types = Dorms::join('room_types', 'dormitory', '=', 'dorm_name')
-        ->where('dorms.id', '=', $id)
+        ->where('dorms.dorm_name', '=', $details->dorm_name)
         ->get();
 
         $amenities = Dorms::join('amenities', 'dormitory', '=', 'dorm_name')
-        ->where('dorms.id', '=', $id)
+        ->where('dorms.dorm_name', '=', $details->dorm_name)
         ->get(['amenities.amenities']);
 
         return view('manager.updatedorm', ['details' => $details],  compact('room_types', 'amenities', 'available'));
     }
 
     function getdorm($id) {
-        $details = Dorms::find($id);
+        $details = Dorms::where('dorm_name', '=', $id)->first();
 
         $images = Dorms::join('images', 'dormitory', '=', 'dorm_name')
-        ->where('dorms.id', '=', $id)
+        ->where('dorms.dorm_name', '=', $id)
         ->get();
 
         $room_types = Dorms::join('room_types', 'dormitory', '=', 'dorm_name')
-        ->where('dorms.id', '=', $id)
+        ->where('dorms.dorm_name', '=', $id)
         ->get();
 
         $amenities = Dorms::join('amenities', 'dormitory', '=', 'dorm_name')
-        ->where('dorms.id', '=', $id)
+        ->where('dorms.dorm_name', '=', $id)
         ->get(['amenities.amenities']);
 
         return view('dormitorydetails', ['details' => $details], compact('images', 'room_types', 'amenities'));
     }
 
     function getapply($id) {
-        $details = Dorms::find($id);
+        $details = Dorms::where('dorm_name', '=', $id)->first();
 
         $images = Dorms::join('images', 'dormitory', '=', 'dorm_name')
-        ->where('dorms.id', '=', $id)
+        ->where('dorms.dorm_name', '=', $id)
         ->get();
 
         $room_types = Dorms::join('room_types', 'dormitory', '=', 'dorm_name')
-        ->where('dorms.id', '=', $id)
+        ->where('dorms.dorm_name', '=', $id)
         ->get();
 
         return view('applyconfirmation', ['details' => $details], compact('images', 'room_types'));
     }
 
     function store(Request $request) {
-        $id = Auth::guard('manager')->id();
-        $dorm = Dorms::find($id);
         $manager = Auth::guard('manager')->user();
+        $dorm = Dorms::where('dorm_name', '=', $manager->dorm_name)->first();
         $available_space = RoomType::where('dormitory', '=', $dorm->dorm_name)->sum('vacancy');
 
         $dorm->first_name = request('first', false);
@@ -172,18 +167,19 @@ class DormsController extends Controller
     }
 
     function getdormimage($id) {
-        $details = Dorms::find($id);
+        $manager = Auth::guard('manager')->user();
+        $details = Dorms::where('dorm_name', '=', $manager->dorm_name)->first();
 
         $images = Dorms::join('images', 'dormitory', '=', 'dorm_name')
-        ->where('dorms.id', '=', $id)
-        ->get();
+        ->where('dorms.dorm_name', '=', $details->dorm_name)
+        ->get(['images.filename']);
 
         return view('manager.updateimage', ['details' => $details], ['images' => $images]);
     }
 
     function storeimg(Request $request) {
-        $id = Auth::guard('manager')->id();
-        $dorm = Dorms::find($id);
+        $manager = Auth::guard('manager')->user();
+        $dorm = Dorms::where('dorm_name', '=', $manager->dorm_name)->first();
 
         $images = Images::where('dormitory', '=', $dorm->dorm_name);
 

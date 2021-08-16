@@ -129,17 +129,6 @@ form {
     font-size: 1.3vw;
 }
 
-.dashboardbutton {
-  background-color:#FFB700;
-  color: #0C4B05;
-  border-style: none;
-  font-size: 1.3vw;
-  margin: 3% 10px 0% 0px;
-  width: 250px;
-  height: 40px;
-  border-radius: 12px;
-  cursor: pointer;
-}
 
 .secondyellowbutton {
     background-color:#FFB700;
@@ -155,15 +144,12 @@ form {
 }
 
 .greenbutton {
-    background-color:#F3EEED;
-    color: #0C4B05;
-    border-style:solid;
-    border-color: #0C4B05;
-    width: 15%;
-    height: 40px;
-    border-radius: 20px;
-    margin-top:15px; 
-    margin-bottom:50px;
+    background-color:transparent;
+    color: #28a01b; 
+    border-style:solid; border-color: #28a01b; border-radius: 12px;
+    width: 15%; height: 40px;
+    font-family: ABolder; font-size: 1.3vw;
+    margin-top:15px; margin-bottom:50px;
     float: right;
     cursor: pointer;
 }
@@ -432,13 +418,10 @@ textarea{
 }
 
 .tableFixHead button{
-  background-color: #28a01b;
-  color: white;
-  font-size: 1.2vw;
-  border-style: none;
-  border-radius: 10px;
-  width: 80%;
-  height: 35px;
+  background-color: #28a01b; color: white;
+  font-size: 1.2vw;            font-family: ABold;
+  border-style: none;          border-radius: 10px;
+  width: 80%;                  height: 35px;
 }
 
 .tableFixHead button:hover{

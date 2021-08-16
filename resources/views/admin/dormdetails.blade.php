@@ -40,7 +40,7 @@
 
     <form style="width:80%;margin-left:25%;">
         <div class="tableFixHeadtitle">{{ $details->dorm_name }} - Details
-            <a href="{{ URL::previous() }}"><button type="button" class="btnviewocc">BACK</button></a>
+            <a href="{{ url('admin/dorms') }}"><button type="button" class="btnviewocc">BACK</button></a>
             <a href="{{ url('admin/'. $details->dorm_name .'/dormoccupantslist') }}"><button type="button" style="margin-left:0%;float:right;" class="btndownload">VIEW OCCUPANTS</button></a>
         </div><br>
 
@@ -53,7 +53,7 @@
     <div style="display:flex;margin-top:2%;"><div style="width: 50%;" class="smallheader">ADDRESS</div>
     <div class="smallheader" style="width: 20%;">CAPACITY</div></div>
     <input type="text" id="brgy" name="fname" style="width: 50%;margin-right:5%;" class="inputapp" value="{{ $details->barangay }} {{ $details->street }} ; {{ $details->nearest }}" readonly>
-    <input type="number" id="quantity" name="quantity"  style="width: 20%;" class="inputapp" min="0" value="{{ $available }}" readonly><br><br>
+    <input type="number" id="quantity" name="quantity"  style="width: 20%;" class="inputapp" min="0" value="{{ $details->available_space }}" readonly><br><br>
     
     <div style="display:flex;"><div style="width: 50%;" class="smallheader">DESCRIPTION</div></div>
     <textarea readonly>{{ $details->description }}</textarea><br><br>

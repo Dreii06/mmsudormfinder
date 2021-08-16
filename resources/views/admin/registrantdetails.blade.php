@@ -13,13 +13,12 @@
     </head>
     
     <body class="antialiased">
-        
+
     <div class="uppernav"><h3>MMSU - Admin Dorm Management</h3></div>
     
     <div class="topnav" id="myTopnav">
-        <img style="float:left;margin-left:20px;margin-top:12px;" src="/images/mmsu logo.png"  height="3%" width="3%">
+        <img style="float:left;margin-left:20px;" src="/images/mmsu logo.png" width="3%">
         <h4>MARIANO MARCOS <br> STATE UNIVERSITY</h4>
-        <div class="titleheader">REGISTRANT - Registrant Name</div>
     </div>
           
     <div class="verticalnav">
@@ -38,30 +37,29 @@
     </div>
 
     <div class="dormdeets">
-    
+
     <form style="width:65%;margin-left:24%;" action="/admin/registrants" method="POST">
         @csrf
-        
-        <div class="smallheader">FULL NAME</div>
-        <label for="fname">First Name</label>
-        <label for="fname">Middle Name</label>
-        <label for="fname">Last Name</label><br>
-        
-        <input type="text" id="fname" name="fname" style="width: 20%;" class="inputapp" value="{{ $details->first_name }}" readonly>
-        <input type="text" id="fname" name="fname" style="width: 20%;" class="inputapp" value="{{ $details->middle_name }}" readonly>
-        <input type="text" id="fname" name="fname" style="width: 20%;" class="inputapp" value="{{ $details->last_name }}" readonly><br><br>
 
-        <div class="smallheader">OTHER INFORMATION</div>
-        <label for="dname">Dorm Name</label>
-        <label for="contact">Contact</label><br>
-   
-        <input type="tel" id="fname" name="dorm_name" style="width: 20%;" class="inputapp" value="{{ $details->dorm_name }}" readonly>
-        <input type="text" id="fname" name="contact" style="width: 20%;" class="inputapp" value="{{ $details->mobile_num }}" readonly><br>
-
-        <a href="occupantslist"><button type="button" onclick="remove()" style="margin: 5% 7% 0% 1%;float:right;"class="btndelete">DENY</button></a>
-        <button type="submit" onclick="download()"  style="margin-left:0%;margin-top:5%;float:right;"class="btndownload">ACCEPT</button>
+        <div class="tableFixHeadtitle">Registrant's Details
+            <a href="{{ URL::previous() }}"><button type="button" style="margin: 0% 7% 0% 1%;float:right;"class="btndelete">BACK</button></a>
         </div>
-    </form>    
+
+        <div style="display:flex;margin-right:5%;margin-top:3%;"><div class="smallheader">FULL NAME</div>
+        <div class="smallheader">DORM NAME</div></div>
+
+        <input type="text" id="fname" name="fname" style="width: 40%;" class="inputapp" value="{{ $details->first_name }} {{ $details->middle_name }} {{ $details->last_name }}" readonly>
+        <input type="tel" id="fname" name="dorm_name" style="width: 40%;" class="inputapp" value="{{ $details->dorm_name }}" readonly>
+
+        <div class="smallheader">CONTACT</div>
+        <input type="text" id="fname" name="contact" style="width: 40%;" class="inputapp" value="{{ $details->mobile_num }}" readonly><br>
+
+        <a href="occupantslist"><button type="button" onclick="remove()" style="margin: 5% 10% 0% 1%;float:right;"class="btndelete">DENY</button></a>
+        <button type="submit" onclick="download()" name="submit" value="addOnCampus" style="width:20%;margin-left:0%;margin-top:5%;float:right;"class="btndownload">ACCEPT AS <br> ON-CAMPUS</button>
+        <button type="submit" onclick="download()" name="submit" value="addOffCampus" style="width:20%;margin-left:0%;margin-top:5%;float:right;"class="btndownload">ACCEPT AS <br> OFF-CAMPUS</button>
+
+        </div>
+    </form>
     
     </div>
         

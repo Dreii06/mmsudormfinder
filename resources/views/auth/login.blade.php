@@ -33,7 +33,7 @@
                 <button type="submit" class="yellowbutton" style="margin-top:15px;">{{ __('Log in') }}</button>
                 
                 <!-- Validation Errors -->
-                <x-auth-validation-errors class="mb-4" :errors="$errors" style="color:white;margin-top:5%;"/> 
+                <x-auth-validation-errors class="mb-4" :errors="$errors" style="color:black;margin-top:5%;"/> 
             <hr>
                 <!-- For Registration of Student -->
                 <label for="register" style="font-size:1vw;width:80%;text-align:center;font-family:Regular;">New Here? Register first!</label><br>

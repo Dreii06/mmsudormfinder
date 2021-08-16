@@ -8,18 +8,20 @@
         <link rel="stylesheet" type="text/css" href="/css/StudentStyle.css">  
         <!-- SCRIPT -->
         <script src="/studentDormFinder.js"></script>
-
+        <!-- ICON -->
         <link rel="icon" href="/images/mmsu logo.png">
     </head>
     
-    <body style="overflow:hidden;background-image: url('/images/bg.png');background-repeat: no-repeat; background-size: 100%;" class="antialiased">
-        
+    <body style="overflow-x:hidden;background-image: url('/images/bg.png');background-repeat: no-repeat; background-size: 100% 100%;" class="antialiased">
+    <!-- HEADER / NAVIGATION BAR -->
     <div class="uppernav"> <h3 style="margin-left:20px;">MMSU - Dorm Finder</h3> </div>
     <div class="topnav" style="background-color:transparent;">
         <img style="float:left;margin-left:20px;" src="/images/mmsu logo.png"  height="5%" width="5%">
         <h4>MARIANO MARCOS <br> STATE UNIVERSITY</h4>
     </div>
-    
+    <!-- END HEADER / NAVIGATION BAR -->
+
+    <!-- REGISTRATION FORM -->
     <div class="registercontainer">
 
         <form id="Registration" method="POST" action="{{ route('register') }}">
@@ -43,10 +45,11 @@
                This consent does not preclude the existence of other criteria for lawful 
                processing of personal data and does not waive any rights under the <a style="color:#28a01b;"href="https://www.officialgazette.gov.ph/2012/08/15/republic-act-no-10173/">Data Privacy Act of 2012</a> and other applicable laws.</p>
             <!-- Validation Errors -->
-            <x-auth-validation-errors class="mb-4" :errors="$errors" style="color:white;"/>
+            <x-auth-validation-errors class="mb-4" :errors="$errors" style="color:black;"/>
             <a href="/login"><button type="submit" class="yellowbutton" style="margin-top:5px;margin-left:0%;">{{ __('Register') }}</button></a><br>
             <a href="/login"><button type="button" id="cancel"  class="registercancelbutton">Cancel</button></a>
         </form>
     </div>
-    </body>
+    
+</body>
 </html>

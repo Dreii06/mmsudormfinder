@@ -70,7 +70,7 @@
 
     <input type="tel" id="fname" name="dorm_name" value="{{ $details->dorm_name }}" style="width: 22%;" class="inputapp">
     <input type="text" id="fname" name="mobile_num" value="{{ $details->mobile_num }}" style="width: 22%;" class="inputapp">
-    <input type="number" id="quantity" name="avail" value="{{ $available }}"  style="width: 22%;" class="inputapp" min="0">
+    <input type="number" id="quantity" name="avail" value="{{ $details->available_space }}"  style="width: 22%;" class="inputapp" min="0">
     
     <div class="smallheader" style="width:90%;border-bottom: #434546 solid 1px;margin-bottom:1%;">SHORT DESCRIPTION</div>
     <textarea name="description">{{ $details->description }}</textarea><br><br>
