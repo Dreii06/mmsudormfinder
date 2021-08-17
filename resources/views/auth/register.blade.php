@@ -28,7 +28,7 @@
             @csrf
             <legend>Registration</legend>
             <hr style="width:80%;">
-            <input type="text" id="studnumber" name="student_number" placeholder="Student Number" class="loginform" style="margin-top:10px;"> 
+            <input type="text" id="studnumber" name="stud_num" placeholder="Student Number" class="loginform" style="margin-top:10px;"> 
 
             <input type="text" id="fullname" name="first_name" placeholder="First Name" class="loginform" style="width:20%;margin-top:10px;margin-right:1%;">
             <input type="text" id="fullname" name="middle_name" placeholder="Middle Name" class="loginform" style="width:20%;margin-top:10px;margin-right:1%;">

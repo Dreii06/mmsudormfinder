@@ -48,13 +48,13 @@ class RegisteredUserController extends Controller
         ]);
 
         $registrant = Registrant::create([
-            'first_name' => $request->first,
-            'middle_name' => $request->middle,
-            'last_name' => $request->last,
+            'first_name' => $request->first_name,
+            'middle_name' => $request->middle_name,
+            'last_name' => $request->last_name,
             'email' => $request->email,
             'password' => Hash::make($request->password),
             'dorm_name' => $request->dorm_name,
-            'mobile_num' => $request->mobile_num
+            'mobile_num' => $request->mobile_number
         ]);
 
         VerifyEmail::createUrlUsing(function ($notifiable) {

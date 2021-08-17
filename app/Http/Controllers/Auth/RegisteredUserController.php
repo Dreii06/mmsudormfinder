@@ -34,7 +34,7 @@ class RegisteredUserController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'student_number' => 'required|string|max:255|unique:users',
+            'stud_num' => 'required|string|max:255|unique:users',
             'first_name' => 'required|string|max:255',
             'middle_name' => 'nullable|string|max:255',
             'last_name' => 'required|string|max:255',
@@ -46,13 +46,13 @@ class RegisteredUserController extends Controller
 
         $user = User::create([
             'stud_num' => $request->stud_num,
-            'first_name' => $request->first,
-            'middle_name' => $request->middle,
-            'last_name' => $request->last,
+            'first_name' => $request->first_name,
+            'middle_name' => $request->middle_name,
+            'last_name' => $request->last_name,
             'suffix' => $request->suffix,
             'email' => $request->email,
             'password' => Hash::make($request->password),
-            'mobile_num' => $request->mobile_num
+            'mobile_num' => $request->mobile_number
         ]);
 
         event(new Registered($user));
