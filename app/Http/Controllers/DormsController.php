@@ -172,7 +172,7 @@ class DormsController extends Controller
 
         $images = Dorms::join('images', 'dormitory', '=', 'dorm_name')
         ->where('dorms.dorm_name', '=', $details->dorm_name)
-        ->get(['images.filename']);
+        ->get();
 
         return view('manager.updateimage', ['details' => $details], ['images' => $images]);
     }

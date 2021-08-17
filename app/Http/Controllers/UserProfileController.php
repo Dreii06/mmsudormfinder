@@ -10,12 +10,6 @@ use App\Models\User;
 class UserProfileController extends Controller
 {
 
-    public function index() {
-        $user = Auth::guard('manager')->user();
-
-        return view('/profilestudent', ['user' => $user]);
-    }
-
     public function update(Request $request) {
         $id = Auth::user()->id;
         $user = UserProfile::find($id);

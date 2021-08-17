@@ -70,6 +70,6 @@ class RegisteredUserController extends Controller
 
         event(new Registered($registrant));
 
-        return view('manager.auth.login');
+        return redirect('/manager/login');
     }
 }

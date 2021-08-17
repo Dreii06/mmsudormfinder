@@ -55,12 +55,17 @@
         <label for="process">Process</label>
         <input type="text" id="process" name="process" value="{{ $process }}" style="width: 30%;color:#28a01b;font-family:ABold;" class="readapp" readonly="readonly">
         
-        <button type="submit" name="cancel" onclick="cancelapp()" class="secondyellowbutton" style="width:20%;float:right;margin-right:15%;"> CANCEL APPLICATION</button>
+        <button type="submit" id="cancel" name="cancel" onclick="cancelapp()" class="secondyellowbutton" style="width:20%;float:right;margin-right:15%;"> CANCEL APPLICATION</button>
 
     </form>
     </div>
     @endforeach
-
+<script>
+        var process = document.getElementById('process').value;
+        var cancel = document.getElementById('cancel');
+        if(process == "Approved") {
+            cancel.remove();
+        }
+</script>
 </body>
-</head>
 </html>
