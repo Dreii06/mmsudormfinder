@@ -23,7 +23,6 @@ body {
     margin: 0;
     overflow-x:hidden ;
     min-height: 100vh;
-
 }
 
 h1{
@@ -31,23 +30,15 @@ h1{
 }
 
 h3{
-    color:#434546;
-    font-size: 1.3vw;
-    margin-top: 3px;     
+    color:#434546; font-size: 1.3vw; margin-top: 3px;     
 }
 
 h4{
-    color: white;
+    color: #FFB700;
     margin-left: 10px;
     margin-right: 100px;
     font-family:Unna;
     font-size: 1vw;
-}
-
-h5{
-  color: #FFB700;
-  font-family: Arial;
-  text-align: center;
 }
 
 legend{
@@ -97,7 +88,6 @@ textarea{
   font-family: ABold;
 }
 
-
 .header{
   padding-left: 30px;
   background-color: #e6e6e6; border-radius: 20px;
@@ -108,7 +98,6 @@ textarea{
   align-items: center;
 }
 
-
 .header input[type=text] {
   padding: 6px;
   font-size: 1.1vw;
@@ -117,7 +106,7 @@ textarea{
 }
 
 .header button {
-  border-style: none; background-color: transparent;
+  border-style: none; background-color:#d1d0d0; border-radius: 10px;
   width: 7%; height: 30px;
 }
 
@@ -135,7 +124,7 @@ textarea{
 }
 
 .contactcontainer img{
-  width: 5%; height: 5%;
+  width: 3%;
   margin-right: 10px;
   margin-bottom: 5px;
   vertical-align: middle;
@@ -218,8 +207,7 @@ top: 0%;  padding-top: 5%;  padding-left: 25%;
 
 .uppernav {
   background-color: #F3EEED;
-  display: flex;
-  position: fixed;
+  display: flex; position: fixed;
   padding-left: 20px;
   width: 100%;
   top: 0%;
@@ -353,7 +341,7 @@ top: 0%;  padding-top: 5%;  padding-left: 25%;
     border-radius: 20px;
     margin-top:15px; margin-bottom:50px;
     float: right;
-    font-size: 1vw; font-family: ABolder;
+    font-size: 1vw; font-family: ABold;
     cursor: pointer;
 }
 
@@ -437,24 +425,13 @@ margin-top: 15px;
 
 .btndelete {
   width: 15%;
-  height: 50px;
+  height: 40px;
   border-radius: 35px;
   font-size: 1.1vw;
   font-family: ABold;
   color: #28a01b;
   border: 2px solid #28a01b;
   cursor: pointer;
-}
-
-.btnview {
-    width: 150px;
-    height: 50px;
-    border-radius: 35px;
-    margin-left: 20px;
-    font-size: 15px;
-    font-weight: bold;
-    color: #1D6115;
-    border: 2px solid #FFB700;
 }
 
 .dorm_con {
@@ -481,12 +458,6 @@ margin-top: 15px;
     display: flex;
     width: 40%;
 
-}
-
-.dorm_name {
-    background-color: #0C4B05;
-    color: #FFB700;
-    padding-left: 50px;
 }
 
 .dorm_details {
@@ -614,7 +585,7 @@ position: sticky;  padding-left: 0%;
     font-size: 1.2vw;
     border-style: none;
     border-radius: 10px;
-    width: 65%;
+    width: 100%;
     height: 35px;
   }
   
@@ -685,7 +656,7 @@ position: sticky;  padding-left: 0%;
   
   /* Handle on hover */
   ::-webkit-scrollbar-thumb:hover {
-    background: #FFB700; 
+    background: #393a3b; 
   }
 
  
@@ -861,8 +832,7 @@ img {
 /* On hover, add a black background color with a little bit see-through */
 .prev:hover,
 .next:hover {
-  background-color:#0C4B05;
-  color: #FFCD00;
+  background-color:#065471;
 }
 
 /* Caption text */
@@ -918,4 +888,44 @@ img {
   margin-bottom: 3%;
 }
 
-/* DASHBOARD SLIDER*/
+/* MODAL FOR REGISTRATION */
+.modal {
+	z-index: 10;
+	display: block;
+	padding-top: 100px;
+	position: fixed;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	overflow: auto;
+	background-color: rgb(0,0,0);
+	background-color: rgba(0,0,0,0.5)
+}
+.modal-content {
+	margin: auto;
+	background-color: #fff;
+	position: relative;
+	padding: 0;
+	outline: 0;
+	max-width: 600px
+}
+.modal-inner { padding: 20px 30px; }
+.modal-inner h2{
+  color:#053F5E;
+  font-family: ABolder;
+}
+.modal-close {
+	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+	position: absolute;
+	right: 0;
+	top: 0;
+	background: #ccc;
+	padding: 6px 10px;
+}
+.animate-opacity { animation: opac 0.8s }@keyframes opac{from{opacity:0} to{opacity:1}}

@@ -14,7 +14,7 @@
           <script type="text/javascript" src="dormfinderadmin.js"></script>
     </head>
     
-    <body class="antialiased">
+    <body class="antialiased" style="overflow:hidden;">
         
     <div class="uppernav"><h3>MMSU - Admin Dorm Management</h3></div>
     

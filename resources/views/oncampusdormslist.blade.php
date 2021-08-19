@@ -22,7 +22,7 @@
             <a class="topnavlink" href="/dorm">LIST OF DORMS</a>
 
             <div class="menu">
-                <img style="float:right;margin-top:15px;" src="/images/user.png"  width="15%" height="40%">
+                <img style="float:right;margin-top:20px;" src="/images/user.png"  width="15%" height="40%">
                     <ul><li>
                      <a href="#" style="float:right;margin:10px 0px 0px 0px;">{{ Auth::user()->stud_num }}</a>
                         <ul>
@@ -37,8 +37,26 @@
             </div>
     </div>
 
-    <div class="header"> <h1>HOUSING FACILITIES - ON CAMPUS</h1>
+    <!-- BREADCRUMBS -->
+    <div class="page__section">
+        <nav class="breadcrumb breadcrumb_type5" aria-label="Breadcrumb">
+            <ol class="breadcrumb__list r-list">
+              <li class="breadcrumb__group">
+                  <a href="{{ url('dashboard') }}" class="breadcrumb__point r-link">Home</a>
+                  <span class="breadcrumb__divider" aria-hidden="true">›</span>
+              </li>
+              <li class="breadcrumb__group">
+                  <a href="{{ url('dorm') }}" class="breadcrumb__point r-link">Dorm</a>
+                  <span class="breadcrumb__divider" aria-hidden="true">›</span>
+              </li>
+              <li class="breadcrumb__group">
+                <span class="breadcrumb__point" aria-current="page">On Campus</span>
+              </li>
+            </ol>
+        </nav>
+    </div>         
 
+    <div class="header"> <h1>HOUSING FACILITIES - ON CAMPUS</h1>
     <form style="margin-left:40%;margin-top:1%;" action="/searchoncampusdorms" method="POST" role="search">
       @csrf
         <input type="text" id="search" onkeyup="searchFunction()" placeholder="Search.." name="q">
@@ -47,7 +65,6 @@
     </div>
         
     <div class="listappcontainer">
-    <div class="tableFixHeadtitle">LIST OF DORMITORIES</div>  
     <div class="tableFixHead">
       <table>
         <thead>

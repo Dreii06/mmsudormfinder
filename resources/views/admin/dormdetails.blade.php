@@ -40,7 +40,7 @@
 
     <form style="width:80%;margin-left:25%;">
         <div class="tableFixHeadtitle">{{ $details->dorm_name }} - Details
-            <a href="{{ url('admin/dorms') }}"><button type="button" class="btnviewocc">BACK</button></a>
+            <a href="{{ URL::previous() }}"><button type="button" class="btnviewocc">BACK</button></a>
             <a href="{{ url('admin/'. $details->dorm_name .'/dormoccupantslist') }}"><button type="button" style="margin-left:0%;float:right;" class="btndownload">VIEW OCCUPANTS</button></a>
         </div><br>
 

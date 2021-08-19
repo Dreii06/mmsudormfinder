@@ -17,8 +17,8 @@
 <!-- UPPER HEADER -->
     <div class="uppernav"> <h3 style="margin-left:20px;">MMSU - Dorm Finder</h3></div>
 <!-- NAVIGATION BAR -->
-    <div class="topnav" style="background-color:transparent;">
-        <img style="float:left;margin-left:20px;" src="/images/mmsu logo.png"  height="5%" width="5%">
+    <div class="topnav">
+        <img style="float:left;margin-left:20px;" src="/images/mmsu logo.png"  height="4%" width="4%">
         <h4>MARIANO MARCOS <br> STATE UNIVERSITY</h4>
     </div>
     

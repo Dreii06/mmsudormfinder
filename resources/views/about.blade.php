@@ -21,7 +21,7 @@
             <a class="topnavlink" href="/dorm">LIST OF DORMS</a>
 
                 <div class="menu">
-                <img style="float:right;margin-top:15px;" src="/images/user.png"  width="15%" height="40%">
+                <img style="float:right;margin-top:20px;" src="/images/user.png"  width="15%" height="40%">
                     <ul><li>
                     <a href="#" style="float:right;margin:10px 0px 0px 0px;">{{ Auth::user()->stud_num }}</a>
                         <ul>
@@ -36,36 +36,40 @@
             </div>
     </div>
 
-
-
     <div class="contactcontainer">
         
     <div class="boxcontact">
         <div class="contactabout">Everything You Need to Know!</div>
         <ol type="A">
-            <li><b>PURPOSE</b></li>
-                <ol type="i">
-                    <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam laoreet molestie tellus, quis fringilla tortor fringilla vel. 
-                        Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Morbi ut porta ex. Ut ullamcorper.</li>
-                    <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam laoreet molestie tellus, quis fringilla tortor fringilla vel. 
-                        Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Morbi ut porta ex. Ut ullamcorper.</li>
-                </ol>
             <li><b>MISSION</b></li>
-                <ol type="i">
-                    <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam laoreet molestie tellus, quis fringilla tortor fringilla vel. 
-                        Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Morbi ut porta ex. Ut ullamcorper.</li>
-                    <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam laoreet molestie tellus, quis fringilla tortor fringilla vel. 
-                        Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Morbi ut porta ex. Ut ullamcorper.</li>
-                </ol>
+                <ul>
+                    <li>One of the most important missions of the OSAS is the development of student's attitudes, values, intellectual and moral commitments.</li>
+                    
+                </ul>
+            <li><b>VISION</b></li>
+                <ul>
+                    <li>The OSAS shall have an integrated student services development program ready to serve the needs of the students in all MMSU campuses. This program shall provide a healthy atmosphere in the University for students to develop a well-rounded personality,
+                         so they may attain their goals for success in life.</li>
+                </ul>
             <li><b>GOAL</b></li>
-                <ol type="i">
-                    <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam laoreet molestie tellus, quis fringilla tortor fringilla vel. 
-                        Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Morbi ut porta ex. Ut ullamcorper.</li>
-                    <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam laoreet molestie tellus, quis fringilla tortor fringilla vel. 
-                        Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Morbi ut porta ex. Ut ullamcorper.</li>
-                </ol>
+                <ul>
+                    <li>The Students Affairs and Services aims to enrich the student’s experiences and supplement the academic programs through 
+                        educational, athletic, cultural, spiritual, civic and social activities.</li>
+                    
+                </ul>
         </ol>
     </div>
+
+    <div class="boxcontact">
+        <div class="contactabout">Credits</div>
+        <ol type="A">
+            <li><b>Illustration</b></li>
+            <ul>
+                <li>  Erwin John Ramos </li>
+            </ul>
+        </ol>
+    </div>
+
 
 </div>
 <div class="imgcover">

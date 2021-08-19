@@ -73,7 +73,7 @@
         <div style="display:flex;"><div class="smallheader">OTHER INFORMATION</div></div>
         <input type="text" style="width:20%;margin-right:2%;" id="sec" name="sex" value="{{ $details->sex }}" class="inputapp" readonly>
 
-        <button type="submit" name="submit" value="DENY" onclick="denyapplicant()" class="greenbutton" style="margin-top:0px;">DENY</button>  
+        <button type="submit" name="submit" value="DENY" onclick="denyapplicant()" class="greenbutton" style="margin-top:0px;margin-right:10%;">DENY</button>  
         <button type="submit" name="submit" value="ACCEPT" onclick="acceptapplicant()" class="secondyellowbutton" style="margin-right:10px;margin-top:0%;">ACCEPT</button>
     </form>
 </div>

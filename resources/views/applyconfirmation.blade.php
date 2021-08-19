@@ -26,7 +26,7 @@
             <a class="topnavlink" href="/dorm">LIST OF DORMS</a>
 
         <div class="menu">
-            <img style="float:right;margin-top:15px;" src="/images/user.png"  width="15%" height="40%">
+            <img style="float:right;margin-top:20px;" src="/images/user.png"  width="15%" height="40%">
                 <ul><li>
                     <a href="#" style="float:right;margin:10px 0px 0px 0px;">{{ Auth::user()->stud_num }}</a>
                     <ul>
@@ -69,7 +69,7 @@
             </select>
 
             <input type="hidden" id="type" name="type">
-            <input type="text" id="vacancy" name="vacancy" style="width:25%;margin-right:2%;" readonly class="inputapp"><br>
+            <input type="text" id="vacancy" name="vacancy" style="width:15%;margin-right:2%;" readonly class="inputapp"><br>
         
             <button type="submit" onclick="###" class="secondyellowbutton" style="width:20%;margin-top:5%;float:left;"> CONFIRM</button>
             <a href="{{ URL::previous() }}"><button type="button" class="confirmcancelbutton">BACK</button></a><br>

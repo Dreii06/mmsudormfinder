@@ -38,7 +38,7 @@
         </ul>
     </div>
 
-<div style="margin-top:10%;">
+<div style="margin-top:8%;">
         <h2 class="h2head">SELECT DORMITORY TYPE</h2>
 
         <div class="dorm_con">

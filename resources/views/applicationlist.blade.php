@@ -19,7 +19,7 @@
             <a class="topnavlink" href="/dorm">LIST OF DORMS</a>
 
                 <div class="menu">
-                <img style="float:right;margin-top:15px;" src="/images/user.png"  width="15%" height="40%">
+                <img style="float:right;margin-top:20px;" src="/images/user.png"  width="15%" height="40%">
                     <ul><li>
                      <a href="#" style="float:right;margin:10px 0px 0px 0px;">{{ Auth::user()->stud_num }}</a>
                         <ul>
@@ -36,7 +36,7 @@
 
     <div class="header"> <h1>APPLICATION LIST</h1></div>
 
-    <p class="note"> <img src="https://img.icons8.com/cute-clipart/64/000000/info.png" width="2%" /> <b>NOTICE</b> : After confirming, wait for 1-3 business days for the process, if still waiting for
+    <p class="note"> <img src="https://img.icons8.com/cute-clipart/64/000000/info.png" width="2%" /> <b>NOTICE</b> : After confirming, wait for 1-3 business days for the process. If it isstill waiting for
         approval, feel free to apply to other available dormitories </p>
 
     @foreach($details as $detail)
@@ -60,12 +60,15 @@
     </form>
     </div>
     @endforeach
-<script>
+
+    <script>
         var process = document.getElementById('process').value;
         var cancel = document.getElementById('cancel');
         if(process == "Approved") {
             cancel.remove();
         }
-</script>
+    </script>
+
 </body>
+</head>
 </html>

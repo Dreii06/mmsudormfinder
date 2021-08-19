@@ -16,7 +16,7 @@
         <div class="topnav" id="myTopnav">
             <img style="float:left;margin-left:20px;" src="/images/mmsu logo.png" width="3%">
             <h4>MARIANO MARCOS <br> STATE UNIVERSITY</h4>
-            <div class="titleheader">DASHBAORD</div>
+            <div class="titleheader">DASHBOARD</div>
         </div>
 
         <div class="verticalnav">
@@ -53,7 +53,7 @@
   <!-- DORMITORY -->
 
       <div class="maincon">
-          <h2 class="h2nav"> Dormitory <p class="text--sub">View and update you dormitory</p>
+          <h2 class="h2nav"> Dormitory <p class="text--sub">View and update your dormitory</p>
           <a href="{{ url('manager/viewdorm/'.Auth::guard('manager')->user()->id) }}"><button type="button" class="dorm">V I E W</button></a>
           </h2> 
       </div></div>

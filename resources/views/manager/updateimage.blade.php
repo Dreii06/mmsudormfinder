@@ -95,7 +95,7 @@
         <hr style="margin-top:2%;"><br>
         </form>
 
-        <a href="{{ URL::previous() }}"><button type="button" class="greenbutton" style="width:18%;margin-right:23%;">CANCEL</button></a>
+        <a href="{{ url('manager/viewdorm/'.Auth::guard('manager')->user()->id) }}"><button type="button" class="greenbutton" style="width:18%;margin-right:23%;">CANCEL</button></a>
     </div>
 
 <!-- SCRIPT FOR SLIDESHOW  -->

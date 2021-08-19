@@ -24,7 +24,7 @@
             <a class="topnavlink" href="/dorm">LIST OF DORMS</a>
 
         <div class="menu">
-            <img style="float:right;margin-top:15px;" src="/images/user.png"  width="15%" height="40%">
+            <img style="float:right;margin-top:20px;" src="/images/user.png"  width="15%" height="40%">
                 <ul><li>
                 
                 <a href="#" style="float:right;margin:10px 0px 0px 0px;">{{ Auth::user()->stud_num }}</a>
@@ -40,8 +40,28 @@
         </div>
     </div>
 
-    <!-- HEADER FOR DORMITORY  -->
-    <div class="header"> <h1>HOUSING FACILITIES - Details</h1></div>
+    <!-- BREADCRUMBS -->
+    <div class="page__section">
+        <nav class="breadcrumb breadcrumb_type5" aria-label="Breadcrumb">
+            <ol class="breadcrumb__list r-list">
+              <li class="breadcrumb__group">
+                  <a href="{{ url('dashboard') }}" class="breadcrumb__point r-link">Home</a>
+                  <span class="breadcrumb__divider" aria-hidden="true">›</span>
+              </li>
+              <li class="breadcrumb__group">
+                  <a href="{{ url('dorm') }}" class="breadcrumb__point r-link">Dorm</a>
+                  <span class="breadcrumb__divider" aria-hidden="true">›</span>
+              </li>
+              <li class="breadcrumb__group">
+                  <a href="{{ URL::previous() }}" class="breadcrumb__point r-link">Campus</a>
+                  <span class="breadcrumb__divider" aria-hidden="true">›</span>
+              </li>
+              <li class="breadcrumb__group">
+                <span class="breadcrumb__point" aria-current="page">Dormitory Details</span>
+              </li>
+            </ol>
+        </nav>
+    </div>         
 
     <!-- SLIDESHOW OF DORMITORY  -->
     <div class="dorm_name">{{ $details->dorm_name }}</div><br>

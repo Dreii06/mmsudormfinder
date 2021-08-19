@@ -31,7 +31,6 @@
                 <!-- Validation Errors -->
                 <x-auth-validation-errors class="mb-4" :errors="$errors" style="color:black;margin-top:5%;"/>
                 <button type="submit" class="yellowbutton" style="width:100%;margin-top:15px; margin-bottom:50px;">{{ __('Log in') }}</button>
-                <x-auth-validation-errors class="mb-4" :errors="$errors" style="color:white;"/>
         </form>
     </div>
             

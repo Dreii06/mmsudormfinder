@@ -25,6 +25,17 @@
             <h4>MARIANO MARCOS <br> STATE UNIVERSITY</h4>
         </div>
         
+        <div id="modal-1" class="modal animate-opacity">
+            <div class="modal-content">
+                <div class="modal-inner">
+                    <span onclick="document.getElementById('modal-1').style.display='none'" class="modal-close">&times;</span>
+                    <h2>Registered Successfully!</h2>
+                    <p>Please wait for 1-3 business days from the Administrator to verify if you are eligible to 
+                        manage your dorm at our system.</p>
+                </div> 
+            </div>
+        </div>
+
         <!-- MAIN CONTENT -->
         <div class="logincontainer">
 
@@ -39,7 +50,7 @@
                     <!-- Validation Errors -->
                     <x-auth-validation-errors class="mb-4" :errors="$errors" style="color:black;margin-top:5%;"/>
                         <hr>
-                    <label style="width:100%;" for="register">New Here? Register first!</label><br>
+                    <label for="register">New Here? Register first!</label><br>
                     <a href="/manager/register"><button type="button" id="register" class="registerbutton" style="margin-top:15px;">{{ __('Register') }}</button></a>       
             </form>
         </div>

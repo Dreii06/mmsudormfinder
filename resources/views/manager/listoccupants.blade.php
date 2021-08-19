@@ -78,8 +78,57 @@
       </table>
     </div>
 
-    <button type="button" class="yellowbutton" onclick="listapp()" style="float:right;margin-top:20px;margin-right:10%;"> DOWNLOAD</button>
+
+    <!-- PDF CONVERSION: TABLE FOR OCCUPANT -->
+    <div id="tab" style="visibility:hidden;height:0; width:0;" class="tableFixHead">
+      <table>
+        <thead>
+          <tr>
+            <th>NAME</th>
+            <th>ADDRESS</th>
+            <th>CONTACT NUMBER</th>
+          </tr>
+        </thead>
+        <tbody>
+            @foreach($occupants as $occupant)
+          <tr>
+            <td>{{ $occupant->first_name }} {{ $occupant->middle_name }} {{ $occupant->last_name }}</td>
+            <td>{{ $occupant->city }}</td>
+            <td>{{ $occupant->mobile_num }}</td>
+          </tr>
+          @endforeach
+        </tbody>
+      </table>
+    </div>
+
+    <button type="button" class="yellowbutton" id="btPrint" onclick="createPDF()" style="float:right;margin-top:20px;margin-right:10%;"> DOWNLOAD</button>
     </div>
     
+    <script>
+    function createPDF() {
+        var sTable = document.getElementById('tab').innerHTML;
+
+        var style = "<style>";
+        style = style + "table {width: 100%;font: 17px Arial;}";
+        style = style + "table, th, td {border: solid 1px #DDD; border-collapse: collapse;";
+        style = style + "padding: 2px 3px;text-align: center;}";
+        style = style + "</style>";
+
+        // CREATE A WINDOW OBJECT.
+        var win = window.open('', '', 'height=700,width=700');
+
+        win.document.write('<html><head>');
+        win.document.write(style);          // ADD STYLE INSIDE THE HEAD TAG.
+        win.document.write('<h2 style="font-family:Arial;">List of Occupants</h2>');   // <title> FOR PDF HEADER.
+        win.document.write('</head>');
+        win.document.write('<body>');
+        win.document.write(sTable);         // THE TABLE CONTENTS INSIDE THE BODY TAG.
+        win.document.write('</body></html>');
+
+        win.document.close(); 	// CLOSE THE CURRENT WINDOW.
+
+        win.print();    // PRINT THE CONTENTS.
+    }
+    </script>
 </body>
 </html>

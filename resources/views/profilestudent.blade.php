@@ -28,7 +28,7 @@
             <a class="topnavlink" href="/dorm">LIST OF DORMS</a>
 
                 <div class="menu">
-                <img style="float:right;margin-top:15px;" src="/images/user.png"  width="15%" height="40%">
+                <img style="float:right;margin-top:20px;" src="/images/user.png"  width="15%" height="40%">
                     <ul><li>
                      <a href="#" style="float:right;margin:10px 0px 0px 0px;">{{ Auth::user()->stud_num }}</a>
                         <ul>
@@ -55,7 +55,7 @@
         <label for="fname">First Name</label>
         <label for="mname">Middle Name</label>
         <label for="lname">Last Name</label>
-        <label for="sname">Suffix (Jr,,III)</label><br>
+        <label for="sname">Suffix (Jr,III)</label><br>
 
         <input type="text"  style="width:20%;margin-right:2%;" id="fname" name="first" value="{{ Auth::user()->first_name }}" class="inputapp">
         <input type="text"  style="width:20%;margin-right:2%;" id="mname" name="middle" value="{{ Auth::user()->middle_name }}" class="inputapp">

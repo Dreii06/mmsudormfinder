@@ -59,9 +59,9 @@
 
     <div class="boxcontact">
         <h1>Contact Information</h1>
-        <ul>
-            <li><img src="https://img.icons8.com/pastel-glyph/50/000000/email--v3.png"/>dormfinder@mmsu.edu.ph</li>
-            <li><img src="https://img.icons8.com/pastel-glyph/64/000000/phone-message--v1.png"/>09355350600</li>
+        <ul style="color:#053F5E;font-family:ABold;">
+            <li><img src="https://img.icons8.com/pastel-glyph/50/000000/email--v3.png"/>osas@mmsu.edu.ph</li>
+            <li><img src="https://img.icons8.com/pastel-glyph/64/000000/phone-message--v1.png"/>+639358486068</li>
         </ul>
     </div>
 

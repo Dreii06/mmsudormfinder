@@ -118,7 +118,6 @@ class DormsController extends Controller
     function store(Request $request) {
         $manager = Auth::guard('manager')->user();
         $dorm = Dorms::where('dorm_name', '=', $manager->dorm_name)->first();
-        $available_space = RoomType::where('dormitory', '=', $dorm->dorm_name)->sum('vacancy');
 
         $dorm->first_name = request('first', false);
         $dorm->middle_name = request('middle', false);
@@ -130,25 +129,30 @@ class DormsController extends Controller
         $manager->dorm_name = request('dorm_name', false);
         $dorm->barangay = request('barangay', false);
         $dorm->street = request('street', false);
-        $dorm->house_num = request('house_num', false);
         $dorm->nearest = request('nearest', false);
         $dorm->mobile_num = request('mobile_num', false);
-        $dorm->available_space = $available_space;
+        $dorm->available_space = request('avail', false);
         $dorm->description = request('description', false);
 
         if ($request->has('amen')) {
             $amenities = Amenities::where('dormitory', '=', $dorm->dorm_name)->
                                     where('amenities', '=', $request->input('amen'))->first();
             $amenities->delete();
+
+            return redirect()->back();
         } else if ($request->has('type')) {
             $room_types = RoomType::where('dormitory', '=', $dorm->dorm_name)->
                                     where('room_type', '=', $request->input('type'))->first();
             $room_types->delete();
+            
+            return redirect()->back();
         } else if($request->submit == ("addAmen")) {
             Amenities::create([
                 'dormitory' => request('dorm_name', false),
                 'amenities' => request('amenities', false)
             ]);
+            
+            return redirect()->back();
         } else if($request->submit == ("addRoomType")) {
             RoomType::create([
                 'dormitory' => request('dorm_name', false),
@@ -156,6 +160,8 @@ class DormsController extends Controller
                 'vacancy' => request('vacancy', false),
                 'price' => request('prices')
             ]);
+            
+            return redirect()->back();
         } else {
             $dorm->save();
             $manager->save();
@@ -163,7 +169,7 @@ class DormsController extends Controller
         $dorm->save();
         $manager->save();
 
-        return redirect()->back();
+        return redirect('/manager/viewdorm/'. $manager->id);
     }
 
     function getdormimage($id) {
@@ -196,13 +202,16 @@ class DormsController extends Controller
                         'filename' => $filename,
                         'label' => $label
                 ]));
+
+                return redirect()->back();
             }
         } else if ($request->submit == "DEL") {
             $images = Images::where('dormitory', '=', $dorm->dorm_name)
                             ->where('id', '=', request('delfilename'))->first();
             $images->delete();
+
+            return redirect()->back();
         }
 
-        return redirect()->back();
     }
 }
