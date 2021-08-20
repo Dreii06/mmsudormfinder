@@ -25,18 +25,18 @@
 
         <div class="menu">
             <img style="float:right;margin-top:20px;" src="/images/user.png"  width="15%" height="40%">
-                <ul><li>
-                
-                <a href="#" style="float:right;margin:10px 0px 0px 0px;">{{ Auth::user()->stud_num }}</a>
-                    <ul>
+                    <ul><li>
+                    <a href="#" style="float:right;margin:10px 0px 0px 0px;">{{ Auth::user()->stud_num }}</a>
+                        <ul>
                         <li><a href="{{ url('profilestudent') }}">Profile</a></li><br>
                         <li><a href="{{ url('applicationlist') }}">Application List</a></li><br>
+                        <li><a href="{{ url('reportdorm') }}">Report Dormitory</a></li><br>
                         <form style="display:block;" method="POST" action="{{ route('logout') }}">
                             @csrf
                         <li><button type="submit">{{ __('Log Out') }}</button></li>
                         </form>
-                    </ul>
-                </ul></li>
+                        </ul>
+                    </ul></li>
         </div>
     </div>
 
@@ -91,7 +91,7 @@
             <label  for="fname">Nearest Landmark</label>
                 <input type="text" id="fname" name="fname" style="width: 35%;" class="readapp" value="{{ $details->nearest }}" readonly="readonly">
             <label for="quantity" >Capacity</label>
-                <input type="number" id="quantity" name="quantity" style="width:10%;" class="readapp" min="0" value="{{ $details->available_space }}" readonly="readonly"><br>
+                <input type="number" id="quantity" name="quantity" style="width:10%;" class="readapp" min="0" value="{{ $details->capacity }}" readonly="readonly"><br>
             
                 <p class="descriptiondorm"> {{ $details->description }} </p>
         

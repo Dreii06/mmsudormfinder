@@ -30,11 +30,12 @@
     <div class="verticalnav">
         <ul>
             <li class="username">{{ Auth::guard('admin')->user()->name }}</li>
-            <li><a class="active" href="{{ url('admin/dashboard') }}"> <img src="https://img.icons8.com/fluent-systems-regular/96/000000/home.png"/> Home</a></li>
-            <li><a href="{{ url('admin/registrants') }}"> <img src="https://img.icons8.com/fluent-systems-regular/50/000000/parse-resume.png"/> Registrants</a></li>
-            <li><a href="{{ url('admin/occupantslist') }}"><img src="https://img.icons8.com/fluent-systems-regular/96/000000/user-rights.png"/> Occupants</a></li>
-            <li><a href="{{ url('admin/dorms') }}"><img src="https://img.icons8.com/fluent-systems-regular/96/000000/department.png"/> Dorm</a></li>
-            <li><a href="{{ url('admin/contact') }}"><img src="https://img.icons8.com/fluent-systems-regular/96/000000/info-squared.png"/> Contact</a></li><br><br>
+            <li><a class="active" href="{{ url('admin/dashboard') }}"> <img src="https://img.icons8.com/fluent-systems-regular/96/000000/home.png"/>Home</a></li>
+            <li><a href="{{ url('admin/registrants') }}"> <img src="https://img.icons8.com/fluent-systems-regular/50/000000/parse-resume.png"/>Registrants</a></li>
+            <li><a href="{{ url('admin/occupantslist') }}"><img src="https://img.icons8.com/fluent-systems-regular/96/000000/user-rights.png"/>Occupants</a></li>
+            <li><a href="{{ url('admin/dorms') }}"><img src="https://img.icons8.com/fluent-systems-regular/96/000000/department.png"/>Dorms</a></li>
+            <li><a href="{{ url('admin/reportoccupant') }}"><img src="https://img.icons8.com/fluency-systems-regular/96/000000/comments--v2.png"/>Reports</a></li>
+            <li><a href="{{ url('admin/contact') }}"><img src="https://img.icons8.com/fluent-systems-regular/96/000000/info-squared.png"/>Contact</a></li><br><br>
             <form style="margin-left:0%;margin-top:0%;display:block;" method="POST" action="{{ route('admin.logout') }}">
                 @csrf
             <li><button type="submit" style="color:red;"><img src="https://img.icons8.com/ios-filled/50/000000/exit.png"/>{{ __('Log Out') }}</button></li>
@@ -71,24 +72,23 @@
           </div>
       </div>
 
-      <div style="display:flex;margin-top:2%;">
+      <div style="display:flex;margin-top:1%;">
           <!-- REGISTRANTS -->
-          <div class="statistics" style="width:77%;height:50px;">
-            <p style="margin-top:0%;" class="text--small">Out of <input type="text" style="width:5%;margin-top:1%;" id="fname" name="first" value="{{ $dorms_capacity }}" readonly>
-             Dorm Capacities, there are a total of <input type="text" style="width:5%;margin-top:1%;" id="fname" name="first" value="{{ $dorms_capacity - $dorms_vacancy }}" readonly> vacancies left<br>
+          <div class="statistics" style="width:100%;height:50px;">
+            <p style="margin-top:0%;" class="text--small">Out of all <input type="text" style="width:5%;margin-top:1%;" id="fname" name="first" value="{{ $dorms_capacity }}" readonly>
+             Dorm Capacities, there are a total of <input type="text" style="width:5%;margin-top:1%;" id="fname" name="first" value="{{ $dorms_vacancy }}" readonly> vacancies left<br>
             </p>
           </div>
-
       </div>
-
       </h2>
 
-      <div class="tableFixHead" style="margin-top:1%;width:80%;height:250px;">
+      <div style="display:flex;">
+        <div class="tableFixHead" style="width:30%;height:100%;margin: 0% 2% 2% 0%;">
           <table style="color:#053F5E;backdrop-filter: blur(16px) saturate(180%);-webkit-backdrop-filter: blur(16px) saturate(180%);background-color: rgba(255, 255, 255, 0.40);">
           <tr>
             <thead>
             <th>COLLEGE</th>
-            <th>TOTAL</th>
+            <th>OCCUPANTS</th>
             </thead>
           </tr>
           <tr>
@@ -125,6 +125,29 @@
           </tr>
           </table>
       </div>
+
+      <div class="tableFixHead" style="width:80%;height:100%;margin: 0% 2% 2% 0%;">
+          <table style="color:#053F5E;backdrop-filter: blur(16px) saturate(180%);-webkit-backdrop-filter: blur(16px) saturate(180%);background-color: rgba(255, 255, 255, 0.40);">
+          <tr>
+            <thead>
+            <th>DORMITORY</th>
+            <th>CAPACITY</th>
+            <th>VACANCY</th>
+            <th>OCCUPANTS</th>
+            </thead>
+          </tr>
+          @foreach($dorms as $dorm)
+          <tr>
+            <td>{{ $dorm->dorm_name }}</td>
+            <td>{{ $dorm->capacity }}</td>
+            <td>{{ $dorm->capacity - $dorm->num_of_occupants }}</td>
+            <td>{{ $dorm->num_of_occupants}}</td>
+          </tr>
+          @endforeach
+          </table>
+      </div>
+    </div>
+
   </div>
 </div>
 

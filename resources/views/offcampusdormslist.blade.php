@@ -25,10 +25,11 @@
             <div class="menu">
                 <img style="float:right;margin-top:20px;" src="/images/user.png"  width="15%" height="40%">
                     <ul><li>
-                     <a href="#" style="float:right;margin:10px 0px 0px 0px;">{{ Auth::user()->stud_num }}</a>
+                    <a href="#" style="float:right;margin:10px 0px 0px 0px;">{{ Auth::user()->stud_num }}</a>
                         <ul>
                         <li><a href="{{ url('profilestudent') }}">Profile</a></li><br>
                         <li><a href="{{ url('applicationlist') }}">Application List</a></li><br>
+                        <li><a href="{{ url('reportdorm') }}">Report Dormitory</a></li><br>
                         <form style="display:block;" method="POST" action="{{ route('logout') }}">
                             @csrf
                         <li><button type="submit">{{ __('Log Out') }}</button></li>

@@ -27,7 +27,7 @@
         <form method="POST" action="{{ route('login') }}">
             @csrf
             <legend>Log In</legend>
-                <input type="text" id="name" name="stud_num" placeholder="Student Number" class="loginform" style="margin-top:30px;"> <br>
+                <input type="text" id="name" name="stud_num" placeholder="Student Number/Examinee Number" class="loginform" style="margin-top:30px;"> <br>
                 <input type="password" name="password" id="password" placeholder="Password" class="loginform" style="margin-top:10px;"> <br>
 
                 <button type="submit" class="yellowbutton" style="margin-top:15px;">{{ __('Log in') }}</button>

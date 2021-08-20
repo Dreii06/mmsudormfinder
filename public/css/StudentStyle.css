@@ -73,6 +73,13 @@ hr{
   margin-top: 20px;
 }
 
+textarea {
+  width:90%;
+  height:10%;
+  font-family: Regular;
+
+}
+
 .registercontainer {
   display: flex;
   backdrop-filter: blur(16px) saturate(180%);

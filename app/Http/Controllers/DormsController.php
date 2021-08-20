@@ -115,6 +115,12 @@ class DormsController extends Controller
         return view('applyconfirmation', ['details' => $details], compact('images', 'room_types'));
     }
 
+    function getdorms() {
+        $dorms = Dorms::all();
+
+        return view ('reportdorm', compact ('dorms'));
+    }
+
     function store(Request $request) {
         $manager = Auth::guard('manager')->user();
         $dorm = Dorms::where('dorm_name', '=', $manager->dorm_name)->first();
@@ -131,7 +137,7 @@ class DormsController extends Controller
         $dorm->street = request('street', false);
         $dorm->nearest = request('nearest', false);
         $dorm->mobile_num = request('mobile_num', false);
-        $dorm->available_space = request('avail', false);
+        $dorm->capacity = RoomType::where('dormitory', '=', $manager->dorm_name)->sum('vacancy');
         $dorm->description = request('description', false);
 
         if ($request->has('amen')) {

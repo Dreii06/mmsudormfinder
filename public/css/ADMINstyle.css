@@ -423,10 +423,10 @@ th {
 }
 .tableFixHead,
 .tableFixHead td {
-  box-shadow: inset 0px 1px #1D6115;
+  box-shadow: inset 0px 1px #343636;
 }
 .tableFixHead th {
-  box-shadow: inset 1px 1px #1D6115, 1 1px #1D6115;
+  box-shadow: inset 1px 1px #1D6115, 1 1px #343636;
   background-color: #065471; 
   color:white;
   text-align: left;
@@ -696,7 +696,7 @@ section {
 }
 
 .statistics{
-  width: 250px; height: 10%;
+  width: 300px; height: 7vw;
   margin-right: 3%;
   border-radius: 20px;
   color: white;
@@ -807,4 +807,12 @@ section {
   width: 40%;
   font-size: 1.3vw;
   font-family:ABolder;
+}
+
+.feedbackcon{
+  background-color: #d4d4d4;
+  border-radius: 20px;
+  width:70%;
+  margin-left:22%; margin-top: 2%;
+  padding-left: 5%; padding-top: 2%; padding-right: 0%;
 }

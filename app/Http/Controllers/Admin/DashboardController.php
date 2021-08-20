@@ -33,8 +33,9 @@ class DashboardController extends Controller
         $occupants_cit = Occupants::where('college', '=', 'CIT')->count();
         $dorms_count = Dorms::all()->count();
         $dorms = Dorms::all();
-        $dorms_capacity = Dorms::all()->sum('available_space');
-        $dorms_vacancy = Dorms::all()->sum('num_of_occupants');
+        $dorms_capacity = Dorms::all()->sum('capacity');
+        $dorms_occupantsnum = Dorms::all()->sum('num_of_occupants');
+        $dorms_vacancy = $dorms_capacity - $dorms_occupantsnum;
 
         return view('admin.dashboard', compact('registrants', 'occupants', 'occupants_cas', 'occupants_coe', 'occupants_cbea', 'occupants_chs', 'occupants_cafsd', 'occupants_casat', 'occupants_cte', 'occupants_cit', 'dorms_count', 'dorms', 'dorms_capacity', 'dorms_vacancy'));
     }

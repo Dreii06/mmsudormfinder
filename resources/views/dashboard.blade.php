@@ -49,6 +49,7 @@
                         <ul>
                         <li><a href="{{ url('profilestudent') }}">Profile</a></li><br>
                         <li><a href="{{ url('applicationlist') }}">Application List</a></li><br>
+                        <li><a href="{{ url('reportdorm') }}">Report Dormitory</a></li><br>
                         <form style="display:block;" method="POST" action="{{ route('logout') }}">
                             @csrf
                         <li><button type="submit">{{ __('Log Out') }}</button></li>

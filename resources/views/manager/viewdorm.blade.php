@@ -69,7 +69,7 @@
 
             <input type="tel" id="fname" name="dname" style="width: 22%;" class="inputapp" value="{{ $details->dorm_name }}" readonly>
             <input type="text" id="fname" name="contact" style="width: 22%;" class="inputapp" value="{{ $details->mobile_num }}" readonly>
-            <input type="number" id="quantity" name="quantity"  style="width: 22%;" class="inputapp" min="0" value="{{ $details->available_space }}" readonly><br><br>
+            <input type="number" id="quantity" name="quantity"  style="width: 22%;" class="inputapp" min="0" value="{{ $details->capacity }}" readonly><br><br>
     
             <label for="fname">Short Description</label><br>
             <textarea readonly>{{ $details->description }}</textarea><br><br>

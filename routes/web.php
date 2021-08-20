@@ -6,6 +6,7 @@ use App\Http\Controllers\DormsController;
 use App\Http\Controllers\OccupantsController;
 use App\Http\Controllers\ApplicantsController;
 use App\Http\Controllers\RegistrantsController;
+use App\Http\Controllers\ReportsController;
 use App\Http\Controllers\Manager\DashboardController as ManagerDashboardController;
 use App\Http\Controllers\Admin\DashboardController as AdminDashboardController;
 use App\Models\Dorms;
@@ -53,6 +54,10 @@ Route::get('/applicationlist', [ApplicantsController::class, 'applicationlist'])
 Route::post('/applicationlist', [ApplicantsController::class, 'delapplication']);
 
 Route::post('/profilestudent', [UserProfileController::class, 'update']);
+
+Route::get('/reportdorm', [DormsController::class, 'getdorms']);
+
+Route::post('/reportdorm', [ReportsController::class, 'report']);
 
 Route::get('/oncampusdormslist', [DormsController::class, 'showOnCampusDorms']);
 
@@ -217,7 +222,9 @@ Route::get('/admin/{id}/dormoccupantslist', [OccupantsController::class, 'admins
 
 Route::get('/admin/{name}/dormoccupantdetails/{id}', [OccupantsController::class, 'admingetdorm']);
 
-//Route::post('/admin/{name}/dormoccupantdetails', [OccupantsController::class, 'admindel']);
+Route::get('/admin/reportoccupant', [ReportsController::class, 'getReports']);
+
+Route::post('/admin/reportoccupant/{id}', [ReportsController::class, 'doneReport']);
 
 require __DIR__.'/auth.php';
 
