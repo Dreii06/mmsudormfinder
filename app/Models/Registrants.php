@@ -9,4 +9,5 @@ class Registrants extends Model
 {
     use HasFactory;
     protected $table = 'managers';
+    public $timestamps = false;
 }

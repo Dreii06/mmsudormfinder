@@ -16,6 +16,7 @@ class Registrant extends Model
      *
      * @var array
      */
+    public $timestamps = false;
     protected $fillable = [
         'first_name',
         'middle_name',

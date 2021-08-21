@@ -16,6 +16,7 @@ class Manager extends Authenticatable
      *
      * @var array
      */
+    public $timestamps = false;
     protected $fillable = [
         'first_name',
         'middle_name',
