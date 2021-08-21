@@ -11,7 +11,6 @@
         "guzzlehttp/guzzle": "^7.0.1",
         "laravel/framework": "^8.40",
         "laravel/tinker": "^2.5",
-        "painlesscode/breeze-multiauth": "^1.1",
         "laravel/ui": "^3.3"
     },
     "require-dev": {
@@ -21,6 +20,7 @@
         "laravel/sail": "^1.0.1",
         "mockery/mockery": "^1.4.2",
         "nunomaduro/collision": "^5.0",
+        "painlesscode/breeze-multiauth": "^1.1",
         "phpunit/phpunit": "^9.3.3"
     },
     "autoload": {
