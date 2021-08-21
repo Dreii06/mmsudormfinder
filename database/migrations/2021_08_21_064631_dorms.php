@@ -23,8 +23,8 @@ class Dorms extends Migration
             $table->string('street')->nullable();
             $table->string('nearest')->nullable();
             $table->string('mobile_num');
-            $table->string('num_of_occupants')->nullable();
-            $table->string('capacity')->nullable();
+            $table->integer('num_of_occupants')->nullable();
+            $table->integer('capacity')->nullable();
             $table->string('description')->nullable();
         });
     }
