@@ -16,7 +16,7 @@ class Images extends Migration
         Schema::create('images', function (Blueprint $table) {
             $table->id();
             $table->string('dormitory');
-            $table->string('filename');
+            $table->string('filename')->nullable();
             $table->string('label');
         });
     }

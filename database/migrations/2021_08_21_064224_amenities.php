@@ -16,7 +16,7 @@ class Amenities extends Migration
         Schema::create('amenities', function (Blueprint $table) {
             $table->id();
             $table->string('dormitory');
-            $table->string('amenities');
+            $table->string('amenities')->nullable();
         });
     }
 

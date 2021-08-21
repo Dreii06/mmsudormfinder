@@ -16,9 +16,9 @@ class Occupants extends Migration
         Schema::create('occupants', function (Blueprint $table) {
             $table->id();
             $table->string('first_name');
-            $table->string('middle_name');
+            $table->string('middle_name')->nullable();
             $table->string('last_name');
-            $table->string('suffix');
+            $table->string('suffix')->nullable();
             $table->string('stud_num')->unique();
             $table->string('sex');
             $table->string('email');
@@ -32,7 +32,7 @@ class Occupants extends Migration
             $table->string('college');
             $table->string('course');
             $table->string('dormitory');
-            $table->string('room_type');
+            $table->string('room_type')->nullable();
         });
     }
 

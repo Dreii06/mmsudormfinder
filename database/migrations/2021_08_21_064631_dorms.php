@@ -16,16 +16,16 @@ class Dorms extends Migration
         Schema::create('dorms', function (Blueprint $table) {
             $table->id();
             $table->string('first_name');
-            $table->string('middle_name');
+            $table->string('middle_name')->nullable();
             $table->string('last_name');
             $table->string('dorm_name');
-            $table->string('barangay');
-            $table->string('street');
-            $table->string('nearest');
+            $table->string('barangay')->nullable();
+            $table->string('street')->nullable();
+            $table->string('nearest')->nullable();
             $table->string('mobile_num');
-            $table->string('num_of_occupants');
-            $table->string('capacity');
-            $table->string('description');
+            $table->string('num_of_occupants')->nullable();
+            $table->string('capacity')->nullable();
+            $table->string('description')->nullable();
         });
     }
 
