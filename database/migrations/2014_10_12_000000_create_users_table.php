@@ -22,16 +22,16 @@ class CreateUsersTable extends Migration
             $table->string('stud_num')->unique();
             $table->string('email')->unique();
             $table->string('password');
-            $table->string('sex');
             $table->string('mobile_num');
-            $table->string('guardian_name');
-            $table->string('guardian_num');
-            $table->string('barangay');
-            $table->string('street');
-            $table->string('city');
-            $table->string('province');
-            $table->string('college');
-            $table->string('course');
+            $table->string('sex')->nullable();
+            $table->string('guardian_name')->nullable();
+            $table->string('guardian_num')->nullable();
+            $table->string('barangay')->nullable();
+            $table->string('street')->nullable();
+            $table->string('city')->nullable();
+            $table->string('province')->nullable();
+            $table->string('college')->nullable();
+            $table->string('course')->nullable();
         });
     }
 
