@@ -13,7 +13,7 @@ class Images extends Migration
      */
     public function up()
     {
-        Schema::create('amenities', function (Blueprint $table) {
+        Schema::create('images', function (Blueprint $table) {
             $table->id();
             $table->string('dormitory');
             $table->string('filename');
