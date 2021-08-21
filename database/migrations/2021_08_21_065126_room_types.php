@@ -17,7 +17,7 @@ class RoomTypes extends Migration
             $table->id();
             $table->string('dormitory');
             $table->string('room_type');
-            $table->string('vacancy')->nullable();
+            $table->int('vacancy')->nullable();
             $table->string('price')->nullable();
         });
     }
