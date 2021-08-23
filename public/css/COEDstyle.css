@@ -608,10 +608,10 @@ position: sticky;  padding-left: 0%;
 .tableFixHeadtitle {
   position: sticky;
   width: 95%;
-  margin: 0px 0px 0px 0px;
   color: #434546;
   font-size: 2vw;
   font-family: ABolder;
+  margin-top: 2%;
   margin-bottom: 1%;
 }
 
