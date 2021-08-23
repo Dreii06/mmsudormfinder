@@ -20,7 +20,6 @@
     <div class="topnav" id="myTopnav">
         <img style="float:left;margin-left:20px;margin-top:10px;" src="/images/mmsu logo.png"  height="60" width="60">
         <h4>MARIANO MARCOS <br> STATE UNIVERSITY</h4>
-        <div class="titleheader">OCCUPANT - Details</div>
     </div>
                 
     <div class="verticalnav">
@@ -38,9 +37,12 @@
         </ul>    
     </div>
 
+
 <div class="listappcontainer">
     <form action="/manager/detailsoccupant" method="POST" style=";width:95%;">
         @csrf
+
+        <div class="tableFixHeadtitle">Occupant's Details</div>
 
         <div style="display:flex;"><div class="smallheader">FULL NAME</div>
         <div class="smallheader">ADDRESS</div></div>
