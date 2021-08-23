@@ -39,11 +39,11 @@
 
     <div class="dormdeets">
 
-    <form style="width:65%;margin-left:24%;" action="/admin/registrants" method="POST">
+    <form style="width:65%;margin-left:24vw;" action="/admin/registrants" method="POST">
         @csrf
 
         <div class="tableFixHeadtitle">Registrant's Details
-            <a href="{{ URL::previous() }}"><button type="button" style="margin: 0% 7% 0% 1%;float:right;"class="btndelete">BACK</button></a>
+            <a href="{{ URL::previous() }}"><button type="button" style="margin: 0vh 7vh 0vh 1vh;float:right;"class="btndelete">BACK</button></a>
         </div>
 
         <div style="display:flex;margin-right:5%;margin-top:3%;"><div class="smallheader">FULL NAME</div>
@@ -55,8 +55,8 @@
         <div class="smallheader">CONTACT</div>
         <input type="text" id="fname" name="contact" style="width: 40%;" class="inputapp" value="{{ $details->mobile_num }}" readonly><br>
 
-        <a href="occupantslist"><button type="button" onclick="remove()" style="margin: 5% 10% 0% 1%;float:right;"class="btndelete">DENY</button></a>
-        <button type="submit" onclick="download()" name="submit" value="addOffCampus" style="width:20%;margin-left:0%;margin-top:5%;float:right;"class="btndownload">ACCEPT</button>
+        <a href="occupantslist"><button type="button" onclick="remove()" style="margin: 5vh 10vh 0vh 1vh;float:right;"class="btndelete">DENY</button></a>
+        <button type="submit" onclick="download()" name="submit" value="addOffCampus" style="width:20%;margin-left:0%;margin-top:5vh;float:right;"class="btndownload">ACCEPT</button>
 
         </div>
     </form>

@@ -27,17 +27,17 @@
         <form method="POST" action="{{ route('login') }}">
             @csrf
             <legend>Log In</legend>
-                <input type="text" id="name" name="stud_num" placeholder="Student Number/Examinee Number" class="loginform" style="margin-top:30px;"> <br>
-                <input type="password" name="password" id="password" placeholder="Password" class="loginform" style="margin-top:10px;"> <br>
+                <input type="text" id="name" name="stud_num" placeholder="Student Number/Examinee Number" class="loginform" style="margin-top:15px;"> <br>
+                <input type="password" name="password" id="password" placeholder="Password" class="loginform" style="margin-top:1vh;"> <br>
 
-                <button type="submit" class="yellowbutton" style="margin-top:15px;">{{ __('Log in') }}</button>
+                <button type="submit" class="yellowbutton" style="margin-top:2vh;">{{ __('Log in') }}</button>
                 
                 <!-- Validation Errors -->
                 <x-auth-validation-errors class="mb-4" :errors="$errors" style="color:black;margin-top:5%;"/> 
             <hr>
                 <!-- For Registration of Student -->
                 <label for="register" style="font-size:1vw;width:80%;text-align:center;font-family:Regular;">New Here? Register first!</label><br>
-                <a href="/register"> <button type="button" id="register" class="registerbutton" style="margin-top:15px;">{{ __('Register') }}</button></a>
+                <a href="/register"> <button type="button" id="register" class="registerbutton" style="margin-top:2vh;">{{ __('Register') }}</button></a>
         </form>
     </div>
     

@@ -2,6 +2,10 @@ function loginFunction() {
     alert('Login Successfully!');
 }
 
+function confirm() {
+    alert('Feedback Sent Successfully!');
+}
+
 function cancelapp() {
   alert('Application Cancelled!');
 }

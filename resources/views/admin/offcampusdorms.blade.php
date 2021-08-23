@@ -23,10 +23,10 @@
         <h4>MARIANO MARCOS <br> STATE UNIVERSITY</h4>
 
       <div class="header"> <h1 style="color:white;">OFF - CAMPUS DORMITORIES</h1>
-        <form style="margin-top:3%;margin-left:15%;" action="/admin/searchoffcampusdorms" method="POST" role="search">
+        <form style="margin-top:3vh;margin-left:15%;width:40%;" action="/admin/searchoffcampusdorms" method="POST" role="search">
           @csrf
           <input type="text" id="search" onkeyup="searchFunction()" placeholder="Search" name="search">
-          <button type="submit"><img src="https://img.icons8.com/pastel-glyph/50/000000/search--v2.png" width="100%"></button>
+          <button type="submit"><img src="https://img.icons8.com/pastel-glyph/50/000000/search--v2.png" width="60%"></button>
         </form>        
       </div>
     </div>

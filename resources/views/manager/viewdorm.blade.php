@@ -17,7 +17,7 @@
     <div class="uppernav"><h3>MMSU - COEDS / Proprietor Dorm Management</h3></div>
     
     <div class="topnav" id="myTopnav">
-        <img style="float:left;margin-left:20px;margin-top:10px;" src="/images/mmsu logo.png"  height="60" width="60">
+        <img style="float:left;margin-left:20px;margin-top:10px;" src="/images/mmsu logo.png"  width="4%">
         <h4>MARIANO MARCOS <br> STATE UNIVERSITY</h4>
     </div>
                 
@@ -38,7 +38,7 @@
 
     <div class="updatedormcontainer">
 
-        <form style="width:95%;padding-top:10%;">
+        <form style="width:95%;padding-top:15%;">
             <div class="tableFixHeadtitle">DORM PROFILE
             <a href="{{ url('manager/updateimage/'.Auth::guard('manager')->user()->id) }}"><button type="button" class="greenbutton" style="margin-right:0%;margin-top:0px;"> UPLOAD IMAGE</button></a>
             <a href="{{ url('manager/updatedorm/'.Auth::guard('manager')->user()->id) }}"><button type="button" class="secondyellowbutton" style="margin-top:0px;margin-right:2%;">UPDATE DORM</button></a>

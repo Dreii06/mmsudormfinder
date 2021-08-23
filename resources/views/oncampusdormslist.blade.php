@@ -14,18 +14,19 @@
     <body>
     <div class="uppernav"> <h3 style="margin-left:20px;">MMSU - Dorm Finder</h3></div>
     
-    <div class="topnav" id="myTopnav">
-       <img style="float:left;margin-left:20px;margin-top:5px;" src="/images/mmsu logo.png"  height="4%" width="4%">
-       <a style=" text-decoration: none;width:20%;margin:0%;" href="{{ url('dashboard') }}"><h4>MARIANO MARCOS <br> STATE UNIVERSITY</h4></a>
+     <!-- NAVIGATION BAR -->
+     <div class="topnav" id="myTopnav">
+            <img style="float:left;margin-left:20px;margin-top:5px;" src="/images/mmsu logo.png"  height="4%" width="4%">
+            <a style=" text-decoration: none;width:20%;margin:0%;" href="{{ url('dashboard') }}"><h4>MARIANO MARCOS <br> STATE UNIVERSITY</h4></a>
             <a class="topnavlink" href="/contact">CONTACT</a>
             <a class="topnavlink" href="/about">ABOUT US</a>
             <a class="topnavlink" href="/dorm">LIST OF DORMS</a>
 
             <div class="menu">
-                <img style="float:right;margin-top:20px;" src="/images/user.png"  width="15%" height="40%">
+                <img style="float:right;" src="/images/user.png"  width="15%" height="35%">
                     <ul><li>
-                    <a href="#" style="float:right;margin:10px 0px 0px 0px;">{{ Auth::user()->stud_num }}</a>
-                        <ul>
+                    <a href="#" style="float:right;width:10vw;">{{ Auth::user()->stud_num }}</a>
+                        <ul style="padding-top:2vh;margin-top:5vh;">
                         <li><a href="{{ url('profilestudent') }}">Profile</a></li><br>
                         <li><a href="{{ url('applicationlist') }}">Application List</a></li><br>
                         <li><a href="{{ url('reportdorm') }}">Report Dormitory</a></li><br>
@@ -36,7 +37,7 @@
                         </ul>
                     </ul></li>
             </div>
-    </div>
+        </div>
 
     <!-- BREADCRUMBS -->
     <div class="page__section">
@@ -57,12 +58,13 @@
         </nav>
     </div>         
 
-    <div class="header"> <h1>HOUSING FACILITIES - ON CAMPUS</h1>
-    <form style="margin-left:40%;margin-top:1%;" action="/searchoncampusdorms" method="POST" role="search">
-      @csrf
-        <input type="text" id="search" onkeyup="searchFunction()" placeholder="Search.." name="q">
-        <button type="submit"><img src="https://img.icons8.com/pastel-glyph/50/000000/search--v2.png" width="100%"></button>
-    </form>         
+    <!-- SECOND HEADER WITH SEARCH BAR-->
+    <div class="header"> <h1>LIST OF DORMITORIES</h1>
+        <form style="margin-left:40%;margin-top:1.2%;width:30vw;" action="/searchoffcampusdorms" method="POST" role="search">
+        @csrf
+          <input type="text" id="search" onkeyup="searchFunction()" placeholder="Search.." name="q">
+          <button type="submit"><img src="https://img.icons8.com/pastel-glyph/50/000000/search--v2.png" width="100%"></button>
+        </form>         
     </div>
         
     <div class="listappcontainer">

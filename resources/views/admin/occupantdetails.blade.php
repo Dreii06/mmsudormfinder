@@ -43,7 +43,7 @@
     </div>
     
     <div class="dormdeets">
-    <form style="width:80%;margin-left:24%;" action="/admin/occupantdetails" method="POST">
+    <form style="width:80%;margin-left:24%;margin-top:10vh;" action="/admin/occupantdetails" method="POST">
     <div class="tableFixHeadtitle">Occupant's Details
         <a href="{{ URL::previous() }}"><button type="button" style="margin: 0% 7% 0% 1%;float:right;"class="btndelete">BACK</button></a>
     </div>
@@ -52,24 +52,24 @@
         <div style="display:flex;"> <div class="smallheader">FULL NAME</div>
         <div class="smallheader">ADDRESS</div></div>
 
-        <input type="text"  style="width:40%;margin-right:5%;" id="fname" value="{{ $details->first_name }} {{ $details->middle_name }} {{ $details->last_name }} {{ $details->suffix }}" class="inputapp" readonly>
+        <input type="text"  style="width:40%;margin-right:4vw;" id="fname" value="{{ $details->first_name }} {{ $details->middle_name }} {{ $details->last_name }} {{ $details->suffix }}" class="inputapp" readonly>
         <input type="text" style="width:40%;" id="barangay" value="{{ $details->barangay }} {{ $details->street }} {{ $details->city }}, {{ $details->province }}" class="inputapp" readonly><br><br>
         
         <div style="display:flex;"> <div class="smallheader">CONTACT INFORMATION</div>
         <div class="smallheader">CONTACT GUARDIAN</div></div>
 
-        <input type="email" style="width:25%;margin-right:1%;" id="email" value="{{ $details->email }}" class="inputapp" readonly>
-        <input type="tel" style="width:13%;margin-right:5%;" id="number" value="{{ $details->mobile_num }}" class="inputapp" readonly>
+        <input type="email" style="width:25%;margin-right:1vw;" id="email" value="{{ $details->email }}" class="inputapp" readonly>
+        <input type="tel" style="width:13%;margin-right:4vw;" id="number" value="{{ $details->mobile_num }}" class="inputapp" readonly>
   
-        <input type="text" style="width:25%;margin-right:1%;"id="nameg" value="{{ $details->guardian_name }}" class="inputapp" readonly>
-        <input type="tel" style="width:13%;margin-right:5%;"id="number" value="{{ $details->guardian_num }}" class="inputapp" readonly><br><br>
+        <input type="text" style="width:25%;margin-right:1vw;"id="nameg" value="{{ $details->guardian_name }}" class="inputapp" readonly>
+        <input type="tel" style="width:13%;margin-right:4vw;"id="number" value="{{ $details->guardian_num }}" class="inputapp" readonly><br><br>
 
         <div style="display:flex;"> <div class="smallheader">ACADEMIC INFORMATION</div>
         <div class="smallheader">OTHER INFORMATION</div></div>
-        <input type="text" style="width:10%;margin-right:1%;" id="fstudentid" name="stud_num" value="{{ $details->stud_num }}" class="inputapp" readonly>
-        <input type="text" style="width:5%;margin-right:1%;" id="college" value="{{ $details->college }}"  class="inputapp" readonly>
-        <input type="text" style="width:21%;margin-right:5%;" id="course" value="{{ $details->course }}"  class="inputapp" readonly>
-        <input type="text" style="width:20%;margin-right:2%;" id="sec" value="{{ $details->sex }}" class="inputapp" readonly>
+        <input type="text" style="width:10%;margin-right:1vw;" id="fstudentid" name="stud_num" value="{{ $details->stud_num }}" class="inputapp" readonly>
+        <input type="text" style="width:5%;margin-right:1vw;" id="college" value="{{ $details->college }}"  class="inputapp" readonly>
+        <input type="text" style="width:21%;margin-right:4vw;" id="course" value="{{ $details->course }}"  class="inputapp" readonly>
+        <input type="text" style="width:20%;margin-right:2vw;" id="sec" value="{{ $details->sex }}" class="inputapp" readonly>
 
     </form>
     </div>

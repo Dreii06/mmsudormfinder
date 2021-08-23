@@ -43,10 +43,10 @@
             <a class="topnavlink" href="/dorm">LIST OF DORMS</a>
 
             <div class="menu">
-                <img style="float:right;margin-top:20px;" src="/images/user.png"  width="15%" height="40%">
+                <img style="float:right;" src="/images/user.png"  width="15%" height="35%">
                     <ul><li>
-                    <a href="#" style="float:right;margin:10px 0px 0px 0px;">{{ Auth::user()->stud_num }}</a>
-                        <ul>
+                    <a href="#" style="float:right;width:10vw;">{{ Auth::user()->stud_num }}</a>
+                        <ul style="padding-top:2vh;margin-top:5vh;">
                         <li><a href="{{ url('profilestudent') }}">Profile</a></li><br>
                         <li><a href="{{ url('applicationlist') }}">Application List</a></li><br>
                         <li><a href="{{ url('reportdorm') }}">Report Dormitory</a></li><br>

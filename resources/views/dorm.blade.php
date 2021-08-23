@@ -18,19 +18,19 @@
     <!-- HEADER -->
     <div class="uppernav"> <h3 style="margin-left:20px;">MMSU - Dorm Finder</h3></div>
     
-    <!-- NAVIGATION BAR -->
-    <div class="topnav" id="myTopnav">
-       <img style="float:left;margin-left:20px;margin-top:5px;" src="/images/mmsu logo.png"  height="4%" width="4%">
-       <a style=" text-decoration: none;width:20%;margin:0%;" href="{{ url('dashboard') }}"><h4>MARIANO MARCOS <br> STATE UNIVERSITY</h4></a>
+     <!-- NAVIGATION BAR -->
+     <div class="topnav" id="myTopnav">
+            <img style="float:left;margin-left:20px;margin-top:5px;" src="/images/mmsu logo.png"  height="4%" width="4%">
+            <a style=" text-decoration: none;width:20%;margin:0%;" href="{{ url('dashboard') }}"><h4>MARIANO MARCOS <br> STATE UNIVERSITY</h4></a>
             <a class="topnavlink" href="/contact">CONTACT</a>
             <a class="topnavlink" href="/about">ABOUT US</a>
             <a class="topnavlink" href="/dorm">LIST OF DORMS</a>
 
-        <div class="menu">
-            <img style="float:right;margin-top:20px;" src="/images/user.png"  width="15%" height="40%">
+            <div class="menu">
+                <img style="float:right;" src="/images/user.png"  width="15%" height="35%">
                     <ul><li>
-                    <a href="#" style="float:right;margin:10px 0px 0px 0px;">{{ Auth::user()->stud_num }}</a>
-                        <ul>
+                    <a href="#" style="float:right;width:10vw;">{{ Auth::user()->stud_num }}</a>
+                        <ul style="padding-top:2vh;margin-top:5vh;">
                         <li><a href="{{ url('profilestudent') }}">Profile</a></li><br>
                         <li><a href="{{ url('applicationlist') }}">Application List</a></li><br>
                         <li><a href="{{ url('reportdorm') }}">Report Dormitory</a></li><br>
@@ -40,8 +40,8 @@
                         </form>
                         </ul>
                     </ul></li>
+            </div>
         </div>
-    </div>
 
     <!-- BREADCRUMBS -->
     <div class="page__section">

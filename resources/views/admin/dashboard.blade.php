@@ -22,7 +22,7 @@
     <div class="uppernav"><h3>MMSU - Admin Dorm Management</h3></div>
     
     <div class="topnav" id="myTopnav">
-        <img style="float:left;margin-left:20px;" src="/images/mmsu logo.png" width="3%">
+        <img style="float:left;margin-left:1vw;" src="/images/mmsu logo.png" width="3%">
         <h4>MARIANO MARCOS <br> STATE UNIVERSITY</h4>
         <div class="titleheader">DASHBOARD</div>
     </div>
@@ -49,24 +49,24 @@
   <div style="width:100%;">
       <h2 class="h2nav">OVERALL STATUS 
       <p class="text--sub">HERE ARE THE OVERALL RESULTS FOR TODAY!</p>
-      <div style="display:flex;margin-top:2%;">
+      <div style="display:flex;margin-top:1vh;">
           <!-- REGISTRANTS -->
           <div class="statistics">
-            <div> <img src="https://img.icons8.com/bubbles/100/000000/group.png"/></div>
+            <div> <img  style="width:5vw;margin-top:1vh;" src="https://img.icons8.com/bubbles/100/000000/group.png"/></div>
             <p style="margin-bottom:0%;" class="text--small">Total Registrants<br>
             <input type="text" style="width:20%;" id="fname" name="first" value="{{ $registrants }}" readonly></p>
           </div>
 
           <!-- OCCUPANTS -->
           <div class="statistics">
-              <div> <img src="https://img.icons8.com/bubbles/100/000000/group.png"/></div>
+              <div> <img style="width:5vw;margin-top:1vh;" src="https://img.icons8.com/bubbles/100/000000/group.png"/></div>
               <p style="margin-bottom:0%;" class="text--small">Total Occupants<br>
               <input type="text" style="width:20%;" id="fname" name="first" value="{{ $occupants }}" readonly></p>        
           </div>
 
           <!-- DORMITORY -->
           <div class="statistics">
-              <div> <img src="https://img.icons8.com/bubbles/100/000000/group.png"/></div>
+              <div> <img  style="width:5vw;margin-top:1vh;" src="https://img.icons8.com/bubbles/100/000000/group.png"/></div>
               <p style="margin-bottom:0%;" class="text--small">Total Dormitories<br>
               <input type="text" style="width:20%;" id="fname" name="first" value="{{ $dorms_count }}"  readonly></p>
           </div>
@@ -74,7 +74,7 @@
 
       <div style="display:flex;margin-top:1%;">
           <!-- REGISTRANTS -->
-          <div class="statistics" style="width:100%;height:50px;">
+          <div class="statistics" style="width:100%;height:8vh;">
             <p style="margin-top:0%;" class="text--small">Out of all <input type="text" style="width:5%;margin-top:1%;" id="fname" name="first" value="{{ $dorms_capacity }}" readonly>
              Dorm Capacities, there are a total of <input type="text" style="width:5%;margin-top:1%;" id="fname" name="first" value="{{ $dorms_vacancy }}" readonly> vacancies left<br>
             </p>
@@ -83,7 +83,7 @@
       </h2>
 
       <div style="display:flex;">
-        <div class="tableFixHead" style="width:30%;height:100%;margin: 0% 2% 2% 0%;">
+        <div class="tableFixHead" style="width:30%;height:100%;margin: 0vh 2vh 2vh 0vh;">
           <table style="color:#053F5E;backdrop-filter: blur(16px) saturate(180%);-webkit-backdrop-filter: blur(16px) saturate(180%);background-color: rgba(255, 255, 255, 0.40);">
           <tr>
             <thead>
@@ -126,7 +126,7 @@
           </table>
       </div>
 
-      <div class="tableFixHead" style="width:80%;height:100%;margin: 0% 2% 2% 0%;">
+      <div class="tableFixHead" style="width:80%;height:100%;margin: 0vh 2.5vh 2vh 0vh;">
           <table style="color:#053F5E;backdrop-filter: blur(16px) saturate(180%);-webkit-backdrop-filter: blur(16px) saturate(180%);background-color: rgba(255, 255, 255, 0.40);">
           <tr>
             <thead>

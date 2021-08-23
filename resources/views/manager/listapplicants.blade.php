@@ -20,7 +20,7 @@
     
     <!-- NAVIGATION BAR -->
     <div class="topnav" id="myTopnav">
-        <img style="float:left;margin-left:20px;margin-top:10px;" src="/images/mmsu logo.png"  height="60" width="60">
+    <img style="float:left;margin-left:1vw;margin-top:0.5vh;" src="/images/mmsu logo.png"  width="3%">
         <h4>MARIANO MARCOS <br> STATE UNIVERSITY</h4>
     </div>
                 
@@ -45,10 +45,10 @@
     
     <!-- 2ND HEADER WITH SEARCH BAR -->
     <div class="header"> <h1 style="width:100%;">LIST OF APPLICANTS</h1>
-            <form style="margin-right:0%;margin-top:0.3%;" action="/manager/searchapplicants" method="POST" role="search">
+            <form style="margin-right:0%;" action="/manager/searchapplicants" method="POST" role="search">
               @csrf
               <input type="text" id="search" onkeyup="searchFunction()" placeholder="Search" name="search">
-              <button type="submit"><img src="https://img.icons8.com/pastel-glyph/50/000000/search--v2.png" width="100%"></button>
+              <button type="submit"><img src="https://img.icons8.com/pastel-glyph/50/000000/search--v2.png" width="80%"></button>
             </form>        
     </div>
     

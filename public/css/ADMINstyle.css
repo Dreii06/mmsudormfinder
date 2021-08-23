@@ -34,13 +34,13 @@ legend{
 }
 
 h1{
-  color:#065471; font-family: ABolder;
+  color:#065471; font-family: ABolder; font-size: 2vw;
 }
 
 h3{
     color:#434546;
     font-size: 1.3vw;
-    margin-top: 3px;
+    margin-top: 1vh;
     padding-left: 20px;  
 }
 
@@ -49,23 +49,23 @@ h4{
   margin-left: 10px;
   margin-right: 100px;
   font-family:Unna;
+  font-size: 1vw;
 }
 
 form {
-  margin-left: 400px;
-  margin-top: -150px;
+  margin-top: 8vh;
   border-style: none;
   display: inline-block;
 }
 
 .username{
   display: flex;
-  margin: 15% 0% 5% 0%;
-  padding-left: 15px;
-  padding-top: 30px;
+  margin: 20% 0% 5% 0%;
+  padding-left: 3vw;
+  padding-top: 5vh;
   font-family: ABold;
   color:#053F5E;
-  font-size: 23px;
+  font-size: 1.5vw;
 }
 
 .uppernav {
@@ -75,7 +75,7 @@ form {
   width: 100%;
   top: 0%;
   z-index: 1;
-  height: 30px;
+  height: 5vh;
   padding: 0%;
 }
 
@@ -86,8 +86,8 @@ form {
     display: flex;
     align-items: center;
     width: 100%;
-    margin-top: 30px;
-    height: 60px;
+    margin-top: 5vh;
+    height: 8vh;
     top: 0%;
     position: fixed;
 }
@@ -95,8 +95,8 @@ form {
 .logincontainer {
   width: 40%;
   text-align: center;
-  margin: 10% 0% 0% 30%;
-  padding: 15% 0% 5% 0%;
+  margin: 30vh 0vh 0vh 60vh;
+  padding: 0vh 0vh 5vh 0vh;
   border-radius: 20px;
   backdrop-filter: blur(16px) saturate(180%);
   -webkit-backdrop-filter: blur(16px) saturate(180%);
@@ -105,16 +105,18 @@ form {
 
 .logincontainer form{
   width: 70%;
+  margin-top: 5vh;
   margin-left:0%;
 }
 
 .loginform {
   width: 80%;
-  height:40px;
+  height:4vh;
   margin-top: 5%;
   border-style: none;
   border-radius: 10px;
   text-indent: 10px;
+  font-size: 1vw;
 }
 
 .yellowbutton {
@@ -123,8 +125,8 @@ form {
     font-family: ABold;
     border-style: none;
     width: 20%;
-    height: 40px;
-    border-radius: 12px;
+    height: 5vh;
+    border-radius: 1.1vw;
     cursor: pointer;
     font-size: 1.3vw;
 }
@@ -133,7 +135,7 @@ form {
     background-color:transparent;
     color: #28a01b; 
     border-style:solid; border-color: #28a01b; border-radius: 12px;
-    width: 15%; height: 40px;
+    width: 15%; height: 5vh;
     font-family: ABolder; font-size: 1.3vw;
     margin-top:15px; margin-bottom:50px;
     float: right;
@@ -148,12 +150,12 @@ form {
 
 .inputapp{
   font-family: Regular;
-  height: 30px;
+  height: 4vh;
   display: inline-block;
-  margin-right: 2%;
+  margin-right: 2vw;
   font-size: 1.2vw;
-  border-radius: 5px;
-  border-width: 1px;
+  border-radius: 0.6vw;
+  border-width: 0.1vw;
 }
 
 .readapp{
@@ -197,8 +199,8 @@ form {
 .verticalnav img{
     width: 10%;
     height: 10%;
-    margin-right: 10px;
-    margin-bottom: 5px;
+    margin-right: 2vh;
+    margin-bottom: 1vh;
     vertical-align: middle;
 }
 
@@ -216,8 +218,8 @@ form {
 .verticalnav  li a {
     display: block;
     color: #000;
-    padding: 8px 16px;
-    padding-left: 50px;
+    padding: 1vh 1vw;
+    padding-left: 3vw;
     text-decoration: none;
   }
   
@@ -235,18 +237,19 @@ form {
 
 .verticalnav button{
   width: 100%;
-  font-size: 1.3vw;
+  font-size: 1.3vw; font-family:Regular;
   border-style: none;
-  background-color: transparent;
+  background-color: transparent; color:rgb(235, 72, 44);
   text-align: left;
-  padding-left: 50px;
+  padding-left: 3vw;
 }
 
 .verticalnav button:hover{
-  background-color:#434546;
+    background-color:#434546;
     color: white;
     cursor: pointer;
 }
+
 
 .dorm_con {
   display: flex;
@@ -267,8 +270,8 @@ form {
 
 .btndownload {
     width: 15%;
-    height: 50px;
-    border-radius: 35px;
+    height: 5vh;
+    border-radius: 2vw;
     margin-left: 60%; margin-right: 1%;
     font-size: 1.1vw;
     font-weight: bold;
@@ -281,20 +284,20 @@ form {
 
 .btndelete {
     width: 15%;
-    height: 50px;
-    border-radius: 35px;
+    height: 5vh;
+    border-radius: 2vw;
     font-size: 1.1vw;
     font-family: ABold;
     color: #28a01b;
-    border: 2px solid #28a01b;
+    border: 0.2vw solid #28a01b;
     cursor: pointer;
 }
 
 .btnviewocc {
     width: 10%;
-    height: 50px;
+    height: 5vh;
     float: right; margin-right: 10%;
-    border-radius: 35px;
+    border-radius: 2vw;
     font-size: 1.1vw;
     font-family: ABold;
     color: #28a01b;
@@ -303,9 +306,8 @@ form {
 }
 
 .dormdeets{
-  padding-top: 18%;
-  padding-bottom: 10%;
-  width: 100%;
+  display: block;
+  padding-top: 10vh;
 }
 
 .dormdeets label{
@@ -340,9 +342,9 @@ position: sticky;  padding-left: 0%;
 
 textarea{
   width:75%;
-  height:50px;
+  height:10vh;
   font-family: Regular;
-
+  font-size: 1.2vw;
 }
 .tablewrapper {
   overflow:hidden;
@@ -368,20 +370,20 @@ textarea{
 
  /* SCROLLABLE LIST */
  .tableFixHead {
-  overflow-y: auto;
-  height: 500px;
+  overflow: hidden;
   width: 95%;
-  border-radius: 15px;
+  border-radius: 1vw;
 }
 
 .tableFixHead button{
-  background-color: #28a01b; 
-  color: white;
-  font-size: 1.2vw;            
+  background-color: #28a01b;
   font-family: ABold;
-  border-style: none;          
-  border-radius: 10px;
-  width: 100%; height: 35px;
+  color: white;
+  font-size: 1.2vw;
+  border-style: none;
+  border-radius: 1vh;
+  width: 100%;
+  height: 4vh;
 }
 
 .tableFixHead button:hover{
@@ -391,7 +393,7 @@ textarea{
 
 .tableFixHead thead th {
   position: sticky;
-  letter-spacing: 5;
+  letter-spacing: 0.1vw;
   top: 0;
 }
 
@@ -411,26 +413,27 @@ table {
 }
 
 td {
-  padding: 8px 16px;
+  padding: 1vh 1vw;
   font-size: 1.3vw;
 }
 
 th {
   font-family: ABold;
-  padding: 8px 16px;
+  padding: 1vh 1vw;
   font-size: 1.3vw;
 
 }
 .tableFixHead,
 .tableFixHead td {
-  box-shadow: inset 0px 1px #343636;
+  box-shadow: inset 0px 1px #1D6115;
 }
 .tableFixHead th {
-  box-shadow: inset 1px 1px #1D6115, 1 1px #343636;
+  box-shadow: inset 1px 1px #1D6115, 1 1px #1D6115;
   background-color: #065471; 
   color:white;
   text-align: left;
 }
+
 /*SCROLLABLE LIST END*/
 
 /*CUSTOM SCROLL*/
@@ -460,27 +463,30 @@ th {
 
 .titleheader{
   color: white;
-  font-size: 30px;
+  margin-left: 20vw;
+  position: fixed;
+  font-size: 2vw;
   font-family: ABolder;
 }
 
 .header{
   color:white;
-  margin-left: 5%;
+  margin-left: 20vw;
+  position: fixed;
   display: flex;
   width: 70%;
 }
 
 .header input[type=text] {
-padding: 6px; border-radius:10px ;
+padding: 1vh; border-radius:10px ;
 font-size: 1vw;
 margin-left: 5%;
 border: none;
 }
 
 .header button {
-  border-style: none; background-color:#d1d0d0; border-radius: 10px;
-  width: 10%; height: 30px;
+  border-style: none; background-color:#d1d0d0; border-radius: 1vw;
+  width: 10%; height: 4vh;
 }
 
 .header button:hover {
@@ -526,6 +532,7 @@ border: none;
   padding: 2%;
   margin-top: 5%;
   border-radius: 20px;
+  font-size: 1vw;
 }
 /* END CONTACT PAGE CONTAINER */
 
@@ -594,7 +601,7 @@ section {
 
 .text--sub {
 	font-size: 1.2vw; font-family: Regular;
-	letter-spacing:3px; margin-top: 0%;
+	letter-spacing:0.5vw; margin-top: 0%;
   color: white;
 }
 
@@ -643,11 +650,12 @@ section {
 }
 
 .dorm {
-  background-color:#FFCD00;
-  color: #0C4B05;
+  background-color:#28a01b;
+  color: white;
   border-style: none;
   width: 100px;
-  height: 40px;
+  height: 5vh;
+  font-family: ABold;
   border-radius: 15px;
   cursor: pointer;
   font-size: 1.2vw;
@@ -696,9 +704,9 @@ section {
 }
 
 .statistics{
-  width: 300px; height: 7vw;
+  width: 30vw; height: 12vh;
   margin-right: 3%;
-  border-radius: 20px;
+  border-radius: 1vw;
   color: white;
   padding-left: 3%;
   display: flex;
@@ -708,18 +716,18 @@ section {
 .statistics input{
   border-style: none;
   background-color: #053F5E;
-  border-radius: 10px;
-  text-indent: 5px;
-  height: 30px;
+  border-radius: 1vw;
+  text-indent: 1vw;
+  height: 5vh;
   color: white;
-  margin-top: 5%;
+  margin-top: 0%;
   font-size: 1.2vw;
   font-family:ABold;
 }
 
 .statistics select{
   width: 50%;
-  height:30px;
+  height:5vh;
   border-radius: 10px;
   margin-top: 5%;
 }
@@ -800,9 +808,9 @@ section {
 
 /* OTHER CLASSES */
 .smallheader{
-  padding: 0.5% 0.5% 0.5% 0%;
+  padding: 0.5vh 0.5vh 0.5vh 0vh;
   /*border-bottom: #434546 solid 1px;*/
-  margin-right: 5%;
+  margin-right: 4vw;
   color:#434546;
   width: 40%;
   font-size: 1.3vw;
