@@ -50,14 +50,13 @@
         </div>
     </div>
 
-
     <div class="applistform">
         <form action="/reportdorm" method="POST" onsubmit="modalclick()">
             @csrf
             <label style="width:100%;"for="dorm">Choose Dormitory to Report:</label><br>
             <select name="dormitory" style="width:30%;margin-bottom:2%;" id="dorm" class="inputapp">
                 @foreach ($dorms as $dorm)
-                <option value="{{ $dorm->dorm_name }}">{{ $dorm->dorm_name }}</option>
+                <option value="{{ $dorm->dormitory }}">{{ $dorm->dormitory }}</option>
                 @endforeach
             </select>
 
@@ -69,7 +68,6 @@
 
         <a href="dashboard"><button type="button" id="cancel" name="cancel"  class="greenbutton" style="margin-top:0%;width:15%;float:right;margin-right:15%;">CANCEL</button></a>
         <button type="submit" id="confirm" name="confirm"  class="secondyellowbutton" style="width:15%;float:right;margin-right:1%;">SUBMIT</button>
-
         </form>
     </div>
 
@@ -80,7 +78,7 @@
     // Get the <span> element that closes the modal
     var span = document.getElementsByClassName("close")[0];
 
-    // When the user clicks the button, open the modal 
+    // When the user clicks the button, open the modal
     function modalclick() {
         modal.style.display = "block";
     }
@@ -94,7 +92,7 @@
     window.onclick = function(event) {
         if (event.target == modal) {
         modal.style.display = "none";
-    }
+        }
     }
     </script>
 

@@ -37,8 +37,8 @@
 
     <div class="header"> <h1>APPLICATION LIST</h1></div>
 
-    <p class="note"> <img src="https://img.icons8.com/cute-clipart/64/000000/info.png" width="2%" /> <b>NOTICE</b> : After confirming, wait for 1-3 business days for the process. If it isstill waiting for
-        approval, feel free to apply to other available dormitories </p>
+    <p class="note"> <img src="https://img.icons8.com/cute-clipart/64/000000/info.png" width="2%" /> <b>NOTICE</b> : After confirming, wait for 1-3 business days for the process. If it is still "Waiting for
+        Approval", feel free to apply to other available dormitories </p>
 
     @foreach($details as $detail)
     <div class="applistform">
@@ -65,7 +65,7 @@
     <script>
         var process = document.getElementById('process').value;
         var cancel = document.getElementById('cancel');
-        if(process == "Approved" || process == "Denied") {
+        if(process == "Approved") {
             cancel.remove();
         }
     </script>

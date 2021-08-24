@@ -43,7 +43,7 @@
         <div class="boxcontact">
             <div class="contactabout">Frequently Asked Questions</div>
             <ol type="A">
-            <li><b>How to apply in a Dorm?</b></li>
+            <li><b>How to Apply in a Dorm?</b></li>
                 <ol type="1">
                     <li>Simply click <i>Apply</i> on the Dashboard or click <i>List of Dorms</i> on the Navigation Bar.</li>
                     <li>Choose your desired Dormitory on the list, click <i>View</i> to see the full details.</li>
@@ -59,8 +59,8 @@
         <div class="boxcontact">
             <div class="contactabout">Contact Us</div>
             <ul style="color:#053F5E;font-family:ABold;">
-                <li ><img src="https://img.icons8.com/pastel-glyph/50/000000/email--v3.png"/>osas@mmsu.edu.ph</li>
-                <li><img src="https://img.icons8.com/pastel-glyph/64/000000/phone-message--v1.png"/>+639358486068</li>
+                <li ><img src="https://img.icons8.com/pastel-glyph/50/000000/email--v3.png"/>isps@mmsu.edu.ph</li>
+                <li><img src="https://img.icons8.com/pastel-glyph/64/000000/phone-message--v1.png"/>09086733959</li>
             </ul>
     </div>
 

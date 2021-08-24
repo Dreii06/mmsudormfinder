@@ -115,12 +115,6 @@ class DormsController extends Controller
         return view('applyconfirmation', ['details' => $details], compact('images', 'room_types'));
     }
 
-    function getdorms() {
-        $dorms = Dorms::all();
-
-        return view ('reportdorm', compact ('dorms'));
-    }
-
     function store(Request $request) {
         $manager = Auth::guard('manager')->user();
         $dorm = Dorms::where('dorm_name', '=', $manager->dorm_name)->first();

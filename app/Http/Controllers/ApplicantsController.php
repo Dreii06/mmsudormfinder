@@ -50,9 +50,13 @@ class ApplicantsController extends Controller
         $applicant->dormitory = $dorm->dorm_name;
         $applicant->room_type = request('type', false);
 
-        $applicant->save();
+        if($applicant->sex == NULL) {
+            return back()->with('error', 'Please update your profile first before applying to dorms!');
+        } else {
+            $applicant->save();
 
-        return redirect('/applicationlist');
+            return redirect('/applicationlist');
+        }
     }
 
     function applicationlist() {

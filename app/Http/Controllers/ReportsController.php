@@ -7,9 +7,18 @@ use Illuminate\Support\Facades\Auth;
 use App\Models\Dorms;
 use App\Models\Reports;
 use App\Models\User;
+use App\Models\Occupants;
 
 class ReportsController extends Controller
 {
+
+    function displayReport() {
+        $user = Auth::user();
+        $dorms = Occupants::where('stud_num', '=', $user->stud_num)->get(['dormitory']);
+
+        return view('reportdorm', compact('dorms'));
+    }
+
     function report(Request $request) {
         $user = Auth::user();
         $report = new Reports();
@@ -21,7 +30,7 @@ class ReportsController extends Controller
 
         $report->save();
         
-        return redirect()->back();
+        return redirect()->back()->with('success', 'Feedback Sent Successfully!');
     }
 
     function getReports() {

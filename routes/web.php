@@ -55,7 +55,7 @@ Route::post('/applicationlist', [ApplicantsController::class, 'delapplication'])
 
 Route::post('/profilestudent', [UserProfileController::class, 'update']);
 
-Route::get('/reportdorm', [DormsController::class, 'getdorms']);
+Route::get('/reportdorm', [ReportsController::class, 'displayReport']);
 
 Route::post('/reportdorm', [ReportsController::class, 'report']);
 

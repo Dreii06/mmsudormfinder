@@ -55,7 +55,7 @@
     </div>
 
     <!-- DETAILS OF DORMITORY  -->
-    <div class="dorm_details" style="margin-top:3%;">    
+    <div class="dorm_details" style="margin-top:3%;">
         <form style="width:80%;" action="/applyconfirmation/{{ $details->id }}" method="POST">
             @csrf
             <h2 style="color:#053F5E;">Confirm your Application to <br> {{ $details->dorm_name }}</h2>
@@ -71,6 +71,12 @@
 
             <input type="hidden" id="type" name="type">
             <input type="text" id="vacancy" name="vacancy" style="width:15%;margin-right:2%;" readonly class="inputapp"><br>
+            
+            @if(session()->has('error'))
+            <div class="alert alert-danger" style="color:red;font-size:30px;margin-top:3%;">
+            {{ session()->get('error') }}
+            </div>
+            @endif
         
             <button type="submit" onclick="###" class="secondyellowbutton" style="width:20%;margin-top:5%;float:left;"> CONFIRM</button>
             <a href="{{ URL::previous() }}"><button type="button" class="confirmcancelbutton">BACK</button></a><br>
