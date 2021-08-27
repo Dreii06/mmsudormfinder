@@ -74,16 +74,9 @@
             <td><a href="{{ url('manager/detailsoccupant/'. $occupant->id) }}"><button type="button">VIEW</button></a></td>
           </tr>
           @endforeach
-          <tr>
-            <td>{{ $occupant->first_name }} {{ $occupant->middle_name }} {{ $occupant->last_name }}</td>
-            <td>{{ $occupant->city }}</td>
-            <td>{{ $occupant->mobile_num }}</td>
-            <td><a href="{{ url('manager/detailsoccupant/'. $occupant->id) }}"><button type="button">VIEW</button></a></td>
-          </tr>
         </tbody>
       </table>
     </div>
-
 
     <!-- PDF CONVERSION: TABLE FOR OCCUPANT -->
     <div id="tab" style="visibility:hidden;height:0; width:0;" class="tableFixHead">
