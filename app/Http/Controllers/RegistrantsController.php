@@ -36,14 +36,12 @@ class RegistrantsController extends Controller
             'mobile_num' => $registrant->mobile_num
         ]);
 
-        if($request->submit == ("addOnCampus")) {
-            OnCampusDorms::create([
-                'dormitory' => $registrant->dorm_name
-            ]);
-        } else if ($request->submit == ("addOffCampus")) {
+        if($request->submit == ("addOffCampus")) {
             OffCampusDorms::create([
                 'dormitory' => $registrant->dorm_name
             ]);
+        } else if ($request->submit == ("denyOffCampus")) {
+            $registrant->delete();
         }
 
         $manager->first_name = $registrant->first_name;
