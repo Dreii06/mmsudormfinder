@@ -75,7 +75,12 @@
     <div class="smallheader" style="width:90%;border-bottom: #434546 solid 1px;margin-bottom:1%;">SHORT DESCRIPTION</div>
     <textarea name="description">{{ $details->description }}</textarea><br><br>
 
-    <div style="display:flex;">
+    <div style="padding-right:10%;margin-top:1%;">
+        <a href="{{ URL::previous() }}"><button type="button" class="greenbutton" style="margin-top:1%;">CANCEL</button></a>
+        <input type="submit" name="save" onclick="update()" class="secondyellowbutton" style="margin-right:20px;margin-top:1%;" value="SAVE">
+    </div>
+
+    <div style="display:flex;margin-top:10%;">
     <div style="width:50%;">
     <table class="viewdormtable" id="room">
         <tr>
@@ -139,15 +144,11 @@
         <option value="Complete Furniture">Complete Furniture</option>
         <option value="Air-conditioned Room">Air-conditioned Room</option>
     </select>
-
+    
     <button type="submit" onclick="new_link()" name="submit" value="addAmen" class="addbutton" style="width:15%;margin-right:10%;">ADD</button><br>
     </div>
 </div>
-
-    <div style="padding-right:10%;margin-top:1%;">
-        <a href="{{ URL::previous() }}"><button type="button" class="greenbutton" style="margin-top:1%;">CANCEL</button></a>
-        <input type="submit" name="save" onclick="update()" class="secondyellowbutton" style="margin-right:20px;margin-top:1%;" value="SAVE">
-    </div>
+    
     </form>
 </div>
 
