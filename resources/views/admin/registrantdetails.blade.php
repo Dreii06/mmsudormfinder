@@ -55,7 +55,7 @@
         <div class="smallheader">CONTACT</div>
         <input type="text" id="fname" name="contact" style="width: 40%;" class="inputapp" value="{{ $details->mobile_num }}" readonly><br>
 
-        <button type="button" onclick="remove()" value="denyOffCampus" style="margin: 5vh 10vh 0vh 1vh;float:right;" class="btndelete">DENY</button>
+        <button type="submit" onclick="remove()" name="submit" value="denyOffCampus" style="margin: 5vh 10vh 0vh 1vh;float:right;" class="btndelete">DENY</button>
         <button type="submit" onclick="download()" name="submit" value="addOffCampus" style="width:20%;margin-left:0%;margin-top:5vh;float:right;"class="btndownload">ACCEPT</button>
 
         </div>
